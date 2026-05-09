@@ -10,7 +10,7 @@ concurrency:
 jobs:
   build-neko-void:
     name: Build Xorg and Xlibre ISOs
-    runs-on: linux 
+    runs-on: codeberg-medium
     
     container:
       image: 'ghcr.io/void-linux/void-mklive:20250116R1'
