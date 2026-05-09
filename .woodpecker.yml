@@ -1,0 +1,34 @@
+# .woodpecker.yml
+pipeline:
+  build-neko-void:
+    image: ghcr.io/void-linux/void-mklive:20250116R1
+    privileged: true
+    volumes:
+      - /dev:/dev
+    environment:
+      - PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin
+    commands:
+      # Preparar sistema e instalar dependencias
+      - xbps-install -Syu xbps
+      - xbps-install -yu
+      - xbps-install -y git bash wget curl file sudo
+
+      # Clonar el repositorio (aunque ya está clonado por Woodpecker, es más seguro)
+      - git clone https://codeberg.org/javiercplus/Neko-Void.git /tmp/workspace
+      - cd /tmp/workspace/live-maker
+
+      # Construir las dos ISOs
+      - bash make-rolling-xorg.sh
+      - bash make-rolling-xlibre.sh
+
+      # Generar checksums
+      - cd /tmp/workspace
+      - sha256sum **/*.iso > sha256sum.txt
+
+      # Mover artefactos a la carpeta que Woodpecker subirá automáticamente
+      - mkdir -p /woodpecker/artifacts
+      - find /tmp/workspace -name '*.iso' -exec cp {} /woodpecker/artifacts/ \;
+      - cp /tmp/workspace/sha256sum.txt /woodpecker/artifacts/
+
+artifacts:
+  - /woodpecker/artifacts/**
