@@ -48,6 +48,7 @@ SYSTEM_UTILS="
     fastfetch
     curl
     wget
+    Neko-Wizard
     git
     xdg-user-dirs
     xdg-utils
