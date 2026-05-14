@@ -36,6 +36,9 @@ BASE_SYSTEM="
     xsetroot
     xinit
     Neko-Wizard
+    neko-icons
+    neko-themes
+    neko-backgrounds
     xtools
     tmux
 "

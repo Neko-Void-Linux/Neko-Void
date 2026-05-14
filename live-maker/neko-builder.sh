@@ -9,7 +9,7 @@ set -e
 # ─────────────────────────────────────────────
 # Configuración de salida
 # ─────────────────────────────────────────────
-ISO_NAME="nekovoid-rolling-xorg.iso"
+
 ISO_TITLE="NekoVoid"
 
 # ─────────────────────────────────────────────
@@ -36,9 +36,6 @@ BASE_SYSTEM="
     xsetroot
     xinit
     Neko-Wizard
-    neko-icons
-    neko-themes
-    neko-backgrounds
     xtools
     tmux
 "
@@ -91,6 +88,7 @@ AUDIO="
     libjack-pipewire
     pavucontrol
     pulsemixer
+    rsync
     volumeicon
 "
 
@@ -102,6 +100,16 @@ XORG="
     xmirror
     libva-intel-driver
     intel-media-driver
+    orca
+"
+
+XLIBRE="
+    xlibre
+    xmirror
+    libva-intel-driver
+    intel-media-driver
+    xlibre-xf86-video-amdgpu
+    xlibre-xf86-video-intel
     orca
 "
 
@@ -237,7 +245,7 @@ NVIDIA=""
 # ─────────────────────────────────────────────
 # Construir la lista completa de paquetes
 # ─────────────────────────────────────────────
-ALL_PACKAGES="
+XORG_PACKAGES="
     ${REPOS_PKGS}
     ${BASE_SYSTEM}
     ${SYSTEM_UTILS}
@@ -255,22 +263,63 @@ ALL_PACKAGES="
     ${ACCESSIBILITY}
     ${NVIDIA}
 "
-
+XLIBRE_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XLIBRE}
+    ${GPU_DRIVERS}
+    ${MATE_DESKTOP}
+    ${DESKTOP_APPS}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
 # Limpiar espacios extra y newlines, convertir a una línea
-PACKAGES=$(echo ${ALL_PACKAGES} | tr -s ' ')
+PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
+PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
 
+
+xorg() {
+ISO_NAME="nekovoid-beta-7.1-xorg.iso"
 echo "============================================="
 echo " NekoVoid Live ISO Builder (Nonfree)"
 echo "============================================="
 echo ""
 echo "ISO de salida: ${ISO_NAME}"
-echo "Paquetes totales: $(echo ${PACKAGES} | wc -w)"
+echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
 echo ""
-
 sudo ./mklive.sh \
     -I includedir \
     -o "${ISO_NAME}" \
     -T "${ISO_TITLE}" \
-    -p "${PACKAGES}" \
-    -v linux-mainline \
+    -p "${PACKAGES_XORG}" \
     -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
+}
+xlibre() {
+ISO_NAME="nekovoid-beta-7.1-xlibre.iso"
+echo "============================================="
+echo " NekoVoid Live ISO Builder (Nonfree)"
+echo "============================================="
+echo ""
+echo "ISO de salida: ${ISO_NAME}"
+echo "Paquetes totales: $(echo ${PACKAGES_XLIBRE} | wc -w)"
+echo ""
+sudo ./mklive.sh \
+    -I includedir \
+    -o "${ISO_NAME}" \
+    -T "${ISO_TITLE}" \
+    -p "${PACKAGES_XLIBRE}" \
+    -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
+}
+
+case "$@" in
+    xlibre) xlibre;;
+    xorg) xorg;;
+esac

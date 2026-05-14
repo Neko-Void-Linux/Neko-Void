@@ -49,6 +49,9 @@ SYSTEM_UTILS="
     curl
     wget
     Neko-Wizard
+    neko-icons
+    neko-themes
+    neko-backgrounds
     git
     xdg-user-dirs
     xdg-utils
