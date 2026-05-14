@@ -36,6 +36,9 @@ BASE_SYSTEM="
     xsetroot
     xinit
     Neko-Wizard
+    neko-icons
+    neko-themes
+    neko-backgrounds
     xtools
     tmux
 "
@@ -319,7 +322,12 @@ sudo ./mklive.sh \
     -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
 }
 
+doble-iso(){
+xlibre
+xorg
+}
 case "$@" in
+    doble) doble-iso;;
     xlibre) xlibre;;
     xorg) xorg;;
 esac
