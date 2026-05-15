@@ -83,7 +83,7 @@ sudo ./mklive.sh \
     -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
 }
 rolling() {
-ISO_NAME="nekovoid-beta-7.1-xorg.iso"
+ISO_NAME="nekovoid-rolling-xorg.iso"
 echo "============================================="
 echo " NekoVoid Live ISO Builder (Nonfree)"
 echo "============================================="
@@ -117,7 +117,7 @@ sudo ./mklive.sh \
 }
 
 rollinglibre() {
-ISO_NAME="nekovoid-beta-7.1-xlibre.iso"
+ISO_NAME="nekovoid-rolling-xlibre.iso"
 echo "============================================="
 echo " NekoVoid Live ISO Builder (Nonfree)"
 echo "============================================="
