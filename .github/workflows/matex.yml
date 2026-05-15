@@ -1,0 +1,56 @@
+name: Build Neko Void ISO Xorg
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-neko-void:
+    name: Build ISOs
+    runs-on: ubuntu-latest
+    
+    container:
+      image: 'ghcr.io/void-linux/void-mklive:20250116R1'
+      options: --privileged
+      volumes:
+        - /dev:/dev
+      env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+
+    steps:
+      - name: Prepare container and dependencies
+        shell: sh
+        run: |
+          xbps-install -Syu xbps
+          xbps-install -yu
+          xbps-install -y git bash wget curl file sudo
+
+      - name: Clone Neko Void repository
+        run: git clone https://codeberg.org/javiercplus/Neko-Void.git workspace
+
+      - name: Build Neko-Void ISO Xorg
+        run: |
+          cd workspace/live-maker
+          bash neko-builder.sh rolling
+          
+      - name: Build Neko-Void ISO XLIBRE
+        run: |
+          cd workspace/live-maker
+          #bash make-rolling-xlibre.sh
+          echo "skip Xlibre"
+      - name: Generate Checksums
+        run: |
+          cd workspace
+          sha256sum **/*.iso > sha256sum.txt || true
+
+      - name: Upload ISO Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: neko-void-rolling-isos
+          path: |
+            workspace/**/*.iso
+            workspace/sha256sum.txt
+          if-no-files-found: error
