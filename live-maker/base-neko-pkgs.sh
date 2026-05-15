@@ -149,11 +149,6 @@ XFCE_DESKTOP="
     xfce4-pulseaudio-plugin
     xfce4-screenshooter
     atril
-    gnome-keyring
-    gvfs-afc
-    gvfs-mtp
-    gvfs-smb
-    lightdm
     lightdm-webkit2-greeter
     lightdm-gtk-greeter-settings
     libnotify
