@@ -5,6 +5,8 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 # Sistema base y utilidades
 # ─────────────────────────────────────────────
 BASE_SYSTEM="
+    grub-i386-efi
+    grub-x86_64-efi
     base-system
     at-spi2-core
     bash-completion
@@ -139,7 +141,44 @@ MATE_DESKTOP="
     picom
     lxappearance
 "
-
+#XFCE DESKTOP
+XFCE_DESKTOP="
+    xfce4
+    xfce4-whiskermenu-plugin
+    gnome-themes-standard
+    xfce4-pulseaudio-plugin
+    xfce4-screenshooter
+    atril
+    gnome-keyring
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    lightdm
+    lightdm-webkit2-greeter
+    lightdm-gtk-greeter-settings
+    libnotify
+    numlockx
+    picom
+"
+LXQT="
+    lxqt
+    firefox
+"
+LXDE="
+    lxde
+    firefox
+"
+KDE="
+    kde-plasma
+    konsole
+    firefox
+    dolphin
+"
+CINNAMON="
+    cinnamon
+    colord
+    gnome-terminal
+"
 # ─────────────────────────────────────────────
 # Aplicaciones de escritorio
 # ─────────────────────────────────────────────
