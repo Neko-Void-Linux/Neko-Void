@@ -9,21 +9,21 @@ git submodule update --init --recursive
 # Normal Build
 - Build neko-void iso xorg
 ``` 
-cd live-maker && bash make-nolibre.sh
+cd live-maker && bash neko-builder.sh xorg
 ```  
 - Build neko-void iso XLIBRE
 ``` 
-cd live-maker && bash make-xlibre.sh
+cd live-maker && bash neko-builder.sh xlibre
 ``` 
 
 # for rollings with lastest kernel
 - Build neko-void iso xorg
 ``` 
-cd live-maker && bash make-rolling-xorg.sh
+cd live-maker && bash neko-builder.sh rolling
 ```  
 - Build neko-void iso XLIBRE
 ``` 
-cd live-maker && bash make-rolling-xlibre.sh
+cd live-maker && bash neko-builder.sh rollinglibre
 ``` 
 
 This repo also has repo of neko wizard and kasha installer module!
