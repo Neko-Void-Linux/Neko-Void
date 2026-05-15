@@ -1,4 +1,4 @@
-name: Build Neko Void ISO Xorg
+name: Build Neko Void ISO XorgMate
 
 on:
   workflow_dispatch:
