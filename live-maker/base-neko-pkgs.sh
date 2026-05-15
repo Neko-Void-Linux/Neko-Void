@@ -1,26 +1,11 @@
 #!/bin/bash
-#
-# NekoVoid Live ISO Builder - Nonfree Edition
-# Genera la ISO con soporte nonfree: Steam, gaming, drivers propietarios, etc.
-#
-
-set -e
-
-# ─────────────────────────────────────────────
-# Configuración de salida
-# ─────────────────────────────────────────────
-ISO_NAME="nekovoid-beta-7.1-xlibre.iso"
-ISO_TITLE="NekoVoid"
-
-# ─────────────────────────────────────────────
-# Repositorios (nonfree + multilib)
-# ─────────────────────────────────────────────
 REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 
 # ─────────────────────────────────────────────
 # Sistema base y utilidades
 # ─────────────────────────────────────────────
 BASE_SYSTEM="
+    base-system
     at-spi2-core
     bash-completion
     cryptsetup
@@ -34,24 +19,25 @@ BASE_SYSTEM="
     xdo
     xsetroot
     xinit
+    Neko-Wizard
+    neko-icons
+    neko-themes
+    neko-backgrounds
+    xtools
+    tmux
 "
 
 SYSTEM_UTILS="
     7zip
     p7zip
     unrar
-    unzip
     zip
-    xz
     xxd
+    xz
     btop
     fastfetch
     curl
     wget
-    Neko-Wizard
-    neko-icons
-    neko-themes
-    neko-backgrounds
     git
     xdg-user-dirs
     xdg-utils
@@ -94,14 +80,22 @@ AUDIO="
 "
 
 # ─────────────────────────────────────────────
-# Xlibre + drivers GPU
+# Xorg + drivers GPU
 # ─────────────────────────────────────────────
+XORG="
+    xorg
+    xmirror
+    libva-intel-driver
+    intel-media-driver
+    orca
+"
+
 XLIBRE="
     xlibre
     xmirror
     libva-intel-driver
     intel-media-driver
-    xlibre-xf86-video-amdgpu 
+    xlibre-xf86-video-amdgpu
     xlibre-xf86-video-intel
     orca
 "
@@ -180,6 +174,8 @@ FONTS="
     font-awesome
     dejavu-fonts-ttf
     liberation-fonts-ttf
+    font-misc-misc
+    terminus-font
 "
 
 # ─────────────────────────────────────────────
@@ -226,50 +222,4 @@ ACCESSIBILITY="
     void-live-audio
     brltty
 "
-
-# ─────────────────────────────────────────────
-# Driver NVIDIA (descomentar si tienes GPU NVIDIA)
-# ─────────────────────────────────────────────
-#NVIDIA="nvidia nvidia-libs-32bit"
-NVIDIA=""
-
-# ─────────────────────────────────────────────
-# Construir la lista completa de paquetes
-# ─────────────────────────────────────────────
-ALL_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XLIBRE}
-    ${GPU_DRIVERS}
-    ${MATE_DESKTOP}
-    ${DESKTOP_APPS}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${MULTILIB_32BIT}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
-"
-
-# Limpiar espacios extra y newlines, convertir a una línea
-PACKAGES=$(echo ${ALL_PACKAGES} | tr -s ' ')
-
-echo "============================================="
-echo " NekoVoid Live ISO Builder (Nonfree)"
-echo "============================================="
-echo ""
-echo "ISO de salida: ${ISO_NAME}"
-echo "Paquetes totales: $(echo ${PACKAGES} | wc -w)"
-echo ""
-
-sudo ./mklive.sh \
-    -I includedir \
-    -o "${ISO_NAME}" \
-    -T "${ISO_TITLE}" \
-    -p "${PACKAGES}" \
-    -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd"
+MATE=${MATE_DESKTOP}
