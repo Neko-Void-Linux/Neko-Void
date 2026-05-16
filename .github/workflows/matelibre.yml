@@ -41,6 +41,9 @@ jobs:
       - name: Build Neko-Void ISO XLIBRE
         run: |
           cd workspace/live-maker
+          chown -R root:root includedir
+          find includedir -type d -exec chmod 755 {} \;
+          find includedir/etc/sv -name "run" -exec chmod +x {} \; 2>/dev/null || true
           bash neko-builder.sh rollinglibre
           
       - name: Generate Checksums
