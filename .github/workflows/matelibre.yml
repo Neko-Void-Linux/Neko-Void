@@ -26,7 +26,8 @@ jobs:
         run: |
           xbps-install -Syu xbps
           xbps-install -yu
-          xbps-install -y git bash wget curl file sudo
+          xbps-install -y git bash wget curl file sudo python3 python3-pip
+          python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages
 
       - name: Clone Neko Void repository
         run: git clone https://codeberg.org/javiercplus/Neko-Void.git workspace
@@ -36,21 +37,32 @@ jobs:
           cd workspace/live-maker
           # bash make-rolling-xorg.sh
           echo "skip XORG"
+
       - name: Build Neko-Void ISO XLIBRE
         run: |
           cd workspace/live-maker
           bash neko-builder.sh rollinglibre
-         
+          
       - name: Generate Checksums
         run: |
           cd workspace
           sha256sum **/*.iso > sha256sum.txt || true
 
-      - name: Upload ISO Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: neko-void-rolling-isos
-          path: |
-            workspace/**/*.iso
-            workspace/sha256sum.txt
-          if-no-files-found: error
+      - name: Upload ISO to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          ISO_FILE=$(find workspace -name "*.iso" | head -n 1)
+          ISO_NAME=$(basename "$ISO_FILE")
+          
+          hf upload arepaconcafe/untested-neko  "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko  workspace/sha256sum.txt "sha256sum.txt" --repo-type dataset --token $HF_TOKEN
+
+#      - name: Upload ISO Artifacts
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: neko-void-rolling-isos
+#           path: |
+#             workspace/**/*.iso
+#             workspace/sha256sum.txt
+#          if-no-files-found: error
