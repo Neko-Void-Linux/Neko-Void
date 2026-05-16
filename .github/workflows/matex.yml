@@ -35,9 +35,21 @@ jobs:
       - name: Build Neko-Void ISO Xorg
         run: |
           cd workspace/live-maker
+          # 1. Hacer que todo pertenezca a root por defecto
           chown -R root:root includedir
+          
+          # 2. Permisos seguros para carpetas (755) y archivos (644)
           find includedir -type d -exec chmod 755 {} \;
-          find includedir/etc/sv -name "run" -exec chmod +x {} \; 2>/dev/null || true
+          find includedir -type f -exec chmod 644 {} \;
+          
+          # 3. Restaurar permisos de ejecución para scripts (runit, ejecutables, etc.)
+          find includedir -type f -name "run" -exec chmod +x {} \;
+          find includedir -type f -name "*.sh" -exec chmod +x {} \;
+          
+          # 4. LA CLAVE: Devolverle la propiedad de su carpeta personal al usuario 'anon' (UID 1000 y GID 1000)
+          if [ -d "./includedir/home/anon" ]; then
+            chown -R 1000:1000 ./includedir/home/anon
+          fi
           bash neko-builder.sh rolling
           
 
