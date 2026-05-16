@@ -76,7 +76,7 @@ echo "ISO de salida: ${ISO_NAME}"
 echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
 echo ""
 sudo ./mklive.sh \
-    -I includedir \
+    -I ./includedir \
     -o "${ISO_NAME}" \
     -T "${ISO_TITLE}" \
     -p "${PACKAGES_XORG}" \
@@ -92,7 +92,7 @@ echo "ISO de salida: ${ISO_NAME}"
 echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
 echo ""
 sudo ./mklive.sh \
-    -I includedir \
+    -I ./includedir \
     -o "${ISO_NAME}" \
     -T "${ISO_TITLE}" \
     -p "${PACKAGES_XORG}" \
@@ -109,7 +109,7 @@ echo "ISO de salida: ${ISO_NAME}"
 echo "Paquetes totales: $(echo ${PACKAGES_XLIBRE} | wc -w)"
 echo ""
 sudo ./mklive.sh \
-    -I includedir \
+    -I ./includedir \
     -o "${ISO_NAME}" \
     -T "${ISO_TITLE}" \
     -p "${PACKAGES_XLIBRE}" \
@@ -126,7 +126,7 @@ echo "ISO de salida: ${ISO_NAME}"
 echo "Paquetes totales: $(echo ${PACKAGES_XLIBRE} | wc -w)"
 echo ""
 sudo ./mklive.sh \
-    -I includedir \
+    -I ./includedir \
     -o "${ISO_NAME}" \
     -T "${ISO_TITLE}" \
     -p "${PACKAGES_XLIBRE}" \
