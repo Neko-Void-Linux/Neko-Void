@@ -8,6 +8,8 @@ BASE_SYSTEM="
     grub-i386-efi
     grub-x86_64-efi
     base-system
+    linux-firmware
+    intel-ucode
     at-spi2-core
     bash-completion
     cryptsetup
@@ -63,6 +65,7 @@ NETWORKING="
     network-manager-applet
     wpa_supplicant
     iw
+    bluez
 "
 
 # ─────────────────────────────────────────────
@@ -89,6 +92,7 @@ XORG="
     xmirror
     libva-intel-driver
     intel-media-driver
+    xf86-video-intel
     orca
 "
 
@@ -112,6 +116,7 @@ GPU_DRIVERS="
     linux-firmware-intel
     linux-firmware-amd
 "
+
 
 # ─────────────────────────────────────────────
 # Escritorio MATE
