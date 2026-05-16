@@ -48,6 +48,7 @@ jobs:
           
           # 4. LA CLAVE: Devolverle la propiedad de su carpeta personal al usuario 'anon' (UID 1000 y GID 1000)
           if [ -d "./includedir/home/anon" ]; then
+            chmod 755 ./includedir/home/anon
             chown -R 1000:1000 ./includedir/home/anon
           fi
           bash neko-builder.sh rolling
