@@ -43,6 +43,26 @@ XORG_PACKAGES="
     ${ACCESSIBILITY}
     ${NVIDIA}
 "
+
+KDE_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${KDE}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
 XLIBRE_PACKAGES="
     ${REPOS_PKGS}
     ${BASE_SYSTEM}
@@ -64,10 +84,10 @@ XLIBRE_PACKAGES="
 # Limpiar espacios extra y newlines, convertir a una línea
 PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
 PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
-
+PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
 
 xorg() {
-ISO_NAME="nekovoid-beta-7.1-xorg.iso"
+ISO_NAME="nekovoid-beta-7.4-xorg.iso"
 echo "============================================="
 echo " NekoVoid Live ISO Builder (Nonfree)"
 echo "============================================="
@@ -99,8 +119,27 @@ sudo ./mklive.sh \
     -v linux-mainline \
     -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
 }
+
+kde() {
+ISO_NAME="nekovoid-rolling-kde.iso"
+echo "============================================="
+echo " NekoVoid Live ISO Builder (Nonfree)"
+echo "============================================="
+echo ""
+echo "ISO de salida: ${ISO_NAME}"
+echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
+echo ""
+sudo ./mklive.sh \
+    -I ./kdedir \
+    -o "${ISO_NAME}" \
+    -T "${ISO_TITLE}" \
+    -p "${PACKAGES_KDE}" \
+    -v linux-mainline \
+    -S "dbus elogind NetworkManager sddm polkitd rtkit sshd chronyd zramen"
+}
+
 xlibre() {
-ISO_NAME="nekovoid-beta-7.1-xlibre.iso"
+ISO_NAME="nekovoid-beta-7.4-xlibre.iso"
 echo "============================================="
 echo " NekoVoid Live ISO Builder (Nonfree)"
 echo "============================================="
@@ -150,4 +189,5 @@ case "$@" in
     rolling) rolling;;
     rollinglibre) rollinglibre;;
     doble-isor) doble-isor;;
+    kde) kde;;
 esac

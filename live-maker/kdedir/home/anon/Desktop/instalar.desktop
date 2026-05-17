@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Install Neko-Void
+GenericName=System Installer
+Comment=Install Neko-Void Linux to your computer
+Exec=sudo /home/anon/.setup/downloader
+Icon=system-software-install
+Categories=System;Utility;GTK;
+StartupNotify=true
+Keywords=installer;void;linux;
+Path=
+Terminal=true

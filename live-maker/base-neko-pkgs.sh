@@ -122,6 +122,7 @@ GPU_DRIVERS="
 # Escritorio MATE
 # ─────────────────────────────────────────────
 MATE_DESKTOP="
+    firefox
     mate
     mate-extra
     mate-tweak
@@ -154,6 +155,11 @@ XFCE_DESKTOP="
     xfce4-pulseaudio-plugin
     xfce4-screenshooter
     atril
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
+    lightdm
     lightdm-webkit2-greeter
     lightdm-gtk-greeter-settings
     libnotify
@@ -162,20 +168,50 @@ XFCE_DESKTOP="
 "
 LXQT="
     lxqt
+    sddm
+    plasma-framework
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
     firefox
 "
 LXDE="
     lxde
+    lightdm
+    lightdm-gtk-greeter
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
     firefox
 "
 KDE="
     kde-plasma
     konsole
+    kate
     firefox
     dolphin
+    discover
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    sddm
+    plasma-framework
+    kdeconnect
+    kdegraphics-thumbnailers
+    kde-baseapps
+    qt6-virtualkeyboard
+    qt6-svg
+    qt6-multimedia
+    gum
 "
 CINNAMON="
     cinnamon
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    lightdm
     colord
     gnome-terminal
 "
@@ -183,7 +219,6 @@ CINNAMON="
 # Aplicaciones de escritorio
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
-    firefox
     ristretto
     geany
     mpv

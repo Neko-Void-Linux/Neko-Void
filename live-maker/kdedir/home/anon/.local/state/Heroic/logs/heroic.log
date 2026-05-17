@@ -1,0 +1,79 @@
+(13:06:12) [INFO]:    [Backend]:         System Information: CPU: 4x AMD PRO A10-8700B R6, 10 Compute Cores 4C+6G
+Memory: 7.71 GB (used: 2.21 GB)
+GPUs:
+  GPU 0:
+    Name: Advanced Micro Devices, Inc. [AMD/ATI] Wani [Radeon R5/R6/R7 Graphics]
+    IDs: D=9874 V=1002 SD=807e SV=103c
+    Driver: amdgpu
+OS: Void 7.0.2_1 (linux)
+
+The current system is not a Steam Deck
+We are not running inside a Flatpak container
+We are not running from an AppImage
+
+Software Versions:
+  Heroic: 2.20.1 Punk 02 - Pythagoras
+  Legendary: 0.20.42 Riding Shotgun (Heroic)
+  gogdl: 1.2.1
+  comet: comet 0.2.0
+  Nile: 1.1.2 Will A. Zeppeli
+(13:06:12) [INFO]:    [Connection]:      Connectivity: check-online
+(13:06:12) [INFO]:    [Connection]:      Pinging external endpoints
+(13:06:12) [INFO]:    [Gog]:             Checking for existing gog manifests
+(13:06:12) [INFO]:    Migration "legendary-move-global-config-folder" successfully applied
+(13:06:12) [INFO]:    Applying migration "legendary-move-global-config-folder"
+(13:06:13) [WARNING]: [Backend]:         Failed to register protocol with OS.
+(13:06:13) [INFO]:    [Connection]:      Connectivity: online
+(13:06:13) [INFO]:    [Backend]:         User Not Found, removing it from Store
+(13:06:13) [ERROR]:   [Gog]:             Unable to syncQueued playtime, userData not present
+(13:06:13) [INFO]:    [Gog]:             Running command: GOGDL_CONFIG_PATH=/home/javierc/.config/heroic/gogdlConfig /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl --auth-config-path /home/javierc/.config/heroic/gog_store/auth.json auth
+(13:06:13) [DEBUG]:   [Gog]:             Logging to file(s) "/home/javierc/.local/state/Heroic/logs/runners/gog.log"
+(13:06:14) [INFO]:    [Backend]:         AreWeAntiCheatYet data downloaded
+(13:06:14) [INFO]:    [Backend]:         Frontend Ready
+(13:06:15) [INFO]:    [Legendary]:       Running command: LEGENDARY_CONFIG_PATH=/home/javierc/.config/heroic/legendaryConfig/legendary /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/legendary --version
+(13:06:15) [INFO]:    [Gog]:             Running command: GOGDL_CONFIG_PATH=/home/javierc/.config/heroic/gogdlConfig /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl --auth-config-path /home/javierc/.config/heroic/gog_store/auth.json --version
+(13:06:15) [INFO]:    [Nile]:            Running command: NILE_CONFIG_PATH=/home/javierc/.config/heroic/nile_config /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/nile --version
+(13:06:15) [DEBUG]:   [Gog]:             Logging to file(s) "/home/javierc/.local/state/Heroic/logs/runners/gog.log"
+(13:06:15) [DEBUG]:   [Legendary]:       Logging to file(s) "/home/javierc/.local/state/Heroic/logs/runners/legendary.log"
+(13:06:15) [DEBUG]:   [Nile]:            Logging to file(s) "/home/javierc/.local/state/Heroic/logs/runners/nile.log"
+(13:06:15) [DEBUG]:   [Backend]:         Unable to load Steam Libraries, libraryfolders.vdf not found
+(13:06:15) [INFO]:    [Winetricks]:      Downloading Winetricks
+(13:06:15) [INFO]:    [WineDownloader]:  Updating wine versions info
+(13:06:15) [INFO]:    [WineDownloader]:  Fetching upstream information...
+(13:06:15) [INFO]:    [Backend]:         Checking for new Heroic Updates
+(13:06:15) [INFO]:    [Backend]:         Checking for current version changelog
+(13:06:15) [INFO]:    [Frontend]:        Updated to a new version, cleaaning up the cache.
+(13:06:15) [INFO]:    [Legendary]:       Running command: LEGENDARY_CONFIG_PATH=/home/javierc/.config/heroic/legendaryConfig/legendary /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/legendary cleanup
+(13:06:15) [DEBUG]:   [Legendary]:       Logging to file(s) "/home/javierc/.local/state/Heroic/logs/runners/legendary.log"
+(13:06:16) [INFO]:    [Frontend]:        Refreshing undefined Library
+(13:06:16) [WARNING]: refresh not implemented on Sideload Library Manager
+(13:06:16) [INFO]:    [Legendary]:       Refreshing library...
+(13:06:16) [INFO]:    [ToolInstaller]:   Updating vkd3d to: vkd3d-proton-2.14.1
+(13:06:16) [INFO]:    [ToolInstaller]:   Updating dxvk to: dxvk-2.7.1
+(13:06:16) [INFO]:    [ToolInstaller]:   Updating dxvk-nvapi to: dxvk-nvapi-v0.9.1
+(13:06:17) [INFO]:    [WineDownloader]:  Start installation of wine version GE-Proton-latest
+(13:06:17) [INFO]:    [WineDownloader]:  wine versions updated
+(13:06:18) [INFO]:    [WineDownloader]:  Updating wine versions info
+(13:06:18) [INFO]:    [WineDownloader]:  Fetching upstream information...
+(13:06:18) [INFO]:    [WineDownloader]:  wine versions updated
+(13:06:19) [INFO]:    [DownloadManager]: Downloader: Finished downloading https://github.com/Heroic-Games-Launcher/vkd3d-proton/releases/download/v2.14.1/vkd3d-proton-2.14.1.tar.xz
+(13:06:19) [INFO]:    [ToolInstaller]:   Downloaded vkd3d, extracting...
+(13:06:19) [INFO]:    [ToolInstaller]:   vkd3d updated!
+(13:06:19) [INFO]:    [Backend]:         Starting the Download Queue
+(13:06:20) [INFO]:    [DownloadManager]: Downloader: Finished downloading https://github.com/jp7677/dxvk-nvapi/releases/download/v0.9.1/dxvk-nvapi-v0.9.1.tar.gz
+(13:06:20) [INFO]:    [ToolInstaller]:   Downloaded dxvk-nvapi, extracting...
+(13:06:20) [INFO]:    [ToolInstaller]:   dxvk-nvapi updated!
+(13:06:20) [INFO]:    [DownloadManager]: Downloader: Finished downloading https://github.com/doitsujin/dxvk/releases/download/v2.7.1/dxvk-2.7.1.tar.gz
+(13:06:20) [INFO]:    [ToolInstaller]:   Downloaded dxvk, extracting...
+(13:06:21) [INFO]:    [Backend]:         Downloaded: 10.94 MB / 492.68 MB  @4.37 MB/s (2.22%)
+(13:06:21) [INFO]:    [ToolInstaller]:   dxvk updated!
+(13:06:24) [INFO]:    [Backend]:         Downloaded: 42.28 MB / 492.68 MB  @10.14 MB/s (8.58%)
+(13:06:25) [INFO]:    [Backend]:         Stopping Plausible Analytics
+(13:06:25) [INFO]:    Settings key analyticsOptIn changed from false to false
+(13:06:27) [INFO]:    [Backend]:         Downloaded: 75.77 MB / 492.68 MB  @11.04 MB/s (15.38%)
+(13:06:28) [INFO]:    [Backend]:         Downloaded: 86.66 MB / 492.68 MB  @10.06 MB/s (17.59%)
+(13:06:29) [INFO]:    [Backend]:         Downloaded: 101.84 MB / 492.68 MB  @11.35 MB/s (20.67%)
+(13:06:32) [INFO]:    [Backend]:         Downloaded: 129.77 MB / 492.68 MB  @10.62 MB/s (26.34%)
+(13:06:34) [INFO]:    [Backend]:         Downloaded: 147.85 MB / 492.68 MB  @11.17 MB/s (30.01%)
+(13:06:36) [INFO]:    [Backend]:         Downloaded: 173.43 MB / 492.68 MB  @10.81 MB/s (35.20%)
+(13:06:39) [INFO]:    [Backend]:         Downloaded: 203.13 MB / 492.68 MB  @11.08 MB/s (41.23%)
