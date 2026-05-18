@@ -1,0 +1,70 @@
+[core]
+repo_version=1
+mode=bare-user-only
+min-free-space-size=500MB
+xa.pinned=runtime/org.freedesktop.Platform/x86_64/23.08;runtime/org.freedesktop.Sdk/x86_64/23.08;runtime/org.freedesktop.Sdk/x86_64/25.08;runtime/org.kde.Platform/x86_64/6.7;runtime/org.kde.Sdk/x86_64/6.10;runtime/org.kde.Sdk/x86_64/6.7;runtime/org.kde.Sdk/x86_64/6.8
+
+[remote "flathub"]
+url=https://dl.flathub.org/repo/
+xa.title=Flathub
+gpg-verify=true
+gpg-verify-summary=true
+xa.comment=Central repository of Flatpak applications
+xa.description=Central repository of Flatpak applications
+xa.icon=https://dl.flathub.org/repo/logo.svg
+xa.homepage=https://flathub.org/
+
+[remote "hytalelauncher-origin"]
+url=
+xa.title=tmp.flatpak
+xa.noenumerate=true
+xa.prio=0
+gpg-verify-summary=false
+gpg-verify=false
+xa.main-ref=app/com.hypixel.HytaleLauncher/x86_64/master
+
+[remote "launcher-origin"]
+url=file:///home/javierc/Documentos/server/dev/FLATPAK/QT6-trinity/flatpak/.flatpak-builder/cache
+xa.title=Local repo
+xa.noenumerate=true
+xa.prio=0
+gpg-verify-summary=false
+gpg-verify=false
+xa.main-ref=app/com.trench.trinity.launcher/x86_64/main
+
+[remote "gearlever-origin"]
+url=
+xa.title=gearlever-4.4.8-x86_64.flatpak
+xa.noenumerate=true
+xa.prio=0
+gpg-verify-summary=false
+gpg-verify=false
+xa.main-ref=app/it.mijorus.gearlever/x86_64/master
+
+[remote "gearlever1-origin"]
+url=
+xa.title=gearlever-4.4.8-x86_64.flatpak
+xa.noenumerate=true
+xa.prio=0
+gpg-verify-summary=false
+gpg-verify=false
+xa.main-ref=app/it.mijorus.gearlever/x86_64/master
+
+[remote "flathub-beta"]
+url=https://dl.flathub.org/beta-repo/
+xa.title=Flathub beta
+gpg-verify=true
+gpg-verify-summary=true
+xa.comment=Beta builds of Flatpak applications
+xa.description=Beta builds of Flatpak applications
+xa.icon=https://dl.flathub.org/repo/logo.svg
+xa.homepage=https://flathub.org/
+
+[remote "trinity"]
+url=https://huggingface.co/datasets/ccoffee20/flatpak/resolve/main/
+xa.title=Trinity Launcher Repository
+gpg-verify=true
+gpg-verify-summary=true
+xa.description=Repositorio oficial de Trinity Launcher para MC Bedrock en Linux
+xa.icon=https://trinitylauncher.vercel.app/assets/icons/start.svg
+xa.homepage=https://trinitylauncher.vercel.app/

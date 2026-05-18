@@ -1,0 +1,6 @@
+(13:06:13) [INFO]:    Running command: GOGDL_CONFIG_PATH=/home/javierc/.config/heroic/gogdlConfig /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl --auth-config-path /home/javierc/.config/heroic/gog_store/auth.json auth 
+
+null
+(13:06:15) [INFO]:    Running command: GOGDL_CONFIG_PATH=/home/javierc/.config/heroic/gogdlConfig /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl --auth-config-path /home/javierc/.config/heroic/gog_store/auth.json --version 
+
+1.2.1

@@ -1,0 +1,99 @@
+#panel {
+    background: #2a2e32;
+    border: 1px solid #32373c;
+    color: #fcfcfc;
+    padding: 0;
+}
+
+QLineEdit {
+    border-radius: 2px;
+    background: #1b1e20;
+    border: 1px solid rgba(61, 174, 233, 100%);
+    padding: 4px 3px;
+    margin: 2px 1px;
+    margin-right: 0;
+    color: #fcfcfc;
+    selection-color: #fcfcfc;
+    selection-background-color: rgba(61, 174, 233, 100%);
+}
+
+QToolButton {
+    margin: 3px;
+    margin-right: 0;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    padding: 1px;
+    qproperty-iconSize: 22px;
+}
+
+QToolButton:hover {
+    background: rgba(61, 174, 233, 33%);
+    border: 1px solid rgba(61, 174, 233, 100%);
+}
+
+QToolButton::menu-indicator {
+   image: none;
+}
+
+#closeButton {
+    qproperty-icon: url(lxqt-runner/window-close.svg);
+}
+
+#actionButton {
+    qproperty-icon: url(lxqt-runner/application-menu.svg);
+}
+
+#commandList {
+    background: #2a2e32;
+    alternate-background-color: #2a2e32;
+    border: 1px solid #32373c;
+    border-top: 0;
+    margin: 0;
+    padding: 4px;
+    color: #fcfcfc;
+    selection-color: #fcfcfc; /* font color of selected item */
+}
+
+#commandList::item {
+    background: #2a2e32;
+    border: 1px transparent;
+    border-radius: 2px;
+    margin: 0;
+}
+
+#commandList::item:hover,
+#commandList::item:selected {
+    background: rgba(61, 174, 233, 33%);
+    border: 1px solid rgba(61, 174, 233, 100%);
+    margin: 0;
+}
+
+QMenu {
+    background: #2a2e32;
+    border: 1px solid #32373c;
+    border-radius: 0;
+    padding: 4px;
+    margin: 0;
+}
+
+QMenu::icon {
+    padding-left: 6px;
+}
+
+QMenu::item {
+    color: #fcfcfc;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin: 0;
+    padding: 4px;
+}
+
+QMenu::item:selected {
+    background: rgba(61, 174, 233, 33%);
+    border: 1px solid rgba(61, 174, 233, 100%);
+    color: #fcfcfc;
+}
+
+QMenu::right-arrow {
+    image: url(right-arrow.svg);
+}

@@ -1,0 +1,77 @@
+Notification {
+    border: 1px solid #32373c;
+    border-radius: 2px;
+    background: #2a2e32;
+    color: #fcfcfc;
+    margin: 0;
+    padding: 0;
+}
+
+QLabel {
+    color: #fcfcfc;
+}
+
+/* the application icon (if any) is actually a QLabel widget */
+/* NOTE: if changing margins, specifiy min-/max-width/-height respectively */
+#iconLabel {
+    margin-left: 4px;
+    max-width: 32px;
+    min-width: 32px;
+}
+
+/* we confine the space for all labels with left and right margins
+   to align them with the outer border of action buttons below,
+   which are placed slightly inwards (can't seem to change that) */
+
+#appLabel {
+    margin-top: 4px;
+    font-weight: bold;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#summaryLabel {
+    font-weight: normal;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#bodyLabel {
+    font-weight: normal;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+
+#closeButton {
+    qproperty-icon: url(lxqt-notificationd/window-close.svg);
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 1px;
+    color: white;
+    margin: 0;
+    margin-top: 2px;
+}
+
+#closeButton:hover {
+    color: rgba(54, 54, 54, 100%);
+    background: rgba(61, 174, 233, 33%);
+    border: 1px solid rgba(61, 174, 233, 100%);
+}
+
+/* action buttons */
+
+QPushButton {
+    color: #fcfcfc;
+    font-weight: normal;
+    background: #31363b;
+    border: 1px solid #6d7174;
+    border-radius: 2px;
+    padding: 4px 6px;
+}
+
+QPushButton:hover {
+    color: #fcfcfc;
+    border: 1px solid rgba(61, 174, 233, 100%);
+    background: rgba(61, 174, 233, 33%);
+}

@@ -22,69 +22,7 @@ ISO_TITLE="NekoVoid"
 #NVIDIA="nvidia nvidia-libs-32bit"
 NVIDIA=""
 
-# ─────────────────────────────────────────────
-# Construir la lista completa de paquetes
-# ─────────────────────────────────────────────
-XORG_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XORG}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
-    ${MATE}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
-"
 
-KDE_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XORG}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
-    ${KDE}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
-"
-
-XLIBRE_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XLIBRE}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
-    ${MATE}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
-"
-# Limpiar espacios extra y newlines, convertir a una línea
-PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
-PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
-PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
 
 xorg() {
 ISO_NAME="nekovoid-beta-7.4-xorg.iso"
@@ -138,6 +76,44 @@ sudo ./mklive.sh \
     -S "dbus elogind NetworkManager sddm polkitd rtkit sshd chronyd zramen"
 }
 
+lxqt() {
+ISO_NAME="nekovoid-rolling-lxqt.iso"
+echo "============================================="
+echo " NekoVoid Live ISO Builder (Nonfree)"
+echo "============================================="
+echo ""
+echo "ISO de salida: ${ISO_NAME}"
+echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
+echo ""
+sudo ./mklive.sh \
+    -I ./lxqt \
+    -o "${ISO_NAME}" \
+    -T "${ISO_TITLE}" \
+    -p "${PACKAGES_LXQT}" \
+    -v linux-mainline \
+    -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
+}
+
+
+xfce() {
+ISO_NAME="nekovoid-rolling-xfce.iso"
+echo "============================================="
+echo " NekoVoid Live ISO Builder (Nonfree)"
+echo "============================================="
+echo ""
+echo "ISO de salida: ${ISO_NAME}"
+echo "Paquetes totales: $(echo ${PACKAGES_XORG} | wc -w)"
+echo ""
+sudo ./mklive.sh \
+    -I ./xfce \
+    -o "${ISO_NAME}" \
+    -T "${ISO_TITLE}" \
+    -p "${PACKAGES_XFCE}" \
+    -v linux-mainline \
+    -S "dbus elogind NetworkManager lightdm polkitd rtkit sshd chronyd zramen"
+}
+
+
 xlibre() {
 ISO_NAME="nekovoid-beta-7.4-xlibre.iso"
 echo "============================================="
@@ -190,4 +166,6 @@ case "$@" in
     rollinglibre) rollinglibre;;
     doble-isor) doble-isor;;
     kde) kde;;
+    lxqt) lxqt;;
+    xfce) xfce;;
 esac

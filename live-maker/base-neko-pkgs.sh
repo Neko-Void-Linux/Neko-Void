@@ -11,6 +11,9 @@ BASE_SYSTEM="
     linux-firmware
     intel-ucode
     at-spi2-core
+    qemu-ga
+    open-vm-tools
+    spice-vdagent
     bash-completion
     cryptsetup
     dbus
@@ -148,7 +151,7 @@ MATE_DESKTOP="
     lxappearance
 "
 #XFCE DESKTOP
-XFCE_DESKTOP="
+XFCE="
     xfce4
     xfce4-whiskermenu-plugin
     gnome-themes-standard
@@ -157,6 +160,7 @@ XFCE_DESKTOP="
     atril
     gvfs-afc
     gvfs-mtp
+    firefox
     gvfs-smb
     udisks2
     lightdm
@@ -167,14 +171,23 @@ XFCE_DESKTOP="
     picom
 "
 LXQT="
+    kate
+    discover
     lxqt
-    sddm
-    plasma-framework
+    xfwm4
+    xfwm4-themes
+    lightdm
+    lightdm-webkit2-greeter
+    lightdm-gtk-greeter-settings
     gvfs-afc
     gvfs-mtp
     gvfs-smb
     udisks2
     firefox
+    qt6-virtualkeyboard
+    qt6-svg
+    qt6-multimedia
+    gum
 "
 LXDE="
     lxde
@@ -215,12 +228,13 @@ CINNAMON="
     colord
     gnome-terminal
 "
+
+
 # ─────────────────────────────────────────────
 # Aplicaciones de escritorio
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
     ristretto
-    geany
     mpv
     arandr
     xarchiver
@@ -297,3 +311,109 @@ ACCESSIBILITY="
     brltty
 "
 MATE=${MATE_DESKTOP}
+
+# ─────────────────────────────────────────────
+# Construir la lista completa de paquetes
+# ─────────────────────────────────────────────
+XORG_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${MATE}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
+KDE_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${KDE}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
+XLIBRE_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XLIBRE}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${MATE}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
+LXQT_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${LXQT}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
+XFCE_PACKAGES="
+    ${REPOS_PKGS}
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${XFCE}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+    ${NVIDIA}
+"
+
+
+# Limpiar espacios extra y newlines, convertir a una línea
+PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
+PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
+PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
+PACKAGES_LXQT=$(echo ${LXQT_PACKAGES} | tr -s ' ')
+PACKAGES_XFCE=$(echo ${XFCE_PACKAGES} | tr -s ' ')
