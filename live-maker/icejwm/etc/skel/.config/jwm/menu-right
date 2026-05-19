@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>   
+   <RootMenu height="0" label="Desktop" onroot="3">      
+      <Desktops label="Desktop" />      
+      <Separator />      
+      <Program icon="/usr/share/pixmaps/jwmkit/wallpaper.svg" label="Desktop Settings" tooltip="Set desktop backgrounds and configure desktop/window behavior">jwmkit_desktops</Program>      
+   </RootMenu>   
+</JWM>

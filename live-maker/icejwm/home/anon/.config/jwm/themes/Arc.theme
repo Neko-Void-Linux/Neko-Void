@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<JWM>
+	<WindowStyle>
+		<Font align="center">Roboto Condensed-11:Bold</Font>
+		<Width>2</Width>
+		<Height>24</Height>
+		<Corner>3</Corner>
+		<Foreground>#808791</Foreground>
+		<Background>#2f343f</Background>
+		<Outline>#3f444f</Outline>
+		<Opacity>1</Opacity>
+		<Active>
+			<Foreground>#afb8c5</Foreground>
+			<Background>#2f343f</Background>
+			<Outline>#3f444f</Outline>
+		</Active>
+	</WindowStyle>
+	<TrayStyle group="false" list="desktop">
+		<Font>Roboto Condensed-11</Font>
+		<Background>#2f343f</Background>
+		<Foreground>#afb8c5</Foreground>
+		<Outline>#2f343f</Outline>
+		<Active>
+			<Background>#5194e2</Background>
+			<Foreground>#ffffff</Foreground>
+		</Active>
+
+	</TrayStyle>
+
+        <PagerStyle>
+                <Outline>#2f343f</Outline>
+                <Foreground>#ececec</Foreground>
+                <Background>#5B5B5D</Background>
+                <Text>#ACABAB</Text>
+                <Active>
+                        <Foreground>#ececec</Foreground>
+                        <Background>#5194e2</Background>
+                </Active>
+        </PagerStyle>
+
+	<MenuStyle>
+		<Font>Roboto Condensed-11</Font>
+		<Foreground>#5c616c</Foreground>
+		<Background>#fdfdfd</Background>
+		<Outline>#CFD6E6</Outline>
+		<Active>
+			<Background>#5194e2</Background>
+			<Foreground>#ffffff</Foreground>
+		</Active>
+	</MenuStyle>
+	<PopupStyle>
+		<Font>Roboto Condensed-11</Font>
+		<Foreground>#5c616c</Foreground>
+		<Background>#fdfdfd</Background>
+		<Outline>#CFD6E6</Outline>
+	</PopupStyle>
+
+	<ButtonClose>actions/24/exit.png</ButtonClose>
+	<ButtonMax>actions/symbolic/window-maximize-symbolic.svg</ButtonMax>
+	<ButtonMaxActive>actions/symbolic/window-restore-symbolic.svg</ButtonMaxActive>
+	<ButtonMin>actions/symbolic/window-minimize-symbolic.svg</ButtonMin>
+
+	<IconPath>
+		/usr/share/icons/Arc/
+	</IconPath>
+	<IconPath>
+		/usr/share/icons/Moka/32x32/
+	</IconPath>
+
+</JWM>
+<!-- vim: set ft=xml : -->

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>   
+   <RootMenu height="0" label="JWM Kit" labeled="true" onroot="J">      
+      <Separator />      
+      <Program icon="/usr/share/pixmaps/jwmkit/icons.svg" label="Appearance">jwmkit_appearance</Program>
+      <Program icon="/usr/share/pixmaps/jwmkit/executegray.svg" label="Startups " tooltip="Add, edit &amp; remove autostart events">jwmkit_startups</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/icons.svg" label="Icon Paths" tooltip="set the paths to icons">jwmkit_icons</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/keys.svg" label="Keys" tooltip="Create or edit keyboard shortcuts">jwmkit_keys</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/menugray.svg" label="Freedesktops" tooltip="Edit Freedesktop (dot desktop) files">jwmkit_freedesktop jwm</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/config.svg" label="Trays" tooltip="Add &amp; remove trays, tray items or configure their appearance">jwmkit_trays</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/menugray.svg" label="Menus" tooltip="Add &amp; remove menus, menu items or configure their appearance">jwmkit_menus</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/groups.svg" label="Groups" tooltip="Create and edit groups and specify options for programs in those groups">jwmkit_groups</Program>      
+      <Program icon="/usr/share/pixmaps/jwmkit/wallpaper.svg" label="Desktops" tooltip="Set desktop backgrounds and configure desktop/window behavior">jwmkit_desktops</Program>      
+   </RootMenu>   
+</JWM>

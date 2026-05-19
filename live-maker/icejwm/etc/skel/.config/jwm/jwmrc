@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>
+   <Include>$HOME/.config/jwm/tray-bottom</Include>
+   <Include>$HOME/.config/jwm/tray-top</Include>
+   <Include>$HOME/.config/jwm/menu-left</Include>
+   <Include>$HOME/.config/jwm/menu-right</Include>
+   <Include>$HOME/.config/jwm/menu-jwmkit</Include>
+   <Include>$HOME/.config/jwm/groups</Include>
+   <Include>$HOME/.config/jwm/preferences</Include>
+   <Include>$HOME/.config/jwm/icons</Include>
+   <Include>$HOME/.config/jwm/keys</Include>
+   <Include>$HOME/.config/jwm/theme</Include>
+   <Include>$HOME/.config/jwm/startup</Include>
+   <Include>$HOME/.config/jwm/menu-battery</Include>
+   <Include>$HOME/.config/jwm/buttons</Include>
+</JWM>

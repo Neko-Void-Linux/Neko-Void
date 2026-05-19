@@ -1,0 +1,3 @@
+<JWM>
+    <RootMenu dynamic="exec:jwmkit_bat_mu" height="0" onroot="B" />
+</JWM>

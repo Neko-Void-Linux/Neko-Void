@@ -1,0 +1,6 @@
+group=$HOME/.config/jwm/groups
+preferences=$HOME/.config/jwm/preferences
+icons=$HOME/.config/jwm/icons
+keys=$HOME/.config/jwm/keys
+theme=$HOME/.config/jwm/theme
+startup=$HOME/.config/jwm/startup

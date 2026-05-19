@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<JWM>
+	<Key key="Up">up</Key>
+	<Key key="Down">down</Key>
+	<Key key="Right">right</Key>
+	<Key key="Left">left</Key>
+	<Key key="Escape">escape</Key>
+	<Key key="Return">select</Key>
+	<Key mask="A" key="Tab">next</Key>
+	<Key mask="A" key="F4">close</Key>
+	<Key mask="A" key="F10">maximize</Key>
+	<Key mask="A" key="F3">window</Key>
+	<Key mask="A" key="Right">rdesktop</Key>
+	<Key mask="A" key="Left">ldesktop</Key>
+	<Key mask="A" key="Up">udesktop</Key>
+	<Key mask="A" key="Down">ddesktop</Key>
+
+	<Key key="k">up</Key>
+	<Key key="j">down</Key>
+	<Key key="l">right</Key>
+	<Key key="h">left</Key>
+	<Key mask="A" key="#">desktop#</Key>
+
+	<Key mask="A" key="F2">exec:gmrun</Key>
+	<Key mask="4" key="t">exec:x-terminal-emulator</Key>
+	<Key mask="4" key="f">exec:spacefm</Key>
+	<Key mask="C" key="KP_Add">exec:jwmkit_popvolume t +</Key>
+	<Key mask="C" key="KP_Subtract">exec:jwmkit_popvolume t -</Key>
+	<Key mask="C" key="KP_Multiply">exec:jwmkit_popvolume mute</Key>
+
+	<Key mask="A" key="F1">root:1</Key>
+</JWM>

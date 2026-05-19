@@ -117,6 +117,7 @@ GPU_DRIVERS="
     Vulkan-Tools
     libglvnd
     linux-firmware-intel
+    linux-firmware-nvidia
     linux-firmware-amd
 "
 
@@ -199,6 +200,26 @@ LXDE="
     udisks2
     firefox
 "
+
+ICEJWM="
+    jwm
+    jwmkit-neko
+    icewm
+    pcmanfm
+    alacritty
+    ristretto
+    lxappearance
+    atril
+    lightdm
+    lightdm-gtk-greeter
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
+    firefox
+    xfce4-screenshooter
+"
+
 KDE="
     kde-plasma
     konsole
@@ -311,11 +332,7 @@ ACCESSIBILITY="
     brltty
 "
 MATE=${MATE_DESKTOP}
-
-# ─────────────────────────────────────────────
-# Construir la lista completa de paquetes
-# ─────────────────────────────────────────────
-XORG_PACKAGES="
+DEFAULT="
     ${REPOS_PKGS}
     ${BASE_SYSTEM}
     ${SYSTEM_UTILS}
@@ -324,7 +341,6 @@ XORG_PACKAGES="
     ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
-    ${MATE}
     ${FLATPAK}
     ${FONTS}
     ${MULTIMEDIA}
@@ -334,23 +350,17 @@ XORG_PACKAGES="
     ${NVIDIA}
 "
 
+# ─────────────────────────────────────────────
+# Construir la lista completa de paquetes
+# ─────────────────────────────────────────────
+XORG_PACKAGES="
+    ${DEFAULT}
+    ${MATE}
+"
+
 KDE_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XORG}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
+    ${DEFAULT}
     ${KDE}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
 "
 
 XLIBRE_PACKAGES="
@@ -373,43 +383,30 @@ XLIBRE_PACKAGES="
 "
 
 LXQT_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XORG}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
+    ${DEFAULT}
     ${LXQT}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
 "
 
 XFCE_PACKAGES="
-    ${REPOS_PKGS}
-    ${BASE_SYSTEM}
-    ${SYSTEM_UTILS}
-    ${NETWORKING}
-    ${AUDIO}
-    ${XORG}
-    ${GPU_DRIVERS}
-    ${DESKTOP_APPS}
+    ${DEFAULT}
     ${XFCE}
-    ${FLATPAK}
-    ${FONTS}
-    ${MULTIMEDIA}
-    ${GAMING}
-    ${OTHER}
-    ${ACCESSIBILITY}
-    ${NVIDIA}
 "
 
+
+ICEJWM_PACKAGES="
+    ${DEFAULT}
+    ${ICEJWM}
+"
+
+LXDE_PACKAGES="
+    ${DEFAULT}
+    ${LXDE}
+"
+
+CINNAMON_PACKAGES="
+    ${DEFAULT}
+    ${CINNAMON}
+"
 
 # Limpiar espacios extra y newlines, convertir a una línea
 PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
@@ -417,3 +414,6 @@ PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
 PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
 PACKAGES_LXQT=$(echo ${LXQT_PACKAGES} | tr -s ' ')
 PACKAGES_XFCE=$(echo ${XFCE_PACKAGES} | tr -s ' ')
+PACKAGES_ICEJWM=$(echo ${ICEJWM_PACKAGES} | tr -s ' ')
+PACKAGES_LXDE=$(echo ${LXDE_PACKAGES} | tr -s ' ')
+PACKAGES_CINNAMON=$(echo ${CINNAMON_PACKAGES} | tr -s ' ')

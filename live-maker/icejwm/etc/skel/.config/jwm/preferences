@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>
+   <Desktops width="2" height="1">
+      <Background type="image">/usr/share/wallpapers/moony-art2.png</Background>
+   </Desktops>
+   <DoubleClickSpeed>400</DoubleClickSpeed>
+   <DoubleClickDelta>2</DoubleClickDelta>
+   <FocusModel>click</FocusModel>
+   <SnapMode distance="10">border</SnapMode>
+   <MoveMode coordinates="off">opaque</MoveMode>
+   <ResizeMode coordinates="off">opaque</ResizeMode>
+</JWM>

@@ -1,0 +1,6 @@
+logout=elogind
+time=su
+editor=
+archiver=
+filemanager=
+term=alacritty

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<JWM>
+   <Group>
+      <Name>jwmkit_calendar</Name>
+      <Option>nolist</Option>
+      <Option>y:-27</Option>
+      <Option>x:-1</Option>
+   </Group>
+   <Group>
+      <Name>jwmkit_popmixer</Name>
+      <Name>jwmkit_popvolume</Name>
+      <Name>jwmkit_popmuter</Name>
+      <Option>nolist</Option>
+      <Option>y:-27</Option>
+      <Option>x:-25</Option>
+   </Group>
+   <Group>
+      <Name>jwmkit_logout</Name>
+      <Option>nolist</Option>
+      <Option>nomove</Option>
+      <Option>nomin</Option>
+      <Option>layer:above</Option>
+   </Group>
+</JWM>

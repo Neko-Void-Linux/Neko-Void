@@ -1,0 +1,7 @@
+#!/bin/bash
+pipewire &
+rice_set &
+/usr/libexec/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal-gtk &
+pcmanfm --desktop &
+nm-applet &

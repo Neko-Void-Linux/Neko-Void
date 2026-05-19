@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="36" width="148">
+ <rect style="fill:#343434;stroke:#000000;stroke-width:2" width="148" height="36" />
+ <rect style="fill:#BFBFBF;stroke:#000000;stroke-width:1" width="22" height="20" x="120" y="8" rx="1.5"/>
+ <rect style="fill:#0062C5" width="22" height="4" x="120" y="8" rx="1.5"/>
+ <rect style="fill:none;stroke:#000000;stroke-width:1" width="14" height="12" x="120" y="16" rx="1.5"/>
+ <rect style="fill:#0062C5" width="14" height="3" x="120" y="16" rx="1.5"/>
+ <rect style="fill:#000000;stroke:#BFBFBF;stroke-width:1" width="22" height="20" x="88" y="8" rx="1.5"/>
+ <path style="stroke:#BFBFBF;stroke-width:1" d="M 94 15 98 17" />
+ <path style="stroke:#BFBFBF;stroke-width:1" d="M 94 15 98 13" />
+ <path style="stroke:#BFBFBF;stroke-width:1" d="M 100 17 105 17" />
+ <rect style="fill:#BFBFBF;stroke:#000000;stroke-width:1" width="22" height="20" x="56" y="8" rx="1.5"/>
+ <rect style="fill:#0062C5" width="22" height="4" x="56" y="8" rx="1.5"/>
+ <path style="stroke:#B68B00;stroke-width:5" d="M 62 24 73 14" />
+ <path style="stroke:#0062C5;stroke-width:5" d="M 71 16 73 14" />
+ <path style="fill:#4e4e4e" d="m 59,27 1.232393,-4.956446 3.736646,3.707416 z"/>
+ <style>.single { font: 10px Sans; }</style>
+ <text x="7" y="22" class="single" fill="#ACABAB">Menu</text>
+</svg>

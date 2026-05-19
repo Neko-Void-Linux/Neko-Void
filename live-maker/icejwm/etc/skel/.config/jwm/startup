@@ -1,0 +1,5 @@
+<JWM>
+     <StartupCommand>pipewire</StartupCommand>
+     <StartupCommand>rice_set</StartupCommand>
+     <StartupCommand>nm-applet</StartupCommand>
+</JWM>

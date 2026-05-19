@@ -1,0 +1,4 @@
+<JWM>
+     <StartupCommand>pipewire</StartupCommand>
+     <StartupCommand>nm-applet</StartupCommand>
+</JWM>

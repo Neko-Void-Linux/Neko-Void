@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>
+   <Tray height="27" x="0" y="-1">
+      <TrayButton icon="void-logo-notext">
+         <Button mask="1">root:1</Button>
+         <Button mask="3">root:j</Button>
+      </TrayButton>
+      <Spacer width="1" />
+      <Spacer width="5" />
+      <TaskList labeled="false" />
+      <Spacer width="5" />
+      <Pager />
+      <Dock />
+      <Spacer width="5" />
+      <TrayButton icon="/usr/share/pixmaps/jwmkit/bat.svg">
+         <Button mask="1">root:b</Button>
+      </TrayButton>
+      <Clock format="%l:%M %p">exec:jwmkit_calendar</Clock>
+      <TrayButton icon="brightside" popup="Show Desktop">showdesktop</TrayButton>
+      <Spacer width="5" />
+      <TrayButton icon="cantata">
+         <Button mask="1">exec:pavucontrol</Button>
+      </TrayButton>
+      <TrayButton icon="system-shutdown">exec:jwmkit_logout</TrayButton>
+   </Tray>
+</JWM>

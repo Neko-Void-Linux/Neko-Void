@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<JWM>
+   <IconPath>/usr/share/icons/hicolor/32x32/apps</IconPath>
+   <IconPath>/usr/share/pixmaps/</IconPath>
+   <IconPath>/usr/share/icons/hicolor/scalable/apps</IconPath>
+   <IconPath>/usr/share/icons/hicolor/48x48/apps</IconPath>
+   <IconPath>/usr/share/icons/hicolor/64x64/apps</IconPath>
+   <IconPath>/usr/share/icons/hicolor/64x64/apps</IconPath>
+   <IconPath>/usr/share/icons/Tela-dracula-dark/scalable/apps</IconPath>
+   <IconPath>/usr/share/icons/ContrastHigh/scalable/apps</IconPath>
+   <IconPath>/usr/share/icons/Tela-dracula-dark/scalable/places</IconPath>
+   <IconPath>/usr/share/icons/Tela-dracula-dark/scalable/devices</IconPath>
+</JWM>

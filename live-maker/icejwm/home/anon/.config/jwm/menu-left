@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>   
+   <RootMenu height="32" label="Applications" labeled="true" onroot="1">      
+      <Separator />      
+      <Include>exec:jwmkit_easymenu -hc:Settings -nodubs -nokit</Include>      
+      <Separator />      
+      <Menu icon="application-exit" label="Exit">
+      <Restart icon="/usr/share/pixmaps/jwmkit/restartgray.svg" label="Refresh" tooltip="Restart JWM" />         
+      <Program icon="/usr/share/pixmaps/jwmkit/exitgray.svg" label="Logout" tooltip="Logout, Reboot, or Shutdown">jwmkit_logout</Program>         
+      </Menu>      
+   </RootMenu>   
+</JWM>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<JWM>
+   <Tray autohide="top" halign="center" height="42" valign="top">
+      <TrayButton icon="/usr/share/pixmaps/jwmkit/config.svg" popup="Use JWM Kit Trays to configure this tray.">exec:jwmkit_trays</TrayButton>
+   </Tray>
+</JWM>
