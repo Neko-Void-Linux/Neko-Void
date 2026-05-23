@@ -149,6 +149,13 @@ build_iso() {
             dm_service="lightdm"
             iso_name="nekovoid-rolling-lxqt.iso"
             ;;
+        i3)
+            pkg_var="PACKAGES_I3"
+            includedir="./i3"
+            kernel_kver="linux-mainline"
+            dm_service="lightdm"
+            iso_name="nekovoid-rolling-i3.iso"
+            ;;
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
@@ -252,6 +259,7 @@ interactive_menu() {
     echo -e "  ${GREEN} 8)${RESET} icejwm    ${YELLOW}→${RESET} IceWM + JWM (kernel LTS)"
     echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
     echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
+    echo -e "  ${GREEN}10)${RESET} i3      ${YELLOW}→${RESET} LXDE (kernel mainline)"
     echo ""
 
     local choice
@@ -269,6 +277,7 @@ interactive_menu() {
         8)  desktop="icejwm" ;;
         9)  desktop="cinnamon" ;;
         10) desktop="lxde" ;;
+        11) desktop="i3" ;;
         *)
             echo -e "${BOLD}Error:${RESET} Opción inválida '$choice'. Usa un número del 1 al 10."
             exit 1
