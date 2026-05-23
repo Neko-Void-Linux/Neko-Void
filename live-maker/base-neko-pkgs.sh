@@ -224,6 +224,7 @@ I3="
     nemo
     dmenu
     git
+    ark
     curl
     wget
     unzip
