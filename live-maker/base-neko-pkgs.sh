@@ -217,6 +217,7 @@ ICEJWM="
     gvfs-smb
     udisks2
     firefox
+    mate-polkit
     xfce4-screenshooter
 "
 

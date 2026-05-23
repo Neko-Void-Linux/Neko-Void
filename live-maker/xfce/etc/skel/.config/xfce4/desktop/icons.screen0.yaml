@@ -4,6 +4,40 @@
 configs:
 - level: 0
   monitors:
+  - id: "abfb9c8813957ba56a06ac1f0133da569ae08c54"
+    display_name: "Red Hat, Inc. QEMU Monitor (Virtual-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1280
+      height: 800
+  icons:
+    "2.2 GB Volume":
+      row: 4
+      col: 0
+      last_seen: 1779108914152735
+    "/":
+      row: 1
+      col: 0
+    "/home/anon":
+      row: 0
+      col: 0
+    "trash:///":
+      row: 2
+      col: 0
+    "Floppy Disk":
+      row: 5
+      col: 0
+      last_seen: 1779108914153831
+    "/home/anon/Desktop/instalar.desktop":
+      row: 6
+      col: 0
+    "5f83d065-2b9e-439d-a5cf-e538671a5e81":
+      row: 3
+      col: 0
+      last_seen: 1779108914151615
+- level: 0
+  monitors:
   - id: "771bbec468c05feeac0d53bde4e486437178b7e7"
     display_name: "Chimei Innolux Corporation 0x14C0 (eDP)"
     geometry:
@@ -12,12 +46,6 @@ configs:
       width: 1920
       height: 1080
   icons:
-    "/":
-      row: 1
-      col: 0
-    "trash:///":
-      row: 2
-      col: 0
     "/home/javierc/Desktop/vivaldi-ibblmnobmgdmpoeblocemifbpglakpoi-Default.desktop":
       row: 4
       col: 0

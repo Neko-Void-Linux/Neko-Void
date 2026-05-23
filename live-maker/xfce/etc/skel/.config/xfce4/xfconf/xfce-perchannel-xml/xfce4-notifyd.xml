@@ -2,4 +2,9 @@
 
 <channel name="xfce4-notifyd" version="1.0">
   <property name="log-max-size-enabled" type="bool" value="true"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="org.freedesktop.network-manager-applet"/>
+    </property>
+  </property>
 </channel>
