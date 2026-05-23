@@ -1,4 +1,4 @@
-name: Build Neko Void ISO ICE-JWM
+name: Build Neko Void ISO I3
 
 on:
   workflow_dispatch:
