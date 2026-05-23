@@ -105,7 +105,7 @@ jobs:
       - name: Generate Checksums
         run: |
           cd /home/anon/workspace
-          sha256sum **/*.iso > sha256sum.txt || true
+          sha256sum **/*.iso > 'sha256sum.txt || true
 
       - name: Upload ISO to Hugging Face
         env:
@@ -115,4 +115,4 @@ jobs:
           ISO_NAME=$(basename "$ISO_FILE")
 
           hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
-          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "sha256sum.txt" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "lxqt-sha256.txt" --repo-type dataset --token $HF_TOKEN
