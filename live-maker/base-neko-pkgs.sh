@@ -11,6 +11,7 @@ BASE_SYSTEM="
     linux-firmware
     intel-ucode
     at-spi2-core
+    kyoz
     qemu-ga
     open-vm-tools
     spice-vdagent
@@ -194,6 +195,52 @@ LXDE="
     lxde
     lightdm
     lightdm-gtk-greeter
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
+    firefox
+"
+
+I3="
+    i3
+    lightdm
+    lightdm-gtk-greeter
+    polybar
+    rofi
+    kitty
+    picom
+    qt6ct
+    lxappearance
+    feh dex
+    polkit-gnome 
+    pulseaudio-utils
+    setxkbmap
+    brightnessctl
+    playerctl
+    maim
+    xclip
+    xdotool
+    nemo
+    dmenu
+    git
+    curl
+    wget
+    unzip
+    base-devel
+    cargo
+    pkg-config
+    openssl-devel
+    libxcb-devel
+    xcb-util-devel
+    xcb-util-image-devel
+    xcb-util-keysyms-devel
+    xcb-util-renderutil-devel
+    xcb-util-wm-devel
+    libxkbcommon-devel
+    font-awesome6
+    fontconfig
+    ImageMagick
     gvfs-afc
     gvfs-mtp
     gvfs-smb
@@ -387,6 +434,10 @@ LXQT_PACKAGES="
     ${DEFAULT}
     ${LXQT}
 "
+I3_PACKAGES="
+    ${DEFAULT}
+    ${I3}
+"
 
 XFCE_PACKAGES="
     ${DEFAULT}
@@ -414,6 +465,7 @@ PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
 PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
 PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
 PACKAGES_LXQT=$(echo ${LXQT_PACKAGES} | tr -s ' ')
+PACKAGES_I3=$(echo ${I3_PACKAGES} | tr -s ' ')
 PACKAGES_XFCE=$(echo ${XFCE_PACKAGES} | tr -s ' ')
 PACKAGES_ICEJWM=$(echo ${ICEJWM_PACKAGES} | tr -s ' ')
 PACKAGES_LXDE=$(echo ${LXDE_PACKAGES} | tr -s ' ')
