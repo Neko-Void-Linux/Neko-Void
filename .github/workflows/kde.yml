@@ -1,4 +1,4 @@
-name: Build Neko Void ISO XORG (MATE)
+name: Build Neko Void ISO KDE
 
 on:
   workflow_dispatch:
@@ -100,7 +100,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # 5. Compilación real de la ISO
-          bash neko-builder.sh rolling
+          bash neko-builder.sh kde
 
       - name: Generate Checksums
         run: |
