@@ -1,0 +1,31 @@
+name: Neko Void - Build All Chain
+
+on:
+  workflow_dispatch: # Lo activas manualmente cuando quieras construir todas las ISOs
+
+jobs:
+  # 1. Empieza con el primero
+  build-ice-jwm:
+    uses: ./.github/workflows/ice-jwm.yml
+
+  # 2. Espera a que el anterior termine para empezar
+  build-kde:
+    needs: build-ice-jwm
+    uses: ./.github/workflows/kde.yml
+
+  # 3. Y así sucesivamente...
+  build-lxqt:
+    needs: build-kde
+    uses: ./.github/workflows/lxqt.yml
+
+  build-matelibre:
+    needs: build-lxqt
+    uses: ./.github/workflows/matelibre.yml
+
+  build-matex:
+    needs: build-matelibre
+    uses: ./.github/workflows/matex.yml
+
+  build-xfce:
+    needs: build-matex
+    uses: ./.github/workflows/xfce.yml
