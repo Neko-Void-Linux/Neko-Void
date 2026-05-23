@@ -102,9 +102,10 @@ jobs:
           rm -rf ./i3/home/anon/.config
           rm -rf ./i3/etc/skel/*
           wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/i3-neko.tar
-          mkdir -p ./i3/etc/skel/
-          tar -xvf i3-neko.tar -C ./i3/home/anon/
-          sudo tar -xvf i3-neko.tar -C ./i3/etc/skel/
+          mkdir -p ./i3/etc/skel
+          tar -xvf i3-neko.tar -C ./i3/etc/skel/
+          cp -rvf ./i3/etc/skel/* ./i3/home/anon/
+          
           # 5. Compilación real de la ISO
           bash neko-builder.sh i3
 
