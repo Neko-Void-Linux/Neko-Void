@@ -209,6 +209,7 @@ I3="
     polybar
     rofi
     kitty
+    geany
     picom
     qt6ct
     lxappearance
