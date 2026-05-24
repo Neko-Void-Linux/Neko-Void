@@ -42,65 +42,25 @@ jobs:
       - name: Build Neko-Void ISO Xorg
         run: |
           cd /home/anon/workspace/live-maker
-
-          # 1. PERMISOS SEGUROS (No destruir binarios de MATE)
-          su - anon -c "
-            cd /home/anon/workspace/live-maker
-
-            # Asegurar que los directorios sean navegables
-            find includedir -type d -exec chmod 755 {} \;
-
-            # Quitar permiso de ejecución SOLO a archivos de texto/configuración conocidos
-            # Esto evita romper binarios como mate-session, xorg, etc.
-            find includedir -type f \( -name '*.conf' -o -name '*.txt' -o -name '*.md' -o -name '*.json' -o -name '*.xml' -o -name '*.desktop' -o -name '*.list' -o -name '*.cfg' -o -name '*.png' -o -name '*.jpg' -o -name '*.svg' \) -exec chmod 644 {} \;
-
-            # Restaurar permisos de ejecución para los scripts del sistema
-            find includedir -type f -name \"run\" -exec chmod +x {} \;
-            find includedir -type f -name \"*.sh\" -exec chmod +x {} \;
-
-            if [ -d \"./includedir/home/anon\" ]; then
-              chmod 755 ./includedir/home/anon
-            fi
-          "
-
-          # 2. Configurar Autologin en LightDM
-          mkdir -p includedir/etc/lightdm/lightdm.conf.d
-          cat << 'EOF' > includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
-          [Seat:*]
-          greeter-session=lightdm-gtk-greeter
-          user-session=mate
-          autologin-user=anon
-          autologin-user-timeout=0
-          EOF
-          chmod 644 includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
-
-          # 3. BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
+          # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
           # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
           # y sin requerir que el usuario pertenezca a ningún grupo especial.
-          mkdir -p includedir/etc/pam.d
-          cat << 'EOFPAM' > includedir/etc/pam.d/lightdm-autologin
+          mkdir -p xfce/etc/pam.d
+          cat << 'EOFPAM' > xfce/etc/pam.d/lightdm-autologin
           #%PAM-1.0
           auth required pam_permit.so
           account required pam_permit.so
           password required pam_permit.so
           session required pam_permit.so
           EOFPAM
-          chmod 644 includedir/etc/pam.d/lightdm-autologin
+          chmod 644 xfce/etc/pam.d/lightdm-autologin
 
-          # 4. Re-alineación final de propietarios
-          if [ -d "./includedir/home/anon" ]; then
-            chown -R anon:anon "./includedir/home/anon"
-            chmod 755 "./includedir/home/anon"
-          fi
-
-          rm -f ./includedir/home/anon/.Xauthority
-          rm -f ./includedir/home/anon/.ICEauthority
 
           chmod 1777 /tmp
           chmod 1777 /var/tmp
 
           # 5. Compilación real de la ISO
-          bash neko-builder.sh lxqt
+          bash neko-builder.sh xfce
 
       - name: Generate Checksums
         run: |
