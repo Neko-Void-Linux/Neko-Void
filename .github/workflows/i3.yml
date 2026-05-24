@@ -49,7 +49,7 @@ jobs:
           wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/i3-neko.tar
           mkdir -p i3/etc/skel
           tar -xvf i3-neko.tar -C i3/etc/skel/
-          cp -rvf i3/etc/skel/* i3/home/anon/
+          tar -xvf i3-neko.tar -C i3/home/anon/
 
           # 1. PERMISOS SEGUROS (No destruir binarios de MATE)
           su - anon -c "
