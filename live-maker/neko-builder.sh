@@ -70,6 +70,7 @@ Escritorios disponibles:
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
+  ${GREEN}i3${RESET}       I3 (kernel mainline)
 
 Especiales:
   ${GREEN}doble${RESET}       Construir xlibre + xorg (ambos)
@@ -259,7 +260,7 @@ interactive_menu() {
     echo -e "  ${GREEN} 8)${RESET} icejwm    ${YELLOW}→${RESET} IceWM + JWM (kernel LTS)"
     echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
     echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
-    echo -e "  ${GREEN}10)${RESET} i3      ${YELLOW}→${RESET} LXDE (kernel mainline)"
+    echo -e "  ${GREEN}11)${RESET} i3      ${YELLOW}→${RESET} I3 (kernel mainline)"
     echo ""
 
     local choice
