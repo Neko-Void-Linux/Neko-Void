@@ -1,4 +1,4 @@
-name: Build Neko Void ISO xfce
+name: Build Neko Void ISO lxqt
 
 on:
   workflow_dispatch:
@@ -64,7 +64,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # Compilación real de la ISO
-          bash neko-builder.sh xfce
+          bash neko-builder.sh lxqt
 
       - name: Generate Checksums
         run: |
