@@ -1,8 +1,3 @@
-workflow:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
-    - if: $CI_PIPELINE_SOURCE == "pipeline"
-
 stages:
   - triggers
 
@@ -11,9 +6,21 @@ trigger-build-mate:
   trigger:
     include: ci/build-mate.yml
     strategy: depend
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: always
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: always
+    - when: manual  
 
 trigger-build-xfce:
   stage: triggers
   trigger:
     include: ci/build-xfce.yml
     strategy: depend
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: always
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: always
+    - when: manual  
