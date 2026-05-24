@@ -75,7 +75,7 @@ jobs:
           password required pam_permit.so
           session required pam_permit.so
           EOFPAM
-          chmod 644 includedir/etc/pam.d/lightdm-autologin
+          chmod 644 ./i3/etc/pam.d/lightdm-autologin
 
           # 4. Re-alineación final de propietarios
           if [ -d "./i3/home/anon" ]; then
