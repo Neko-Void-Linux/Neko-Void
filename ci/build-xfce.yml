@@ -8,7 +8,6 @@ build-neko-void-xfce:
   before_script:
     - mkdir -p /dev
   script:
-    # 1. Prepare container, system users and dependencies
     - xbps-install -Syu xbps
     - xbps-install -yu
     - xbps-install -y git bash wget curl file sudo python3 python3-pip
@@ -17,14 +16,12 @@ build-neko-void-xfce:
     - useradd -m -u 1000 -g anon -s /bin/bash anon
     - echo "anon ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/anon
 
-    # 2. Clone Neko Void repository
     - mkdir -p /home/anon/workspace
     - chown -R anon:anon /home/anon/workspace
     - su - anon -c "git clone --depth 1 https://codeberg.org/javiercplus/Neko-Void.git /home/anon/workspace"
 
-    # 3. Build Neko-Void ISO Xorg (XFCE)
     - cd /home/anon/workspace/live-maker
-    # BY-PASS TOTAL DE PAM
+
     - mkdir -p xfce/etc/pam.d
     - |
       cat << 'EOFPAM' > xfce/etc/pam.d/lightdm-autologin
@@ -37,14 +34,12 @@ build-neko-void-xfce:
     - chmod 644 xfce/etc/pam.d/lightdm-autologin
     - chmod 1777 /tmp
     - chmod 1777 /var/tmp
-    # Compilación real de la ISO
+    
     - bash neko-builder.sh xfce
 
-    # 4. Generate Checksums
     - cd /home/anon/workspace
     - sha256sum **/*.iso > sha256sum.txt || true
 
-    # 5. Upload ISO to Hugging Face
     - ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
     - ISO_NAME=$(basename "$ISO_FILE")
     - hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
