@@ -8,21 +8,18 @@ build-neko-void-xfce:
   before_script:
     - mkdir -p /dev
   script:
-    - xbps-install -Syu xbps
-    - xbps-install -yu
-    - xbps-install -y git bash wget curl file sudo python3 python3-pip
-    - python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages
-    - groupadd -g 1000 anon
-    - useradd -m -u 1000 -g anon -s /bin/bash anon
-    - echo "anon ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/anon
-
-    - mkdir -p /home/anon/workspace
-    - chown -R anon:anon /home/anon/workspace
-    - su - anon -c "git clone --depth 1 https://codeberg.org/javiercplus/Neko-Void.git /home/anon/workspace"
-
-    - cd /home/anon/workspace/live-maker
-
-    - mkdir -p xfce/etc/pam.d
+    - 'xbps-install -Syu xbps'
+    - 'xbps-install -yu'
+    - 'xbps-install -y git bash wget curl file sudo python3 python3-pip'
+    - 'python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages'
+    - 'groupadd -g 1000 anon'
+    - 'useradd -m -u 1000 -g anon -s /bin/bash anon'
+    - 'echo "anon ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/anon'
+    - 'mkdir -p /home/anon/workspace'
+    - 'chown -R anon:anon /home/anon/workspace'
+    - 'su - anon -c "git clone --depth 1 https://codeberg.org/javiercplus/Neko-Void.git /home/anon/workspace"'
+    - 'cd /home/anon/workspace/live-maker'
+    - 'mkdir -p xfce/etc/pam.d'
     - |
       cat << 'EOFPAM' > xfce/etc/pam.d/lightdm-autologin
       #%PAM-1.0
@@ -31,16 +28,13 @@ build-neko-void-xfce:
       password required pam_permit.so
       session required pam_permit.so
       EOFPAM
-    - chmod 644 xfce/etc/pam.d/lightdm-autologin
-    - chmod 1777 /tmp
-    - chmod 1777 /var/tmp
-    
-    - bash neko-builder.sh xfce
-
-    - cd /home/anon/workspace
-    - sha256sum **/*.iso > sha256sum.txt || true
-
-    - ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
-    - ISO_NAME=$(basename "$ISO_FILE")
-    - hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
-    - hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "xfce-sha256.txt" --repo-type dataset --token $HF_TOKEN
+    - 'chmod 644 xfce/etc/pam.d/lightdm-autologin'
+    - 'chmod 1777 /tmp'
+    - 'chmod 1777 /var/tmp'
+    - 'bash neko-builder.sh xfce'
+    - 'cd /home/anon/workspace'
+    - 'sha256sum **/*.iso > sha256sum.txt || true'
+    - 'ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)'
+    - 'ISO_NAME=$(basename "$ISO_FILE")'
+    - 'hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN'
+    - 'hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "xfce-sha256.txt" --repo-type dataset --token $HF_TOKEN'
