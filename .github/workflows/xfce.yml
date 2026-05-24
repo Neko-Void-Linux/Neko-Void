@@ -1,4 +1,4 @@
-name: Build Neko Void ISO lxqt
+name: Build Neko Void ISO xfce
 
 on:
   workflow_dispatch:
