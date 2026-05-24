@@ -70,7 +70,7 @@ jobs:
       - name: Generate Checksums
         run: |
           cd /home/anon/workspace
-          sha256sum **/*.iso > 'lxqt-sha256.txt' || true
+          sha256sum **/*.iso > 'sha256sum.txt' || true
 
       - name: Upload ISO to Hugging Face
         env:
