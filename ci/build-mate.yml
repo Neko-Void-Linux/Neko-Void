@@ -61,11 +61,9 @@ build-neko-void-mate:
     - chmod 1777 /var/tmp
     - bash neko-builder.sh rolling
 
-    # 4. Generate Checksums
     - cd /home/anon/workspace
     - sha256sum **/*.iso > sha256sum.txt || true
 
-    # 5. Upload ISO to Hugging Face
     - ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
     - ISO_NAME=$(basename "$ISO_FILE")
     - hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
