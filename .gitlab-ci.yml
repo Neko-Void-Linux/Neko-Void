@@ -6,9 +6,17 @@ trigger-build-mate:
   trigger:
     include: ci/build-mate.yml
     strategy: depend
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: manual
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
 
 trigger-build-xfce:
   stage: triggers
   trigger:
     include: ci/build-xfce.yml
     strategy: depend
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: manual
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
