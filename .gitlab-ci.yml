@@ -1,0 +1,14 @@
+stages:
+  - triggers
+
+trigger-build-mate:
+  stage: triggers
+  trigger:
+    include: ci/build-mate.yml
+    strategy: depend
+
+trigger-build-xfce:
+  stage: triggers
+  trigger:
+    include: ci/build-xfce.yml
+    strategy: depend
