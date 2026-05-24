@@ -1,4 +1,4 @@
-name: Sync ISOs to SourceForge (One by One)
+name: 🚀 Sync ISOs to SourceForge (One by One)
 
 on:
   workflow_dispatch:
@@ -9,33 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Liberar espacio en el runner
-      - name: Free up disk space
+      # 1. Liberar espacio e instalar sshpass
+      - name: Free up disk space and install sshpass
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          sudo apt-get update
+          sudo apt-get install -y sshpass
           sudo apt-get clean
           df -h
 
-      # 2. Configurar SSH para SourceForge
-      - name: Setup SSH Key for SourceForge
-        env:
-          SF_SSH_KEY: ${{ secrets.SF_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SF_SSH_KEY" > ~/.ssh/sf_key
-          chmod 600 ~/.ssh/sf_key
-          ssh-keyscan -t rsa frs.sourceforge.net >> ~/.ssh/known_hosts
-
-      # 3. Descargar lista, iterar, subir y limpiar (Con parada de seguridad)
+      # 2. Descargar lista, iterar, subir y limpiar
       - name: Process ISOs from list
         env:
           SF_USER: ${{ secrets.SF_USERNAME }}
+          SF_PASS: ${{ secrets.SF_PASS }}
           SF_PROJECT: ${{ secrets.SF_PROJECT_NAME }}
+          SF_HOST: frs.sourceforge.net
+          SF_DIR: /home/frs/project/${{ secrets.SF_PROJECT_NAME }}/
         run: |
           # Descargamos el archivo 'list' desde Hugging Face
           echo "Descargando archivo de lista..."
           wget -O list.txt "https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/list"
-
+          
           echo "Contenido de la lista a procesar:"
           cat list.txt
 
@@ -43,56 +38,53 @@ jobs:
           while IFS= read -r line; do
             # Limpiar posibles saltos de línea de Windows (\r) y espacios vacíos
             line=$(echo "$line" | tr -d '\r' | xargs)
-
+            
             # Saltar líneas vacías
             [ -z "$line" ] && continue
-
-            # DETECCIÓN DE SEGURIDAD: Si la línea contiene 'finish', rompemos el bucle
+            
+            # 🛑 DETECCIÓN DE SEGURIDAD
             if [[ "$line" == finish* ]] || [[ "$line" == *finish* ]]; then
-              echo "Señal de finalización ('finish') detectada. Deteniendo el bucle de forma segura."
+              echo "🛑 Señal de finalización ('finish') detectada. Deteniendo el bucle de forma segura."
               break
             fi
-
-            # Extraer la URL (todo lo que está después del signo '=')
+            
+            # Extraer la URL y el nombre del archivo
             url="${line#*=}"
-
-            # Extraer el nombre del archivo (todo lo que está después del último '/')
             filename="${url##*/}"
-
-            # Doble verificación: si no hay archivo o URL, saltamos
+            
             if [ -z "$url" ] || [ -z "$filename" ]; then
               continue
             fi
-
+            
             echo "========================================"
-            echo "Descargando: $filename"
-            echo "Desde: $url"
-
+            echo "📥 Descargando: $filename"
+            echo "🔗 Desde: $url"
+            
             # Descargar la ISO con wget
             wget -O "$filename" "$url"
-
-            # Verificar si la descarga falló
+            
             if [ $? -ne 0 ]; then
-              echo "Error descargando $filename. Saltando..."
+              echo "❌ Error descargando $filename. Saltando..."
               rm -f "$filename"
               continue
             fi
-
-            echo "Subiendo $filename a SourceForge..."
-            # Subir a SourceForge mediante RSYNC
-            rsync -avz --progress -e "ssh -i ~/.ssh/sf_key -o StrictHostKeyChecking=no" "$filename" ${SF_USER}@frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/
-
-            # Verificar si la subida falló
+            
+            echo "☁️ Subiendo $filename a SourceForge..."
+            
+            # Subir a SourceForge mediante RSYNC y SSHPASS
+            # Usamos -avP (archive, verbose, progress) como en tu ejemplo
+            SSHPASS="$SF_PASS" sshpass -e rsync -avP -e "ssh -o StrictHostKeyChecking=no" "$filename" "${SF_USER}@${SF_HOST}:${SF_DIR}"
+            
             if [ $? -ne 0 ]; then
-              echo "Error subiendo $filename a SourceForge. Deteniendo."
+              echo "❌ Error subiendo $filename a SourceForge. Deteniendo."
               exit 1
             fi
-
-            echo "Eliminando $filename para liberar espacio..."
+            
+            echo "🗑️ Eliminando $filename para liberar espacio..."
             rm -f "$filename"
-
-            echo "$filename procesado con éxito."
-
+            
+            echo "✅ $filename procesado con éxito."
+            
           done < list.txt
-
-          echo "¡Proceso de sincronización finalizado correctamente!"
+          
+          echo "🎉 ¡Proceso de sincronización finalizado correctamente!"
