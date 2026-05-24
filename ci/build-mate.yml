@@ -3,8 +3,6 @@ build-neko-void-mate:
     name: ghcr.io/void-linux/void-mklive:20250116R1
   variables:
     PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
-  tags:
-    - docker
   before_script:
     - mkdir -p /dev
   script:
