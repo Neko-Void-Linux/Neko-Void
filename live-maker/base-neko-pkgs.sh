@@ -212,7 +212,8 @@ I3="
     picom
     qt6ct
     lxappearance
-    feh dex
+    feh
+    dex
     polkit-gnome 
     pulseaudio-utils
     setxkbmap
