@@ -11,7 +11,9 @@ trigger-build-mate:
       when: always
     - if: $CI_PIPELINE_SOURCE == "pipeline"
       when: always
-    - when: manual  
+    - if: $CI_PIPELINE_SOURCE == "push"
+      when: manual
+    - when: never
 
 trigger-build-xfce:
   stage: triggers
@@ -23,4 +25,6 @@ trigger-build-xfce:
       when: always
     - if: $CI_PIPELINE_SOURCE == "pipeline"
       when: always
-    - when: manual  
+    - if: $CI_PIPELINE_SOURCE == "push"
+      when: manual
+    - when: never
