@@ -48,9 +48,8 @@ jobs:
           rm -rf i3/etc/skel
           wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/i3-neko.tar
           mkdir -p i3/etc/skel
-          tar -xvf i3-neko.tar -C i3/etc/skel/
-          cp -rvf i3/etc/skel/.* i3/home/anon/
-          cp -rvf i3/etc/skel/* i3/home/anon/
+          tar -xf i3-neko.tar -C i3/etc/skel/
+          tar -xf i3-neko.tar -C i3/home/anon/
           
           # 3. BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
           # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
