@@ -4,9 +4,10 @@
 MARKER_FILE="$HOME/.rices.set"
 
 runn(){
-# Aplicar configuración de apariencia personalizada para MATE
+# Aplicar configuración de apariencia personalizada 
 xdg-user-dirs-update && xdg-user-dirs-update --force
 #tar -xvzf /usr/share/rice/xfce-config-backup.tar.gz -C ~/
+$HOME/i3dots/dots install i3dots void
 /usr/lib/Neko-Wizard/neko-store
 #/usr/share/rice/RestartApp &
 # Crear el archivo de marca para evitar reejecución
