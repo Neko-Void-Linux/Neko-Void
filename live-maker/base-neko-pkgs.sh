@@ -9,6 +9,9 @@ BASE_SYSTEM="
     grub-x86_64-efi
     base-system
     linux-firmware
+    tlp
+    tlp-pd
+    tlp-rdw
     intel-ucode
     at-spi2-core
     kyoz
