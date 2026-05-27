@@ -139,28 +139,28 @@ build_iso() {
         kde)
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="sddm tlp-pd"
             iso_name="nekovoid-$VERSION-kde.iso"
             ;;
         lxqt)
             pkg_var="PACKAGES_LXQT"
             includedir="./lxqt"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-$VERSION-lxqt.iso"
             ;;
         i3)
             pkg_var="PACKAGES_I3"
             includedir="./i3"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-$VERSION-i3.iso"
             ;;
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-$VERSION-xfce.iso"
             ;;
@@ -174,14 +174,14 @@ build_iso() {
         cinnamon)
             pkg_var="PACKAGES_CINNAMON"
             includedir="./cinnamon"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-$VERSION-cinnamon.iso"
             ;;
         lxde)
             pkg_var="PACKAGES_LXDE"
             includedir="./lxde"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-$VERSION-lxde.iso"
             ;;
