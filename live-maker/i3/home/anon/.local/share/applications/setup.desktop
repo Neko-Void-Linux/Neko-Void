@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Install Neko-Void
+Name=1-Install Neko-Void
 GenericName=System Installer
 Comment=Install Neko-Void Linux to your computer
 Exec=sudo /home/anon/.setup/downloader
