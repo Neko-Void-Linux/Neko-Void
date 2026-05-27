@@ -8,6 +8,7 @@ runn(){
 xdg-user-dirs-update && xdg-user-dirs-update --force
 #tar -xvzf /usr/share/rice/xfce-config-backup.tar.gz -C ~/
 $HOME/i3dots/dots install i3dots void
+nohup i3-msg restart &
 /usr/lib/Neko-Wizard/neko-store
 #/usr/share/rice/RestartApp &
 # Crear el archivo de marca para evitar reejecución
