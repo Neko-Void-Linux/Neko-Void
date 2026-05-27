@@ -10,7 +10,7 @@
 #   ./neko-builder.sh doble                  # Construir xlibre + xorg
 #   ./neko-builder.sh doble-isor             # Construir rollibre + rolling
 #
-VERSION="11"
+VERSION=$(date +"%Y%m%d")
 set -euo pipefail
 
 # ─────────────────────────────────────────────
@@ -235,7 +235,7 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh "${cmd_args[@]}"
+    sudo ./mklive.sh -a x86_64 -i gzip -s zstd "${cmd_args[@]}"
 }
 
 # ─────────────────────────────────────────────
