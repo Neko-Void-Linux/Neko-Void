@@ -113,77 +113,77 @@ build_iso() {
             includedir="./includedir"
             kernel_kver=""
             dm_service="lightdm"
-            iso_name="nekovoid-beta-$VERSION-xorg.iso"
+            iso_name="nekovoid-xorg-$VERSION.iso"
             ;;
         xlibre)
             pkg_var="PACKAGES_XLIBRE"
             includedir="./includedir"
             kernel_kver=""
             dm_service="lightdm"
-            iso_name="nekovoid-beta-$VERSION-xlibre.iso"
+            iso_name="nekovoid-xlibre-$VERSION.iso"
             ;;
         rolling)
             pkg_var="PACKAGES_XORG"
             includedir="./includedir"
             kernel_kver="linux-mainline"
             dm_service="lightdm"
-            iso_name="nekovoid-rolling-$VERSION-xorg.iso"
+            iso_name="nekovoid-rolling-xorg-$VERSION.iso"
             ;;
         rollibre)
             pkg_var="PACKAGES_XLIBRE"
             includedir="./includedir"
             kernel_kver="linux-mainline"
             dm_service="lightdm"
-            iso_name="nekovoid-rolling-$VERSION-xlibre.iso"
+            iso_name="nekovoid-rolling-xlibre-$VERSION.iso"
             ;;
         kde)
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
             kernel_kver="linux-lts"
             dm_service="sddm tlp-pd"
-            iso_name="nekovoid-$VERSION-kde.iso"
+            iso_name="nekovoid-kde-$VERSION.iso"
             ;;
         lxqt)
             pkg_var="PACKAGES_LXQT"
             includedir="./lxqt"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-$VERSION-lxqt.iso"
+            iso_name="nekovoid-lxqt-$VERSION.iso"
             ;;
         i3)
             pkg_var="PACKAGES_I3"
             includedir="./i3"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-$VERSION-i3.iso"
+            iso_name="nekovoid-i3-$VERSION.iso"
             ;;
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-$VERSION-xfce.iso"
+            iso_name="nekovoid-xfce-$VERSION.iso"
             ;;
         icejwm)
             pkg_var="PACKAGES_ICEJWM"
             includedir="./icejwm"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-lts-$VERSION-icejwm.iso"
+            iso_name="nekovoid-lts-icejwm-$VERSION.iso"
             ;;
         cinnamon)
             pkg_var="PACKAGES_CINNAMON"
             includedir="./cinnamon"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-$VERSION-cinnamon.iso"
+            iso_name="nekovoid-cinnamon-$VERSION.iso"
             ;;
         lxde)
             pkg_var="PACKAGES_LXDE"
             includedir="./lxde"
             kernel_kver="linux-lts"
             dm_service="lightdm"
-            iso_name="nekovoid-$VERSION-lxde.iso"
+            iso_name="nekovoid-lxde-$VERSION.iso"
             ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
