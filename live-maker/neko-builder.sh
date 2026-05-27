@@ -10,7 +10,7 @@
 #   ./neko-builder.sh doble                  # Construir xlibre + xorg
 #   ./neko-builder.sh doble-isor             # Construir rollibre + rolling
 #
-VERSION="9"
+VERSION="11"
 set -euo pipefail
 
 # ─────────────────────────────────────────────
@@ -38,7 +38,7 @@ cd "$SCRIPT_DIR"
 # Servicios base (el display manager se agrega
 # automáticamente según el escritorio)
 # ─────────────────────────────────────────────
-SERVICES_BASE="dbus elogind NetworkManager polkitd rtkit sshd chronyd zramen tlp tlp-pd"
+SERVICES_BASE="dbus elogind NetworkManager polkitd rtkit sshd chronyd zramen tlp"
 
 # ─────────────────────────────────────────────
 # Colores para modo interactivo
@@ -140,7 +140,7 @@ build_iso() {
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
             kernel_kver="linux-mainline"
-            dm_service="sddm"
+            dm_service="sddm tlp-pd"
             iso_name="nekovoid-$VERSION-kde.iso"
             ;;
         lxqt)

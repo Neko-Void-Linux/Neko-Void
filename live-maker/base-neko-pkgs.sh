@@ -5,13 +5,9 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 # Sistema base y utilidades
 # ─────────────────────────────────────────────
 BASE_SYSTEM="
-    grub-i386-efi
-    grub-x86_64-efi
     base-system
     linux-firmware
     tlp
-    tlp-pd
-    tlp-rdw
     intel-ucode
     at-spi2-core
     kyoz
@@ -136,6 +132,7 @@ MATE_DESKTOP="
     mate-tweak
     mate-polkit
     mate-terminal
+    mpv
     pluma
     caja-wallpaper
     caja-sendto
@@ -178,6 +175,7 @@ XFCE="
 LXQT="
     kate
     discover
+    mpv
     lxqt
     xfwm4
     xfwm4-themes
@@ -202,6 +200,7 @@ LXDE="
     gvfs-mtp
     gvfs-smb
     udisks2
+    mpv
     firefox
 "
 
@@ -217,6 +216,7 @@ I3="
     qt6ct
     lxappearance
     feh
+    mpv
     dex
     polkit-gnome 
     pulseaudio-utils
@@ -258,6 +258,7 @@ ICEJWM="
     jwm
     jwmkit-neko
     icewm
+    mpv
     pcmanfm
     alacritty
     ristretto
@@ -278,12 +279,15 @@ KDE="
     kde-plasma
     konsole
     kate
+    tlp-pd
+    tlp-rdw
     firefox
     dolphin
     discover
     gvfs-afc
     gvfs-mtp
     gvfs-smb
+    mpv
     sddm
     plasma-framework
     kdeconnect
@@ -293,6 +297,10 @@ KDE="
     qt6-svg
     qt6-multimedia
     gum
+    okular
+    spectacle
+    gwenview
+    ark
 "
 CINNAMON="
     cinnamon
@@ -310,7 +318,6 @@ CINNAMON="
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
     ristretto
-    mpv
     arandr
     xarchiver
     gparted
