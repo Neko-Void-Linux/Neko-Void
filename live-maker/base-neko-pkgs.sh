@@ -233,17 +233,16 @@ I3="
     curl
     wget
     unzip
-    base-devel
     cargo
     pkg-config
-    openssl-devel
-    libxcb-devel
-    xcb-util-devel
-    xcb-util-image-devel
-    xcb-util-keysyms-devel
-    xcb-util-renderutil-devel
-    xcb-util-wm-devel
-    libxkbcommon-devel
+    openssl
+    libxcb
+    xcb-util
+    xcb-util-image
+    xcb-util-keysyms
+    xcb-util-renderutil
+    xcb-util-wm
+    libxkbcommon
     font-awesome6
     fontconfig
     ImageMagick
