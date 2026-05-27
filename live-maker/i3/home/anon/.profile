@@ -1,4 +1,4 @@
 # Ejecutar rice_set solo en sesión gráfica
 if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
-    /usr/bin/rice_set
+    $HOME/i3dots/dots install i3dots void
 fi
