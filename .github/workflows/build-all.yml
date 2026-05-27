@@ -32,3 +32,8 @@ jobs:
     needs: build-matex
     uses: ./.github/workflows/xfce.yml
     secrets: inherit
+  build-i3:
+    needs: build-xfce
+    uses: ./.github/workflows/i3.yml
+    secrets: inherit
+  
