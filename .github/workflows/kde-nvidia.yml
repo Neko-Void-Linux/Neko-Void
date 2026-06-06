@@ -1,0 +1,82 @@
+name: nvidia-Build Neko Void ISO KDE
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-neko-void:
+    name: Build ISOs
+    runs-on: ubuntu-latest
+
+    container:
+      image: 'ghcr.io/void-linux/void-mklive:20250116R1'
+      options: --privileged
+      volumes:
+        - /dev:/dev
+      env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+
+    steps:
+      - name: Prepare container, system users and dependencies
+        shell: sh
+        run: |
+          xbps-install -Syu xbps
+          xbps-install -yu
+          xbps-install -y git bash wget curl file sudo python3 python3-pip
+          python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages
+
+          groupadd -g 1000 anon
+          useradd -m -u 1000 -g anon -s /bin/bash anon
+          echo "anon ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/anon
+
+      - name: Clone Neko Void repository
+        run: |
+          mkdir -p /home/anon/workspace
+          chown -R anon:anon /home/anon/workspace
+          su - anon -c "git clone --depth 1 https://codeberg.org/javiercplus/Neko-Void.git /home/anon/workspace"
+
+      - name: Build Neko-Void ISO Xorg
+        run: |
+          cd /home/anon/workspace/live-maker
+
+          # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
+          # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
+          # y sin requerir que el usuario pertenezca a ningún grupo especial.
+          mkdir -p kdedir/etc/pam.d
+          cat << 'EOFPAM' > kdedir/etc/pam.d/lightdm-autologin
+          #%PAM-1.0
+          auth required pam_permit.so
+          account required pam_permit.so
+          password required pam_permit.so
+          session required pam_permit.so
+          EOFPAM
+          chmod 644 kdedir/etc/pam.d/lightdm-autologin
+
+          rm -f ./includedir/home/anon/.Xauthority
+          rm -f ./includedir/home/anon/.ICEauthority
+
+          chmod 1777 /tmp
+          chmod 1777 /var/tmp
+
+          # Compilación real de la ISO
+          bash neko-builder.sh kde -e nvidia580
+
+      - name: Generate Checksums
+        run: |
+          cd /home/anon/workspace
+          sha256sum **/*.iso > sha256sum.txt || true
+
+      - name: Upload ISO to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
+          ISO_NAME=$(basename "nvidia-$ISO_FILE")
+
+          hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "kde-sha256.txt" --repo-type dataset --token $HF_TOKEN
