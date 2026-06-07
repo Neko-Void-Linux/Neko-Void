@@ -25,7 +25,7 @@ cd live-maker && bash neko-builder.sh rolling
 ``` 
 cd live-maker && bash neko-builder.sh rollibre
 ``` 
-
+# HOW TO USE NEKO BUILDER (neko-builder.sh)
 ``` 
 # NekoVoid Live ISO Builder - Nonfree Edition
 # This here builds the ISO with nonfree support: Steam, gaming, proprietary drivers, and such.
