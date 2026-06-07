@@ -28,15 +28,14 @@ cd live-maker && bash neko-builder.sh rollibre
 
 ``` 
 # NekoVoid Live ISO Builder - Nonfree Edition
-# Genera la ISO con soporte nonfree: Steam, gaming, drivers propietarios, etc.
+# This here builds the ISO with nonfree support: Steam, gaming, proprietary drivers, and such.
 #
-# Uso:
-#   ./neko-builder.sh                        # Modo interactivo
-#   ./neko-builder.sh <desktop>              # Construir escritorio específico
-#   ./neko-builder.sh <desktop> -e "pkg..."  # Con paquetes extra
-#   ./neko-builder.sh doble                  # Construir xlibre + xorg
-#   ./neko-builder.sh doble-isor             # Construir rollibre + rolling
-#
+# How to use:
+#   ./neko-builder.sh                        # Interactive mode
+#   ./neko-builder.sh <desktop>              # Build a specific desktop
+#   ./neko-builder.sh <desktop> -e "pkg..."  # With extra packages
+#   ./neko-builder.sh doble                  # Build xlibre + xorg
+#   ./neko-builder.sh doble-isor             # Build rollibre + rolling
 ``` 
 
 This repo also has repo of neko wizard and kasha installer module!
