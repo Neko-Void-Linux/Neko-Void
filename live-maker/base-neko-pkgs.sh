@@ -170,7 +170,6 @@ XFCE="
     lightdm-gtk-greeter-settings
     libnotify
     numlockx
-    picom
 "
 LXQT="
     kate
