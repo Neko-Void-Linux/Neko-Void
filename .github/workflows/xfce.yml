@@ -81,7 +81,13 @@ jobs:
 
           chmod 1777 /tmp
           chmod 1777 /var/tmp
-
+          #dotfile
+          rm -rf xfce/etc/skel/.config
+          rm -rf xfce/home/anon/.config
+          wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/xfce.tar
+          tar -xf xfce.tar -C xfce/home/anon/
+          tar -xf xfce.tar -C xfce/etc/skel/
+          
           # Ejecutar la compilación real
           chown -R anon:anon /home/anon/workspace
           bash neko-builder.sh xfce
