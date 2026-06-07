@@ -50,15 +50,7 @@ jobs:
           mkdir -p "$BUILD/etc/polkit-1/rules.d"
           mkdir -p "$BUILD/etc/lightdm"
 
-          # 1. Configurar explícitamente LightDM para autologin
-          cat << 'EOF' > "$BUILD/etc/lightdm/lightdm.conf"
-          [Seat:*]
-          autologin-user=anon
-          autologin-session=xfce
-          EOF
-          sed -i 's/^[ \t]*//' "$BUILD/etc/lightdm/lightdm.conf"
-
-          # 2. Configuración limpia de PAM (se remueve pam_sepermit que es para SELinux)
+          # Configuración limpia de PAM (se remueve pam_sepermit que es para SELinux)
           cat << 'EOF' > "$BUILD/etc/pam.d/lightdm-autologin"
           #%PAM-1.0
           auth     required    pam_permit.so
