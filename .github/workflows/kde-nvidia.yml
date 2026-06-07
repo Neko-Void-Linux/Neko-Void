@@ -43,7 +43,8 @@ jobs:
       - name: Build Neko-Void ISO Xorg
         run: |
           cd /home/anon/workspace/live-maker
-
+          rm -rf kdedir/etc/default/grub
+          wget -O kdedir/etc/default/grub https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/grub
           # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
           # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
           # y sin requerir que el usuario pertenezca a ningún grupo especial.
