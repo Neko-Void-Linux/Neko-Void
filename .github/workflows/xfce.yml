@@ -3,6 +3,7 @@ name: Build Neko Void ISO xfce
 on:
   workflow_dispatch:
   workflow_call:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -42,39 +43,42 @@ jobs:
       - name: Build Neko-Void ISO Xorg
         run: |
           cd /home/anon/workspace/live-maker
-          BUILD=xfce
-          # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
-          # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
-          # y sin requerir que el usuario pertenezca a ningún grupo especial.
-          mkdir -p xfce/etc/pam.d
-          cat << 'EOFPAM' > xfce/etc/pam.d/lightdm-autologin
-          #%PAM-1.0
-          auth     required    pam_sepermit.so
-          auth     required    pam_permit.so
-          account  required    pam_permit.so
-          password required    pam_deny.so
-          session  required    pam_loginuid.so
-          session  required    pam_limits.so
-          -session optional    pam_elogind.so
-          session  required    pam_env.so
-          EOFPAM
-          chmod 644 xfce/etc/pam.d/lightdm-autologin
+          BUILD="/home/anon/workspace/live-maker/xfce"
 
-          mkdir -p xfce/etc/polkit-1/rules.d
-          cat << 'EOFPOLKIT' > xfce/etc/polkit-1/rules.d/49-nopasswd_global.rules
-          /* Permitir que los usuarios administradores ejecuten acciones de polkit sin interacción gráfica */
-          polkit.addRule(function(action, subject) {
-              if (subject.isInGroup("wheel")) {
-                  return polkit.Result.YES;
-              }
-          });
-          EOFPOLKIT
-          chmod 644 xfce/etc/polkit-1/rules.d/49-nopasswd_global.rules
+          # Crear directorios en la ruta correcta del árbol de origen de la ISO
+          mkdir -p "$BUILD/etc/pam.d"
+          mkdir -p "$BUILD/etc/polkit-1/rules.d"
+
+          # Configuración limpia de PAM para LightDM Autologin
+          cat << 'EOFPAM' > "$BUILD/etc/pam.d/lightdm-autologin
+#%PAM-1.0
+auth     required    pam_sepermit.so
+auth     required    pam_permit.so
+account  required    pam_permit.so
+password required    pam_deny.so
+session  required    pam_loginuid.so
+session  required    pam_limits.so
+-session optional    pam_elogind.so
+session  required    pam_env.so
+EOFPAM
+          chmod 644 "$BUILD/etc/pam.d/lightdm-autologin"
+
+          # Regla de Polkit para evitar ventanas emergentes vacías
+          cat << 'EOFPOLKIT' > "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules
+/* Permitir que los usuarios administradores ejecuten acciones de polkit sin interacción gráfica */
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel") || subject.isInGroup("autologin")) {
+        return polkit.Result.YES;
+    }
+});
+EOFPOLKIT
+          chmod 644 "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
 
           chmod 1777 /tmp
           chmod 1777 /var/tmp
 
-          # 5. Compilación real de la ISO
+          # Ejecutar la compilación real pasándole los permisos correctos
+          chown -R anon:anon /home/anon/workspace
           bash neko-builder.sh xfce
 
       - name: Generate Checksums
