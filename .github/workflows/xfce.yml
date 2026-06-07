@@ -45,14 +45,22 @@ jobs:
           cd /home/anon/workspace/live-maker
           BUILD="/home/anon/workspace/live-maker/xfce"
 
-          # Crear directorios en la ruta correcta del árbol de origen de la ISO
+          # Crear directorios
           mkdir -p "$BUILD/etc/pam.d"
           mkdir -p "$BUILD/etc/polkit-1/rules.d"
+          mkdir -p "$BUILD/etc/lightdm"
 
-          # Configuración limpia de PAM para LightDM Autologin
-          cat << 'EOFPAM' > "$BUILD/etc/pam.d/lightdm-autologin"
+          # 1. Configurar explícitamente LightDM para autologin
+          cat << 'EOF' > "$BUILD/etc/lightdm/lightdm.conf"
+          [Seat:*]
+          autologin-user=anon
+          autologin-session=xfce
+          EOF
+          sed -i 's/^[ \t]*//' "$BUILD/etc/lightdm/lightdm.conf"
+
+          # 2. Configuración limpia de PAM (se remueve pam_sepermit que es para SELinux)
+          cat << 'EOF' > "$BUILD/etc/pam.d/lightdm-autologin"
           #%PAM-1.0
-          auth     required    pam_sepermit.so
           auth     required    pam_permit.so
           account  required    pam_permit.so
           password required    pam_deny.so
@@ -60,24 +68,29 @@ jobs:
           session  required    pam_limits.so
           -session optional    pam_elogind.so
           session  required    pam_env.so
-          EOFPAM
-          chmod 644 "$BUILD/etc/pam.d/lightdm-autologin"
+          EOF
+          sed -i 's/^[ \t]*//' "$BUILD/etc/pam.d/lightdm-autologin"
 
-          # Regla de Polkit para evitar ventanas emergentes vacías
-          cat << 'EOFPOLKIT' > "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
-          /* Permitir que los usuarios administradores ejecuten acciones de polkit sin interacción gráfica */
+          # 3. Regla de Polkit para evitar ventanas emergentes vacías
+          cat << 'EOF' > "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+          /* Permitir que los administradores ejecuten acciones de polkit sin contraseña */
           polkit.addRule(function(action, subject) {
-              if (subject.isInGroup("wheel") || subject.isInGroup("autologin")) {
+              if (subject.isInGroup("wheel")) {
                   return polkit.Result.YES;
               }
           });
-          EOFPOLKIT
+          EOF
+          sed -i 's/^[ \t]*//' "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+
+          # Asegurar permisos correctos
+          chmod 644 "$BUILD/etc/lightdm/lightdm.conf"
+          chmod 644 "$BUILD/etc/pam.d/lightdm-autologin"
           chmod 644 "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
 
           chmod 1777 /tmp
           chmod 1777 /var/tmp
 
-          # Ejecutar la compilación real pasándole los permisos correctos
+          # Ejecutar la compilación real
           chown -R anon:anon /home/anon/workspace
           bash neko-builder.sh xfce
 
