@@ -76,7 +76,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
-          ISO_NAME=$(basename "nvidia-$ISO_FILE")
+          ISO_NAME=$(basename "$ISO_FILE")
 
-          hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko "$ISO_FILE" "nvidia580-$ISO_NAME" --repo-type dataset --token $HF_TOKEN
           hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "kde-sha256.txt" --repo-type dataset --token $HF_TOKEN
