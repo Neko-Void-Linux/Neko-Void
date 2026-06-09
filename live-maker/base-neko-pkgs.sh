@@ -17,8 +17,8 @@ BASE_SYSTEM="
     bash-completion
     cryptsetup
     dbus
+    seatd
     dialog
-    elogind
     grub
     mdadm
     nano
