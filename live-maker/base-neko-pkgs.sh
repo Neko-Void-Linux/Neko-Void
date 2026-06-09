@@ -17,7 +17,6 @@ BASE_SYSTEM="
     bash-completion
     cryptsetup
     dbus
-    seatd
     dialog
     grub
     mdadm
