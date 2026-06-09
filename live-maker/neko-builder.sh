@@ -38,7 +38,7 @@ cd "$SCRIPT_DIR"
 # Servicios base (el display manager se agrega
 # automáticamente según el escritorio)
 # ─────────────────────────────────────────────
-SERVICES_BASE="dbus elogind NetworkManager polkitd rtkit sshd chronyd zramen tlp"
+SERVICES_BASE="dbus seatd NetworkManager polkitd rtkit sshd chronyd zramen tlp"
 
 # ─────────────────────────────────────────────
 # Colores para modo interactivo
