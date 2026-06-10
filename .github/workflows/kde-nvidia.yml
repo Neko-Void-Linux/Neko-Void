@@ -57,6 +57,9 @@ jobs:
           session required pam_permit.so
           EOFPAM
           chmod 644 kdedir/etc/pam.d/lightdm-autologin
+          # Forzar carga de nvidia al inicio
+          mkdir -p kdedir/etc/modules-load.d
+          echo "nvidia" > kdedir/etc/modules-load.d/nvidia.conf
 
           rm -f ./includedir/home/anon/.Xauthority
           rm -f ./includedir/home/anon/.ICEauthority
