@@ -50,7 +50,7 @@ print_step() {
 mount_pseudofs() {
     for f in sys dev proc; do
         mkdir -p "$ROOTFS"/$f
-        mount --rbind /$f "$ROOTFS"/$f
+        mount --rbind /$f "$ROOTFS"/$f --make-rslave
     done
 }
 
@@ -531,7 +531,7 @@ while getopts "a:b:r:H:c:C:T:Kk:l:i:I:S:e:s:o:p:g:v:P:x:Vh" opt; do
 	esac
 done
 shift $((OPTIND - 1))
-XBPS_REPOSITORY="$XBPS_REPOSITORY --repository=https://repo-default.voidlinux.org/current --repository=https://repo-default.voidlinux.org/current/musl --repository=https://repo-default.voidlinux.org/current/aarch64 --repository=https://github.com/xlibre-void/xlibre/releases/latest/download --repository=https://sourceforge.net/projects/neko-void/files/repo --repository=https://repo-default.voidlinux.org/current/nonfree --repository=https://repo-default.voidlinux.org/current/multilib/nonfree --repository=https://repo-default.voidlinux.org/current/multilib --repository=https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo --repository=https://raw.githubusercontent.com/Makrennel/hyprland-void/repository-x86_64-glibc"
+XBPS_REPOSITORY="$XBPS_REPOSITORY --repository=https://repo-default.voidlinux.org/current --repository=https://repo-default.voidlinux.org/current/musl --repository=https://repo-default.voidlinux.org/current/aarch64"
 
 # Configure dracut to use overlayfs for the writable overlay.
 BOOT_CMDLINE="$BOOT_CMDLINE rd.live.overlay.overlayfs=1 "
