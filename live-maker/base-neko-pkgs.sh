@@ -14,6 +14,7 @@ BASE_SYSTEM="
     qemu-ga
     open-vm-tools
     spice-vdagent
+    elogind
     bash-completion
     cryptsetup
     dbus
