@@ -1,0 +1,28 @@
+# 1. Controlar D-Bus de forma segura
+# Solo lanza dbus-launch si la variable no está definida por el sistema o gestor de sesión
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && command -v dbus-launch >/dev/null 2>&1; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+# 2. Controlar ssh-agent para evitar procesos duplicados
+# Primero verifica si ya hay un agente corriendo y responde
+if [ -n "$SSH_AUTH_SOCK" ] && [ -S "$SSH_AUTH_SOCK" ]; then
+    # El agente ya está activo y funcional
+    true
+else
+    # Si no hay agente, busca si hay un archivo de entorno guardado previamente
+    SSH_ENV="$HOME/.ssh/agent-environment"
+
+    if [ -f "$SSH_ENV" ]; then
+        . "$SSH_ENV" > /dev/null
+    fi
+
+    # Si el archivo no existe o el proceso guardado ya no responde, inicia uno nuevo
+    if ! ps -p "$SSH_AGENT_PID" > /dev/null 2>&1; then
+        eval $(ssh-agent -s) > /dev/null
+        # Guarda las variables para que otras terminales compartan el mismo agente
+        echo "export SSH_AUTH_SOCK=$SSH_AUTH_SOCK" > "$SSH_ENV"
+        echo "export SSH_AGENT_PID=$SSH_AGENT_PID" >> "$SSH_ENV"
+        chmod 600 "$SSH_ENV"
+    fi
+fi
