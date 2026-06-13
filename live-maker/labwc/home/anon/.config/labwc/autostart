@@ -11,6 +11,13 @@
 #   }
 kanshi >/dev/null 2>&1 &
 
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+# Export environment variables
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
 # Launch a panel such as yambar or waybar.
 sfwbar >/dev/null 2>&1 &
 nm-applet &
@@ -21,3 +28,4 @@ mako >/dev/null 2>&1 &
 
 /usr/libexec/xdg-desktop-portal-wlr &
 pipewire &
+thunar /home/anon/Desktop &

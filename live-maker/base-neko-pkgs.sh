@@ -332,14 +332,14 @@ LABWC="
 	gtk-update-icon-cache
 	wl-clipboard
 	wlopm
+	mpv
+	kate
 	grim
 	slurp
-	gtksourceview-devel
-	json-c-devel
-	gtk-layer-shell-devel
-	gtkmm-devel
-	cmake
-	gcc
+	gtksourceview
+	json-c
+	gtk-layer-shell
+	gtkmm
 	Thunar
 "
 
@@ -502,6 +502,10 @@ LXDE_PACKAGES="
 CINNAMON_PACKAGES="
     ${DEFAULT}
     ${CINNAMON}
+"
+LABWC_PACKAGES="
+    ${DEFAULT}
+    ${LABWC}
 "
 
 # Limpiar espacios extra y newlines, convertir a una línea
