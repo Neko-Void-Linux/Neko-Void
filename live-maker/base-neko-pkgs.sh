@@ -311,6 +311,38 @@ CINNAMON="
     gnome-terminal
 "
 
+LABWC="
+	lightdm
+	gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+	wlr-randr
+	mako
+	swaylock
+	labwc
+	alacritty
+	kanshi
+	nerd-fonts-ttf
+	fish-shell
+	xdg-desktop-portal
+	xdg-desktop-portal-wlr
+	playerctl
+	rofi
+	nwg-look
+	gtk-update-icon-cache
+	wl-clipboard
+	wlopm
+	grim
+	slurp
+	gtksourceview-devel
+	json-c-devel
+	gtk-layer-shell-devel
+	gtkmm-devel
+	cmake
+	gcc
+	Thunar
+"
+
 
 # ─────────────────────────────────────────────
 # Aplicaciones de escritorio

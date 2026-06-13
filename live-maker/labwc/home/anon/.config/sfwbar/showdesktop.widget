@@ -1,0 +1,55 @@
+#Api2
+
+Private {
+
+  Var FocusedWindow;
+  Function ShowWindows() {
+    Var i, wins;
+
+    wins = WidgetChildren("target");
+    for(i = 0; i <ArraySize(wins); i=i+1)
+      If WidgetState(wins[i], 1) {
+        UserState(wins[i], "off");
+        UnMinimize(wins[i]);
+      }
+    If FocusedWindow!='' {
+      Focus(FocusEdWindow);
+      FocusedWindow = '';
+    }
+
+    UserState("off")
+  }
+
+  Function HideWindows() {
+    Var i, wins;
+
+    wins = WidgetChildren("target");
+    for(i = 0; i <ArraySize(wins); i=i+1) {
+      If WindowInfo(wins[i], "focused") & FocusedWindow=''
+        FocusedWindow = wins[i];
+      If !WindowInfo(wins[i], "minimized") {
+        UserState(wins[i], "on");
+        Minimize(wins[i]);
+      }
+    }
+    UserState("on")
+  }
+
+  layout {
+    button "showdesktop" {
+      value = "user-desktop"
+      style = "showdesktop"
+      class = "module";
+      tooltip = GT("Show Desktop")
+      action = {
+        if WidgetState(1)
+          ShowWindows();
+        else
+          HideWindows();
+      }
+    }
+    taskbar "target" {
+      css = "* { -GtkWidget-visible: false; }"
+    }
+  }
+}

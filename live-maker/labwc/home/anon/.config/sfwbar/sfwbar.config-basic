@@ -1,0 +1,339 @@
+
+scanner {
+# Extract memory usage information
+  file("/proc/meminfo") {
+    MemTotal = RegEx("^MemTotal:[\t ]*([0-9]+)[\t ]")
+    MemFree = RegEx("^MemFree:[\t ]*([0-9]+)[\t ]")
+    MemCache = RegEx( "^Cached:[\t ]*([0-9]+)[\t ]")
+    MemBuff = Regex("^Buffers:[\t ]*([0-9]+)[\t ]")
+  }
+
+# Add up total and used swap capacity across all partitions
+  file("/proc/swaps") {
+    SwapTotal = RegEx("[\t ]([0-9]+)",Sum)
+    SwapUsed = RegEx("[\t ][0-9]+[\t ]([0-9]+)",Sum)
+  }
+
+# Add up CPU utilization stats across all CPUs
+  file("/proc/stat") {
+    CpuUser = RegEx("^cpu [\t ]*([0-9]+)",Sum)
+    CpuNice = RegEx("^cpu [\t ]*[0-9]+ ([0-9]+)",Sum)
+    CpuSystem = RegEx("^cpu [\t ]*[0-9]+ [0-9]+ ([0-9]+)",Sum)
+    CpuIdle = RegEx("^cpu [\t ]*[0-9]+ [0-9]+ [0-9]+ ([0-9]+)",Sum)
+  }
+
+# Get total and remaining battery charge
+  file("/sys/class/power_supply/BAT0/charge_full") {
+    BatteryTotal = Grab(Sum)
+  }
+  file("/sys/class/power_supply/BAT0/charge_now") {
+    BatteryLeft = Grab(Sum)
+  }
+  file("/sys/class/power_supply/AC/online") {
+    ACOnline = Grab(Sum)
+  }
+}
+
+# Window Placer
+placer {
+  xorigin = 5  # place the first window at X% from the left
+  yorigin = 5  # place the first window at X% from the top
+  xstep = 5    # step by X% of desktop horizontally
+  ystep = 5    # step by X% of desktop vertically
+  children = true
+}
+
+# Task Switcher
+switcher {
+  interval = 1700
+  icons = true
+  labels = false
+  cols = 8 
+}
+
+function("SfwbarInit") {
+  SetBarId "bar-0"
+#  SetLayer "bottom"
+#  SetMonitor "eDP-1"
+#  SetBarSize "800" 
+}
+
+function("ToggleMinimize") {
+  [!Minimized] Minimize
+  [Minimized] UnMinimize
+}
+
+function("ToggleMaximize") {
+  [!Maximized] Maximize
+  [Maximized] UnMaximize
+}
+
+menu("winops") {
+  item("focus", Focus );
+  item("close", Close );
+  item("(un)minimize", Function "ToggleMinimize" );
+  item("(un)maximize", Function "ToggleMaximize" );
+}
+
+# Panel layout
+
+layout {
+  taskbar {
+    rows = 1
+#    css = "* { -GtkWidget-hexpand: true; }" # stretch horizontally
+    icons = false
+    labels = true
+    action[3] = Menu "winops"
+    filter = workspace
+    group = false
+  }
+
+#  label { css = "* { -GtkWidget-hexpand: true; }" }
+
+  # add a pager
+#  pager {
+#    style = "pager"
+#    rows = 1
+#    preview = true
+#    numeric = true
+#    pins = "1","2","3","4"
+#  }
+
+  # add a launcher
+ # button {
+ #   value = "firefox"
+ #   action = "firefox"                        # launch firefox on click
+ # }
+
+
+#  include("idle.widget")
+
+
+#  tray {
+#    rows = 1
+#  }
+#}
+
+#CSS
+window {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-height: 42px;
+#  -GtkWidget-halign: start;
+  -GtkWidget-hexpand: true;
+}
+
+#hidden {
+  -GtkWidget-visible: false;
+}
+
+button {
+#background: transparent;
+border: none;
+box-shadow: none;
+-GtkWidget-halign: start;
+-GtkWidget-hexpand: true;
+}
+
+button#taskbar_normal grid {
+  -GtkWidget-halign: start; 
+  padding-right: 0px;
+  margin-right: 0px;
+}
+button#taskbar_normal image, button#taskbar_active image, button#taskbar_normal:hover image {
+  min-width: 5px;
+  min-height: 30px;
+}
+
+button#taskbar_normal label, button#taskbar_active label, button#taskbar_normal:hover label {
+  -GtkWidget-vexpand: true;
+  -GtkWidget-halign: start;
+  -GtkWidget-hexpand: true;
+  padding-left: 0.75mm;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font: 12pt Terminus;
+}
+
+button#taskbar_normal , button#taskbar_active , button#taskbar_normal:hover {
+  padding-left: 0.75mm;
+  padding-top: 0.5mm;
+  padding-bottom: 0.5mm;
+  background-image: none;
+  border-radius: 0px;
+  border-image: none;
+  -GtkWidget-hexpand: true;
+}
+
+button#taskbar_active {
+  background-color: #666;
+}
+
+button#taskbar_normal:hover {
+  background-color: #333;
+}
+
+button#pager_normal , button#pager_visible , button#pager_focused {
+  padding-left: 1.25mm;
+  padding-right: 1.25mm;
+  padding-top: 0.5mm;
+  padding-bottom: 0.5mm;
+  background-image: none;
+  border-radius: 0px;
+  border-image: none;
+  font: 0.3cm Sans;
+}
+
+button#pager_focused {
+  background-color: #bbddff;
+}
+
+button#pager_preview {
+  background-image: none;
+  border-radius: 0px;
+  border-image: none;
+  border-color: #000000;
+  border-width: 0.25mm;
+  color: #777777;
+  min-width: 5cm;
+  min-height: 2.8125cm;
+}
+
+grid#pager {
+  outline-color: #000000;
+  outline-style: dashed;
+  outline-width: 0.25mm;
+}
+
+grid#switcher_active image,
+grid#switcher_active {
+  min-width: 1.25cm;
+  min-height: 1.25cm;
+  border-image: none;
+  padding: 1.25mm;
+  background-color: #bbddff;
+  border-radius: 1.25mm;
+  -GtkWidget-hexpand: false;
+}
+
+grid#switcher_normal image,
+grid#switcher_normal {
+  min-width: 1.25cm;
+  min-height: 1.25cm;
+  border-image: none;
+  padding: 1.25mm;
+  -GtkWidget-direction: right;
+  -GtkWidget-hexpand: false;
+}
+
+window#switcher { 
+  border-style: solid;
+  border-width: 0.25mm;
+  border-color: #000000;
+  border-radius: 0; 
+  padding: 1.25mm; 
+  -GtkWidget-hexpand: true;
+}
+
+grid#switcher { 
+  border-radius: 0;
+  padding: 1.25mm;
+  -GtkWidget-hexpand: true;
+}
+
+button#tray_active,
+button#tray_passive,
+button#tray_attention {
+  background-image: none;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  border-image: none;
+  border-radius: 0px;
+  outline-style: none;
+  box-shadow: none;
+}
+
+button#tray_active image,
+button#tray_passive image,
+button#tray_attention image {
+  -GtkWidget-hexpand: false;
+  -GtkWidget-vexpand: true;
+  padding: 1mm;
+}
+
+progressbar {
+  padding-left: 0.25mm;
+  padding-right: 0.25mm;
+  -GtkWidget-vexpand: true;
+  -GtkWidget-direction: top;
+}
+
+progress, trough {
+  border-radius: 0px;
+  border-color: #9c9c9c;
+}
+
+progress {
+  border-style: outset;
+  min-width: 2mm;
+}
+
+trough {
+  background-color: #a1a1a1;
+  border-style: inset;
+  min-height: 2.5mm;
+  min-width: 2.5mm;
+}
+
+grid#frame {
+  -GtkWidget-direction: bottom;
+  min-width: 2cm;
+  border-color: #9c9c9c;
+  border-style: groove;
+  border-width: 0.5mm;
+  padding-top: 0.25mm;
+}
+
+grid#layout {
+  padding: 0.25mm;
+  -GtkWidget-direction: right;
+}
+
+label#value {
+#  -GtkWidget-hexpand: true;
+  -GtkWidget-align: 1;
+  padding-right: 2mm;
+  padding-left: 2mm;
+}
+
+image#value_icon {
+  min-width: 0.3cm;
+  min-height: 0.3cm;
+}
+
+label#mpd {
+  padding-top: 1mm;
+  padding-bottom: 1mm;
+  padding-left: 2mm;
+  padding-right: 2mm;
+}
+
+image#mpd {
+  min-width: 0.4cm;
+  min-height: 0.4cm;
+  padding-left: 0.5mm;
+  padding-right: 0.5mm;
+}
+
+button#idle_inhibit {
+  -GtkWidget-vexpand: true;
+}
+
+label {
+  font: 0.27cm Sans;
+}
+
+label#awesome {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}

@@ -1,0 +1,15 @@
+module("appmenu")
+
+Private {
+
+  Var icon = "open-menu";
+
+  layout {
+    button {
+      value = icon;
+      style = "startmenu"
+      action = Menu("app_menu_system")
+      tooltip = GT("Application menu")
+    }
+  }
+}

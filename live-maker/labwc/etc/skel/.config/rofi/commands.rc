@@ -1,0 +1,37 @@
+run_cmd() {
+    selected="$(confirm_exit)"
+    if [[ "$selected" != "$yes" ]]; then
+        exit 0
+    fi
+
+    # Define el comando de energía basado en la disponibilidad de systemctl
+    if command -v systemctl >/dev/null 2>&1; then
+        sys_cmd="systemctl"
+    else
+        sys_cmd="loginctl"
+    fi
+
+    if [[ $1 == '--shutdown' ]]; then
+        $sys_cmd poweroff
+    elif [[ $1 == '--reboot' ]]; then
+        $sys_cmd reboot
+    elif [[ $1 == '--hibernate' ]]; then
+        $sys_cmd hibernate
+    elif [[ $1 == '--suspend' ]]; then
+        mpc -q pause
+        amixer set Master mute
+        $sys_cmd suspend
+    elif [[ $1 == '--logout' ]]; then
+        if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
+            openbox --exit
+        elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
+            bspc quit
+        elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
+            i3-msg exit
+        elif [[ "$DESKTOP_SESSION" == 'labwc' ]]; then
+            pkill labwc
+        elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
+            qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+        fi
+    fi
+}

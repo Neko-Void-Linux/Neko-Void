@@ -69,6 +69,7 @@ Escritorios disponibles:
   ${GREEN}xfce${RESET}       XFCE (kernel mainline)
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
+  ${GREEN}labwc${RESET}   Labwc (kernel mainline)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
   ${GREEN}i3${RESET}       I3 (kernel mainline)
 
@@ -177,6 +178,13 @@ build_iso() {
             kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-cinnamon-$VERSION.iso"
+            ;;
+        labwc)
+            pkg_var="PACKAGES_LABWC"
+            includedir="./labwc"
+            kernel_kver="linux-mainline"
+            dm_service="lightdm seatd"
+            iso_name="nekovoid-labwc-$VERSION.iso"
             ;;
         lxde)
             pkg_var="PACKAGES_LXDE"
