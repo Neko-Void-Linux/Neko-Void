@@ -183,7 +183,7 @@ build_iso() {
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
             kernel_kver="linux-mainline"
-            dm_service="lightdm seatd"
+            dm_service="lightdm"
             iso_name="nekovoid-labwc-$VERSION.iso"
             ;;
         lxde)
@@ -268,7 +268,8 @@ interactive_menu() {
     echo -e "  ${GREEN} 8)${RESET} icejwm    ${YELLOW}→${RESET} IceWM + JWM (kernel LTS)"
     echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
     echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
-    echo -e "  ${GREEN}11)${RESET} i3      ${YELLOW}→${RESET} I3 (kernel mainline)"
+    echo -e "  ${GREEN}11)${RESET} labwc     ${YELLOW}→${RESET} labwc (kernel mainline)"
+    echo -e "  ${GREEN}11)${RESET} i3        ${YELLOW}→${RESET} I3 (kernel mainline)"
     echo ""
 
     local choice
@@ -287,6 +288,7 @@ interactive_menu() {
         9)  desktop="cinnamon" ;;
         10) desktop="lxde" ;;
         11) desktop="i3" ;;
+        12) desktop="labwc" ;;
         *)
             echo -e "${BOLD}Error:${RESET} Opción inválida '$choice'. Usa un número del 1 al 10."
             exit 1
