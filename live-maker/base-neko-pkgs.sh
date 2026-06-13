@@ -328,11 +328,13 @@ LABWC="
 	xdg-desktop-portal-wlr
 	playerctl
 	rofi
+	ristre
 	nwg-look
 	gtk-update-icon-cache
 	wl-clipboard
 	wlopm
 	mpv
+	ristretto
 	kate
 	grim
 	slurp
