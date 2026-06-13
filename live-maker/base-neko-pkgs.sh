@@ -338,6 +338,7 @@ LABWC="
 	slurp
 	gtksourceview
 	json-c
+	yad
 	gtk-layer-shell
 	gtkmm
 	Thunar
