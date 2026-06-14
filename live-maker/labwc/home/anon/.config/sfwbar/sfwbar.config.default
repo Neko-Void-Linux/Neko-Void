@@ -27,11 +27,6 @@ layout "sfwbar" {
     action = "alacritty"
   }
 
-  button {
-    style = "launcher"
-    value = "firefox"
-    action = "env MOZ_ENABLE_WAYLAND=1 firefox"
-  }
 
 
 
