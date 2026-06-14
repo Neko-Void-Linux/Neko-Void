@@ -65,7 +65,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # Compilación real de la ISO
-          bash neko-builder.sh kde -e nvidia linux-headers nvidia-libs-32bit
+          bash neko-builder.sh kde -e "nvidia linux-headers nvidia-libs-32bit"
 
       - name: Generate Checksums
         run: |
