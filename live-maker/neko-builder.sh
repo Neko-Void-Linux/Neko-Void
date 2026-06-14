@@ -140,7 +140,7 @@ build_iso() {
         kde)
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
-            kernel_kver="linux-mainline"
+            kernel_kver=""
             dm_service="sddm tlp-pd"
             iso_name="nekovoid-kde-$VERSION.iso"
             ;;
