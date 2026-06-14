@@ -319,6 +319,7 @@ LABWC="
 	wlr-randr
 	mako
 	swaylock
+	mate-polkit
 	labwc
 	alacritty
 	kanshi

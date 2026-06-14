@@ -14,7 +14,7 @@ kanshi >/dev/null 2>&1 &
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
     eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
-
+/usr/libexec/polkit-mate-authentication-agent-1 &
 # Export environment variables
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
@@ -28,4 +28,3 @@ mako >/dev/null 2>&1 &
 
 /usr/libexec/xdg-desktop-portal-wlr &
 pipewire &
-/usr/bin/rice_set &
