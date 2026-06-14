@@ -340,6 +340,7 @@ LABWC="
 	gtksourceview
 	json-c
 	yad
+	waterfox
 	gtk-layer-shell
 	gtkmm
 	pcmanfm
