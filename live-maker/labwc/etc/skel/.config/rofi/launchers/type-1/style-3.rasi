@@ -2,8 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
- * Rofi Theme File
+ * Modified: Dark Material Theme (Light Gray Accent)
  * Rofi Version: 1.7.3
  **/
 
@@ -19,11 +18,16 @@ configuration {
 	window-format:              "{w} · {c} · {t}";
 }
 
-/*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
-
+/*****----- Dark Material Colors with Light Gray Accent -----*****/
 * {
+    /* Dark Material Palette */
+    background:                 #212121;
+    background-alt:             #2C2C2C;
+    foreground:                 #EEFFFF;
+    selected:                   #BDBDBD;
+    active:                     #424242;
+    urgent:                     #757575;
+    
     border-colour:               var(selected);
     handle-colour:               var(foreground);
     background-colour:           var(background);
@@ -34,11 +38,11 @@ configuration {
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
     active-background:           var(active);
-    active-foreground:           var(background);
+    active-foreground:           var(foreground);
     selected-normal-background:  var(selected);
     selected-normal-foreground:  var(background);
     selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
+    selected-urgent-foreground:  var(foreground);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(background);
     alternate-normal-background: var(background);
@@ -46,7 +50,7 @@ configuration {
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);
     alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
+    alternate-active-foreground: var(foreground);
 }
 
 /*****----- Main Window -----*****/
