@@ -28,4 +28,7 @@ mako >/dev/null 2>&1 &
 
 /usr/libexec/xdg-desktop-portal-wlr &
 pipewire &
+gsettings set org.gnome.desktop.interface icon-theme "Tela-dracula-dark" &
+gsettings set org.gnome.desktop.interface gtk-theme "Everforest-BL-MB-Dark-Soft" &
 thunar /home/anon/Desktop &
+

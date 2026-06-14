@@ -69,7 +69,7 @@ Escritorios disponibles:
   ${GREEN}xfce${RESET}       XFCE (kernel mainline)
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
-  ${GREEN}labwc${RESET}   Labwc (kernel mainline)
+  ${GREEN}labwc${RESET}   Labwc (kernel LTS)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
   ${GREEN}i3${RESET}       I3 (kernel mainline)
 
@@ -182,7 +182,7 @@ build_iso() {
         labwc)
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
-            kernel_kver="linux-mainline"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-labwc-$VERSION.iso"
             ;;
@@ -268,7 +268,7 @@ interactive_menu() {
     echo -e "  ${GREEN} 8)${RESET} icejwm    ${YELLOW}→${RESET} IceWM + JWM (kernel LTS)"
     echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
     echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
-    echo -e "  ${GREEN}11)${RESET} labwc     ${YELLOW}→${RESET} labwc (kernel mainline)"
+    echo -e "  ${GREEN}11)${RESET} labwc     ${YELLOW}→${RESET} labwc (kernel LTS)"
     echo -e "  ${GREEN}11)${RESET} i3        ${YELLOW}→${RESET} I3 (kernel mainline)"
     echo ""
 
