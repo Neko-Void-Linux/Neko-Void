@@ -17,8 +17,8 @@ layout "sfwbar" {
   
   button {
     style = "launcher"
-    value = "thunar"
-    action = "thunar"
+    value = "pcmanfm"
+    action = "pcmanfm"
   }
 
   button {
@@ -95,7 +95,7 @@ layout "sfwbar" {
 
   button {
     style = "launcher"
-    value = "Shutdown"
+    value = "system-shutdown"
     action = "powermenu"
   }
   

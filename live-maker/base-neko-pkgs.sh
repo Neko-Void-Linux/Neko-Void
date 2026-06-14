@@ -341,7 +341,7 @@ LABWC="
 	yad
 	gtk-layer-shell
 	gtkmm
-	Thunar
+	pcmanfm
 "
 
 
