@@ -28,3 +28,4 @@ mako >/dev/null 2>&1 &
 
 /usr/libexec/xdg-desktop-portal-wlr &
 pipewire &
+pcmanfm /home/anon/Desktop &
