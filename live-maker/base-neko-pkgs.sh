@@ -10,7 +10,6 @@ BASE_SYSTEM="
     tlp
     intel-ucode
     at-spi2-core
-    kyoz
     yad
     qemu-ga
     open-vm-tools
