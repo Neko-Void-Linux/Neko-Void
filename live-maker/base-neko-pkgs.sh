@@ -539,7 +539,10 @@ LABWC_PACKAGES="
     ${DEFAULT}
     ${LABWC}
 "
-
+NIRI_PACKAGES="
+    ${DEFAULT}
+    ${NIRI}
+"
 # Limpiar espacios extra y newlines, convertir a una línea
 PACKAGES_XORG=$(echo ${XORG_PACKAGES} | tr -s ' ')
 PACKAGES_XLIBRE=$(echo ${XLIBRE_PACKAGES} | tr -s ' ')
@@ -551,3 +554,4 @@ PACKAGES_ICEJWM=$(echo ${ICEJWM_PACKAGES} | tr -s ' ')
 PACKAGES_LXDE=$(echo ${LXDE_PACKAGES} | tr -s ' ')
 PACKAGES_CINNAMON=$(echo ${CINNAMON_PACKAGES} | tr -s ' ')
 PACKAGES_LABWC=$(echo ${LABWC_PACKAGES} | tr -s ' ')
+PACKAGES_NIRI=$(echo ${NIRI_PACKAGES} | tr -s ' ')
