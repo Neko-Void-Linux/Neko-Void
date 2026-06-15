@@ -29,15 +29,6 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
-# --- Check internet connection ---
-update_text "Checking internet connection..."
-sleep 0.5
-if ! wget -q --spider --timeout=5 --tries=2 http://github.com; then
-    cleanup
-    yad --warning --center --title="Kasha Installer" --text="<b>No internet connection detected</b>\n\nPlease connect and try again."
-    exit 1
-fi
-
 # --- Download ---
 update_text "Downloading installer..."
 cd /tmp || exit 1
