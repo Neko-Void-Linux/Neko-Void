@@ -1,0 +1,23 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+overview {
+    zoom 0.8
+}
+
+include "animations.kdl"
+include "autostart.kdl"
+include "input.kdl"
+include "keybinds.kdl"
+include "visual.kdl"
+include "window-rules.kdl"
+
+
+

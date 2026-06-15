@@ -68,6 +68,7 @@ Escritorios disponibles:
   ${GREEN}lxqt${RESET}       LXQt (kernel mainline)
   ${GREEN}xfce${RESET}       XFCE (kernel mainline)
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
+  ${GREEN}niri${RESET}     Niri (kernel Stable)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
   ${GREEN}labwc${RESET}   Labwc (kernel LTS)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
@@ -185,6 +186,13 @@ build_iso() {
             kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-labwc-$VERSION.iso"
+            ;;
+        niri)
+            pkg_var="PACKAGES_NIRI"
+            includedir="./niri"
+            kernel_kver=""
+            dm_service="lightdm"
+            iso_name="nekovoid-niri-$VERSION.iso"
             ;;
         lxde)
             pkg_var="PACKAGES_LXDE"

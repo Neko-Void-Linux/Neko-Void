@@ -346,6 +346,35 @@ LABWC="
 	pcmanfm
 "
 
+NIRI="
+	lightdm
+	gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+	mate-polkit
+	pcmanfm
+	niri
+	noctalia
+	foot
+	xdg-desktop-portal
+	xdg-desktop-portal-wlr
+	rofi
+	nwg-look
+	gtk-update-icon-cache
+	wl-clipboard
+	wlopm
+	mpv
+	ristretto
+	geany
+	grim
+	slurp
+	gtksourceview
+	json-c
+	yad
+	waterfox
+	gtk-layer-shell
+	gtkmm
+"
 
 # ─────────────────────────────────────────────
 # Aplicaciones de escritorio

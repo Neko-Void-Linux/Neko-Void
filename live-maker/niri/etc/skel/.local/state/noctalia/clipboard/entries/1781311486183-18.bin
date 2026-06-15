@@ -1,0 +1,25 @@
+╰─❯ music https://music.youtube.com/watch\?v\=tpiT5HpASwc\&si\=rrqa4lj1VfzDmLie
+Extracting cookies from firefox
+Extracted 1714 cookies from firefox
+[youtube] Extracting URL: https://music.youtube.com/watch?v=tpiT5HpASwc&si=rrqa4lj1VfzDmLie
+[youtube] tpiT5HpASwc: Downloading webpage
+[youtube] tpiT5HpASwc: Downloading tv downgraded player API JSON
+[youtube] tpiT5HpASwc: Downloading web music client config
+[youtube] tpiT5HpASwc: Downloading player 445213fb-main
+[youtube] tpiT5HpASwc: Downloading web music player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] tpiT5HpASwc: Downloading m3u8 information
+[info] tpiT5HpASwc: Downloading 1 format(s): 251
+Deleting existing file /home/jmx/Music/with you forever.webp
+[info] Downloading video thumbnail 46 ...
+[info] Writing video thumbnail 46 to: /home/jmx/Music/with you forever.webp
+[download] Destination: /home/jmx/Music/with you forever.webm
+[download] 100% of    2.97MiB in 00:00:00 at 3.55MiB/s
+[ExtractAudio] Destination: /home/jmx/Music/with you forever.opus
+Deleting original file /home/jmx/Music/with you forever.webm (pass -k to keep)
+[Metadata] Adding metadata to "/home/jmx/Music/with you forever.opus"
+[ThumbnailsConvertor] Converting thumbnail "/home/jmx/Music/with you forever.webp" to png
+ERROR: Postprocessing: module mutagen was not found. Please install using `python3 -m pip install mutagen`
+
+╭─ ~ ···································································································································································· took 7s at 20:44:42
+╰─❯ 

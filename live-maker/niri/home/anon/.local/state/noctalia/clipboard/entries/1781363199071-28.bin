@@ -1,0 +1,1 @@
+ Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }

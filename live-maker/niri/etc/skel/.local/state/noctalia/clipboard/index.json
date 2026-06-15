@@ -1,0 +1,1439 @@
+{
+  "entries": [
+    {
+      "byte_size": 9,
+      "captured_at_ms": 1781402416476,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781402416476-13",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781402416476-13.bin",
+      "pinned": false,
+      "text_preview": "eatherpad"
+    },
+    {
+      "byte_size": 14,
+      "captured_at_ms": 1781400736779,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781400736779-12",
+      "mime_types": [
+        "TIMESTAMP",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "chromium/x-internal-source-rfh-token",
+        "chromium/x-source-url",
+        "text/html"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781400736779-12.bin",
+      "pinned": false,
+      "text_preview": "IBM Plex Mono "
+    },
+    {
+      "byte_size": 5,
+      "captured_at_ms": 1781400733564,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781400733564-11",
+      "mime_types": [
+        "TIMESTAMP",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "chromium/x-internal-source-rfh-token",
+        "chromium/x-source-url",
+        "text/html"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781400733564-11.bin",
+      "pinned": false,
+      "text_preview": "Inter"
+    },
+    {
+      "byte_size": 14,
+      "captured_at_ms": 1781400650593,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781400650593-10",
+      "mime_types": [
+        "TIMESTAMP",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "chromium/x-internal-source-rfh-token",
+        "chromium/x-source-url",
+        "text/html"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781400650593-10.bin",
+      "pinned": false,
+      "text_preview": "IBM Plex Mono "
+    },
+    {
+      "byte_size": 24,
+      "captured_at_ms": 1781398276082,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781398276082-9",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781398276082-9.bin",
+      "pinned": false,
+      "text_preview": "sudo pacman -S dms-shell"
+    },
+    {
+      "byte_size": 23,
+      "captured_at_ms": 1781389470521,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389470521-8",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389470521-8.bin",
+      "pinned": false,
+      "text_preview": "Intel Core2 Quad Q9650 "
+    },
+    {
+      "byte_size": 27,
+      "captured_at_ms": 1781389409017,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389409017-7",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389409017-7.bin",
+      "pinned": false,
+      "text_preview": "Intel Core2 Extreme QX9770 "
+    },
+    {
+      "byte_size": 16,
+      "captured_at_ms": 1781389282273,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389282273-6",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389282273-6.bin",
+      "pinned": false,
+      "text_preview": "Intel Xeon X5492"
+    },
+    {
+      "byte_size": 17,
+      "captured_at_ms": 1781389230105,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389230105-5",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389230105-5.bin",
+      "pinned": false,
+      "text_preview": "Intel Xeon X5492 "
+    },
+    {
+      "byte_size": 23,
+      "captured_at_ms": 1781389207265,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389207265-4",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389207265-4.bin",
+      "pinned": false,
+      "text_preview": "Intel Core 2 Quad Q9650"
+    },
+    {
+      "byte_size": 17,
+      "captured_at_ms": 1781389124729,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389124729-3",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389124729-3.bin",
+      "pinned": false,
+      "text_preview": "Intel Xeon X5492 "
+    },
+    {
+      "byte_size": 23,
+      "captured_at_ms": 1781389056091,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781389056091-2",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781389056091-2.bin",
+      "pinned": false,
+      "text_preview": "Intel Core 2 Quad Q9650"
+    },
+    {
+      "byte_size": 631889,
+      "captured_at_ms": 1781386913729,
+      "data_mime_type": "image/png",
+      "id": "1781386913729-1",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781386913729-1.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 1244092,
+      "captured_at_ms": 1781386581158,
+      "data_mime_type": "image/png",
+      "id": "1781386581158-31",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781386581158-31.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 6,
+      "captured_at_ms": 1781385861278,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781385861278-30",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781385861278-30.bin",
+      "pinned": false,
+      "text_preview": "Rhythm"
+    },
+    {
+      "byte_size": 1600281,
+      "captured_at_ms": 1781385776322,
+      "data_mime_type": "image/png",
+      "id": "1781385776322-29",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781385776322-29.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 1209162,
+      "captured_at_ms": 1781385315988,
+      "data_mime_type": "image/png",
+      "id": "1781385315988-28",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781385315988-28.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781385276264,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781385276264-27",
+      "mime_types": [
+        "TIMESTAMP",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "text/html",
+        "chromium/x-internal-source-rfh-token",
+        "chromium/x-source-url"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781385276264-27.bin",
+      "pinned": false,
+      "text_preview": "akai xr-20"
+    },
+    {
+      "byte_size": 4,
+      "captured_at_ms": 1781384572671,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781384572671-26",
+      "mime_types": [
+        "TIMESTAMP",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "text/html",
+        "chromium/x-internal-source-rfh-token",
+        "chromium/x-source-url"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781384572671-26.bin",
+      "pinned": false,
+      "text_preview": "$ha "
+    },
+    {
+      "byte_size": 24500,
+      "captured_at_ms": 1781380627261,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781380627261-25",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781380627261-25.bin",
+      "pinned": false,
+      "text_preview": "t knot//net.minecraft.client.MouseHandler.md2bd3a1$controlify$lambda$wrapMouseEvents$1$2(MouseHandler.java:2061)  at knot//me.decce.ixeris.core.glfw.callback_dispatcher.MouseButtonCallbackDispatcher.l"
+    },
+    {
+      "byte_size": 39,
+      "captured_at_ms": 1781378492146,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781378492146-24",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781378492146-24.bin",
+      "pinned": false,
+      "text_preview": "https://limewire.com/d/O49KS#euSw2xlquc"
+    },
+    {
+      "byte_size": 1235,
+      "captured_at_ms": 1781375764363,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781375764363-23",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781375764363-23.bin",
+      "pinned": false,
+      "text_preview": "xaero.map.MapLimiter.determineDriverType(MapLimiter.java:38)  at knot//xaero.map.MapLimiter.updateAvailableVRAM(MapLimiter.java:48)  at knot//xaero.map.MapProcessor.onRenderProcess(MapProcessor.java:5"
+    },
+    {
+      "byte_size": 43351,
+      "captured_at_ms": 1781375337566,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781375337566-22",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781375337566-22.bin",
+      "pinned": false,
+      "text_preview": "---- Minecraft Crash Report ---- // You should try our sister game, Minceraft!  Time: 2026-06-13 14:26:12 Description: Initializing game  java.lang.RuntimeException: Could not execute entrypoint stage"
+    },
+    {
+      "byte_size": 11,
+      "captured_at_ms": 1781373083704,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781373083704-21",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781373083704-21.bin",
+      "pinned": false,
+      "text_preview": "FinnDog_123"
+    },
+    {
+      "byte_size": 1234947,
+      "captured_at_ms": 1781372327077,
+      "data_mime_type": "image/png",
+      "id": "1781372327077-20",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781372327077-20.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 8,
+      "captured_at_ms": 1781367504136,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367504136-19",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367504136-19.bin",
+      "pinned": false,
+      "text_preview": "Duckling"
+    },
+    {
+      "byte_size": 20,
+      "captured_at_ms": 1781367496745,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367496745-18",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367496745-18.bin",
+      "pinned": false,
+      "text_preview": "Creatures and Beasts"
+    },
+    {
+      "byte_size": 17,
+      "captured_at_ms": 1781367481322,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367481322-17",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367481322-17.bin",
+      "pinned": false,
+      "text_preview": "Ambient Additions"
+    },
+    {
+      "byte_size": 18,
+      "captured_at_ms": 1781367470753,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367470753-16",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367470753-16.bin",
+      "pinned": false,
+      "text_preview": "Creatures Extended"
+    },
+    {
+      "byte_size": 23,
+      "captured_at_ms": 1781367447497,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367447497-15",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367447497-15.bin",
+      "pinned": false,
+      "text_preview": "Critters and Companions"
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781367377524,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367377524-14",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367377524-14.bin",
+      "pinned": false,
+      "text_preview": "Naturalist"
+    },
+    {
+      "byte_size": 20,
+      "captured_at_ms": 1781367231737,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367231737-13",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367231737-13.bin",
+      "pinned": false,
+      "text_preview": "Valhelsia Structures"
+    },
+    {
+      "byte_size": 34,
+      "captured_at_ms": 1781367186761,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367186761-12",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367186761-12.bin",
+      "pinned": false,
+      "text_preview": "ChoiceTheorem's Overhauled Village"
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781367169498,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367169498-11",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367169498-11.bin",
+      "pinned": false,
+      "text_preview": "Better Dungeons"
+    },
+    {
+      "byte_size": 4,
+      "captured_at_ms": 1781367150977,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367150977-10",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367150977-10.bin",
+      "pinned": false,
+      "text_preview": "YUNG"
+    },
+    {
+      "byte_size": 21,
+      "captured_at_ms": 1781367112501,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781367112501-8",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781367112501-8.bin",
+      "pinned": false,
+      "text_preview": "Repurposed Structures"
+    },
+    {
+      "byte_size": 33,
+      "captured_at_ms": 1781366390485,
+      "data_mime_type": "UTF8_STRING",
+      "id": "1781366390484-5",
+      "mime_types": [
+        "UTF8_STRING",
+        "STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781366390484-5.bin",
+      "pinned": false,
+      "text_preview": "https://spark.lucko.me/6BZm9kAFcZ"
+    },
+    {
+      "byte_size": 25,
+      "captured_at_ms": 1781365824189,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781365824189-4",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781365824189-4.bin",
+      "pinned": false,
+      "text_preview": " /spark profiler --start "
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781365370749,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781365370749-3",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781365370749-3.bin",
+      "pinned": false,
+      "text_preview": "Memory Leak Fix"
+    },
+    {
+      "byte_size": 9,
+      "captured_at_ms": 1781365346420,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781365346420-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781365346420-2.bin",
+      "pinned": false,
+      "text_preview": "ModernFix"
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781365309781,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781365309781-1",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781365309781-1.bin",
+      "pinned": false,
+      "text_preview": "Let Me Despawn "
+    },
+    {
+      "byte_size": 157,
+      "captured_at_ms": 1781364833796,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781364833796-36",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781364833796-36.bin",
+      "pinned": false,
+      "text_preview": "ayer-rule {   match namespace=\"^noctalia-(bar-[^\\\"]+|notification|dock|panel|attached-panel|osd)$\"   background-effect {     xray false     // blur false   }"
+    },
+    {
+      "byte_size": 767,
+      "captured_at_ms": 1781363502807,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363502807-35",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363502807-35.bin",
+      "pinned": false,
+      "text_preview": "/* Apps: blur them all without xray so it looks more realistic. */ window-rule {   background-effect {     blur true     xray false   } }  /*   Noctalia   Disable xray on all our surfaces so it looks "
+    },
+    {
+      "byte_size": 82,
+      "captured_at_ms": 1781363436986,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363436986-34",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363436986-34.bin",
+      "pinned": false,
+      "text_preview": "layer-rule {   match namespace=\"^noctalia-backdrop\"   place-within-backdrop true }"
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781363420851,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363420851-33",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363420851-33.bin",
+      "pinned": false,
+      "text_preview": "layer-rule"
+    },
+    {
+      "byte_size": 82,
+      "captured_at_ms": 1781363327046,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363327046-32",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363327046-32.bin",
+      "pinned": false,
+      "text_preview": "layer-rule {   match namespace=\"^noctalia-backdrop\"   place-within-backdrop true }"
+    },
+    {
+      "byte_size": 322,
+      "captured_at_ms": 1781363283975,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363283975-31",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363283975-31.bin",
+      "pinned": false,
+      "text_preview": "XF86AudioRaiseVolume { spawn-sh \"noctalia msg volume-up\"; }     XF86AudioLowerVolume { spawn-sh \"noctalia msg volume-down\"; }     XF86AudioMute { spawn-sh \"noctalia msg volume-mute\"; }     XF86MonBrig"
+    },
+    {
+      "byte_size": 4,
+      "captured_at_ms": 1781363260721,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363260721-30",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363260721-30.bin",
+      "pinned": false,
+      "text_preview": "XF86"
+    },
+    {
+      "byte_size": 56,
+      "captured_at_ms": 1781363224519,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363224519-29",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363224519-29.bin",
+      "pinned": false,
+      "text_preview": "Mod+Comma { spawn-sh \"noctalia msg settings-toggle\"; }  "
+    },
+    {
+      "byte_size": 63,
+      "captured_at_ms": 1781363199071,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363199071-28",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363199071-28.bin",
+      "pinned": false,
+      "text_preview": " Mod+S { spawn-sh \"noctalia msg panel-toggle control-center\"; }"
+    },
+    {
+      "byte_size": 5,
+      "captured_at_ms": 1781363060824,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781363060824-26",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781363060824-26.bin",
+      "pinned": false,
+      "text_preview": "Mod+S"
+    },
+    {
+      "byte_size": 1234,
+      "captured_at_ms": 1781362416241,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781362416241-25",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781362416241-25.bin",
+      "pinned": false,
+      "text_preview": "#!/usr/bin/env bash  # Pulls the live package list from the official Arch Linux HedgeDoc note. LIST_URL=\"https://md.archlinux.org/s/SxbqukK6IA\"  echo \"Fetching infected package list...\"  raw=$(curl -f"
+    },
+    {
+      "byte_size": 192,
+      "captured_at_ms": 1781362387453,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781362387453-24",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781362387453-24.bin",
+      "pinned": false,
+      "text_preview": "curl -sSf https://raw.githubusercontent.com/A1RM4X/AUR-Malware-2026.06-Check/main/check-aur-vuln.sh -o /tmp/check-aur-vuln.sh && sha256sum /tmp/check-aur-vuln.sh && bash /tmp/check-aur-vuln.sh"
+    },
+    {
+      "byte_size": 99,
+      "captured_at_ms": 1781362382946,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781362382946-23",
+      "mime_types": [
+        "TIMESTAMP",
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781362382946-23.bin",
+      "pinned": false,
+      "text_preview": "curl -sSf https://raw.githubusercontent.com/A1RM4X/AUR-Malware-2026.06-Check/main/install.sh | bash"
+    },
+    {
+      "byte_size": 1214634,
+      "captured_at_ms": 1781362288585,
+      "data_mime_type": "image/png",
+      "id": "1781362288585-22",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781362288585-22.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 77929,
+      "captured_at_ms": 1781315232340,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781315232340-21",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781315232340-21.bin",
+      "pinned": false,
+      "text_preview": "wilderwild:block.hanging_tendril.break [21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.clicking [21:46:21] [Render thread/INFO]: Unknown sound in "
+    },
+    {
+      "byte_size": 22,
+      "captured_at_ms": 1781314659749,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781314659749-20",
+      "mime_types": [
+        "text/html",
+        "text/markdown",
+        "application/vnd.oasis.opendocument.text",
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781314659749-20.bin",
+      "pinned": false,
+      "text_preview": "Animatica Refabricated"
+    },
+    {
+      "byte_size": 94,
+      "captured_at_ms": 1781311914473,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311914473-19",
+      "mime_types": [
+        "chromium/x-source-url",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "chromium/x-internal-source-rfh-token",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311914473-19.bin",
+      "pinned": false,
+      "text_preview": "https://music.youtube.com/playlist?list=PLm7hGfQJCW25RdY8Ykbzj9jwgrph-wM0l&si=L30ov2h9BBucQm9T"
+    },
+    {
+      "byte_size": 1762,
+      "captured_at_ms": 1781311486183,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311486183-18",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311486183-18.bin",
+      "pinned": false,
+      "text_preview": "╰─❯ music https://music.youtube.com/watch\\?v\\=tpiT5HpASwc\\&si\\=rrqa4lj1VfzDmLie Extracting cookies from firefox Extracted 1714 cookies from firefox [youtube] Extracting URL: https://music.youtub"
+    },
+    {
+      "byte_size": 30,
+      "captured_at_ms": 1781311449903,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311449903-17",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311449903-17.bin",
+      "pinned": false,
+      "text_preview": "python3 -m pip install mutagen"
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781311436591,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311436591-16",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311436591-16.bin",
+      "pinned": false,
+      "text_preview": "python3 -m pip "
+    },
+    {
+      "byte_size": 30,
+      "captured_at_ms": 1781311369495,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311369495-15",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311369495-15.bin",
+      "pinned": false,
+      "text_preview": "python3 -m pip install mutagen"
+    },
+    {
+      "byte_size": 192,
+      "captured_at_ms": 1781311084352,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311084352-14",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311084352-14.bin",
+      "pinned": false,
+      "text_preview": "\"yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-   metadata --embed-thumbnail --cookies-from-browser firefox --limit-rate 5M -o   '~/Music/%(title)s.%(ext)s'\""
+    },
+    {
+      "byte_size": 27,
+      "captured_at_ms": 1781311038424,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781311038424-13",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781311038424-13.bin",
+      "pinned": false,
+      "text_preview": "'~/Music/%(title)s.%(ext)s'"
+    },
+    {
+      "byte_size": 30,
+      "captured_at_ms": 1781310984952,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781310984952-12",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781310984952-12.bin",
+      "pinned": false,
+      "text_preview": "python3 -m pip install mutagen"
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781310944022,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781310944022-11",
+      "mime_types": [
+        "text/plain",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781310944022-11.bin",
+      "pinned": false,
+      "text_preview": " ./Music/ "
+    },
+    {
+      "byte_size": 2,
+      "captured_at_ms": 1781310590413,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781310590413-10",
+      "mime_types": [
+        "text/plain",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781310590413-10.bin",
+      "pinned": false,
+      "text_preview": "\"y"
+    },
+    {
+      "byte_size": 154,
+      "captured_at_ms": 1781310518015,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781310518015-9",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781310518015-9.bin",
+      "pinned": false,
+      "text_preview": "yt-dlp -f bestaudio --extract-audio --audio-format best --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --sub-langs -o"
+    },
+    {
+      "byte_size": 225,
+      "captured_at_ms": 1781310495032,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781310495032-8",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781310495032-8.bin",
+      "pinned": false,
+      "text_preview": "yt-dlp -f bestaudio --extract-audio --audio-format best --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --sub-langs -o https://music.youtube.com/watch \\?v\\=tpiT5HpA"
+    },
+    {
+      "byte_size": 232,
+      "captured_at_ms": 1781309322543,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781309322543-7",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781309322543-7.bin",
+      "pinned": false,
+      "text_preview": "yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --limit-rate 5M --write-subs --write-auto-     subs --sub-lan"
+    },
+    {
+      "byte_size": 188,
+      "captured_at_ms": 1781309228921,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781309228921-6",
+      "mime_types": [
+        "text/plain",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781309228921-6.bin",
+      "pinned": false,
+      "text_preview": "=\"yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --limit-rate 5M -o '~/Music/%(title)s.%(ext)s'\""
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781309205456,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781309205456-5",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781309205456-5.bin",
+      "pinned": false,
+      "text_preview": "--embed-metadat"
+    },
+    {
+      "byte_size": 65,
+      "captured_at_ms": 1781309097580,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781309097580-4",
+      "mime_types": [
+        "chromium/x-source-url",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "chromium/x-internal-source-rfh-token",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781309097580-4.bin",
+      "pinned": false,
+      "text_preview": "https://music.youtube.com/watch?v=tpiT5HpASwc&si=rrqa4lj1VfzDmLie"
+    },
+    {
+      "byte_size": 65,
+      "captured_at_ms": 1781308824965,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781308824965-3",
+      "mime_types": [
+        "chromium/x-source-url",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "chromium/x-internal-source-rfh-token",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781308824965-3.bin",
+      "pinned": false,
+      "text_preview": "https://music.youtube.com/watch?v=tpiT5HpASwc&si=anNL8Ad6W-RnNo3J"
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781308786080,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781308786080-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781308786080-2.bin",
+      "pinned": false,
+      "text_preview": "sub-langs "
+    },
+    {
+      "byte_size": 188,
+      "captured_at_ms": 1781308708809,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781308708809-1",
+      "mime_types": [
+        "text/plain",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781308708809-1.bin",
+      "pinned": false,
+      "text_preview": "\"yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --limit-rate 5M -o '~/Music/%(title)s.%(ext)s'\" "
+    },
+    {
+      "byte_size": 784,
+      "captured_at_ms": 1781306902523,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781306902523-1",
+      "mime_types": [
+        "text/plain",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781306902523-1.bin",
+      "pinned": false,
+      "text_preview": "alias zshconfig=\"nvim ~/.zshrc\" alias update=\"paru -Syu && flatpak update\" alias cleaner=\"paru -c --noconfirm;  sudo paccache -rk1 --noconfirm; paru -Scc --noconfirm; paccache -r; rm -rf ~/.cache/thum"
+    },
+    {
+      "byte_size": 1113951,
+      "captured_at_ms": 1781286884002,
+      "data_mime_type": "image/png",
+      "id": "1781286884002-3",
+      "mime_types": [
+        "image/png"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781286884002-3.bin",
+      "pinned": false,
+      "text_preview": ""
+    },
+    {
+      "byte_size": 94,
+      "captured_at_ms": 1781286214220,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781286214220-2",
+      "mime_types": [
+        "chromium/x-source-url",
+        "TEXT",
+        "STRING",
+        "UTF8_STRING",
+        "text/plain",
+        "text/plain;charset=utf-8",
+        "chromium/x-internal-source-rfh-token",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/jmx/.local/state/noctalia/clipboard/entries/1781286214220-2.bin",
+      "pinned": false,
+      "text_preview": "https://music.youtube.com/playlist?list=PL1PMYwJyaDg2BfhUQnI48iD9eQsvFr3nK&si=QXPCbolyKEzHWTn_"
+    }
+  ]
+}

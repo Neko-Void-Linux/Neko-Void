@@ -1,0 +1,1 @@
+yt-dlp -f bestaudio --extract-audio --audio-format best --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --sub-langs -o

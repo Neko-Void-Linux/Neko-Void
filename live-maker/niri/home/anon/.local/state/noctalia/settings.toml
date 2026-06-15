@@ -1,0 +1,249 @@
+[audio]
+enable_overdrive = true
+enable_sounds = true
+
+[bar.default]
+border_width = 1.0
+capsule_border = "on_secondary"
+capsule_fill = "primary"
+capsule_opacity = 0.14999999999999999
+capsule_padding = 8.0
+capsule_radius = 0
+center = [ "audio_visualizer" ]
+contact_shadow = true
+end = [ "media", "tray", "notifications", "clipboard", "recorder", "volume", "clock", "session" ]
+font_weight = 700
+margin_edge = 0
+margin_ends = 1
+padding = 16
+position = "left"
+radius = 8
+scale = 1.1000000000000001
+start = [ "control-center", "workspaces" ]
+thickness = 42
+widget_spacing = 8
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1733.0
+    cy = 986.5
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        background_color = "outline"
+        background_opacity = 1.0
+        background_padding = 0.0
+        background_radius = 19.0
+        clock_style = "digital"
+        color = "secondary"
+        font_family = "JetBrainsMono Nerd Font"
+        shadow = true
+
+[dock]
+auto_hide = true
+background_opacity = 0.99999997764825821
+cross_axis_padding = 0
+enabled = true
+icon_size = 42
+item_spacing = 0
+launcher_position = "start"
+magnification_scale = 1.3
+main_axis_padding = 0
+margin_edge = 0
+radius = 0
+reserve_space = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 660
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-0000000000000001", "lockscreen-widget-0000000000000002" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 912.0
+    cy = 967.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 112.0
+    box_width = 288.0
+    cx = 912.0
+    cy = 192.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        color = "secondary"
+        font_family = "JetBrainsMono Nerd Font"
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 128.0
+    box_width = 336.0
+    cx = 936.0
+    cy = 832.0
+    output = "HDMI-A-1"
+    rotation = -0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        color = "secondary"
+        font_family = "JetBrainsMono Nerd Font"
+        shadow = true
+
+[notification]
+scale = 0.80000000447034836
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "noctalia/translator" ]
+
+    [[plugins.source]]
+    auto_update = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    auto_update = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+app_icon_color = "primary"
+corner_radius_scale = 0.0
+font_family = "Adwaita Mono"
+niri_overview_type_to_launch_enabled = true
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+settings_show_advanced = true
+
+    [shell.animation]
+    speed = 0.69999999999999996
+
+    [shell.panel]
+    control_center_placement = "centered"
+    launcher_session_search = true
+    session_placement = "centered"
+    wallpaper_placement = "centered"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 16
+
+    [shell.shadow]
+    alpha = 0.80000000000000004
+    direction = "down_left"
+
+[theme]
+community_palette = "Matecito"
+custom_palette = ""
+mode = "auto"
+source = "community"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "kcolorscheme", "qt" ]
+    community_ids = [ "neovim", "papirus-icons" ]
+
+[wallpaper]
+directory = ""
+
+    [wallpaper.default]
+    path = ""
+
+    [wallpaper.last]
+    path = ""
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = ""
+
+[widget.audio_visualizer]
+capsule = true
+show_when_idle = true
+width = 180.0
+
+[widget.cat]
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+capsule = true
+
+[widget.control-center]
+capsule = true
+capsule_padding = 4.0
+glyph = "navigation"
+scale = 1.2
+
+[widget.launcher]
+glyph = "grid-dots"
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.session]
+capsule = true
+
+[widget.volume]
+capsule = true
+
+[widget.workspaces]
+capsule = true

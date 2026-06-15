@@ -1,0 +1,16 @@
+xaero.map.MapLimiter.determineDriverType(MapLimiter.java:38)
+	at knot//xaero.map.MapLimiter.updateAvailableVRAM(MapLimiter.java:48)
+	at knot//xaero.map.MapProcessor.onRenderProcess(MapProcessor.java:555)
+	... 10 more
+FATAL ERROR in native method: Thread[#45,Render thread,5,main]: No context is current or a function that is not available in the current context was called. The JVM will abort execution.
+	at org.lwjgl.opengl.GL11C.glColorMask(Native Method)
+	at org.lwjgl.opengl.GL11.glColorMask(GL11.java:1119)
+	at fudge.notenoughcrashes.utils.GlUtil.resetState(GlUtil.java:66)
+	at fudge.notenoughcrashes.mixinhandlers.InGameCatcher.resetStates(InGameCatcher.java:40)
+	at fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:31)
+	at net.minecraft.client.Minecraft.modify$hhm000$notenoughcrashes$atTheEndOfSecondCatchBeforePrintingCrashReport(Minecraft.java:38712)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:1015)
+	at me.decce.ixeris.RenderThreadStarter/0x00000000ab8e0000.run(RenderThreadStarter.java:37)
+	at java.lang.Thread.runWith(java.base@25.0.1/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.1/Thread.java:1474)
+El proceso terminó de forma inesperada con el código: 6.
