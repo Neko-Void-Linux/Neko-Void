@@ -2,9 +2,10 @@
 spawn-at-startup "noctalia"
 
 // PipeWire sound server & session management
+spawn-at-startup "wireplumber"
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
-spawn-at-startup "wireplumber"
+
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "/usr/libexec/xdg-desktop-portal"
 spawn-at-startup "/usr/libexec/xdg-desktop-portal-wlr"
