@@ -1,23 +1,9 @@
 {
   "Applications": [
-    "/usr/share/applications/foot.desktop",
-    "/usr/share/applications/nwg-look.desktop",
-    "/usr/share/applications/qt6ct.desktop",
-    "/usr/share/applications/virt-manager.desktop",
-    "/home/jmx/.local/share/applications/pineconemc-linux-x86_64.desktop",
-    "/home/jmx/.local/share/applications/pear-desktop.desktop",
-    "/usr/share/applications/discord.desktop",
-    "/var/lib/flatpak/exports/share/applications/net.sonobus.SonoBus.desktop",
-    "/usr/share/applications/net.lutris.Lutris.desktop",
-    "/usr/share/applications/steam.desktop",
-    "/usr/share/applications/com.shellyorg.shelly.desktop",
-    "/usr/share/applications/heroic.desktop",
-    "/usr/share/applications/org.kde.krita.desktop",
-    "/usr/share/applications/io.github.ilya_zlobintsev.LACT.desktop",
+    "/usr/share/applications/nemo.desktop",
     "/usr/share/applications/firefox.desktop",
-    "/usr/share/applications/kitty.desktop"
-  ],
-  "Wallpaper": [
-    "/home/jmx/Pictures/Wallpapers/139396752_p0.jpg"
+    "/usr/share/applications/Alacritty.desktop",
+    "/usr/share/applications/gparted.desktop",
+    "/usr/share/applications/xfce4-about.desktop"
   ]
 }

@@ -1,23 +1,9 @@
 {
   "Applications": {
-    "/home/jmx/.local/share/applications/pear-desktop.desktop": 5,
-    "/home/jmx/.local/share/applications/pineconemc-linux-x86_64.desktop": 12,
-    "/usr/share/applications/com.shellyorg.shelly.desktop": 2,
-    "/usr/share/applications/discord.desktop": 11,
-    "/usr/share/applications/firefox.desktop": 1,
-    "/usr/share/applications/foot.desktop": 18,
-    "/usr/share/applications/heroic.desktop": 2,
-    "/usr/share/applications/io.github.ilya_zlobintsev.LACT.desktop": 3,
-    "/usr/share/applications/kitty.desktop": 1,
-    "/usr/share/applications/net.lutris.Lutris.desktop": 1,
-    "/usr/share/applications/nwg-look.desktop": 2,
-    "/usr/share/applications/org.kde.krita.desktop": 1,
-    "/usr/share/applications/qt6ct.desktop": 1,
-    "/usr/share/applications/steam.desktop": 2,
-    "/usr/share/applications/virt-manager.desktop": 3,
-    "/var/lib/flatpak/exports/share/applications/net.sonobus.SonoBus.desktop": 2
-  },
-  "Wallpaper": {
-    "/home/jmx/Pictures/Wallpapers/139396752_p0.jpg": 1
+    "/usr/share/applications/Alacritty.desktop": 6,
+    "/usr/share/applications/firefox.desktop": 3,
+    "/usr/share/applications/gparted.desktop": 1,
+    "/usr/share/applications/nemo.desktop": 28,
+    "/usr/share/applications/xfce4-about.desktop": 1
   }
 }

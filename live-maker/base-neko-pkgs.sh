@@ -346,18 +346,21 @@ LABWC="
 "
 
 NIRI="
-	lightdm
 	gvfs-afc
     gvfs-mtp
     gvfs-smb
 	mate-polkit
 	pcmanfm
+	lightdm
 	niri
 	noctalia
 	foot
 	xdg-desktop-portal
 	xdg-desktop-portal-wlr
 	rofi
+	wl-clipboard
+	mako
+	wlsunset
 	nwg-look
 	gtk-update-icon-cache
 	wl-clipboard
@@ -380,7 +383,6 @@ NIRI="
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
     ristretto
-    arandr
     xarchiver
     gparted
     gnome-software

@@ -21,3 +21,5 @@ include "window-rules.kdl"
 
 
 
+
+include "noctalia.kdl"

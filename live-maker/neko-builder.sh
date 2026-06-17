@@ -190,7 +190,7 @@ build_iso() {
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver=""
+            kernel_kver="linux-mainline"
             dm_service="lightdm"
             iso_name="nekovoid-niri-$VERSION.iso"
             ;;

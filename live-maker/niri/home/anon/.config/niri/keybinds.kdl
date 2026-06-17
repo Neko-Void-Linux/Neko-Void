@@ -252,7 +252,7 @@ binds {
     Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
     Mod+E { spawn "pcmanfm"; }
-    Mod+B { spawn "firefox"; }
+    Mod+B { spawn "waterfox"; }
 
 
     // Audio & Brightness

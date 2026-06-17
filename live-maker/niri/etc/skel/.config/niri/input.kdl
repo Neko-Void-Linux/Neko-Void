@@ -8,7 +8,6 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "es"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -65,7 +64,7 @@ input {
 // Cursor Style
 
 cursor {
-    xcursor-theme "Graphite-light-cursors"
-    xcursor-size 24
+    xcursor-theme "Bibata-Gruvbox"
+    xcursor-size 16
         hide-when-typing
     }

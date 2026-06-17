@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Ruta del archivo de marca
+MARKER_FILE="$HOME/.rices.set"
+
+runn(){
+gsettings set org.gnome.desktop.interface icon-theme "Tela-dracula-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Everforest-BL-MB-Dark-Soft"
+# Aplicar configuración de apariencia personalizada para MATE
+xdg-user-dirs-update && xdg-user-dirs-update --force
+/usr/lib/Neko-Wizard/neko-store
+# Crear el archivo de marca para evitar reejecución
+touch "$MARKER_FILE"
+
+echo "✓ Apariencia configurada: + Bibata-Gruvbox "
+}
+
+# Verificar si ya se ejecutó la configuración
+if [ -f "$MARKER_FILE" ]; then
+    echo "✓ La configuración de apariencia ya fue aplicada (archivo $MARKER_FILE encontrado)."
+else
+runn
+fi
+

@@ -1,2 +1,0 @@
-Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
-
