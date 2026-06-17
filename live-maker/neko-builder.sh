@@ -38,7 +38,7 @@ cd "$SCRIPT_DIR"
 # Servicios base (el display manager se agrega
 # automáticamente según el escritorio)
 # ─────────────────────────────────────────────
-SERVICES_BASE="dbus NetworkManager polkitd rtkit sshd chronyd zramen tlp"
+SERVICES_BASE="dbus NetworkManager polkitd rtkit sshd chronyd zramen tlp tlp-pd"
 
 # ─────────────────────────────────────────────
 # Colores para modo interactivo
@@ -191,7 +191,7 @@ build_iso() {
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
             kernel_kver="linux-mainline"
-            dm_service="lightdm"
+            dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             ;;
         lxde)

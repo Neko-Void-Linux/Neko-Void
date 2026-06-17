@@ -8,6 +8,8 @@ BASE_SYSTEM="
     base-system
     linux-firmware
     tlp
+    tlp-pd
+    tlp-rdw
     intel-ucode
     at-spi2-core
     yad
@@ -277,8 +279,6 @@ KDE="
     kde-plasma
     konsole
     kate
-    tlp-pd
-    tlp-rdw
     firefox
     dolphin
     discover
@@ -351,7 +351,7 @@ NIRI="
     gvfs-smb
 	mate-polkit
 	pcmanfm
-	lightdm
+	emptty
 	niri
 	noctalia
 	foot
