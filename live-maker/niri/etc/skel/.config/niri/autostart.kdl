@@ -6,6 +6,5 @@ spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
-spawn-at-startup "/usr/libexec/xdg-desktop-portal"
-spawn-at-startup "/usr/libexec/xdg-desktop-portal-wlr"
+spawn-at-startup "sleep 3 && /usr/libexec/xdg-desktop-portal -r"
 spawn-at-startup "/usr/bin/rice_set"

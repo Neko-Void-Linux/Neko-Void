@@ -356,6 +356,7 @@ NIRI="
 	noctalia
 	foot
 	xdg-desktop-portal
+	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr
 	rofi
 	wl-clipboard
