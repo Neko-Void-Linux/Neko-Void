@@ -2,7 +2,6 @@
 spawn-at-startup "noctalia"
 
 // PipeWire sound server & session management
-spawn-at-startup "wireplumber"
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 
