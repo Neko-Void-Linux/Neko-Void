@@ -1,4 +1,5 @@
 //spawn-at-startup "eval $(dbus-launch --sh-syntax --exit-with-session)"
+spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "noctalia"
 
 // PipeWire sound server & session management
@@ -7,4 +8,6 @@ spawn-at-startup "pipewire-pulse"
 
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "sleep 3 && /usr/libexec/xdg-desktop-portal -r"
+spawn-at-startup "sleep 2 && /usr/local/libexec/xdg-desktop-portal-gtk"
+spawn-at-startup "sleep 2 && /usr/local/libexec/xdg-desktop-portal-wlr"
 spawn-at-startup "/usr/bin/rice_set"
