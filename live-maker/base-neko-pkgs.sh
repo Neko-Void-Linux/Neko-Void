@@ -317,6 +317,7 @@ LABWC="
     gvfs-smb
 	wlr-randr
 	mako
+	xwayland-satellite
 	swaylock
 	mate-polkit
 	labwc
@@ -351,10 +352,11 @@ NIRI="
     gvfs-smb
 	mate-polkit
 	pcmanfm
+    xwayland-satellite
 	emptty
 	niri
 	noctalia
-	foot
+	kitty
 	xdg-desktop-portal
 	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr

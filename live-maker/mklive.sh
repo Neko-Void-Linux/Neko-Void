@@ -149,6 +149,8 @@ post_install_packages() {
     done
 }
 
+
+
 install_packages() {
     XBPS_ARCH=$TARGET_ARCH "${XBPS_INSTALL_CMD}" -r "$ROOTFS" \
         ${XBPS_REPOSITORY} -c "$XBPS_CACHEDIR" -yn "${PACKAGE_LIST[@]}" "${INITRAMFS_PKGS[@]}"
@@ -170,7 +172,7 @@ install_packages() {
 
     if XBPS_ARCH=$BASE_ARCH "$XBPS_QUERY_CMD" -r "$ROOTFS" dkms >/dev/null 2>&1; then
         # dkms modules alphabetically before dkms can't configure
-        # if dkms hasn't configured beforehand to create /var/lib/dkms
+        # # # if dkms hasn't configured beforehand to create /var/lib/dkms
         chroot "$ROOTFS" env -i xbps-reconfigure dkms
     fi
 
@@ -181,7 +183,6 @@ install_packages() {
         # so if it's installed we should ensure it's /bin/sh
         chroot "$ROOTFS" env -i xbps-alternatives -s dash
     fi
-
     post_install_packages
 }
 

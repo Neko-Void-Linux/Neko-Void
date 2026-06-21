@@ -12,7 +12,8 @@
 #
 VERSION=$(date +"%Y%m%d")
 set -euo pipefail
-
+KERNEL_DEFAULT="linux6.18"
+KERNEL_LASTEST="linux7.0"
 # ─────────────────────────────────────────────
 # Configuración de salida
 # ─────────────────────────────────────────────
@@ -127,49 +128,49 @@ build_iso() {
         rolling)
             pkg_var="PACKAGES_XORG"
             includedir="./includedir"
-            kernel_kver="linux-mainline"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xorg-$VERSION.iso"
             ;;
         rollibre)
             pkg_var="PACKAGES_XLIBRE"
             includedir="./includedir"
-            kernel_kver="linux-mainline"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xlibre-$VERSION.iso"
             ;;
         kde)
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
-            kernel_kver=""
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="sddm tlp-pd"
             iso_name="nekovoid-kde-$VERSION.iso"
             ;;
         lxqt)
             pkg_var="PACKAGES_LXQT"
             includedir="./lxqt"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-lxqt-$VERSION.iso"
             ;;
         i3)
             pkg_var="PACKAGES_I3"
             includedir="./i3"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-i3-$VERSION.iso"
             ;;
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-xfce-$VERSION.iso"
             ;;
         icejwm)
             pkg_var="PACKAGES_ICEJWM"
             includedir="./icejwm"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-lts-icejwm-$VERSION.iso"
             ;;
@@ -183,21 +184,21 @@ build_iso() {
         labwc)
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-labwc-$VERSION.iso"
             ;;
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="linux-mainline"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             ;;
         lxde)
             pkg_var="PACKAGES_LXDE"
             includedir="./lxde"
-            kernel_kver="linux-lts"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-lxde-$VERSION.iso"
             ;;

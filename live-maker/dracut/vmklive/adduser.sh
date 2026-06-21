@@ -24,7 +24,8 @@ if ! grep -q ${USERSHELL} ${NEWROOT}/etc/shells ; then
 fi
 
 # Create new user and remove password. We'll use autologin by default.
-chroot ${NEWROOT} useradd -m -c $USERNAME -G audio,video,wheel -s $USERSHELL $USERNAME
+chroot ${NEWROOT} /bin/sh -c 'getent group nopasswdlogin || groupadd nopasswdlogin'
+chroot ${NEWROOT} useradd -m -c $USERNAME -G audio,video,wheel,nopasswdlogin -s $USERSHELL $USERNAME
 chroot ${NEWROOT} passwd -d $USERNAME >/dev/null 2>&1
 
 # Setup default root/user password (voidlinux).
