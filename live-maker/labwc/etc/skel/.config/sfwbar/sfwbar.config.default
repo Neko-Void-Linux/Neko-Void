@@ -14,11 +14,10 @@ include("winops.widget")
 layout "sfwbar" {
   include("startmenu.widget")
 
-  
   button {
     style = "launcher"
-    value = "pcmanfm"
-    action = "pcmanfm"
+    value = "thunar"
+    action = "thunar"
   }
 
   button {
@@ -27,16 +26,17 @@ layout "sfwbar" {
     action = "alacritty"
   }
 
-
-
+  button {
+    style = "launcher"
+    value = "waterfox"
+    action = "env MOZ_ENABLE_WAYLAND=1 waterfox"
+  }
 
   button {
     style = "launcher"
     value = "pavucontrol"
     action = "pavucontrol"
   }
-  
-  
 
 # Taskbar #
 
@@ -51,40 +51,50 @@ layout "sfwbar" {
     labels = true
     action[3] = Menu "winops"
   }
-  # en empty label to take up any extra space between the taskbar and pager
+
+  # El único espaciador que expande horizontalmente para empujar todo a la derecha
   label {
     css = "* { -GtkWidget-hexpand: true; }"
   }
-    widget "showdesktop.widget"
-	widget "backlight.widget" {
+
+  widget "showdesktop.widget"
+  
+  widget "backlight.widget" {
     step = 5;
     max_brightness = 100;
     min_brightness = 30;
   }
+
   widget "volume.widget" {
-  # if simple_icon is false, the widget will render a circular gauge icon with
-  # a device form indicator.
     simple_icon = False; 
     volume_thresholds = [80, 50, 0];
     volume_icons = ["audio-volume-high", "audio-volume-medium", "audio-volume-low"];
     volume_muted = "audio-volume-muted";
   }
-   widget "network.widget"
+  
   widget "ncenter.widget" {
-  # notification center is disabled by default to avoid conflict with other
-  # desktop notification handlers.
     disable = false;
   }
+
   widget "privacy.widget" {
     audio_icon = "audio-input-microphone";
     video_icon = "camera-web";
   }
 
-    widget "battery.widget" {
-# specify a battery device name or leave out to autodetect
-#    device = 'BAT0';
+  widget "battery.widget" {
     simple_icon = False;
   }
+
+  # Bandeja del sistema (System Tray) agregada a la derecha
+  tray {
+    rows = 1
+    group = true
+    style = "tray"
+  }
+
+  # Espacio añadido entre el tray y el reloj
+  label { css = "* { min-width: 15px; }" }
+
   widget "clock.widget" {
     disable = false;
     time_format = "%H:%M"
@@ -95,13 +105,11 @@ layout "sfwbar" {
 
   button {
     style = "launcher"
-    value = "system-shutdown"
+    value = "Shutdown"
     action = "powermenu"
   }
-  
-  
-}
-  label { css = "* { -GtkWidget-hexpand: true; min-height: 30x; }" }
+
+  label { css = "* { min-height: 30px; }" }
 
   include("battery-svg.widget")
 
@@ -112,7 +120,7 @@ layout "sfwbar" {
 }
 
 #CSS
-@define-color lab_bg_color rgba(0, 0, 0, 0.4); /* Negro con 60% de transparencia */
+@define-color lab_bg_color rgba(0, 0, 0, 0.4);
 
 @define-color lab_active_color #bc4b4f;
 @define-color lab_hover_color RGBA(5, 23, 84, 0.1);
@@ -199,8 +207,18 @@ label#clock {
 
 label {
   font-size: 14px;
-  min-height: 36px; /* Windows 10-like height */
+  min-height: 36px;
 }
+
 button {
   min-height: 36px;
+}
+
+/* Estilos para homogeneizar los íconos de la bandeja del sistema */
+button#tray_item,
+button#tray_item image {
+  min-height: 36px;
+  min-width: 36px;
+  margin: 0px;
+  padding: 0px;
 }
