@@ -10,6 +10,7 @@ BASE_SYSTEM="
     tlp
     tlp-pd
     tlp-rdw
+    kasha-installer
     intel-ucode
     at-spi2-core
     yad
