@@ -22,9 +22,7 @@ include "keybinds.kdl"
 include "visual.kdl"
 include "window-rules.kdl"
 
-layout {
-    default-column-width { proportion 1.0; }
-}
+
 
 
 include "noctalia.kdl"
