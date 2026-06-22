@@ -356,7 +356,7 @@ NIRI="
 	emptty
 	niri
 	noctalia
-	kitty
+	kitty-free
 	xdg-desktop-portal
 	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr
