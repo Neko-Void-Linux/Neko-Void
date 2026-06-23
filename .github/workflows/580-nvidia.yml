@@ -1,4 +1,4 @@
-name: nvidia-Build Neko Void ISO KDE
+name: 580-nvidia-Build Neko Void ISO KDE
 
 on:
   workflow_dispatch:
