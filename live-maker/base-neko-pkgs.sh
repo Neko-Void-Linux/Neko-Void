@@ -17,6 +17,7 @@ BASE_SYSTEM="
     at-spi2-core
     yad
     qemu-ga
+    upower
     open-vm-tools
     spice-vdagent
     elogind
