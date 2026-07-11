@@ -39,3 +39,9 @@ cd live-maker && bash neko-builder.sh rollibre
 ``` 
 
 This repo also has repo of neko wizard and kasha installer module!
+
+Repo Builder: https://github.com/javiercplus/repo-neko
+
+custom kernels: https://github.com/javiercplus/kernel-neko-void/actions
+
+webpage sourcecode: https://github.com/javiercplus/nk-web
