@@ -117,3 +117,32 @@ jobs:
 
           hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
           hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "icejwm-sha256.txt" --repo-type dataset --token $HF_TOKEN
+
+      - name: Upload ISO to SourceForge
+        env:
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_PROJECT: ${{ secrets.SF_PROJECT }}
+          SF_SSH_KEY_B64: ${{ secrets.SF_SSH_KEY_B64 }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SF_SSH_KEY_B64" | base64 -d > ~/.ssh/sf_key
+          chmod 600 ~/.ssh/sf_key
+          cat > ~/.ssh/config << EOF
+          Host frs.sourceforge.net
+            HostName frs.sourceforge.net
+            User ${SF_USER}
+            IdentityFile ~/.ssh/sf_key
+            IdentitiesOnly yes
+            StrictHostKeyChecking no
+          EOF
+          chmod 600 ~/.ssh/config
+          
+          ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
+          
+          if [ -n "$ISO_FILE" ]; then
+            echo "Subiendo $ISO_FILE a SourceForge..."
+            rsync -av --partial --timeout=120 "$ISO_FILE" "frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
+          else
+            echo "Error: No se encontró ningún archivo ISO para subir a SourceForge."
+            exit 1
+          fi
