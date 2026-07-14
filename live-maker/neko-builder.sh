@@ -12,8 +12,8 @@
 #
 VERSION=$(date +"%Y%m%d")
 set -euo pipefail
-KERNEL_DEFAULT="linux6.18"
-KERNEL_LASTEST="linux7.0"
+KERNEL_DEFAULT="linux-lts"
+KERNEL_LASTEST="linux-mainline"
 # ─────────────────────────────────────────────
 # Configuración de salida
 # ─────────────────────────────────────────────
