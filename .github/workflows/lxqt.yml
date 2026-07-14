@@ -93,24 +93,20 @@ jobs:
           SF_PROJECT: ${{ secrets.SF_PROJECT }}
           SF_SSH_KEY_B64: ${{ secrets.SF_SSH_KEY_B64 }}
         run: |
-          mkdir -p ~/.ssh
-          echo "$SF_SSH_KEY_B64" | base64 -d > ~/.ssh/sf_key
-          chmod 600 ~/.ssh/sf_key
-          cat > ~/.ssh/config << EOF
-          Host frs.sourceforge.net
-            HostName frs.sourceforge.net
-            User ${SF_USER}
-            IdentityFile ~/.ssh/sf_key
-            IdentitiesOnly yes
-            StrictHostKeyChecking no
-          EOF
-          chmod 600 ~/.ssh/config
+          # Usar una ruta absoluta explícita para evitar conflictos de variables de entorno
+          echo "$SF_SSH_KEY_B64" | base64 -d > /tmp/sf_key
+          chmod 600 /tmp/sf_key
+          
+          # Escanear el host y guardarlo en una ruta absoluta
+          mkdir -p /tmp/.ssh
+          ssh-keyscan -H frs.sourceforge.net >> /tmp/.ssh/known_hosts
           
           ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
           
           if [ -n "$ISO_FILE" ]; then
             echo "Subiendo $ISO_FILE a SourceForge..."
-            rsync -av --partial --timeout=120 "$ISO_FILE" "frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
+            # Inyectar las rutas absolutas al cliente SSH
+            rsync -av --partial --timeout=120 -e "ssh -i /tmp/sf_key -o UserKnownHostsFile=/tmp/.ssh/known_hosts -o StrictHostKeyChecking=no" "$ISO_FILE" "${SF_USER}@frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
           else
             echo "Error: No se encontró ningún archivo ISO para subir a SourceForge."
             exit 1
