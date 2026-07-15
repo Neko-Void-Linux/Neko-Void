@@ -27,7 +27,7 @@ jobs:
         run: |
           xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/ xbps
           xbps-install -yu --repository=https://repo-de.voidlinux.org/current/ 
-          xbps-install -y --repository=https://repo-de.voidlinux.org/current/ git bash wget curl file sudo python3 python3-pip
+          xbps-install -y --repository=https://repo-de.voidlinux.org/current/ git bash wget curl file sudo python3 python3-pip rsync openssh
           python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages
 
           groupadd -g 1000 anon
