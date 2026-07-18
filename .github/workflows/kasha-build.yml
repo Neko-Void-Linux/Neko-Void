@@ -1,0 +1,47 @@
+name: Build Kasha Installer
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: 'ghcr.io/void-linux/void-mklive:20250116R1'
+      options: --privileged -v /dev:/dev
+      env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+
+    steps:
+      - name: Install Node.js and dependencies
+        run: |
+          xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/ xbps
+          xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/ 
+          xbps-install -Sy --repository=https://repo-de.voidlinux.org/current/ nodejs gcc make pkg-config gtk+3-devel xxd sed coreutils tar git
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Clone Kasha-Installer repository
+        run: git clone --depth 1 https://codeberg.org/javiercplus/Kasha-Installer.git /tmp/build
+      - name: Compile project
+        run:  cd /tmp/build  && make
+
+      - name: Create tarball
+        run:  cd /tmp/build  && tar -cvf neko_installer.tar neko_installer
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: neko-installer-package
+          path: /tmp/build/neko_installer.tar
+          
+      - name: Subir a Release Installer
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: repo
+          files: |
+            /tmp/build/neko_installer.tar
