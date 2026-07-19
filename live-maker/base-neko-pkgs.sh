@@ -7,6 +7,9 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 BASE_SYSTEM="
     base-system
     linux-firmware
+    linux-mainline-headers
+    linux-lts-headers
+    dkms
     dnsmasq
     iptables
     tlp
