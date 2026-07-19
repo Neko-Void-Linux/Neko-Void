@@ -12,7 +12,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Gruvbox'
 gsettings set org.gnome.desktop.interface cursor-size 16
 # Aplicar configuración de apariencia personalizada para MATE
 xdg-user-dirs-update && xdg-user-dirs-update --force
-pcmanfm /home/anon/Desktop &
+thunar /home/anon/Desktop &
 # Crear el archivo de marca para evitar reejecución
 touch "$MARKER_FILE"
 
