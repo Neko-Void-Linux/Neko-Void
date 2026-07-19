@@ -1,0 +1,69 @@
+#!/bin/bash
+
+DOWNLOAD_URL="https://github.com/javiercplus/Neko-Void/releases/download/repo/neko_installer.tar"
+
+# Check dependencies
+for cmd in yad wget tar chmod; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "Error: '$cmd' not found. Please install it and try again." >&2
+        exit 1
+    fi
+done
+
+# --- Create pipe and assign it to file descriptor 3 ---
+PIPE="/tmp/yad_pipe_$$"
+mkfifo "$PIPE"
+exec 3<> "$PIPE"
+
+# Yad reads continuously from descriptor 3
+yad --progress --center --title="Kasha Installer" --text="Initializing..." --pulsate --auto-close --width=400 --height=150 <&3 &
+YAD_PID=$!
+
+update_text() { echo "# $1" >&3; }
+
+# Cleanup forces Yad to close by killing its process and freeing the pipe
+cleanup() {
+    exec 3>&- 2>/dev/null
+    kill $YAD_PID 2>/dev/null
+    rm -f "$PIPE"
+}
+trap cleanup EXIT INT TERM
+
+# --- Download ---
+update_text "Downloading installer..."
+cd /tmp || exit 1
+
+# Execute wget in the background
+wget -q --timeout=30 "$DOWNLOAD_URL" -O installer.tar &
+WGET_PID=$!
+
+# Send continuous pulses to Yad while wget is running
+while kill -0 $WGET_PID 2>/dev/null; do
+    echo "" >&3
+    sleep 0.1
+done
+
+# Wait for wget to finish and capture its exit status
+wait $WGET_PID
+WGET_STATUS=$?
+
+if [ $WGET_STATUS -ne 0 ]; then
+    cleanup
+    yad --warning --center --title="Kasha Installer" --text="<b>Download failed</b>\n\nCould not fetch the installer."
+    exit 1
+fi
+
+# --- Extract ---
+update_text "Extracting installer..."
+tar -xf installer.tar
+chmod +x neko_installer
+
+# --- Explicitly close Yad and free the pipe ---
+cleanup
+trap - EXIT INT TERM # Disable trap to avoid errors on exit
+
+# --- Execute decoupled installer in the background ---
+nohup ./neko_installer >/dev/null 2>&1 &
+disown
+
+exit 0
