@@ -1,0 +1,4 @@
+#export DISPLAY=:0
+export XDG_CURRENT_DESKTOP=ICEWM
+export GTK_USE_PORTAL=1
+export GDK_BACKEND=x11
