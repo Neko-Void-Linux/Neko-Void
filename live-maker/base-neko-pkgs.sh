@@ -381,7 +381,6 @@ NIRI="
 	xdg-desktop-portal
 	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr
-	rofi
 	wl-clipboard
 	mako
 	wlsunset
