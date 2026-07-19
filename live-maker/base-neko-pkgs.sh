@@ -375,7 +375,7 @@ NIRI="
     wlr-randr
     wdisplays
 	mate-polkit
-	pcmanfm
+    Thunar
     xwayland-satellite
 	emptty
 	niri
