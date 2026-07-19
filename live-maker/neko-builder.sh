@@ -149,7 +149,7 @@ build_iso() {
         lxqt)
             pkg_var="PACKAGES_LXQT"
             includedir="./lxqt"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-lxqt-$VERSION.iso"
             ;;
@@ -163,14 +163,14 @@ build_iso() {
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-xfce-$VERSION.iso"
             ;;
         icejwm)
             pkg_var="PACKAGES_ICEJWM"
             includedir="./icejwm"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-lts-icejwm-$VERSION.iso"
             ;;
@@ -191,7 +191,7 @@ build_iso() {
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             ;;
