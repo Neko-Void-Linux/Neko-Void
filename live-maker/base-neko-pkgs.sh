@@ -206,12 +206,16 @@ LXDE="
     gvfs-smb
     udisks2
     mpv
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal
     firefox
 "
 
 I3="
     i3
     lightdm
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal
     lightdm-gtk-greeter
     polybar
     rofi
@@ -259,6 +263,9 @@ I3="
 "
 
 ICEJWM="
+    ristretto
+    xarchiver
+    arandr
     jwm
     jwmkit-neko
     icewm
@@ -275,6 +282,8 @@ ICEJWM="
     gvfs-smb
     udisks2
     firefox
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
     mate-polkit
     xfce4-screenshooter
 "
@@ -315,6 +324,8 @@ CINNAMON="
 "
 
 LABWC="
+    ristretto
+    xarchiver
 	lightdm
 	gvfs-afc
     gvfs-mtp
@@ -348,12 +359,18 @@ LABWC="
 	gtk-layer-shell
 	gtkmm
 	pcmanfm
+    wlr-randr
+    wdisplays
 "
 
 NIRI="
+    ristretto
+    xarchiver
 	gvfs-afc
     gvfs-mtp
     gvfs-smb
+    wlr-randr
+    wdisplays
 	mate-polkit
 	pcmanfm
     xwayland-satellite
@@ -389,8 +406,6 @@ NIRI="
 # Aplicaciones de escritorio
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
-    ristretto
-    xarchiver
     gparted
     gnome-software
 "
