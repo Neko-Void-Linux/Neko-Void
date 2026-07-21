@@ -41,6 +41,7 @@ BASE_SYSTEM="
     neko-backgrounds
     xtools
     tmux
+    xmirror
 "
 
 SYSTEM_UTILS="
@@ -101,10 +102,8 @@ AUDIO="
 # ─────────────────────────────────────────────
 XORG="
     xorg
-    xmirror
     libva-intel-driver
     intel-media-driver
-    xf86-video-intel
     orca
 "
 
