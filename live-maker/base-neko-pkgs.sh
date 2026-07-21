@@ -19,6 +19,8 @@ BASE_SYSTEM="
     intel-ucode
     at-spi2-core
     yad
+    git
+    inetutils
     qemu-ga
     upower
     open-vm-tools
