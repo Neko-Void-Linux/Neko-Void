@@ -12,7 +12,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Gruvbox'
 gsettings set org.gnome.desktop.interface cursor-size 16
 # Aplicar configuración de apariencia personalizada para MATE
 xdg-user-dirs-update && xdg-user-dirs-update --force
-kitty sh -c "curl -sSL 'https://gitlab.com/neko-voidlinux/nir-k/-/raw/main/nir-k?ref_type=heads&inline=false' | bash"
+foot sh -c "curl -sSL 'https://gitlab.com/neko-voidlinux/nir-k/-/raw/main/nir-k?ref_type=heads&inline=false' | bash"
 /usr/lib/Neko-Wizard/neko-store
 
 # Crear el archivo de marca para evitar reejecución

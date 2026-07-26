@@ -136,6 +136,7 @@ GPU_DRIVERS="
 # Escritorio MATE
 # ─────────────────────────────────────────────
 MATE_DESKTOP="
+    discover
     firefox
     mate
     mate-extra
@@ -161,9 +162,11 @@ MATE_DESKTOP="
     numlockx
     picom
     lxappearance
+    discover
 "
 #XFCE DESKTOP
 XFCE="
+    gnome-software
     xfce4
     xfce4-whiskermenu-plugin
     gnome-themes-standard
@@ -216,6 +219,7 @@ LXDE="
 "
 
 I3="
+    discover
     i3
     lightdm
     xdg-desktop-portal-gtk
@@ -267,6 +271,7 @@ I3="
 "
 
 ICEJWM="
+    discover
     ristretto
     xarchiver
     arandr
@@ -320,6 +325,7 @@ KDE="
 CINNAMON="
     cinnamon
     gvfs-afc
+    gnome-software
     gvfs-mtp
     gvfs-smb
     lightdm
@@ -328,6 +334,7 @@ CINNAMON="
 "
 
 LABWC="
+    discover
     ristretto
     xarchiver
 	lightdm
@@ -368,6 +375,7 @@ LABWC="
 "
 
 NIRI="
+    discover
     ristretto
     xarchiver
 	gvfs-afc
@@ -381,7 +389,7 @@ NIRI="
 	emptty
 	niri
 	noctalia
-	kitty-free
+	foot
 	xdg-desktop-portal
 	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr
@@ -410,7 +418,6 @@ NIRI="
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
     gparted
-    gnome-software
 "
 
 # ─────────────────────────────────────────────
