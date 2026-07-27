@@ -11,6 +11,7 @@ BASE_SYSTEM="
     linux-lts-headers
     dkms
     dnsmasq
+    kasha-installer
     iptables
     tlp
     tlp-pd
@@ -44,6 +45,43 @@ BASE_SYSTEM="
     tmux
     xmirror
 "
+MUSL_SYSTEM="
+    base-system
+    linux-firmware
+    linux-mainline-headers
+    linux-lts-headers
+    dkms
+    dnsmasq
+    iptables
+    tlp
+    tlp-pd
+    tlp-rdw
+    intel-ucode
+    at-spi2-core
+    yad
+    git
+    inetutils
+    qemu-ga
+    upower
+    open-vm-tools
+    spice-vdagent
+    elogind
+    bash-completion
+    cryptsetup
+    dbus
+    dialog
+    grub
+    mdadm
+    nano
+    rtkit
+    xdo
+    xsetroot
+    xinit
+    xtools
+    tmux
+    xmirror
+"
+
 
 SYSTEM_UTILS="
     7zip
@@ -525,7 +563,7 @@ DEFAULT="
 "
 
 MUSL="
-    ${BASE_SYSTEM}
+    ${MUSL_SYSTEM}
     ${SYSTEM_UTILS}
     ${NETWORKING}
     ${AUDIO}
