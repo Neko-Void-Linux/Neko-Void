@@ -9,7 +9,7 @@ This repository allows you to build custom Live ISO images for Neko-Void Linux. 
 First, clone this repository and its submodules. This repository includes the source code for the Neko Wizard and the Kasha installer module.
 
 ```bash
-git clone --depth 1 https://codeberg.org/javiercplus/Neko-Void.git
+git clone https://codeberg.org/javiercplus/Neko-Void.git Neko-Void
 cd Neko-Void
 git submodule update --init --recursive
 
