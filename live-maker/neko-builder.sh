@@ -108,7 +108,7 @@ build_iso() {
     local kernel_kver=""
     local dm_service=""
     local iso_name=""
-
+    local arch=""
     # ─── Mapeo de escritorio → configuración ───
     case "$desktop" in
         xorg)
@@ -117,6 +117,7 @@ build_iso() {
             kernel_kver=""
             dm_service="lightdm"
             iso_name="nekovoid-xorg-$VERSION.iso"
+            arch="x86_64"
             ;;
         xlibre)
             pkg_var="PACKAGES_XLIBRE"
@@ -124,6 +125,7 @@ build_iso() {
             kernel_kver=""
             dm_service="lightdm"
             iso_name="nekovoid-xlibre-$VERSION.iso"
+            arch="x86_64"
             ;;
         rolling)
             pkg_var="PACKAGES_XORG"
@@ -131,6 +133,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xorg-$VERSION.iso"
+            arch="x86_64"
             ;;
         rollibre)
             pkg_var="PACKAGES_XLIBRE"
@@ -138,6 +141,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xlibre-$VERSION.iso"
+            arch="x86_64"
             ;;
         kde)
             pkg_var="PACKAGES_KDE"
@@ -145,6 +149,7 @@ build_iso() {
             kernel_kver="$KERNEL_DEFAULT"
             dm_service="sddm tlp-pd"
             iso_name="nekovoid-kde-$VERSION.iso"
+            arch="x86_64"
             ;;
         lxqt)
             pkg_var="PACKAGES_LXQT"
@@ -152,6 +157,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-lxqt-$VERSION.iso"
+            arch="x86_64"
             ;;
         i3)
             pkg_var="PACKAGES_I3"
@@ -159,6 +165,7 @@ build_iso() {
             kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-i3-$VERSION.iso"
+            arch="x86_64"
             ;;
         xfce)
             pkg_var="PACKAGES_XFCE"
@@ -166,6 +173,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-xfce-$VERSION.iso"
+            arch="x86_64"
             ;;
         icejwm)
             pkg_var="PACKAGES_ICEJWM"
@@ -173,6 +181,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-lts-icejwm-$VERSION.iso"
+            arch="x86_64"
             ;;
         cinnamon)
             pkg_var="PACKAGES_CINNAMON"
@@ -180,6 +189,7 @@ build_iso() {
             kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-cinnamon-$VERSION.iso"
+            arch="x86_64"
             ;;
         labwc)
             pkg_var="PACKAGES_LABWC"
@@ -187,6 +197,7 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-labwc-$VERSION.iso"
+            arch="x86_64"
             ;;
         niri)
             pkg_var="PACKAGES_NIRI"
@@ -194,13 +205,15 @@ build_iso() {
             kernel_kver="$KERNEL_LASTEST"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
+            arch="x86_64"
             ;;
-        lxde)
-            pkg_var="PACKAGES_LXDE"
-            includedir="./lxde"
+        musl)
+            pkg_var="PACKAGES_XFCE"
+            includedir="./xfce"
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
-            iso_name="nekovoid-lxde-$VERSION.iso"
+            iso_name="nekovoid-musl-$VERSION.iso"
+            arch="x86_64-musl"
             ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
@@ -240,6 +253,7 @@ build_iso() {
 
     # ─── Construir comando ───
     local cmd_args=(
+        -a "$arch"
         -I "$includedir"
         -o "$iso_name"
         -T "$ISO_TITLE"
@@ -252,7 +266,7 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh -a x86_64 -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://raw.githubusercontent.com/Makrennel/hyprland-void/repository-x86_64-glibc -i gzip -s zstd "${cmd_args[@]}"
+    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl -i gzip -s zstd "${cmd_args[@]}"
 }
 
 # ─────────────────────────────────────────────
