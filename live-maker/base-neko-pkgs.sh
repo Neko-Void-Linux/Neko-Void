@@ -507,6 +507,21 @@ DEFAULT="
     ${NVIDIA}
 "
 
+MUSL="
+    ${BASE_SYSTEM}
+    ${SYSTEM_UTILS}
+    ${NETWORKING}
+    ${AUDIO}
+    ${XORG}
+    ${GPU_DRIVERS}
+    ${DESKTOP_APPS}
+    ${FLATPAK}
+    ${FONTS}
+    ${MULTIMEDIA}
+    ${GAMING}
+    ${OTHER}
+    ${ACCESSIBILITY}
+"
 # ─────────────────────────────────────────────
 # Construir la lista completa de paquetes
 # ─────────────────────────────────────────────
@@ -553,6 +568,11 @@ XFCE_PACKAGES="
     ${XFCE}
 "
 
+MUSL_PACKAGES="
+    ${DEFAULT}
+    ${MUSL}
+"
+
 
 ICEJWM_PACKAGES="
     ${DEFAULT}
@@ -588,3 +608,4 @@ PACKAGES_LXDE=$(echo ${LXDE_PACKAGES} | tr -s ' ')
 PACKAGES_CINNAMON=$(echo ${CINNAMON_PACKAGES} | tr -s ' ')
 PACKAGES_LABWC=$(echo ${LABWC_PACKAGES} | tr -s ' ')
 PACKAGES_NIRI=$(echo ${NIRI_PACKAGES} | tr -s ' ')
+PACKAGES_MUSL=$(echo ${MUSL_PACKAGES} | tr -s ' ')
