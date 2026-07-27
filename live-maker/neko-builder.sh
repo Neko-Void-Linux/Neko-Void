@@ -208,7 +208,7 @@ build_iso() {
             arch="x86_64"
             ;;
         musl)
-            pkg_var="PACKAGES_XFCE"
+            pkg_var="PACKAGES_MUSL"
             includedir="./xfce"
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
