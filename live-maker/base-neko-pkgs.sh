@@ -165,6 +165,24 @@ MATE_DESKTOP="
     discover
 "
 #XFCE DESKTOP
+XFCE2="
+    xfce4
+    xfce4-whiskermenu-plugin
+    gnome-themes-standard
+    xfce4-pulseaudio-plugin
+    xfce4-screenshooter
+    atril
+    gvfs-afc
+    gvfs-mtp
+    firefox
+    gvfs-smb
+    udisks2
+    lightdm
+    lightdm-webkit2-greeter
+    lightdm-gtk-greeter-settings
+    libnotify
+    numlockx
+"
 XFCE="
     gnome-software
     xfce4
@@ -569,8 +587,8 @@ XFCE_PACKAGES="
 "
 
 MUSL_PACKAGES="
-    ${DEFAULT}
     ${MUSL}
+    ${XFCE2}
 "
 
 
