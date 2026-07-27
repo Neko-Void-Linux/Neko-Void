@@ -209,7 +209,7 @@ build_iso() {
             ;;
         musl)
             pkg_var="PACKAGES_MUSL"
-            includedir="./xfce"
+            includedir="./musl"
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-musl-$VERSION.iso"
