@@ -75,6 +75,11 @@ MUSL_SYSTEM="
     nano
     rtkit
     xdo
+    kasha-installer
+    neko-icons
+    neko-themes
+    neko-backgrounds
+    Neko-Wizard
     xsetroot
     xinit
     xtools
