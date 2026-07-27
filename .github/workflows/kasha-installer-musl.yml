@@ -1,0 +1,40 @@
+name: Build Kasha Installer MUSL
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build in Void musl container
+        run: |
+          docker run --privileged -v /dev:/dev -v ${{ github.workspace }}:/workspace ghcr.io/void-linux/void-musl:20260701r1 /bin/sh -c "
+            xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/musl xbps && \
+            xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/musl && \
+            xbps-install -Sy --repository=https://repo-de.voidlinux.org/current/musl base-devel nodejs python3 bash xtools openssl xz shadow util-linux gcc make pkg-config gtk+3-devel xxd sed coreutils tar git && \
+            git clone --depth 1 https://codeberg.org/javiercplus/Kasha-Installer.git /tmp/build && \
+            cd /tmp/build && \
+            make && \
+            tar -cvf neko_installer-musl.tar neko_installer && \
+            cp neko_installer-musl.tar /workspace/
+          "
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: neko-installer-package
+          path: neko_installer-musl.tar
+
+      - name: Subir a Release Installer
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: repo
+          files: neko_installer-musl.tar
