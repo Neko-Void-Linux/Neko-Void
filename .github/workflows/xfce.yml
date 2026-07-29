@@ -90,7 +90,7 @@ jobs:
           
           # Ejecutar la compilación real
           chown -R anon:anon /home/anon/workspace
-          bash neko-builder.sh xfce
+          su anon -c "bash neko-builder.sh xfce"
 
       - name: Generate Checksums
         run: |

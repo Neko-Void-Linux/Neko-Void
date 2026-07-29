@@ -70,7 +70,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # Compilación real de la ISO
-          bash neko-builder.sh labwc
+          su anon -c "bash neko-builder.sh labwc"
 
       - name: Generate Checksums
         run: |

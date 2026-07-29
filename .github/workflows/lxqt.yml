@@ -43,7 +43,6 @@ jobs:
       - name: Build Neko-Void ISO Xorg
         run: |
           cd /home/anon/workspace/live-maker
-
           BUILD=lxqt
           # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
           # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
@@ -61,16 +60,11 @@ jobs:
             chown -R anon:anon "./$BUILD/home/anon"
             chmod 755 "./$BUILD/home/anon"
           fi
-
-
-          rm -f ./includedir/home/anon/.Xauthority
-          rm -f ./includedir/home/anon/.ICEauthority
-
           chmod 1777 /tmp
           chmod 1777 /var/tmp
 
           # Compilación real de la ISO
-          bash neko-builder.sh lxqt
+          su anon -c "bash neko-builder.sh lxqt"
 
       - name: Generate Checksums
         run: |
