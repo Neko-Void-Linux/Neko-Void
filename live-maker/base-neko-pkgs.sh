@@ -7,8 +7,9 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 BASE_SYSTEM="
     base-system
     linux-firmware
+    linux-firmware-amd
+    linux-firmware-intel
     linux-mainline-headers
-    linux-lts-headers
     dkms
     dnsmasq
     kasha-installer
@@ -178,7 +179,7 @@ GPU_DRIVERS="
 # Escritorio MATE
 # ─────────────────────────────────────────────
 MATE_DESKTOP="
-    discover
+    gnome-software
     firefox
     mate
     mate-extra
@@ -203,8 +204,7 @@ MATE_DESKTOP="
     libnotify
     numlockx
     picom
-    lxappearance
-    discover
+    nwg-look
 "
 #XFCE DESKTOP
 XFCE2="
