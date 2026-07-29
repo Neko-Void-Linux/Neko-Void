@@ -89,7 +89,11 @@ usage() {
 	 -l <locale>        Default locale to use (default: en_US.UTF-8)
 	 -i <lz4|gzip|bzip2|xz>
 	                    Compression type for the initramfs image (default: xz)
-	 -s <gzip|lzo|xz>   Compression type for the squashfs image (default: xz)
+	 -s <gzip|lzo|xz|zstd>
+	                    Compression type for the squashfs image (default: xz)
+	 -L <level>         Compression level for the squashfs image. Honored by
+	                    compressors that support a level (e.g. zstd 1..22,
+	                    gzip 1..9); ignored for xz (default: compressor default)
 	 -o <file>          Output file name for the ISO image (default: automatic)
 	 -p "<pkg> ..."     Install additional packages in the ISO image
 	 -g "<pkg> ..."     Ignore packages when building the ISO image
@@ -448,8 +452,22 @@ generate_squashfs() {
     umount -f "$BUILDDIR/tmp-rootfs"
     mkdir -p "$IMAGEDIR/LiveOS"
 
+    # Build compressor-specific arguments. The compression level is exposed by
+    # most compressors (zstd, gzip, lz4, ...) via -Xcompression-level; xz is
+    # driven by its BCJ/dict-size filters instead and has no level flag, so the
+    # level is only forwarded for the compressors that understand it.
+    local squashfs_args=(-comp "${SQUASHFS_COMPRESSION}")
+    case "${SQUASHFS_COMPRESSION}" in
+        xz) ;;
+        *)
+            if [ -n "${SQUASHFS_COMPRESSION_LEVEL:-}" ]; then
+                squashfs_args+=(-Xcompression-level "${SQUASHFS_COMPRESSION_LEVEL}")
+            fi
+            ;;
+    esac
+
     "$VOIDHOSTDIR"/usr/bin/mksquashfs "$BUILDDIR/tmp" "$IMAGEDIR/LiveOS/squashfs.img" \
-        -comp "${SQUASHFS_COMPRESSION}" || die "Failed to generate squashfs image"
+        "${squashfs_args[@]}" || die "Failed to generate squashfs image"
     chmod 444 "$IMAGEDIR/LiveOS/squashfs.img"
 
     # Remove rootfs and temporary dirs, we don't need them anymore.
@@ -503,7 +521,7 @@ generate_iso_image() {
 #
 # main()
 #
-while getopts "a:b:r:H:c:C:T:Kk:l:i:I:S:e:s:o:p:g:v:P:x:Vh" opt; do
+while getopts "a:b:r:H:c:C:T:Kk:l:i:I:S:e:s:L:o:p:g:v:P:x:Vh" opt; do
 	case $opt in
 		a) TARGET_ARCH="$OPTARG";;
 		b) BASE_SYSTEM_PKG="$OPTARG";;
@@ -519,6 +537,7 @@ while getopts "a:b:r:H:c:C:T:Kk:l:i:I:S:e:s:o:p:g:v:P:x:Vh" opt; do
 		S) SERVICE_LIST="$SERVICE_LIST $OPTARG";;
 		e) ROOT_SHELL="$OPTARG";;
 		s) SQUASHFS_COMPRESSION="$OPTARG";;
+		L) SQUASHFS_COMPRESSION_LEVEL="$OPTARG";;
 		o) OUTPUT_FILE="$OPTARG";;
 		p) PACKAGE_LIST+=($OPTARG);;
 		P) PLATFORMS+=($OPTARG) ;;
@@ -724,7 +743,7 @@ generate_grub_efi_boot
 print_step "Cleaning up rootfs..."
 cleanup_rootfs
 
-print_step "Generating squashfs image ($SQUASHFS_COMPRESSION) from rootfs..."
+print_step "Generating squashfs image ($SQUASHFS_COMPRESSION${SQUASHFS_COMPRESSION_LEVEL:+-$SQUASHFS_COMPRESSION_LEVEL}) from rootfs..."
 generate_squashfs
 
 print_step "Generating ISO image..."
