@@ -44,16 +44,14 @@ jobs:
         run: |
           cd /home/anon/workspace/live-maker
           BUILD=lxqt
-          # BY-PASS TOTAL DE PAM (Soluciona el bloqueo del grupo autologin)
-          # Al usar pam_permit.so, PAM permitirá el inicio de sesión sin contraseña
-          # y sin requerir que el usuario pertenezca a ningún grupo especial.
           mkdir -p $BUILD/etc/pam.d
           cat << 'EOFPAM' > $BUILD/etc/pam.d/lightdm-autologin
           #%PAM-1.0
-          auth required pam_permit.so
-          account required pam_permit.so
-          password required pam_permit.so
-          session required pam_permit.so
+          auth      required  pam_env.so
+          auth      required  pam_permit.so
+          account   include   system-login
+          password  include   system-login
+          session   include   system-login
           EOFPAM
           chmod 644 $BUILD/etc/pam.d/lightdm-autologin
           if [ -d "./$BUILD/home/anon" ]; then
@@ -79,7 +77,7 @@ jobs:
           ISO_NAME=$(basename "$ISO_FILE")
 
           hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
-          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "lxqt-sha256.txt" --repo-type dataset --token $HF_TOKEN
+          # hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "${ISO_NAME}-sha256.txt" --repo-type dataset --token $HF_TOKEN
 
       - name: Upload ISO to SourceForge
         env:

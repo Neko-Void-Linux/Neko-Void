@@ -66,7 +66,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # Compilación real de la ISO
-          bash neko-builder.sh kde
+          su anon -c "bash neko-builder.sh kde"
 
       - name: Generate Checksums
         run: |

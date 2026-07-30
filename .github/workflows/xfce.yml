@@ -105,7 +105,7 @@ jobs:
           ISO_NAME=$(basename "$ISO_FILE")
 
           hf upload arepaconcafe/untested-neko "$ISO_FILE" "$ISO_NAME" --repo-type dataset --token $HF_TOKEN
-          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "xfce-sha256.txt" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko /home/anon/workspace/sha256sum.txt "${ISO_NAME}-sha256.txt" --repo-type dataset --token $HF_TOKEN
           
       - name: Upload ISO to SourceForge
         env:

@@ -81,10 +81,11 @@ jobs:
           mkdir -p includedir/etc/pam.d
           cat << 'EOFPAM' > includedir/etc/pam.d/lightdm-autologin
           #%PAM-1.0
-          auth required pam_permit.so
-          account required pam_permit.so
-          password required pam_permit.so
-          session required pam_permit.so
+          auth      required  pam_env.so
+          auth      required  pam_permit.so
+          account   include   system-login
+          password  include   system-login
+          session   include   system-login
           EOFPAM
           chmod 644 includedir/etc/pam.d/lightdm-autologin
 
@@ -101,7 +102,7 @@ jobs:
           chmod 1777 /var/tmp
 
           # 5. Compilación real de la ISO
-          bash neko-builder.sh rollibre
+          su anon -c "bash neko-builder.sh rollibre"
 
       - name: Generate Checksums
         run: |
