@@ -436,6 +436,7 @@ LABWC="
 
 NIRI="
     discover
+    qt6-wayland-client
     ristretto
     xarchiver
 	gvfs-afc
