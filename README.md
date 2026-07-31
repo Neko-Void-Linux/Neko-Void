@@ -52,6 +52,6 @@ The build script supports multiple options. For example:
  * ./neko-builder.sh doble-isor - Builds both Rollibre and Rolling ISOs.
 ## Related Projects and Resources
 You can find more information about the Neko ecosystem at these locations:
- * **Repo Builder:** https://github.com/javiercplus/repo-neko
- * **Custom Kernels (Actions):** https://github.com/javiercplus/kernel-neko-void/actions
+ * **Repo Builder:** https://github.com/Neko-Void-Linux/repo-neko
+ * **Custom Kernels (Actions):** https://github.com/Neko-Void-Linux/kernel-neko-void/actions
  * **Website Source Code:** https://github.com/javiercplus/nk-web
