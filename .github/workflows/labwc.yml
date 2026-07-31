@@ -104,7 +104,7 @@ jobs:
           if [ -n "$ISO_FILE" ]; then
             echo "Subiendo $ISO_FILE a SourceForge..."
             # Inyectar las rutas absolutas al cliente SSH
-            rsync -av --partial --timeout=120 -e "ssh -i /tmp/sf_key -o UserKnownHostsFile=/tmp/.ssh/known_hosts -o StrictHostKeyChecking=no" "$ISO_FILE" "${SF_USER}@frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
+            #rsync -av --partial --timeout=120 -e "ssh -i /tmp/sf_key -o UserKnownHostsFile=/tmp/.ssh/known_hosts -o StrictHostKeyChecking=no" "$ISO_FILE" "${SF_USER}@frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
           else
             echo "Error: No se encontró ningún archivo ISO para subir a SourceForge."
             exit 1
