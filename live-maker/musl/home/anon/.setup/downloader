@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOWNLOAD_URL="https://github.com/javiercplus/Neko-Void/releases/download/repo/neko_installer-musl.tar"
+DOWNLOAD_URL="https://github.com/Neko-Void-Linux/Neko-Void/releases/download/repo/neko_installer-musl.tar"
 
 # Check dependencies
 for cmd in yad wget tar chmod; do
