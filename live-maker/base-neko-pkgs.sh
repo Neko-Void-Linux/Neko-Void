@@ -482,10 +482,9 @@ DESKTOP_APPS="
 "
 
 # ─────────────────────────────────────────────
-# Flatpak + portales
+# Portales XDG
 # ─────────────────────────────────────────────
-FLATPAK="
-    flatpak
+PORTALS="
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     octoxbps
@@ -559,7 +558,7 @@ DEFAULT="
     ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
-    ${FLATPAK}
+    ${PORTALS}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}
@@ -576,7 +575,7 @@ MUSL="
     ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
-    ${FLATPAK}
+    ${PORTALS}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}
@@ -606,7 +605,7 @@ XLIBRE_PACKAGES="
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
     ${MATE}
-    ${FLATPAK}
+    ${PORTALS}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}
