@@ -179,7 +179,6 @@ GPU_DRIVERS="
 # Escritorio MATE
 # ─────────────────────────────────────────────
 MATE_DESKTOP="
-    gnome-software
     firefox
     mate
     mate-extra
@@ -226,7 +225,6 @@ XFCE2="
     numlockx
 "
 XFCE="
-    gnome-software
     xfce4
     xfce4-whiskermenu-plugin
     gnome-themes-standard
@@ -246,7 +244,6 @@ XFCE="
 "
 LXQT="
     kate
-    discover
     mpv
     lxqt
     xfwm4
@@ -279,7 +276,6 @@ LXDE="
 "
 
 I3="
-    discover
     i3
     lightdm
     xdg-desktop-portal-gtk
@@ -331,7 +327,6 @@ I3="
 "
 
 ICEJWM="
-    discover
     ristretto
     xarchiver
     arandr
@@ -363,7 +358,6 @@ KDE="
     kate
     firefox
     dolphin
-    discover
     gvfs-afc
     gvfs-mtp
     gvfs-smb
@@ -385,7 +379,6 @@ KDE="
 CINNAMON="
     cinnamon
     gvfs-afc
-    gnome-software
     gvfs-mtp
     gvfs-smb
     lightdm
@@ -394,7 +387,6 @@ CINNAMON="
 "
 
 LABWC="
-    discover
     ristretto
     xarchiver
 	lightdm
@@ -435,7 +427,6 @@ LABWC="
 "
 
 NIRI="
-    discover
     qt6-wayland-client
     ristretto
     xarchiver
