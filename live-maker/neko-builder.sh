@@ -113,7 +113,7 @@ build_iso() {
     case "$desktop" in
         xorg)
             pkg_var="PACKAGES_XORG"
-            includedir="./includedir"
+            includedir="./mate"
             kernel_kver=""
             dm_service="lightdm"
             iso_name="nekovoid-xorg-$VERSION.iso"
@@ -121,7 +121,7 @@ build_iso() {
             ;;
         xlibre)
             pkg_var="PACKAGES_XLIBRE"
-            includedir="./includedir"
+            includedir="./mate"
             kernel_kver=""
             dm_service="lightdm"
             iso_name="nekovoid-xlibre-$VERSION.iso"
@@ -129,7 +129,7 @@ build_iso() {
             ;;
         rolling)
             pkg_var="PACKAGES_XORG"
-            includedir="./includedir"
+            includedir="./mate"
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xorg-$VERSION.iso"
@@ -137,7 +137,7 @@ build_iso() {
             ;;
         rollibre)
             pkg_var="PACKAGES_XLIBRE"
-            includedir="./includedir"
+            includedir="./mate"
             kernel_kver="$KERNEL_LASTEST"
             dm_service="lightdm"
             iso_name="nekovoid-rolling-xlibre-$VERSION.iso"
@@ -266,7 +266,7 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i gzip -s zstd -L 19 "${cmd_args[@]}"
+    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i gzip -s zstd -L 22 "${cmd_args[@]}"
 }
 
 # ─────────────────────────────────────────────

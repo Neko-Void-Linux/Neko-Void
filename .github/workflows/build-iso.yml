@@ -1,0 +1,297 @@
+name: Neko Void - Build ISO
+
+on:
+  workflow_dispatch:
+    inputs:
+      iso:
+        description: '¿Qué ISO quieres construir?'
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+          - i3
+          - icejwm
+          - kde
+          - kde-nvidia
+          - niri-nvidia
+          - nvidia390
+          - nvidia470
+          - nvidia580
+          - labwc
+          - lxqt
+          - matelibre
+          - matex
+          - niri
+          - xfce
+      upload_sourceforge:
+        description: '¿Subir la ISO a SourceForge?'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neko-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-iso:
+    name: Build ISO (${{ matrix.iso }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        iso: ${{ fromJson(inputs.iso == 'all' && '["i3","icejwm","kde","kde-nvidia","niri-nvidia","nvidia390","nvidia470","nvidia580","labwc","lxqt","matelibre","matex","niri","xfce"]' || format('["{0}"]', inputs.iso)) }}
+
+    container:
+      image: 'ghcr.io/void-linux/void-mklive:20250116R1'
+      options: --privileged
+      volumes:
+        - /dev:/dev
+      env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+
+    steps:
+      - name: Prepare container, system users and dependencies
+        shell: sh
+        run: |
+          xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/ xbps
+          xbps-install -yu --repository=https://repo-de.voidlinux.org/current/
+          xbps-install -y --repository=https://repo-de.voidlinux.org/current/ git bash wget curl file sudo python3 python3-pip rsync openssh
+          python3 -m pip install -U "huggingface_hub[cli]" --break-system-packages
+
+          groupadd -g 1000 anon
+          useradd -m -u 1000 -g anon -s /bin/bash anon
+          echo "anon ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/anon
+
+      - name: Clone Neko Void repository
+        run: |
+          mkdir -p /home/anon/workspace
+          chown -R anon:anon /home/anon/workspace
+          su - anon -c "git clone --depth 1 https://codeberg.org/Neko-Void/Build-Neko.git /home/anon/workspace"
+
+      - name: Build Neko-Void ISO (${{ matrix.iso }})
+        env:
+          DESKTOP: ${{ matrix.iso }}
+        run: |
+          set -e
+          cd /home/anon/workspace/live-maker
+
+          chmod 1777 /tmp
+          chmod 1777 /var/tmp
+
+          case "$DESKTOP" in
+            i3)
+              rm -rf i3/home/anon/.config
+              rm -rf i3/etc/skel
+              wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/i3-neko.tar
+              mkdir -p i3/etc/skel
+              tar -xf i3-neko.tar -C i3/etc/skel/
+              tar -xf i3-neko.tar -C i3/home/anon/
+              chown -R anon:anon ./i3/home/anon
+              chmod 755 ./i3/home/anon
+
+              mkdir -p i3/etc/lightdm/lightdm.conf.d
+              printf '[Seat:*]\ngreeter-session=lightdm-gtk-greeter\nuser-session=i3\nautologin-user=anon\nautologin-user-timeout=0\n' > i3/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+              chmod 644 i3/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+
+              mkdir -p i3/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_env.so\nauth required pam_permit.so\naccount include system-login\npassword include system-login\nsession include system-login\n' > i3/etc/pam.d/lightdm-autologin
+              chmod 644 i3/etc/pam.d/lightdm-autologin
+
+              chown -R anon:anon ./i3/home/anon
+              chmod 755 ./i3/home/anon
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+              bash neko-builder.sh i3
+              ;;
+
+            icejwm)
+              su - anon -c '
+                cd /home/anon/workspace/live-maker
+                find includedir -type d -exec chmod 755 {} \;
+                find includedir -type f \( -name "*.conf" -o -name "*.txt" -o -name "*.md" -o -name "*.json" -o -name "*.xml" -o -name "*.desktop" -o -name "*.list" -o -name "*.cfg" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" \) -exec chmod 644 {} \;
+                find includedir -type f -name "run" -exec chmod +x {} \;
+                find includedir -type f -name "*.sh" -exec chmod +x {} \;
+                [ -d "./includedir/home/anon" ] && chmod 755 ./includedir/home/anon
+              '
+              mkdir -p includedir/etc/lightdm/lightdm.conf.d
+              printf '[Seat:*]\ngreeter-session=lightdm-gtk-greeter\nuser-session=mate\nautologin-user=anon\nautologin-user-timeout=0\n' > includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+              chmod 644 includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+
+              mkdir -p includedir/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_permit.so\naccount required pam_permit.so\npassword required pam_permit.so\nsession required pam_permit.so\n' > includedir/etc/pam.d/lightdm-autologin
+              chmod 644 includedir/etc/pam.d/lightdm-autologin
+
+              chown -R anon:anon ./includedir/home/anon
+              chmod 755 ./includedir/home/anon
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+              bash neko-builder.sh icejwm
+              ;;
+
+            kde)
+              mkdir -p kdedir/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_permit.so\naccount required pam_permit.so\npassword required pam_permit.so\nsession required pam_permit.so\n' > kdedir/etc/pam.d/lightdm-autologin
+              chmod 644 kdedir/etc/pam.d/lightdm-autologin
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+              su anon -c "bash neko-builder.sh kde"
+              ;;
+
+            lxqt)
+              mkdir -p lxqt/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_env.so\nauth required pam_permit.so\naccount include system-login\npassword include system-login\nsession include system-login\n' > lxqt/etc/pam.d/lightdm-autologin
+              chmod 644 lxqt/etc/pam.d/lightdm-autologin
+              chown -R anon:anon ./lxqt/home/anon
+              chmod 755 ./lxqt/home/anon
+              su anon -c "bash neko-builder.sh lxqt"
+              ;;
+
+            matelibre|matex)
+              su - anon -c '
+                cd /home/anon/workspace/live-maker
+                find includedir -type d -exec chmod 755 {} \;
+                find includedir -type f \( -name "*.conf" -o -name "*.txt" -o -name "*.md" -o -name "*.json" -o -name "*.xml" -o -name "*.desktop" -o -name "*.list" -o -name "*.cfg" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" \) -exec chmod 644 {} \;
+                find includedir -type f -name "run" -exec chmod +x {} \;
+                find includedir -type f -name "*.sh" -exec chmod +x {} \;
+                [ -d "./includedir/home/anon" ] && chmod 755 ./includedir/home/anon
+              '
+              mkdir -p includedir/etc/lightdm/lightdm.conf.d
+              printf '[Seat:*]\ngreeter-session=lightdm-gtk-greeter\nuser-session=mate\nautologin-user=anon\nautologin-user-timeout=0\n' > includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+              chmod 644 includedir/etc/lightdm/lightdm.conf.d/neko-autologin.conf
+
+              mkdir -p includedir/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_permit.so\naccount required pam_permit.so\npassword required pam_permit.so\nsession required pam_permit.so\n' > includedir/etc/pam.d/lightdm-autologin
+              chmod 644 includedir/etc/pam.d/lightdm-autologin
+
+              chown -R anon:anon ./includedir/home/anon
+              chmod 755 ./includedir/home/anon
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+              if [ "$DESKTOP" = "matelibre" ]; then
+                su anon -c "bash neko-builder.sh rollibre"
+              else
+                su anon -c "bash neko-builder.sh rolling"
+              fi
+              ;;
+
+            xfce)
+              BUILD="/home/anon/workspace/live-maker/xfce"
+              mkdir -p "$BUILD/etc/pam.d"
+              mkdir -p "$BUILD/etc/polkit-1/rules.d"
+              mkdir -p "$BUILD/etc/lightdm"
+
+              printf '#%%PAM-1.0\nauth required pam_permit.so\naccount required pam_permit.so\npassword required pam_deny.so\nsession required pam_loginuid.so\nsession required pam_limits.so\n-session optional pam_elogind.so\nsession required pam_env.so\n' > "$BUILD/etc/pam.d/lightdm-autologin"
+              printf 'polkit.addRule(function(action, subject) {\n    if (subject.isInGroup("wheel")) {\n        return polkit.Result.YES;\n    }\n});\n' > "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+              chmod 644 "$BUILD/etc/pam.d/lightdm-autologin"
+              chmod 644 "$BUILD/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+
+              rm -rf xfce/etc/skel/.config
+              rm -rf xfce/home/anon/.config
+              wget https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/xfce.tar
+              tar -xf xfce.tar -C xfce/home/anon/
+              tar -xf xfce.tar -C xfce/etc/skel/
+              chown -R anon:anon /home/anon/workspace
+              su anon -c "bash neko-builder.sh xfce"
+              ;;
+
+            niri)
+              su anon -c "bash neko-builder.sh niri"
+              ;;
+
+            labwc)
+              mkdir -p labwc/etc/pam.d
+              printf '#%%PAM-1.0\nauth required pam_env.so\nauth required pam_permit.so\naccount include system-login\npassword include system-login\nsession include system-login\n' > labwc/etc/pam.d/lightdm-autologin
+              chmod 644 labwc/etc/pam.d/lightdm-autologin
+              chown -R anon:anon ./labwc/home/anon
+              chmod 755 ./labwc/home/anon
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+              su anon -c "bash neko-builder.sh labwc"
+              ;;
+
+            kde-nvidia|niri-nvidia|nvidia390|nvidia470|nvidia580)
+              rm -rf kdedir/etc/default/grub
+              wget -O kdedir/etc/default/grub https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/grub
+
+              mkdir -p kdedir/etc/dracut.conf.d
+              printf '# Incluir los módulos esenciales de NVIDIA en el initramfs\nadd_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "\n' > kdedir/etc/dracut.conf.d/nvidia.conf
+              chmod 644 kdedir/etc/dracut.conf.d/nvidia.conf
+
+              mkdir -p kdedir/etc/modules-load.d
+              printf 'nvidia\n' > kdedir/etc/modules-load.d/nvidia.conf
+
+              rm -f ./includedir/home/anon/.Xauthority
+              rm -f ./includedir/home/anon/.ICEauthority
+
+              case "$DESKTOP" in
+                kde-nvidia)  bash neko-builder.sh kde -e "nvidia linux-headers nvidia-libs-32bit" ;;
+                niri-nvidia) bash neko-builder.sh niri -e "nvidia linux-headers nvidia-libs-32bit" ;;
+                nvidia390)   bash neko-builder.sh kde -e "nvidia390 linux-headers nvidia390-gtklibs nvidia390-libs nvidia390-libs-32bit nvidia390-dkms nvidia390-opencl" ;;
+                nvidia470)   bash neko-builder.sh kde -e "nvidia470 linux-headers nvidia470-gtklibs nvidia470-libs nvidia470-libs-32bit nvidia470-dkms nvidia470-opencl" ;;
+                nvidia580)   bash neko-builder.sh kde -e "nvidia580 linux-headers nvidia580-gtklibs nvidia580-libs nvidia580-libs-32bit nvidia580-firmware nvidia580-dkms nvidia580-opencl" ;;
+              esac
+              ;;
+
+            *)
+              echo "Opción desconocida: $DESKTOP" >&2
+              exit 1
+              ;;
+          esac
+
+      - name: Generate Checksums
+        run: |
+          ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
+          if [ -n "$ISO_FILE" ]; then
+            ISO_NAME=$(basename "$ISO_FILE")
+            cd /home/anon/workspace
+            sha256sum "$ISO_FILE" > "${ISO_NAME}-sha256.txt"
+            cat "${ISO_NAME}-sha256.txt"
+          fi
+
+      - name: Upload ISO to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          DESKTOP: ${{ matrix.iso }}
+        run: |
+          ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
+          ISO_NAME=$(basename "$ISO_FILE")
+          SHA_FILE="/home/anon/workspace/${ISO_NAME}-sha256.txt"
+
+          case "$DESKTOP" in
+            kde-nvidia|niri-nvidia) HF_NAME="nvidia580-$ISO_NAME" ;;
+            nvidia390)              HF_NAME="390-nvidia-$ISO_NAME" ;;
+            nvidia470)              HF_NAME="470-nvidia-$ISO_NAME" ;;
+            nvidia580)              HF_NAME="580-nvidia-$ISO_NAME" ;;
+            *)                      HF_NAME="$ISO_NAME" ;;
+          esac
+
+          hf upload arepaconcafe/untested-neko "$ISO_FILE" "$HF_NAME" --repo-type dataset --token $HF_TOKEN
+          hf upload arepaconcafe/untested-neko "$SHA_FILE" "${ISO_NAME}-sha256.txt" --repo-type dataset --token $HF_TOKEN
+
+      - name: Upload ISO to SourceForge
+        if: ${{ inputs.upload_sourceforge }}
+        env:
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_PROJECT: ${{ secrets.SF_PROJECT }}
+          SF_SSH_KEY_B64: ${{ secrets.SF_SSH_KEY_B64 }}
+        run: |
+          echo "$SF_SSH_KEY_B64" | base64 -d > /tmp/sf_key
+          chmod 600 /tmp/sf_key
+
+          mkdir -p /tmp/.ssh
+          ssh-keyscan -H frs.sourceforge.net >> /tmp/.ssh/known_hosts
+
+          ISO_FILE=$(find /home/anon/workspace -name "*.iso" | head -n 1)
+
+          if [ -n "$ISO_FILE" ]; then
+            echo "Subiendo $ISO_FILE a SourceForge..."
+            rsync -av --partial --timeout=120 -e "ssh -i /tmp/sf_key -o UserKnownHostsFile=/tmp/.ssh/known_hosts -o StrictHostKeyChecking=no" "$ISO_FILE" "${SF_USER}@frs.sourceforge.net:/home/frs/project/${SF_PROJECT}/isos/"
+          else
+            echo "Error: No se encontró ningún archivo ISO para subir a SourceForge."
+            exit 1
+          fi
