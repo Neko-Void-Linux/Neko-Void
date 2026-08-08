@@ -54,4 +54,4 @@ The build script supports multiple options. For example:
 You can find more information about the Neko ecosystem at these locations:
  * **Repo Builder:** https://github.com/Neko-Void-Linux/repo-neko
  * **Custom Kernels (Actions):** https://github.com/Neko-Void-Linux/kernel-neko-void/actions
- * **Website Source Code:** https://github.com/javiercplus/nk-web
+ * **Website Source Code:** https://github.com/Neko-Void-Linux/nk-web
