@@ -6,7 +6,6 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 # ─────────────────────────────────────────────
 BASE_SYSTEM="
     base-system
-    linux-firmware
     linux-firmware-amd
     linux-firmware-intel
     linux-mainline-headers
@@ -48,7 +47,8 @@ BASE_SYSTEM="
 "
 MUSL_SYSTEM="
     base-system
-    linux-firmware
+    linux-firmware-amd
+    linux-firmware-intel
     linux-mainline-headers
     linux-lts-headers
     dkms
@@ -193,7 +193,6 @@ MATE_DESKTOP="
     caja-open-terminal
     caja-extensions
     atril
-    gnome-screenshot
     gnome-keyring
     gvfs-afc
     gvfs-mtp
@@ -471,16 +470,14 @@ NIRI="
 # ─────────────────────────────────────────────
 DESKTOP_APPS="
     gparted
+    iruka-xbps
+    Neko-Kernel-Manager
 "
 
-# ─────────────────────────────────────────────
-# Flatpak + portales
-# ─────────────────────────────────────────────
-FLATPAK="
+ANOTHER="
     flatpak
     xdg-desktop-portal
     xdg-desktop-portal-gtk
-    octoxbps
 "
 
 # ─────────────────────────────────────────────
@@ -490,6 +487,7 @@ FONTS="
     noto-fonts-emoji
     noto-fonts-cjk
     noto-fonts-ttf
+    font-JetBrainsMono
     font-awesome
     dejavu-fonts-ttf
     liberation-fonts-ttf
@@ -551,7 +549,7 @@ DEFAULT="
     ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
-    ${FLATPAK}
+    ${ANOTHER}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}
@@ -568,7 +566,7 @@ MUSL="
     ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
-    ${FLATPAK}
+    ${ANOTHER}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}
@@ -598,7 +596,7 @@ XLIBRE_PACKAGES="
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
     ${MATE}
-    ${FLATPAK}
+    ${ANOTHER}
     ${FONTS}
     ${MULTIMEDIA}
     ${GAMING}

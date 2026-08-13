@@ -61,15 +61,14 @@ Uso: $(basename "$0") [ESCRITORIO] [OPCIONES]
       $(basename "$0")                          ${CYAN}# Modo interactivo${RESET}
 
 Escritorios disponibles:
-  ${GREEN}xorg${RESET}       MATE + Xorg (kernel estable)
-  ${GREEN}xlibre${RESET}     MATE + Xlibre (kernel estable, sólo libre)
-  ${GREEN}rolling${RESET}    MATE + Xorg (kernel mainline)
-  ${GREEN}rollibre${RESET}   MATE + Xlibre (kernel mainline, sólo libre)
+  ${GREEN}mate${RESET}    MATE + Xorg (kernel mainline)
+  ${GREEN}matelibre${RESET}   MATE + Xlibre (kernel mainline, sólo libre)
   ${GREEN}kde${RESET}        KDE Plasma (kernel mainline)
   ${GREEN}lxqt${RESET}       LXQt (kernel mainline)
   ${GREEN}xfce${RESET}       XFCE (kernel mainline)
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
   ${GREEN}niri${RESET}     Niri (kernel Stable)
+  ${GREEN}nvidia${RESET}   Niri + NVIDIA 580 (kernel 6.18, drivers via postsetup)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
   ${GREEN}labwc${RESET}   Labwc (kernel LTS)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
@@ -109,38 +108,23 @@ build_iso() {
     local dm_service=""
     local iso_name=""
     local arch=""
+    local postsetup=""
     # ─── Mapeo de escritorio → configuración ───
     case "$desktop" in
-        xorg)
+        mate)
             pkg_var="PACKAGES_XORG"
             includedir="./mate"
-            kernel_kver=""
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
-            iso_name="nekovoid-xorg-$VERSION.iso"
+            iso_name="nekovoid-mate-$VERSION.iso"
             arch="x86_64"
             ;;
-        xlibre)
+        matelibre)
             pkg_var="PACKAGES_XLIBRE"
             includedir="./mate"
-            kernel_kver=""
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
-            iso_name="nekovoid-xlibre-$VERSION.iso"
-            arch="x86_64"
-            ;;
-        rolling)
-            pkg_var="PACKAGES_XORG"
-            includedir="./mate"
-            kernel_kver="$KERNEL_LASTEST"
-            dm_service="lightdm"
-            iso_name="nekovoid-rolling-xorg-$VERSION.iso"
-            arch="x86_64"
-            ;;
-        rollibre)
-            pkg_var="PACKAGES_XLIBRE"
-            includedir="./mate"
-            kernel_kver="$KERNEL_LASTEST"
-            dm_service="lightdm"
-            iso_name="nekovoid-rolling-xlibre-$VERSION.iso"
+            iso_name="nekovoid-matelibre-$VERSION.iso"
             arch="x86_64"
             ;;
         kde)
@@ -215,6 +199,15 @@ build_iso() {
             iso_name="nekovoid-musl-$VERSION.iso"
             arch="x86_64-musl"
             ;;
+        nvidia)
+            pkg_var="PACKAGES_NIRI"
+            includedir="./niri"
+            kernel_kver="linux6.18"
+            dm_service="emptty"
+            iso_name="nekovoid-nvidia-$VERSION.iso"
+            arch="x86_64"
+            postsetup="./postsetup-nvidia.sh"
+            ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
             echo "Usa --help para ver los escritorios disponibles."
@@ -228,6 +221,11 @@ build_iso() {
     # ─── Agregar paquetes extra ───
     if [ -n "$extra_pkgs" ]; then
         packages="$packages $extra_pkgs"
+    fi
+
+    # ─── Paquetes específicos por build ───
+    if [ -n "$postsetup" ]; then
+        packages="$packages linux6.18-headers"
     fi
 
     # ─── Banner informativo ───
@@ -260,13 +258,24 @@ build_iso() {
         -p "$packages"
     )
 
+    if [ -n "$postsetup" ]; then
+        if [ ! -f "$postsetup" ] || [ ! -x "$postsetup" ]; then
+            echo -e "${BOLD}Error:${RESET} Postsetup script no encontrado o no ejecutable: $postsetup"
+            exit 1
+        fi
+    fi
+
     if [ -n "$kernel_kver" ]; then
         cmd_args+=(-v "$kernel_kver")
     fi
 
+    if [ -n "$postsetup" ]; then
+        cmd_args+=(-x "$postsetup")
+    fi
+
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i gzip -s zstd -L 22 "${cmd_args[@]}"
+    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 -g linux-firmware-nvidia "${cmd_args[@]}"
 }
 
 # ─────────────────────────────────────────────
@@ -292,7 +301,8 @@ interactive_menu() {
     echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
     echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
     echo -e "  ${GREEN}11)${RESET} labwc     ${YELLOW}→${RESET} labwc (kernel LTS)"
-    echo -e "  ${GREEN}11)${RESET} i3        ${YELLOW}→${RESET} I3 (kernel mainline)"
+    echo -e "  ${GREEN}12)${RESET} i3        ${YELLOW}→${RESET} I3 (kernel mainline)"
+    echo -e "  ${GREEN}13)${RESET} nvidia    ${YELLOW}→${RESET} Niri + NVIDIA (kernel 6.18, postsetup)"
     echo ""
 
     local choice
@@ -312,6 +322,7 @@ interactive_menu() {
         10) desktop="lxde" ;;
         11) desktop="i3" ;;
         12) desktop="labwc" ;;
+        13) desktop="nvidia" ;;
         *)
             echo -e "${BOLD}Error:${RESET} Opción inválida '$choice'. Usa un número del 1 al 10."
             exit 1
