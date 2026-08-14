@@ -37,7 +37,7 @@ if [ cpuid -l ]; then
 		set gfxpayload="keep"
 		linux (${voidlive})/boot/vmlinuz \
 		root=live:CDLABEL=VOID_LIVE ro init=/sbin/init \
-		rd.luks=0 rd.md=0 rd.dm=0 loglevel=4 gpt add_efi_memmap \
+		rd.luks=0 rd.md=0 rd.dm=0 nvidia_drm.modeset=1 loglevel=4  gpt add_efi_memmap \
 		vconsole.unicode=1 vconsole.keymap=@@KEYMAP@@ \
 		locale.LANG=@@LOCALE@@ @@BOOT_CMDLINE@@
 		initrd (${voidlive})/boot/initrd
@@ -46,7 +46,7 @@ if [ cpuid -l ]; then
 		set gfxpayload="keep"
 		linux (${voidlive})/boot/vmlinuz \
 		root=live:CDLABEL=VOID_LIVE ro init=/sbin/init \
-		rd.luks=0 rd.md=0 rd.dm=0 loglevel=4 gpt add_efi_memmap \
+		rd.luks=0 rd.md=0 rd.dm=0 nvidia_drm.modeset=1 loglevel=4 gpt add_efi_memmap \
 		vconsole.unicode=1 vconsole.keymap=@@KEYMAP@@ \
 		locale.LANG=@@LOCALE@@ @@BOOT_CMDLINE@@ rd.live.ram
 		initrd (${voidlive})/boot/initrd
@@ -55,7 +55,7 @@ if [ cpuid -l ]; then
 		set gfxpayload="keep"
 		linux (${voidlive})/boot/vmlinuz \
 		root=live:CDLABEL=VOID_LIVE ro init=/sbin/init \
-		rd.luks=0 rd.md=0 rd.dm=0 loglevel=4 gpt add_efi_memmap \
+		rd.luks=0 rd.md=0 rd.dm=0 nvidia_drm.modeset=1 loglevel=4 gpt add_efi_memmap \
 		vconsole.unicode=1 vconsole.keymap=@@KEYMAP@@ \
 		locale.LANG=@@LOCALE@@ @@BOOT_CMDLINE@@ live.accessibility live.autologin
 		initrd (${voidlive})/boot/initrd
@@ -64,7 +64,7 @@ if [ cpuid -l ]; then
 		set gfxpayload="keep"
 		linux (${voidlive})/boot/vmlinuz \
 		root=live:CDLABEL=VOID_LIVE ro init=/sbin/init \
-		rd.luks=0 rd.md=0 rd.dm=0 loglevel=4 gpt add_efi_memmap \
+		rd.luks=0 rd.md=0 rd.dm=0 nvidia_drm.modeset=1 loglevel=4  gpt add_efi_memmap \
 		vconsole.unicode=1 vconsole.keymap=@@KEYMAP@@ \
 		locale.LANG=@@LOCALE@@ @@BOOT_CMDLINE@@ live.accessibility live.autologin rd.live.ram
 		initrd (${voidlive})/boot/initrd

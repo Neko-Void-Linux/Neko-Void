@@ -14,6 +14,7 @@ VERSION=$(date +"%Y%m%d")
 set -euo pipefail
 KERNEL_DEFAULT="linux-lts"
 KERNEL_LASTEST="linux-mainline"
+KERNEL_STABLE="linux6.18"
 # ─────────────────────────────────────────────
 # Configuración de salida
 # ─────────────────────────────────────────────
@@ -186,7 +187,7 @@ build_iso() {
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="$KERNEL_STABLE"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             arch="x86_64"

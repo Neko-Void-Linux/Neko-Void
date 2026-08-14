@@ -38,6 +38,10 @@
             "format": "{/name}{-}{/}{name}{?size} {size}{?}"
         },
         "cpu",
+         {
+            "type": "gpu",
+            "key": "GPU"
+        },
         {
             "type": "memory",
             "format": "{} / {}"
