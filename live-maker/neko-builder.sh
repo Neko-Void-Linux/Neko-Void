@@ -276,7 +276,7 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 -g linux-firmware-nvidia "${cmd_args[@]}"
+    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://codeberg.org/javiercplus/Neko-Wizard/releases/download/repo -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 "${cmd_args[@]}"
 }
 
 # ─────────────────────────────────────────────

@@ -7,6 +7,7 @@ REPOS_PKGS="void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree"
 BASE_SYSTEM="
     base-system
     linux-firmware-amd
+    linux-firmware-nvidia
     linux-firmware-intel
     linux-mainline-headers
     dkms
