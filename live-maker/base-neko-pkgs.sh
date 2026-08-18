@@ -388,6 +388,7 @@ CINNAMON="
 
 LABWC="
     ristretto
+    noctalia
     xarchiver
 	lightdm
 	gvfs-afc
@@ -401,11 +402,9 @@ LABWC="
 	labwc
 	alacritty
 	kanshi
-	sfwbar
 	xdg-desktop-portal
 	xdg-desktop-portal-wlr
 	playerctl
-	rofi
 	nwg-look
 	gtk-update-icon-cache
 	wl-clipboard
@@ -513,6 +512,9 @@ MULTIMEDIA="
 MULTILIB_32BIT="
     mesa-32bit
     mesa-dri-32bit
+    SDL2-32bit
+    SDL2
+    libGL-32bit
 "
 
 # ─────────────────────────────────────────────

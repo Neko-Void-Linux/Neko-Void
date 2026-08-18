@@ -1,0 +1,54 @@
+[bar.default]
+margin_edge = 3
+margin_ends = 8
+position = "left"
+radius = 8
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@VGA-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@VGA-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 640.0
+    cy = 645.0
+    output = "VGA-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@VGA-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[shell.screen_corners]
+size = 15
+
+[theme]
+community_palette = "Matecito"
+source = "community"
+
+    [theme.templates]
+    builtin_ids = [ "alacritty", "btop", "foot", "gtk3", "gtk4", "ghostty", "mango", "niri", "qt", "sway" ]
+
+[wallpaper]
+directory = "/usr/share/backgrounds"
+
+    [wallpaper.default]
+    path = "/usr/share/backgrounds/moony-art3.png"
+
+    [wallpaper.last]
+    path = "/usr/share/backgrounds/moony-art3.png"
+
+    [wallpaper.monitors.VGA-1]
+    path = "/usr/share/backgrounds/moony-art3.png"

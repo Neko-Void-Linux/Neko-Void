@@ -1,0 +1,7 @@
+{
+  "title": "Example",
+  "clicks": {
+    "one": "Clicked {count} time",
+    "other": "Clicked {count} times"
+  }
+}

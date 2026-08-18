@@ -1,0 +1,11 @@
+sudo xbps-install -S \
+  pipewire wireplumber \
+  xdg-desktop-portal xdg-desktop-portal-wlr \
+  waybar \
+  fuzzel \
+  swaybg \
+  swaync \
+  grim slurp \
+  wl-clipboard \
+  mako \
+  wlsunset

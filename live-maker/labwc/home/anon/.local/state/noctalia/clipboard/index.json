@@ -1,0 +1,1001 @@
+{
+  "entries": [
+    {
+      "byte_size": 35,
+      "captured_at_ms": 1781608513770,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781608513770-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781608513770-1.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/.local/state/noctalia"
+    },
+    {
+      "byte_size": 14,
+      "captured_at_ms": 1781574970563,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574970563-1",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574970563-1.bin",
+      "pinned": false,
+      "text_preview": "linux-mainline"
+    },
+    {
+      "byte_size": 7,
+      "captured_at_ms": 1781574619069,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574619069-5",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574619069-5.bin",
+      "pinned": false,
+      "text_preview": "niri-nk"
+    },
+    {
+      "byte_size": 40,
+      "captured_at_ms": 1781574522685,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574522685-2",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574522685-2.bin",
+      "pinned": false,
+      "text_preview": "dbus-run-session /usr/bin/niri --session"
+    },
+    {
+      "byte_size": 40,
+      "captured_at_ms": 1781574452642,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574452642-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/plain;charset=utf-8",
+        "text/plain",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574452642-1.bin",
+      "pinned": false,
+      "text_preview": "/usr/share/wayland-sessions/niri.desktop"
+    },
+    {
+      "byte_size": 98,
+      "captured_at_ms": 1781574389796,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574389796-44",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574389796-44.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/etc/skel/.config/niri/input.kdl"
+    },
+    {
+      "byte_size": 99,
+      "captured_at_ms": 1781574300756,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574300756-26",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574300756-26.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.config/niri/input.kdl"
+    },
+    {
+      "byte_size": 27,
+      "captured_at_ms": 1781574191644,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574191644-25",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574191644-25.bin",
+      "pinned": false,
+      "text_preview": "spawn-at-startup \"noctalia\""
+    },
+    {
+      "byte_size": 365,
+      "captured_at_ms": 1781574146292,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574146292-23",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574146292-23.bin",
+      "pinned": false,
+      "text_preview": "gsettings set org.gnome.desktop.interface icon-theme \"Tela-dracula-dark\" gsettings set org.gnome.desktop.interface gtk-theme \"Everforest-BL-MB-Dark-Soft\" # Cambiar el tema del cursor para aplicaciones"
+    },
+    {
+      "byte_size": 14,
+      "captured_at_ms": 1781574134731,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574134731-21",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574134731-21.bin",
+      "pinned": false,
+      "text_preview": "Bibata-Gruvbox"
+    },
+    {
+      "byte_size": 214,
+      "captured_at_ms": 1781574113342,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574113342-19",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574113342-19.bin",
+      "pinned": false,
+      "text_preview": "# Cambiar el tema del cursor para aplicaciones GTK gsettings set org.gnome.desktop.interface cursor-theme 'nombre-de-tu-tema' # Cambiar el tamaño del cursor gsettings set org.gnome.desktop.interface "
+    },
+    {
+      "byte_size": 14,
+      "captured_at_ms": 1781574040867,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781574040867-18",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781574040867-18.bin",
+      "pinned": false,
+      "text_preview": "Bibata-Gruvbox"
+    },
+    {
+      "byte_size": 92,
+      "captured_at_ms": 1781573917104,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573917104-17",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573917104-17.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.setup/rice_set"
+    },
+    {
+      "byte_size": 83,
+      "captured_at_ms": 1781573819396,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573819396-14",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573819396-14.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/usr/bin/rice_set"
+    },
+    {
+      "byte_size": 73,
+      "captured_at_ms": 1781573805452,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573805452-12",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573805452-12.bin",
+      "pinned": false,
+      "text_preview": "gsettings set org.gnome.desktop.interface icon-theme \"Tela-dracula-dark\" "
+    },
+    {
+      "byte_size": 84,
+      "captured_at_ms": 1781573784627,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573784627-10",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573784627-10.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.themes"
+    },
+    {
+      "byte_size": 85,
+      "captured_at_ms": 1781573756867,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573756867-8",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573756867-8.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/labwc/home/anon/.themes"
+    },
+    {
+      "byte_size": 705,
+      "captured_at_ms": 1781573707988,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573707988-6",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573707988-6.bin",
+      "pinned": false,
+      "text_preview": "#!/bin/bash  # Ruta del archivo de marca MARKER_FILE=\"$HOME/.rices.set\"  runn(){ gsettings set org.gnome.desktop.interface icon-theme \"Tela-dracula-dark\" gsettings set org.gnome.desktop.interface gtk-"
+    },
+    {
+      "byte_size": 185,
+      "captured_at_ms": 1781573659965,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573659965-4",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573659965-4.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.config/gtk-3.0 /home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.config/gtk-4.0"
+    },
+    {
+      "byte_size": 59,
+      "captured_at_ms": 1781573636111,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573636111-2",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573636111-2.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/.config/gtk-3.0 /home/javierc/.config/gtk-4.0"
+    },
+    {
+      "byte_size": 7,
+      "captured_at_ms": 1781573571971,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781573571971-1",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781573571971-1.bin",
+      "pinned": false,
+      "text_preview": "lightdm"
+    },
+    {
+      "byte_size": 88,
+      "captured_at_ms": 1781572537496,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781572537496-8",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781572537496-8.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/nekovoid-niri-20260615.iso"
+    },
+    {
+      "byte_size": 116,
+      "captured_at_ms": 1781571882515,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781571882515-5",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781571882515-5.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/labwc/home/anon/.local/share/applications/gtks.desktop"
+    },
+    {
+      "byte_size": 7,
+      "captured_at_ms": 1781571710780,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781571710780-4",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781571710780-4.bin",
+      "pinned": false,
+      "text_preview": "lightdm"
+    },
+    {
+      "byte_size": 59,
+      "captured_at_ms": 1781571647467,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781571647467-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781571647467-1.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/.config/gtk-3.0 /home/javierc/.config/gtk-4.0"
+    },
+    {
+      "byte_size": 88,
+      "captured_at_ms": 1781571189069,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781571189069-16",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781571189069-16.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/nekovoid-niri-20260615.iso"
+    },
+    {
+      "byte_size": 15,
+      "captured_at_ms": 1781569625394,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569625394-15",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569625394-15.bin",
+      "pinned": false,
+      "text_preview": "Ivo Mukkulainen"
+    },
+    {
+      "byte_size": 39,
+      "captured_at_ms": 1781569526827,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569526827-13",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569526827-13.bin",
+      "pinned": false,
+      "text_preview": "Ivo Mukkulainen Ivo Mukkulainen Donate "
+    },
+    {
+      "byte_size": 11014,
+      "captured_at_ms": 1781569212142,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569212142-12",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569212142-12.bin",
+      "pinned": false,
+      "text_preview": "Perfecto. He leído tu análisis y tienes toda la razón. Esos dos puntos necesitaban ajuste para que la lógica interna fuera sólida y el ritmo no se sintiera apresurado. Aquí tienes el Capítulo 1"
+    },
+    {
+      "byte_size": 1331,
+      "captured_at_ms": 1781569179161,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569179161-10",
+      "mime_types": [
+        "text/html",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569179161-10.bin",
+      "pinned": false,
+      "text_preview": "Análisis de la estructura narrativa  Existen algunos puntos de lógica interna y ritmo que requieren atención para que la trama sea hermética:  La relación Controlador-Supervisada entre Leo y Alma"
+    },
+    {
+      "byte_size": 8340,
+      "captured_at_ms": 1781569076975,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569076975-6",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569076975-6.bin",
+      "pinned": false,
+      "text_preview": "Dieciocho años, dieciocho horas.  Leo llevaba años leyendo el mismo aviso en las pantallas comunitarias. Se lo sabía de memoria: al alcanzar la adultez, la primera noche serías monitorizado. Si al"
+    },
+    {
+      "byte_size": 8502,
+      "captured_at_ms": 1781569055085,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781569055085-5",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781569055085-5.bin",
+      "pinned": false,
+      "text_preview": "Aquí tienes el Capítulo 1 sin guiones en los diálogos, usando formato narrativo:  ---  # 18?  ## CAPÍTULO 1: LA NOCHE QUE TODO TE MIRA  Dieciocho años, dieciocho horas.  Leo llevaba años leyendo"
+    },
+    {
+      "byte_size": 3,
+      "captured_at_ms": 1781568871997,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781568871997-4",
+      "mime_types": [
+        "text/html",
+        "text/_moz_htmlcontext",
+        "text/_moz_htmlinfo",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "text/x-moz-url-priv"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781568871997-4.bin",
+      "pinned": false,
+      "text_preview": "—"
+    },
+    {
+      "byte_size": 30,
+      "captured_at_ms": 1781568617994,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781568617994-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781568617994-2.bin",
+      "pinned": false,
+      "text_preview": "https://linktr.ee/javiercplusx"
+    },
+    {
+      "byte_size": 107,
+      "captured_at_ms": 1781568470493,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781568470493-1",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781568470493-1.bin",
+      "pinned": false,
+      "text_preview": "https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/nvidia580-nekovoid-kde-20260615.iso"
+    },
+    {
+      "byte_size": 88,
+      "captured_at_ms": 1781565130702,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781565130702-8",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781565130702-8.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/nekovoid-niri-20260615.iso"
+    },
+    {
+      "byte_size": 10,
+      "captured_at_ms": 1781564109348,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781564109348-5",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781564109348-5.bin",
+      "pinned": false,
+      "text_preview": "/etc/pam.d"
+    },
+    {
+      "byte_size": 16,
+      "captured_at_ms": 1781564066812,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781564066812-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781564066812-1.bin",
+      "pinned": false,
+      "text_preview": "/etc/emptty/conf"
+    },
+    {
+      "byte_size": 102,
+      "captured_at_ms": 1781562067726,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781562067726-1",
+      "mime_types": [
+        "text/plain",
+        "text/plain;charset=utf-8"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781562067726-1.bin",
+      "pinned": false,
+      "text_preview": "if [ -z \"$DBUS_SESSION_BUS_ADDRESS\" ]; then     eval $(dbus-launch --sh-syntax --exit-with-session) fi"
+    },
+    {
+      "byte_size": 13,
+      "captured_at_ms": 1781561656500,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781561656500-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781561656500-2.bin",
+      "pinned": false,
+      "text_preview": "autostart.kdl"
+    },
+    {
+      "byte_size": 22,
+      "captured_at_ms": 1781561651964,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781561651964-1",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781561651964-1.bin",
+      "pinned": false,
+      "text_preview": "include \"noctalia.kdl\""
+    },
+    {
+      "byte_size": 83,
+      "captured_at_ms": 1781561577580,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781561577580-13",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781561577580-13.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.local"
+    },
+    {
+      "byte_size": 98,
+      "captured_at_ms": 1781561555450,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781561555450-12",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781561555450-12.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/Documentos/server/projects/Neko-Void/live-maker/niri/home/anon/.local/state/noctalia"
+    },
+    {
+      "byte_size": 35,
+      "captured_at_ms": 1781561490085,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781561490085-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781561490085-1.bin",
+      "pinned": false,
+      "text_preview": "/home/javierc/.local/state/noctalia"
+    },
+    {
+      "byte_size": 36,
+      "captured_at_ms": 1781560051188,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781560051188-1",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781560051188-1.bin",
+      "pinned": false,
+      "text_preview": "67723116-6edd-4077-af23-ed21a532bd0d"
+    },
+    {
+      "byte_size": 8,
+      "captured_at_ms": 1781543633435,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781543633435-5",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781543633435-5.bin",
+      "pinned": false,
+      "text_preview": "wlsunset"
+    },
+    {
+      "byte_size": 12,
+      "captured_at_ms": 1781543621020,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781543621020-4",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781543621020-4.bin",
+      "pinned": false,
+      "text_preview": "wl-clipboard"
+    },
+    {
+      "byte_size": 41,
+      "captured_at_ms": 1781543595700,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781543595700-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781543595700-2.bin",
+      "pinned": false,
+      "text_preview": "xdg-desktop-portal xdg-desktop-portal-wlr"
+    },
+    {
+      "byte_size": 189,
+      "captured_at_ms": 1781543577006,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781543577006-1",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781543577006-1.bin",
+      "pinned": false,
+      "text_preview": "sudo xbps-install -S \\   pipewire wireplumber \\   xdg-desktop-portal xdg-desktop-portal-wlr \\   waybar \\   fuzzel \\   swaybg \\   swaync \\   grim slurp \\   wl-clipboard \\   mako \\   wlsunset"
+    },
+    {
+      "byte_size": 113,
+      "captured_at_ms": 1781539968126,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781539968126-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781539968126-1.bin",
+      "pinned": false,
+      "text_preview": "/run/media/javierc/67723116-6edd-4077-af23-ed21a532bd0d/projects/Neko-Void/live-maker/niri/home/anon/.config/niri"
+    },
+    {
+      "byte_size": 81,
+      "captured_at_ms": 1781539738793,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781539738793-7",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781539738793-7.bin",
+      "pinned": false,
+      "text_preview": "https://github.com/javiercplus/Neko-Void/actions/runs/27559614354/job/81467805944"
+    },
+    {
+      "byte_size": 3100,
+      "captured_at_ms": 1781539661986,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781539661986-6",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781539661986-6.bin",
+      "pinned": false,
+      "text_preview": "name: Build Neko Void ISO niri  on:   workflow_dispatch:   workflow_call:  concurrency:   group: ${{ github.workflow }}-${{ github.ref }}   cancel-in-progress: true  jobs:   build-neko-void:     name:"
+    },
+    {
+      "byte_size": 3103,
+      "captured_at_ms": 1781539427550,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781539427550-5",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781539427550-5.bin",
+      "pinned": false,
+      "text_preview": "name: Build Neko Void ISO labwc  on:   workflow_dispatch:   workflow_call:  concurrency:   group: ${{ github.workflow }}-${{ github.ref }}   cancel-in-progress: true  jobs:   build-neko-void:     name"
+    },
+    {
+      "byte_size": 36,
+      "captured_at_ms": 1781538787751,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781538787751-2",
+      "mime_types": [
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "text/plain"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781538787751-2.bin",
+      "pinned": false,
+      "text_preview": "e34a1132-5dd0-443a-9bf6-d7fc0e139c5b"
+    },
+    {
+      "byte_size": 107,
+      "captured_at_ms": 1781538580020,
+      "data_mime_type": "text/plain;charset=utf-8",
+      "id": "1781538580020-1",
+      "mime_types": [
+        "x-special/gnome-copied-files",
+        "text/uri-list",
+        "application/vnd.portal.filetransfer",
+        "application/vnd.portal.files",
+        "text/plain;charset=utf-8",
+        "UTF8_STRING",
+        "COMPOUND_TEXT",
+        "TEXT",
+        "text/plain",
+        "STRING",
+        "SAVE_TARGETS"
+      ],
+      "payload_path": "/home/javierc/.local/state/noctalia/clipboard/entries/1781538580020-1.bin",
+      "pinned": false,
+      "text_preview": "/run/media/javierc/67723116-6edd-4077-af23-ed21a532bd0d/projects/Neko-Void/live-maker/niri/home/anon/.local"
+    }
+  ]
+}

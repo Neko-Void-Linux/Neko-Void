@@ -1,0 +1,73 @@
+{
+  "change_serial": 7,
+  "entries": [
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 2,
+      "notification": {
+        "actions": [],
+        "app_name": "nemo",
+        "body": "Filesystem has been disconnected.",
+        "category": null,
+        "desktop_entry": "org.Nemo",
+        "expiry_wall_ms": 1781538847765,
+        "icon": "media-removable",
+        "id": 1,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1781538841765,
+        "summary": "1.0 TB Volume unmounted",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 5,
+      "notification": {
+        "actions": [],
+        "app_name": "nemo",
+        "body": "Disconnecting from filesystem.",
+        "category": null,
+        "desktop_entry": "org.Nemo",
+        "expiry_wall_ms": 1781543503710,
+        "icon": "media-removable",
+        "id": 2,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1781543497710,
+        "summary": "Unmounting 8.2 GB Volume",
+        "timeout": 6000,
+        "urgency": "critical"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 7,
+      "notification": {
+        "actions": [],
+        "app_name": "nemo",
+        "body": "Filesystem has been disconnected.",
+        "category": null,
+        "desktop_entry": "org.Nemo",
+        "expiry_wall_ms": 1781543505469,
+        "icon": "media-removable",
+        "id": 3,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1781543499070,
+        "summary": "Volume unmounted",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    }
+  ],
+  "next_id": 7,
+  "version": 2
+}

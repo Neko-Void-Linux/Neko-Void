@@ -1,0 +1,6 @@
+ayer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }

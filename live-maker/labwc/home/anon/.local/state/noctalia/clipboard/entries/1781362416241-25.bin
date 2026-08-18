@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Pulls the live package list from the official Arch Linux HedgeDoc note.
+LIST_URL="https://md.archlinux.org/s/SxbqukK6IA"
+
+echo "Fetching infected package list..."
+
+raw=$(curl -fsSL "$LIST_URL") || { echo "ERROR: failed to fetch $LIST_URL"; exit 1; }
+
+# Extract lines that look like package names only (lowercase, digits, dots, plus, underscore, hyphen)
+# Strips HTML, blank lines, comments, and anything that doesn't match a sane pkgname pattern.
+mapfile -t INFECTED_PKGS < <(
+    echo "$raw" \
+    | sed 's/<[^>]*>//g' \
+    | grep -E '^[a-z0-9][a-z0-9_.+\-]*[a-z0-9]$' \
+    | sort -u
+)
+
+count=${#INFECTED_PKGS[@]}
+if [[ $count -eq 0 ]]; then
+    echo "ERROR: parsed 0 packages, something went wrong with the fetch/parse."
+    exit 1
+fi
+
+echo "Checking $count known infected packages..."
+echo
+
+mapfile -t found < <(comm -12 <(pacman -Qmq | sort) <(printf "%s\n" "${INFECTED_PKGS[@]}" | sort))
+
+if [[ ${#found[@]} -eq 0 ]]; then
+    echo "Clean: none of the known infected packages are installed."
+else
+    echo "WARNING: ${#found[@]} infected package(s) found:"
+    for pkg in "${found[@]}"; do
+        echo "  - $pkg"
+    done
+    echo
+    echo "You may be infected"
+fi
+
+# printf "%s\n" "${INFECTED_PKGS[@]}"

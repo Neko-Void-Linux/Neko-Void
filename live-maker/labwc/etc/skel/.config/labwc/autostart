@@ -1,7 +1,7 @@
 # Example autostart file
 
 # Set background color.
-~/.local/bin/ici-paper &
+#~/.local/bin/ici-paper &
 # Configure output directives such as mode, position, scale and transform.
 # Use wlr-randr to get your output names
 # Example ~/.config/kanshi/config below:
@@ -19,13 +19,13 @@ fi
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
 # Launch a panel such as yambar or waybar.
-sfwbar >/dev/null 2>&1 &
-nm-applet &
+#sfwbar >/dev/null 2>&1 &
+#nm-applet &
 # Enable notifications. Typically GNOME/KDE application notifications go
 # through the org.freedesktop.Notifications D-Bus API and require a client such
 # as mako to function correctly. Thunderbird is an example of this.
 mako >/dev/null 2>&1 &
-
+noctalia &
 /usr/libexec/xdg-desktop-portal-wlr &
 pipewire &
 /usr/bin/rice_set &

@@ -32,13 +32,13 @@
     
     <keybind key="W-r">
       <action name="Execute">
-	      <command> ~/.config/rofi/select launcher</command>
+	      <command>noctalia msg panel-toggle launcher</command>
       </action>
     </keybind>
 
     <keybind key="W-x">
       <action name="Execute">
-        <command>~/.config/rofi/select power</command>
+        <command>noctalia msg panel-toggle session</command>
       </action>
     </keybind>
     

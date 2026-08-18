@@ -1,0 +1,1097 @@
+wilderwild:block.hanging_tendril.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.clicking
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.clicking_stop
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hanging_tendril.wring
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_cherry_log.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_cherry_log.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_cherry_log.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_cherry_log.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_cherry_log.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_log.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_log.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_log.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_log.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_log.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_maple_log.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_maple_log.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_maple_log.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_maple_log.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_maple_log.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_pale_oak_log.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_pale_oak_log.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_pale_oak_log.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_pale_oak_log.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_pale_oak_log.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_stem.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_stem.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_stem.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_stem.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.hollowed_stem.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ice.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ice.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ice.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ice.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ice.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.log_hollowed
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.log_hollowed.axe
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.magma.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.magma.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.magma.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.magma.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.magma.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaf_litter.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaf_litter.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaf_litter.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaf_litter.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaf_litter.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaves.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaves.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaves.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaves.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_leaves.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_button.click_off
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_button.click_on
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_door.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_door.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_fence_gate.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_fence_gate.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_hanging_sign.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_hanging_sign.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_hanging_sign.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_hanging_sign.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_hanging_sign.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_pressure_plate.click_off
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_pressure_plate.click_on
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_trapdoor.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.maple_wood_trapdoor.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.melon.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.melon.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.melon.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.melon.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.melon.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.evaporate
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mesoglea.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.milkweed.rustle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom_block.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom_block.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom_block.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom_block.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.mushroom_block.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.nematocyst.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.nematocyst.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.nematocyst.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.nematocyst.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.nematocyst.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.null_block.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.null_block.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.null_block.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.null_block.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.null_block.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.osseous_sculk.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.osseous_sculk.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.osseous_sculk.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.osseous_sculk.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.osseous_sculk.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ostrich_egg.crack
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.ostrich_egg.hatch
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss_carpet.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss_carpet.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss_carpet.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss_carpet.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_moss_carpet.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaf_litter.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaf_litter.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaf_litter.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaf_litter.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaf_litter.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaves.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaves.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaves.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaves.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_leaves.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_button.click_off
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_button.click_on
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_door.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_door.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_fence_gate.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_fence_gate.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_hanging_sign.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_hanging_sign.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_hanging_sign.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_hanging_sign.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_hanging_sign.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_pressure_plate.click_off
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_pressure_plate.click_on
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_trapdoor.close
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pale_oak_wood_trapdoor.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.penguin_egg.crack
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.penguin_egg.hatch
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pollen.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pollen.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pollen.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pollen.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.pollen.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.prickly_pear.pick
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.reinforced_deepslate.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.reinforced_deepslate.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.reinforced_deepslate.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.reinforced_deepslate.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.reinforced_deepslate.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sandstone.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sandstone.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sandstone.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sandstone.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sandstone.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sapling.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sapling.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sapling.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sapling.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sapling.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.scorched_sand.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.scorched_sand.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.scorched_sand.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.scorched_sand.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.scorched_sand.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sculk_shrieker.gargle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sea_anemone.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sea_anemone.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.short_grass.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.short_grass.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.soul_fire.ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stem_hollowed
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stem_hollowed.axe
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.close_start
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.close_start_underwater
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.item_crumble
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.lift
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.lift_underwater
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.open
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.open_underwater
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.slam
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.stone_chest.slam_underwater
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sugar_cane.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sugar_cane.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sugar_cane.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sugar_cane.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.sugar_cane.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.enter
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.exit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.termite_gnaw
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.termite_gnaw_finish
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.termite_mound.termite_idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:block.thin_ice.crack
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tube_worms.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tube_worms.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.fall
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.hit
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.place
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.shear
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:block.tumbleweed_plant.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: custom-weapons:elephant_ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: custom-weapons:elephant_hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.butterfly.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.butterfly.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.coconut_crab.ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.coconut_crab.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.coconut_crab.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.attack
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.dig
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.emerge
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.crab.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.firefly.hide
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.firefly.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.frog.sus_death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.generic.splash_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.generic.swim_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.hostile.splash_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.hostile.swim_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.ambient_water
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.death_water
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.hide
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.hurt_water
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.sting
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.jellyfish.swim
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.moobloom.shear
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.beak.stuck
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.beak.swing
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.eat
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.grunt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.hiss
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.beak.stuck
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.beak.swing
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.idle.ah
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.idle.bock
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.inbred.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.lay_egg
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.saddle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.ostrich.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.penguin.ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.call
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.penguin.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.penguin.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.lay_egg
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.call
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.lay_egg
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.linux.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.penguin.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.player.hurt.cactus
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.player.splash.high_speed_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.player.splash_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.player.swim_mesoglea
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.scorched.ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.scorched.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.scorched.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.scorched.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.scorched.step_lava
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.squirrel.ambient
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.squirrel.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: ecologics:entity.squirrel.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.bounce
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.cannonball.bounce
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.cannonball.break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.cannonball.damage
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.cannonball.roll
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.tumbleweed.damage
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.brap
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.dying
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.dying_underwater
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.kirby_death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.stella_heartbeat
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.warden.swim
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.beak.stuck
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.beak.swing
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.death
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.eat
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.grunt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.hiss
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.hurt
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.idle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.saddle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:entity.zombie_ostrich.step
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bottle.catch_butterfly
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bottle.catch_firefly
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bottle.put_in_lantern_firefly
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bottle.release_butterfly
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bottle.release_firefly
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bucket.empty_crab
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bucket.empty_jellyfish
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bucket.fill_crab
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.bucket.fill_jellyfish
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.coconut.hit_head
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.coconut.land
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.coconut.land_break
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.coconut.throw
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.egg.land
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.ender_pearl.land
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.experience_bottle.splash
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: sounds:item.hard_metal.hold
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.milkweed_pod.blow
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.potion.lingering
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.potion.magic
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.potion.splash
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: sounds:item.shiny_metal.hold
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:item.snowball.land
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: mutantszombies:mob.mutants.roar
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: mutantszombies:mob.split_head_zombie.flesh
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: mutantszombies:mob.split_head_zombie.gurgle
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.dying_forest
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.frozen_caves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.magmatic_caves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.maple_forest
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.mesoglea_caves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.snowy_dying_forest
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_badlands
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_bamboo_jungles
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_cherry_groves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_deserts
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_dripstone_caves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_flower_forests
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_forests
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_frozen_oceans
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_groves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_jungles
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_lush_caves
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_oceans
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_snowy
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_sparse_jungles
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:music.overworld.wilder_warm_oceans
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:particle.floating_sculk_bubble.pop
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:particle.mesoglea_bubble.pop
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: wilderwild:particle.mesoglea_drip.land
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: physicsmod:splash_sound
+[21:46:21] [Render thread/INFO]: Unknown sound in sound rate config: physicsmod:wind
+[21:46:21] [Render thread/INFO]: [SSPB] Broken dirt path lighting is best dirt path lighting lol
+[21:46:21] [Render thread/INFO]: Constructing components for statuemenus:client
+[21:46:21] [Render thread/INFO]: Constructing components for stonecuttingupgrade:client
+[21:46:21] [Render thread/INFO]: Constructing components for stoneworks:client
+[21:46:21] [Render thread/INFO]: Constructing components for strawstatues:client
+[21:46:21] [Render thread/INFO]: Loaded config subtle_effects:general in 113ms
+[21:46:21] [Render thread/INFO]: Loaded config subtle_effects:blocks in 102ms
+[21:46:21] [Render thread/INFO]: Loaded config subtle_effects:entities in 99ms
+[21:46:21] [Render thread/INFO]: Loaded config subtle_effects:environment in 99ms
+[21:46:22] [Render thread/INFO]: Loaded config subtle_effects:items in 40ms
+[21:46:22] [Render thread/WARN]: Found okay program match for subtle_effects:pipeline/entity_particle_translucent: PARTICLES_TRANS
+[21:46:22] [Render thread/WARN]: Found okay program match for subtle_effects:pipeline/alpha_blend: PARTICLES_TRANS
+[21:46:22] [Render thread/INFO]: Constructing components for swordblockingmechanics:client
+[21:46:22] [Render thread/INFO]: Initializing client hooks for the_best_cube_game
+[21:46:22] [Render thread/INFO]: Constructing components for tinyskeletons:client
+[21:46:22] [Render thread/INFO]: Constructing components for tooltipinsights:client
+[21:46:22] [Render thread/INFO]: Constructing components for tradingpost:client
+[21:46:22] [Render thread/INFO]: [STDOUT]: [LibGui] Initializing Client...
+[21:46:22] [Render thread/INFO]: Constructing components for universalbonemeal:client
+[21:46:22] [Render thread/INFO]: Deserializing URClientConfig from '/home/jmx/.local/share/ElyPrismLauncher/instances/Mods vanilla++/minecraft/config/uselessreptile_client.json5'
+[21:46:22] [Render thread/INFO]: Constructing components for vehicleupgrade:client
+[21:46:22] [Render thread/INFO]: Constructing components for villagemasquerade:client
+[21:46:22] [Render thread/INFO]: Fabric client initialization starting
+[21:46:22] [Render thread/INFO]: Visual Health (CLIENT) starting!
+[21:46:22] [Render thread/INFO]: Loaded 32 entity damage overrides
+[21:46:22] [Render thread/INFO]: Applied 0 color overrides, 0 disabled entities
+[21:46:22] [Render thread/INFO]: Visual Health config loaded: 50% wound density, 5 tiers, passive mobs: true, villagers: false, players: true, color: RED
+[21:46:22] [Render thread/INFO]: Visual Health wound textures will load on first use
+[21:46:22] [Render thread/INFO]: Visual Health client initialization complete!
+[21:46:22] [Render thread/INFO]: Registering Visual Health emissive damage overlay layers to entity renderers
+[21:46:22] [Render thread/WARN]: EntityRenderDispatcher is null, will retry later
+[21:46:22] [Render thread/INFO]: Fabric client initialization complete
+[21:46:22] [Render thread/INFO]: Constructing components for visualworkbench:client
+[21:46:22] [Render thread/INFO]: Registering common data for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Registering client data for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Loading primary common config for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Loading server config profiles for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Loading primary client config for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Loading client config profiles for channel xaerolib:main!
+[21:46:22] [Render thread/INFO]: Loading XaeroLib common 1/2!
+[21:46:22] [Render thread/INFO]: Loading XaeroLib client 1/3!
+[21:46:23] [Render thread/INFO]: Registering common data for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Registering client data for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Loading primary common config for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Loading server config profiles for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Loading primary client config for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Loading client config profiles for channel xaerominimap:main!
+[21:46:23] [Render thread/INFO]: Loading Xaero's Minimap - Stage 1/3
+[21:46:23] [Render thread/INFO]: Registering common data for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Registering client data for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Loading primary common config for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Loading server config profiles for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Loading primary client config for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Loading client config profiles for channel xaeroworldmap:main!
+[21:46:23] [Render thread/INFO]: Loading Xaero's World Map - Stage 1/3
+[21:46:23] [Render thread/INFO]: Deserializing YACLConfig from '/home/jmx/.local/share/ElyPrismLauncher/instances/Mods vanilla++/minecraft/config/yacl.json5'
+[21:46:23] [Render thread/WARN]: Failed to get system info for Render Extensions
+java.lang.IllegalStateException: Can't getDevice() before it was initialized
+	at knot//com.mojang.blaze3d.systems.RenderSystem.getDevice(RenderSystem.java:280)
+	at knot//net.minecraft.client.Minecraft.lambda$fillSystemReport$2(Minecraft.java:2579)
+	at knot//net.minecraft.SystemReport.setDetail(SystemReport.java:91)
+	at knot//net.minecraft.client.Minecraft.fillSystemReport(Minecraft.java:2579)
+	at knot//net.minecraft.client.Minecraft.fillReport(Minecraft.java:2549)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+[21:46:23] [Render thread/INFO]: [FastQuit] Exiting FastQuit.
+[21:46:24] [Render thread/WARN]: @Final field KNOWN_ATLASES:Ljava/util/List; in eg_particle_interactions.mixins.json:resource.RegisterAtlasConfig_AtlasManagerMixin from mod eg_particle_interactions should be final
+[21:46:24] [Render thread/WARN]: @Final field KNOWN_ATLASES:Ljava/util/List; in eg_particle_interactions.mixins.json:resource.RegisterAtlasConfig_AtlasManagerMixin from mod eg_particle_interactions should be final
+---- Minecraft Crash Report ----
+// My bad.
+Time: 2026-06-12 21:46:23
+Description: Initializing game
+java.lang.RuntimeException: Could not execute entrypoint stage 'client' due to errors, provided by 'controlify' at 'dev.isxander.controlify.ControlifyBootstrap'!
+	at net.fabricmc.loader.impl.FabricLoaderImpl.lambda$invokeEntrypoints$0(FabricLoaderImpl.java:413)
+	at net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:411)
+	at net.fabricmc.loader.impl.game.minecraft.Hooks.startClient(Hooks.java:53)
+	at knot//fudge.notenoughcrashes.fabric.mixinhandlers.ModLoaders.fabricEntrypoints(ModLoaders.java:9)
+	at knot//net.minecraft.client.Minecraft.redirect$hmj000$notenoughcrashes$catchFabricInit(Minecraft.java:40165)
+	at knot//net.minecraft.client.Minecraft.<init>(Minecraft.java:477)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: net.fabricmc.loader.api.EntrypointException: Exception while loading entries for entrypoint 'controlify' provided by 'itemswapper'
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage.getEntrypoints(EntrypointStorage.java:195)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.getEntrypoints(FabricLoaderImpl.java:387)
+	at knot//dev.isxander.controlify.platform.main.fabric.FabricPlatformMainImpl.applyToControlifyEntrypoint(FabricPlatformMainImpl.java:46)
+	at knot//dev.isxander.controlify.platform.main.PlatformMainUtil.applyToControlifyEntrypoint(PlatformMainUtil.java:38)
+	at knot//dev.isxander.controlify.Controlify.preInitialiseControlify(Controlify.java:178)
+	at knot//dev.isxander.controlify.ControlifyBootstrap.onInitializeClient(ControlifyBootstrap.java:15)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:409)
+	... 5 more
+Caused by: net.fabricmc.loader.api.LanguageAdapterException: java.lang.ClassNotFoundException: dev.tr7zw.itemswapper.compat.ControlifyItemswapperEntrypoint
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:55)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:124)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage.getEntrypoints(EntrypointStorage.java:188)
+	... 11 more
+Caused by: java.lang.ClassNotFoundException: dev.tr7zw.itemswapper.compat.ControlifyItemswapperEntrypoint
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:239)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:547)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:53)
+	... 13 more
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.fabricmc.loader.impl.FabricLoaderImpl.lambda$invokeEntrypoints$0(FabricLoaderImpl.java:413)
+	at net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:411)
+	at net.fabricmc.loader.impl.game.minecraft.Hooks.startClient(Hooks.java:53)
+	at knot//fudge.notenoughcrashes.fabric.mixinhandlers.ModLoaders.fabricEntrypoints(ModLoaders.java:9)
+	at knot//net.minecraft.client.Minecraft.redirect$hmj000$notenoughcrashes$catchFabricInit(Minecraft.java:40165)
+	at knot//net.minecraft.client.Minecraft.<init>(Minecraft.java:477)
+-- Initialization --
+Details:
+	Modules: 
+Stacktrace:
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+-- System Details --
+Details:
+	Minecraft Version: 26.1.2
+	Minecraft Version ID: 26.1.2
+	Operating System: Linux (amd64) version 7.0.11-zen1-1-zen
+	Java Version: 25.0.1, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 1564475392 bytes (1492 MiB) / 3401580544 bytes (3244 MiB) up to 4294967296 bytes (4096 MiB)
+	Memory (heap): init: 512MiB, used: 1752MiB, committed: 3244MiB, max: 4096MiB
+	Memory (non-head): init: 007MiB, used: 372MiB, committed: 374MiB, max: 000MiB
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+	Identifier: Intel64 Family 6 Model 94 Stepping 3
+	Microarchitecture: Skylake (Client)
+	Frequency (GHz): 3.20
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: Skylake-S GT2 [HD Graphics 530]
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MiB): 256.00
+	Graphics card #0 deviceId: 0x1912
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MiB): 7660.53
+	Virtual memory used (MiB): 5622.12
+	Swap memory total (MiB): 3830.00
+	Swap memory used (MiB): 271.47
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 116597.21, total: 237263.70
+	Space in storage for workdir (MiB): available: 116597.21, total: 237263.70
+	JVM Flags: 9 total; -Xms512m -Xmx4096m -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+PerfDisableSharedMem -XX:+UseZGC -XX:-ZUncommit
+	Debug Flags: 0 total; 
+	Fabric Mods: 
+		additional_lights: Additional Lights 3.1.0
+		advancednetherite: Advanced Netherite 2.4.1-26.1.2
+		aerialhell: Aerial Hell 1.0.0
+		airhop: Air Hop 26.1.0
+		almanac: Almanac 1.6.2
+		ambientsounds: AmbientSounds 6.3.6
+		amplified_nether: Amplified Nether 1.2.14
+		ancient-city-map: Ancient City Map 1.0.0
+		animalgarden_alligatorgar: Alligator Gar 1.0.0
+		animalgarden_bullshark: Animal Garden -Bull Shark 1.1.1
+		animalgarden_commonraven: animalgarden_commonraven 1.0.1
+		animalgarden_crocodile: animalgarden_crocodile 1.1.0
+		animalgarden_fennecfox: fennecfox 1.0.1
+		animalgarden_harpseal: animalgarden_harpseal 1.0.1
+		animalgarden_hippopotamus: animalgarden_hippopotamus 1.0.2
+		animalgarden_lion: animalgarden_lion 1.0.3
+		animalgarden_manatee: Animal Garden - Manatee 1.0.2
+		animalgarden_meerkat: Animal Garden - Meerkat 1.0.6
+		animalgarden_mouse: Animal Garden - Mouse 1.0.6
+		animalgarden_narwhal: animalgarden_narwhal 1.0.1
+		animalgarden_owl: Animal Garden - Owl 1.2.8
+		animalgarden_porcupine: Animal Garden - Porcupine 1.0.5
+		animalgarden_prairiedog: Animal Garden - Prairie Dog 1.0.3
+		animalgarden_redpanda: Animal Garden - Red Panda 1.1.3
+		animalgarden_redriverhog: animalgarden_redriverhog 1.0.0
+		animalgarden_seaotter: animalgarden_seaotter 1.1.1
+		animalgarden_snowleopard: animalgarden_snowleopard 1.0.1
+		animalgarden_spottedhyena: Animal Garden - Spotted Hyena 1.1.1
+		animalgarden_springhare: animalgarden_springhare 1.0.1
+		animalgarden_sugarglider: Animal Garden - Sugar Glider 1.0.1
+		animalgarden_vicuna: animalgarden_vicuna 1.0.1
+		animalgarden_westerngorilla: westerngorilla 1.0.1
+		animalgarden_whiterhinoceros: animalgarden-whiterhinoceros 1.0.1
+		animatica: Animatica Refabricated 0.6.2+26.1
+		anvilrestoration: Anvil Restoration 2.5
+		appleskin: AppleSkin 3.0.9+mc26.1
+		aquarius_libs: Aquarius Libs 1.2.0
+		arcanelanterns: Arcane Lanterns 26.1.0
+		armoredfoes: Armored Foes 26.1.0
+		armortrimitemfix: Armor Trim Item Fix 2.1.5
+		artifacts: Artifacts 15.0.0
+			expandability: ExpandAbility 14.0.0
+		async: Async 0.2.2+alpha-26.1.2
+			com_axalotl_async_api: api 1.0.1
+			fabric-permissions-api-v0: fabric-permissions-api 0.7.0
+		attributefix: AttributeFix 26.1.2.1
+		autototem: Auto Totem 2.0.0
+		axesareweapons: Axes Are Weapons 1.10.2
+		azaleagrowthcontrol: Azalea Growth Control 26.1.0
+		bagofholding: Bag Of Holding 26.1.0
+		balanced_diet: Balanced Diet Variety is Vital 2.0.0+26.1
+		balm: Balm 26.1.2.7
+			kuma_api: KumaAPI 26.1.2.2
+		barteringstation: Bartering Station 26.1.0
+		bcc: Better Compatibility Checker 26.1.2.1
+		better_climbing: Better Climbing 6
+		better_happy_ghast: Happy Ghast+ 1.0.0
+		betterbiomeblend: Better Biome Blend 1.4.0
+		betterclouds: Better Clouds 1.13.6+26.1.2-fabric
+			gs_mclo_api: api 5.0.2
+			mixinsquared: MixinSquared 0.3.7-beta.1
+		betterdays: BetterDays 4.1.1.6
+		betterf3: BetterF3 18.0.2
+		bettergrass: BetterGrassify 1.8.6+fabric.26.1.2
+		bettermounthud: Better Mount HUD 1.3.0
+		bettershields: BetterShields 1.10.0+mc26.1
+		bettertridents: Better Tridents 26.1.0
+		biolith: Biolith 3.6.0-alpha.8
+		biomesoplenty: BiomesOPlenty 26.1.2.0.20
+			com_google_code_findbugs_jsr305: jsr305 3.0.2
+			net_jodah_typetools: typetools 0.6.3
+		blockrunner: Block Runner 26.1.0
+		bloomcraft: Bloomcraft 26.1.0
+		bookshelf: Bookshelf 26.1.2.9
+		boss_checklist: Boss Checklist 5.0.2
+		bossbar: Bossbar 1.3+26.1.2
+		bridgingmod: Bridging Mod 2.6.6+26.1
+		cameraoverhaul: CameraOverhaul 2.1.1-fabric+mc.26.1-plus
+		cape-provider: Cape Provider 5.4.2
+		cavedust: Cave Dust 3.1.0
+			kirin: Kirin UI 1.22.0+26.1
+		chat_heads: Chat Heads 1.2.2
+		chatanimation: ChatAnimation 1.1.3
+		chunksfadein: Chunks Fade In 3.0.21-26.1
+			com_moandjiezana_toml_toml4j: toml4j 0.7.2
+			fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.1.8+9c919dacc9
+		chunky: Chunky 1.5.3
+		client_recipe_fix: Client Recipe Fix 2.0.0-beta.3
+		clienttweaks: Client Tweaks 26.1.2.3
+		climaterivers: Climate Rivers 26.1.0
+		cloth-config: Cloth Config v26.1 26.1.154
+			cloth-basic-math: cloth-basic-math 0.6.1
+		clumps: Clumps 26.1.2.1
+		cobweb: Cobweb 1.4.0
+		coinsje: Coins 26.1.2.2
+		collective: Collective 8.25
+		combatnouveau: Combat Nouveau 26.1.0
+		completionistsindex: Completionist's Index 26.1.0
+		config_manager: Config Manager 1.1.2
+		configureddefaults: Configured Defaults 26.1.0
+		connectivity: Connectivity Mod 26.1-7.6
+		continuity: Continuity 3.0.1-beta.2+26.1
+		controlify: Controlify 3.0.1+26.1-fabric
+			dev_isxander_libsdl4j: libsdl4j 3.2.18.release-3.2.18-79
+			dev_isxander_steamdeck4j: steamdeck4j 1.1.7
+			org_hid4java_hid4java: hid4java 0.8.0
+		controlling: Controlling 26.1.2.4
+		convenienteffects: Convenient Effects 26.1.0
+		coolrain: CoolRain 1.4.0-26.1.2
+		cosycritters: Cosy Critters & Creepy Crawlies 0.3.2
+		craftingtweaks: Crafting Tweaks 26.1.2.1
+		crash_assistant: Crash Assistant 1.11.9
+		crashfixer: CrashFixer 3.1.0+26.1.2
+		creativecore: CreativeCore 2.14.16
+			net_neoforged_bus: bus 7.2.0
+		cristellib: Cristel Lib 3.1.4
+			blue_endless_jankson: jankson 1.2.3
+		cullleaves: Cull Leaves 4.1.2
+		cupboard: cupboard 26.1-3.7
+		cutthrough: Cut Through 26.1.0
+		cwb: Cubes Without Borders 4.0.6+26.1
+		deathfinder: Death Finder 26.1.1
+		debugify: Debugify 26.1.2.2
+		deimos: Deimos 2.7
+		deleteworldstotrash: Delete Worlds To Trash 26.1.2
+		diagonalfences: Diagonal Fences 26.1.0
+			diagonalblocks: Diagonal Blocks 26.1.0
+		dismountentity: Dismount Entity 3.6
+		distinctpotions: Distinct Potions 26.1.0
+		doubledoors: Double Doors 7.2
+		dyedflames: Dyed Flames 26.1.0
+		dynamic_fps: Dynamic FPS 3.11.7
+			dynamic_fps_common: Dynamic FPS Common 3.11.7
+			net_lostluma_battery: battery 2.1.0
+		dynamiccrosshair: Dynamic Crosshair 9.12
+			dynamiccrosshair-api: Dynamic Crosshair API 1.3.1
+			libbamboo: LibBamboo 2.29
+		e4mc: e4mc 6.1.2+modern
+			folk_sisby_kaleido-config: kaleido-config 0.3.3+1.3.2
+		easyanvils: Easy Anvils 26.1.1
+		easyelytratakeoff: Easy Elytra Takeoff 4.5
+		easymagic: Easy Magic 26.1.0
+		easyshulkerboxes: Easy Shulker Boxes 26.1.0
+		echochest: Echo Chest 26.1.0
+		ecologics: Ecologics 2.5.1
+		effectinsights: Effect Insights 26.1.0
+		eg_particle_interactions: Particle Interactions 0.9.5+26.1
+		elementa: Elementa 712
+		elytra-chestplate-swapper: Elytra Chestplate Swapper 2.0.1
+		elytra_physics: Elytra physics 2.6_mc26.1
+		enchantinginfuser: Enchanting Infuser 26.1.0
+		enchantmentinsights: Enchantment Insights 26.1.0
+			tooltipinsights: Tooltip Insights 26.1.0
+		enchantmentswitch: Enchantment Switch 26.1.0
+		enchdesc: EnchantmentDescriptions 26.1.2.3
+		enderzoology: Ender Zoology 26.1.0
+		entity_model_features: Entity Model Features 3.2.4
+		entity_texture_features: Entity Texture Features 7.1
+		entityculling: EntityCulling 1.10.2
+			transition: TRansition 1.0.19
+			trender: TRender 1.0.13
+		essential: Essential 1.3.10.9
+		essential-container: essential-container 1.0.0
+			essential-loader: essential-loader 1.3.2
+		eternalnether: Eternal Nether 26.1.4
+		expanded_weapon_enchanting: Expanded Weapon Enchanting 1.2.11
+		explorify: Explorify 1.6.5
+		explosiveenhancement: Explosive Enhancement 1.4.2-26.1.1
+		fabric-api: Fabric API 0.151.0+26.1.2
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 2.0.11+d5a053b64c
+			fabric-biome-api-v1: Fabric Biome API (v1) 18.0.5+2fa62b4e4c
+			fabric-block-api-v1: Fabric Block API (v1) 3.0.2+ec56b6014c
+			fabric-block-getter-api-v2: Fabric BlockGetter API (v2) 2.0.6+ec56b6014c
+			fabric-command-api-v2: Fabric Command API (v2) 3.0.5+e2bdee784c
+			fabric-content-registries-v0: Fabric Content Registries (v0) 11.2.0+76b0b6bb4c
+			fabric-convention-tags-v2: Fabric Convention Tags (v2) 4.6.1+4f11f7994c
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 1.0.3+9f78a5a84c
+			fabric-creative-tab-api-v1: Fabric Creative Tab API (v1) 5.0.11+d871b99e4c
+			fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 2.2.8+44a0bd1d4c
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 24.3.0+83dd0ba34c
+			fabric-debug-api-v1: Fabric Debug API (v1) 1.0.1+c792624d4c
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 5.1.5+9cbf5da54c
+			fabric-entity-events-v1: Fabric Entity Events (v1) 5.0.2+e2bdee784c
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 5.2.2+07b380be4c
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 4.0.5+d871b99e4c
+			fabric-item-api-v1: Fabric Item API (v1) 14.1.2+73d134684c
+			fabric-key-mapping-api-v1: Fabric Key Mapping API (v1) 2.0.4+e2bdee784c
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 4.1.0+6d50a0854c
+			fabric-loot-api-v3: Fabric Loot API (v3) 3.0.12+00a1fba64c
+			fabric-menu-api-v1: Fabric Menu API (v1) 2.0.14+d871b99e4c
+			fabric-message-api-v1: Fabric Message API (v1) 7.0.5+dae8ce3e4c
+			fabric-model-loading-api-v1: Fabric Model Loading API (v1) 8.0.7+c80601bb4c
+			fabric-networking-api-v1: Fabric Networking API (v1) 6.3.1+554860db4c
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 23.0.17+b95dd56e4c
+			fabric-particles-v1: Fabric Particles (v1) 5.0.15+b61fef434c
+			fabric-permission-api-v1: Fabric Permission API (v1) 1.0.1+c3369b134c
+			fabric-recipe-api-v1: Fabric Recipe API (v1) 9.0.15+be4b75ae4c
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 7.1.0+2fa62b4e4c
+			fabric-renderer-api-v1: Fabric Renderer API (v1) 13.0.4+c80601bb4c
+			fabric-renderer-indigo: Fabric Renderer - Indigo 8.1.1+1403e82c4c
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 6.0.1+d871b99e4c
+			fabric-rendering-v1: Fabric Rendering (v1) 23.1.1+1403e82c4c
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 6.1.0+83dd0ba34c
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 3.3.17+4fc5413f4c
+			fabric-resource-loader-v1: Fabric Resource Loader (v1) 2.0.10+7c44c7324c
+			fabric-screen-api-v1: Fabric Screen API (v1) 5.0.1+d871b99e4c
+			fabric-serialization-api-v1: Fabric Serialization API (v1) 2.0.3+11a26f314c
+			fabric-sound-api-v1: Fabric Sound API (v1) 2.0.4+11a26f314c
+			fabric-tag-api-v1: Fabric Tag API (v1) 2.1.1+371cf5db4c
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 8.0.5+357ea7334c
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 8.1.1+7f80f93d4c
+		fabric-language-kotlin: Fabric Language Kotlin 1.13.12+kotlin.2.4.0
+			org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 2.4.0
+			org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 2.4.0
+			org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 2.4.0
+			org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 2.4.0
+			org_jetbrains_kotlinx_atomicfu-jvm: atomicfu-jvm 0.33.0
+			org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.11.0
+			org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.11.0
+			org_jetbrains_kotlinx_kotlinx-datetime-jvm: kotlinx-datetime-jvm 0.8.0
+			org_jetbrains_kotlinx_kotlinx-io-bytestring-jvm: kotlinx-io-bytestring-jvm 0.9.0
+			org_jetbrains_kotlinx_kotlinx-io-core-jvm: kotlinx-io-core-jvm 0.9.0
+			org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm: kotlinx-serialization-cbor-jvm 1.11.0
+			org_jetbrains_kotlinx_kotlinx-serialization-core-jvm: kotlinx-serialization-core-jvm 1.11.0
+			org_jetbrains_kotlinx_kotlinx-serialization-json-jvm: kotlinx-serialization-json-jvm 1.11.0
+		fabricloader: Fabric Loader 0.19.3
+			mixinextras: MixinExtras 0.5.4
+		fabrishot: Fabrishot 1.17.0
+		fallingleaves: Falling Leaves 2.0.7
+		farmersdelight: Farmer's Delight 26.1-3.6.5+refabricated
+		fastitemframes: Fast Item Frames 26.1.0
+		fastquit: FastQuit 3.1.4+mc26.1.x
+		ferritecore: FerriteCore 9.0.0
+		firearrows: Fire Arrows Ignite Fire 13.4
+		firstaid: First Aid 1.2.6+fabric26.1
+		fishery: Fishery 1.2
+		fishingreal: FishingReal 1.10.0
+		fixedanvilrepaircost: Fixed Anvil Repair Cost 3.5
+		fk_ninjamoves: NinjaMoves 2.5.0
+		fk_rpcampfire: RPcampfire 1.4.5
+		forgeconfigapiport: Forge Config API Port 26.1.5
+		fresh-blocks-animation: Fresh Blocks Animation 1.2.1
+		friendsandfoes: Friends&Foes 4.0.26
+		frozenlib: FrozenLib 2.4.4-mc26.1
+		furnacerecycle: Furnace Recycle 2.6
+		fwa: Fancy World Animations 1.2.32
+		fzzy_config: Fzzy Config 0.7.6+26.1
+			net_peanuuutz_tomlkt_tomlkt-jvm: tomlkt-jvm 0.3.7
+		glitchcore: GlitchCore 26.1.2.0.2
+		globalpacks: Global Data- & Resourcepacks 26.1.0
+		grassseeds: Grass Seeds 3.4
+		gravestones: Gravestones 1.3.0
+		hangglider: Hang Glider 26.1.1
+		harvest_with_ease: Harvest with ease 9.4.0
+		healingcampfire: Healing Campfire 6.2
+		healthbars: Health Bars 26.1.0
+		helditemtooltips: Held Item Tooltips 26.1.2
+		homeostatic: Homeostatic 2.12.0.0
+			climatesettings: ClimateSettings 1.2.1
+			handbook: Handbook 1.3.3
+			whitenoise: WhiteNoise 2.2.0
+				com_electronwill_night-config_core: core 3.8.4
+				com_electronwill_night-config_toml: toml 3.8.4
+		homesteads: homesteads 2.0.0
+		hoppergadgetry: Hopper Gadgetry 26.1.0
+		illagerinvasion: Illager Invasion 26.1.0
+			multiloaderdataextensions: Multiloader Data Extensions 26.1.0
+		immediatelyfast: ImmediatelyFast 1.15.2+26.1.2
+			net_lenni0451_reflect: Reflect 1.6.2
+		immersive-storms: Immersive Storms 1.7.1
+		incendium: Incendium 5.4.12
+		inventorytotem: Inventory Totem 3.4
+		iris: Iris 1.10.9+mc26.1.1
+			io_github_douira_glsl-transformer: glsl-transformer 3.0.0-pre3
+			org_anarres_jcpp: jcpp 1.4.14
+			org_antlr_antlr4-runtime: antlr4-runtime 4.13.1
+		isxander-main-menu-credits: Main Menu Credits 1.3.0
+		itemswapper: ItemSwapper 0.10.1
+		ixeris: Ixeris 4.4.2+26.1.2-fabric
+		jade: Jade 26.1.0+fabric
+		jauml: Jauml 2.0.0
+		java: OpenJDK 64-Bit Server VM 25
+		jei: Just Enough Items 29.6.2.31
+		jei_trim_hider: JEI Trim Hider 1.0.0-Fabric-26.1
+		jeiworldgen: JEIWorldGen 1.2.0
+		jeresources: Just Enough Resources 1.10.0.35
+		justhammers: Just Hammers 26.1.2.1
+		lambdynlights: LambDynamicLights 4.10.2+26.1.2
+			lambdynlights_api: LambDynamicLights (API) 4.10.2+26.1.2
+			pride: Pride Lib 1.6.0+26.1
+			spruceui: SpruceUI 10.0.0+26.1
+			yumi_mc_core: Yumi Minecraft Libraries: Foundation 1.0.0+26.1
+				yumi_commons_collections: Yumi Commons: Collections 2.0.0
+				yumi_commons_core: Yumi Commons: Core 2.0.0
+				yumi_commons_event: Yumi Commons: Event 2.0.0
+		languagereload: Language Reload 1.7.6+26.1
+		leavemybarsalone: Leave My Bars Alone 26.1.0
+		leavesbegone: Leaves Be Gone 26.1.0
+		letmesleep: Let Me Sleep 26.1.0
+		lib_5555ff: 5555ff-lib 1-v1.0.10
+		lighterend: Lighter End 1.0.6-beta2-0-26.1
+		linkedchests: Linked Chests 26.1.0
+		lithium: Lithium 0.24.5+mc26.1.2
+		lithostitched: Lithostitched 1.7.10+beta3
+		lockedinslots: Locked In Slots 26.1.0
+		lootintegrations: Loot integration Mod 26.1-4.8
+		lost-relics: Lost Relics 26.1-r6
+		many_more_ores_and_crafts: Many More Ores and Crafts 2.0.1
+		mbs: MoogsBountifulStructures 1.0.6
+		mcwbridges: Macaw's Bridges 3.1.2
+		mcwdoors: Macaw's Doors 1.1.5
+		mcwfences: Macaw's Fences and Walls 1.2.1
+		mcwfurnitures: Macaw's Furniture 3.4.2
+		mcwholidays: Macaw's Holidays 1.1.2
+		mcwlights: Macaw's Lights and Lamps 1.1.5
+		mcwpaintings: Macaw's Paintings 1.1.0
+		mcwpaths: Macaw's Paths and Pavings 1.1.1
+		mcwroofs: Macaw's Roofs 2.3.2
+		mcwstairs: Macaw's Stairs and Balconies 1.0.2
+		mcwtrpdoors: Macaw's Trapdoors 1.1.5
+		mcwwindows: Macaw's Windows 2.4.2
+		medieval_buildings: Medieval Buildings 1.2.0
+		medieval_end: Medieval Buildings [The End Edition] 1.2.0
+		medieval_nether: Medieval Buildings [The Nether Edition] 1.2.1
+		mes: MoogsEndStructures 2.0.3
+		metalbundles: Metal Bundles 26.1.0
+			iteminteractions: Item Interactions 26.1.2
+		mindfuldarkness: Mindful Darkness 26.1.0
+		minecraft: Minecraft 26.1.2
+		moblassos: Mob Lassos 26.1.0
+		modmenu: Mod Menu 18.0.0-beta.1
+		monolib: MonoLib 4.0.2
+		moogs_structures: Moog's Structure Lib 3.0.0+fabric
+		more_bows_and_arrows: More Bows and Arrows 5.0.3
+		morechathistory: More Chat History 2.0.0
+		moreculling: More Culling 1.7.2
+			conditional-mixin: conditional mixin 0.6.3
+		morekittens: More Kittens 1.0.0
+		moremobs: More Mobs 1.5.9+mod
+		mousetweaks: Mouse Tweaks 2.31
+		mr_better_babies: Better Babies 0.8.9
+		mr_better_snowybiome: Snowy Biomes: Enhanced 2.5.1
+		mr_data_api: Data API 1.10.3
+		mr_dungeons_andtaverns: Dungeons and Taverns 5.2.0
+		mr_dungeons_andtavernsancientcityoverhaul: Dungeons and Taverns Ancient City Overhaul 3.3
+		mr_dungeons_andtavernsdeserttempleoverhaul: Dungeons and Taverns Desert Temple Overhaul 1-v2.1
+		mr_dungeons_andtavernsjungletempleoverhaul: Dungeons and Taverns Jungle Temple Overhaul 1-v2.1
+		mr_dungeons_andtavernsnetherfortressoverhaul: Dungeons and Taverns Nether Fortress Overhaul 1-v3.1
+		mr_dungeons_andtavernsoceanmonumentoverhaul: Dungeons and Taverns Ocean Monument Overhaul 1-v2.2
+		mr_dungeons_andtavernspillageroutpostoverhaul: Dungeons and Taverns Pillager Outpost Overhaul 1-v3.3
+		mr_dungeons_andtavernsstrongholdoverhaul: Dungeons and Taverns Stronghold Overhaul 1-v2.4.0
+		mr_dungeons_andtavernsswamphutoverhaul: Dungeons and Taverns Swamp Hut Overhaul 1-v2.3
+		mr_dungeons_andtavernswoodlandmansionoverhaul: Dungeons and Taverns Woodland Mansion Overhaul 2.1
+		mr_enchanted_goldenappleaddition: Enchanted Golden Apple Addition 2.3
+		mr_enhanced_mobs: Enhanced Mobs 1.0.1
+		mr_epic_structuresdungeons: Epic Structures: Dungeons 1.2.0
+		mr_epic_structuresigloo: Epic Structures: Igloo 1-v1.0.3
+		mr_epic_structuresvillages: Epic Structures: Villages 1.3.0
+		mr_epic_structureswitchhuts: Epic Structures: Witch Huts 1.3.0
+		mr_fortunate_ancientdebris: Fortunate Ancient Debris 4.2
+		mr_helmaroc_king: Helmaroc King 1.0
+		mr_humanoid_villagers: Humanoid Villagers 1.0.3
+		mr_improved_morebiomes: Improved/More Biomes 1.7
+		mr_jean_caves: Jean Caves 26.1
+		mr_ks_bloodmoon: Blood Moon 26.1.x
+		mr_mace: Better Mace 1.0.0
+		mr_mine_treasure: Mine Treasure 1.6.3
+		mr_moreenchantments: More Enchants 1.3.7
+		mr_physical_stats: Physical Stats 1.2
+		mr_true_ending: True Ending: Ender Dragon Overhaul 1-v1.1.4d
+		mr_wither_bossfightremastered: Wither Boss Fight Remastered 3
+		mru: M.R.U 1.0.28+lts+26.1
+		multi-key-bindings: Multi Key Bindings 1.3.4+26.1.2
+		mvs: MoogsVoyagerStructures 5.0.11
+		nametagupgrade: Name Tag Upgrade 26.1.0
+		nanitelibrary: Nanite Library 26.1.2.6
+			de_marhali_json5-java: json5-java 3.0.0
+		naturally_trimmed: Naturally Trimmed 3.4.5
+			org_quiltmc_parsers_gson: gson 0.3.1
+			org_quiltmc_parsers_json: json 0.3.1
+		naturalwaters: Natural Waters 26.1.1
+		naturescompass: Nature's Compass 26.1-2.5.0-fabric
+		neienchant: NEI Enchantments 3.0.0
+		netherchested: Nether Chested 26.1.1
+		netherportalfix: NetherPortalFix 26.1.0.1
+		no-resource-pack-warnings: No Resource Pack Warnings 1.5.0
+		notenoughanimations: NotEnoughAnimations 1.12.3
+		notenoughcrashes: Not Enough Crashes 4.4.9+26.1.2
+		ohmega: Ohmega 1.6.0-beta.15
+		optigui: OptiGUI 2.3.0-beta.10+26.1
+			org_apache_commons_commons-text: commons-text 1.12.0
+			org_ini4j_ini4j: ini4j 0.5.4
+		org_jetbrains_annotations: annotations 13.0
+		overflowingbars: Overflowing Bars 26.1.0
+		owo: oωo 0.13.0+26.1
+			com_github_kdl-org_kdl4j: kdl4j 1.0.1
+			io_wispforest_endec: endec 0.1.12
+			io_wispforest_endec_gson: gson 0.1.7
+			io_wispforest_endec_jankson: jankson 0.1.7
+			io_wispforest_endec_netty: netty 0.1.6
+		packetfixer: Packet Fixer 3.3.5
+		paginatedadvancements: Paginated Advancements 2.8.0+26.1
+		particle_effects: Particle Effects 1.4.0+26.1+fabric
+		particlerain: Particle Rain 4.0.0-beta.10
+		particletweaks: Particle Tweaks 3.0.1-mc26.1
+		partycreepers: Party Creepers 26.1.0
+		pickupnotifier: Pick Up Notifier 26.1.1
+		placeholder-api: Placeholder API 3.0.0+26.1
+		player_animation_library: Player Animation Library 1.2.3+mc.26.1
+			com_zigythebird_mochafloats: mochafloats 5.0.0
+			org_redlance_common-utils_services: services 1.2.6
+		pneumonocore: PneumonoCore 1.3.1
+		polymer-bundled: Polymer 0.16.5+26.1.2
+			polymer-autohost: Polymer (Auto Host) 0.16.5+26.1.2
+			polymer-blocks: Polymer (Textured Blocks) 0.16.5+26.1.2
+			polymer-common: Polymer (Common) 0.16.5+26.1.2
+			polymer-core: Polymer (Core) 0.16.5+26.1.2
+				polymer-networking: Polymer (Networking) 0.16.5+26.1.2
+				polymer-registry-sync-manipulator: Polymer (Registry Sync Manipulator) 0.16.5+26.1.2
+			polymer-resource-pack: Polymer (Resource Pack) 0.16.5+26.1.2
+			polymer-resource-pack-extras: Polymer (Resource Pack Extras) 0.16.5+26.1.2
+			polymer-sound-patcher: Polymer (Sound Patcher) 0.16.5+26.1.2
+			polymer-virtual-entity: Polymer (Virtual Entity) 0.16.5+26.1.2
+		presencefootsteps: Presence Footsteps 1.13.0+26.1
+		prickle: PrickleMC 26.1.2.3
+		promenade: Promenade 5.5.0
+		prometheus: Prometheus 1.2.5
+		ptp: Projectiles Trajectory Prediction ${version}
+		puddleflood: Puddles & Floods 1.1.4
+		puffish_skills: Pufferfish's Skills 0.17.4
+		puzzle: Puzzle 2.3.1
+			midnightlib: MidnightLib 1.9.2
+		puzzleslib: Puzzles Lib 26.1.10
+		quad: Quad 1.2.15
+		realinvisibility: Real Invisibility 3.0.1+26.1
+			icu_suc_kkw557_realinvisibility-common: realinvisibility-common 3.0.1+26.1
+		realisticbees: Realistic Bees 4.3
+		rearm: ReArm 2.5.0
+			mixson: Mixson 2.1.0
+		reborncore: Reborn Core 6.0.5
+			team_reborn_energy: Energy 5.0.0
+		reeses-sodium-options: Reese's Sodium Options 2.0.5+mc26.1.1
+		refinedstorage: Refined Storage 3.2.1
+		renderscale: RenderScale 1.3.7
+			com_moulberry_mixinconstraints: mixinconstraints 1.1.0
+		resource_backpacks: Resource Backpacks 26.1.2-2.0.0
+		resource_gamma_util: Resource Gamma Util 26.1.2-1.5.2
+		resourceconfigapi: Resource Config API 26.1.2-4.0.2
+		resourcefulconfig: Resourcefulconfig 4.0.1
+		resourcefullib: Resourceful Lib 4.0.1
+			com_teamresourceful_bytecodecs: bytecodecs 1.1.3
+			com_teamresourceful_yabn: yabn 1.0.3
+		resourcelibrary: Resource Library 26.1.2-3.0.2
+		resourcepackoverrides: Resource Pack Overrides 26.1.0
+		resourcify: Resourcify 1.8.3
+		respawninganimals: Respawning Animals 26.1.0
+		rpg_attribute_system: RPG Attribute System 3.4.0
+		rpg_stash: RPG Stash 0.6.0
+		rrls: Remove Reloading Screen 5.2.5+mc.26.1
+		saturated_eating: Saturated Eating 1.0.10
+		sdrp: Simple Discord Rich Presence 26.1.2.1
+			dev_nanite_forks_discord-ipc: discord-ipc 0.5.2
+		sealife: Sea Life 26.1.1
+		searchables: Searchables 1.0.2
+		sereneseasons: SereneSeasons 26.1.2.0.3
+		serverevents: Server Events 2.2.1+26.1
+		sheepvariety: Sheep Variety 26.1.0
+		shieldfixes: Shield Fixes 2.0.3+26.1
+		shifting-wares: Shifting Wares 4.0.0+26.1.2
+		shogi: Shogi 26.1.2.5
+			shogi_api: Shogi API 26.1.2.5
+		shroomcraft: Shroomcraft 26.1.0
+		shulkerboxtooltip: Shulker Box Tooltip 5.2.18+26.1
+		simple_datapacks: Simple Datapacks 2.7
+		simplefog: Simple Fog Control 2.0.14
+		sit: Sit 1.5.1
+		skeletonaifix: Skeleton AI Fix 26.1.0
+		skyboxify: Skyboxify 2.8
+		sleepsooner: Sleep Sooner 5.0
+		slotcustomizationapi: Slot Customization API 4.1.0
+		slotcycler: Slot Cycler 26.1.0
+			hotbarslotcycling: Hotbar Slot Cycling 26.1.0
+		smithery: Smithery 0.8.1+26.1
+		smoothscroll: Smooth Scrolling 2.8.1
+		sodium: Sodium 0.8.12+mc26.1.2
+			fabric-api-base: Fabric API Base 2.0.3+ece063234c
+		sodium-extra: Sodium Extra 0.8.7+mc26.1.1
+		soul_fire_d: Soul Fire'd 6.1.0
+		sound_physics_remastered: Sound Physics Remastered 1.5.1+26.1.2
+		sounds: Sounds 2.5.0+lts
+		sspb: Sodium Shadowy Path Blocks 7.0.0
+		stellarity: Stellarity 5.4.3
+		stonecuttingupgrade: Stonecutting Upgrade 26.1.1
+		stoneworks: Stoneworks 26.1.0
+		strawberrylib: StrawberryLib 26.1-r8
+			cardinal-components-base: Cardinal Components API (base) 8.0.0
+			cardinal-components-entity: Cardinal Components API (entities) 8.0.0
+			datasync_minecraft: DataSync-Minecraft 0.10.4
+		strawstatues: Straw Statues 26.1.0
+			statuemenus: Statue Menus 26.1.0
+		structory: Structory 1.3.16
+		structory_towers: Structory: Towers 1.0.16
+		subtle_effects: Subtle Effects 1.14.3
+		swordblockingmechanics: Sword Blocking Mechanics 26.1.0
+		t_and_t: Towns and Towers 1.13.11
+		tagtranslations: Tag Translations 26.1
+		taxfreelevels: Tax Free Levels 1.5.4
+		terrablender: TerraBlender 26.1.2.0.2
+		the_best_cube_game: The best cube game 4.1+26.1.2-fabric
+		tinyskeletons: Tiny Skeletons 26.1.0
+		tool-trims: Tool Trims 3.0.2-beta
+		tradingpost: Trading Post 26.1.0
+		trashslot: TrashSlot 26.1.2.3
+		trimeffects: TrimsEffects 2.1.1
+		ukulib: ukulib 2.0.0+26.1
+		ultimate_warden: Ultimate Warden 0.3.S7
+		underwater_village: Underwater Village 1.0.0
+		universalbonemeal: Universal Bone Meal 26.1.0
+		universalcraft: UniversalCraft 463
+		uselessreptile: Useless Reptile 0.13.2-26.1
+			biscuit_roll: Biscuit Roll Lib 0.17.4
+			common-protection-api: Common Protection API 2.0.0
+			primitive_multipart_entities: Primitive Multipart Entities 1.4.0-26.1-rc-2
+		vehicleupgrade: Vehicle Upgrade 26.1.2
+		vigilance: Vigilance 306
+		village-quest: Village Quest 1.22.5
+		villagemasquerade: Village Masquerade 26.1.0
+		villagernames: Villager Names 8.5
+		villagespawnpoint: Village Spawn Point 4.7
+		visual_health: Visual Health 26.1-2.0.1
+		visuality: Visuality 0.7.13+26.1
+		visualworkbench: Visual Workbench 26.1.0
+		walksylib: Walksy Lib 1.0.11+26.1
+		waveycapes: WaveyCapes 1.9.2
+		waystones: Waystones 26.1.2.5
+		weaponsexpanded: Weapons Expanded 1.8.3
+		xaerominimap: Xaero's Minimap 26.1.0
+		xaeroworldmap: Xaero's World Map 1.41.0
+			xaerolib: XaeroLib 1.1.15
+		xpbook: XP Tome 2.5.1
+		yet_another_config_lib_v3: YetAnotherConfigLib 3.9.4+26.1-fabric
+			com_twelvemonkeys_common_common-image: common-image 3.12.0
+			com_twelvemonkeys_common_common-io: common-io 3.12.0
+			com_twelvemonkeys_common_common-lang: common-lang 3.12.0
+			com_twelvemonkeys_imageio_imageio-core: imageio-core 3.12.0
+			com_twelvemonkeys_imageio_imageio-metadata: imageio-metadata 3.12.0
+			com_twelvemonkeys_imageio_imageio-webp: imageio-webp 3.12.0
+		yo_hooks: Yori3o's Grappling Hooks 4.8.0
+	Handbook open book context: Book GUI or book is null. Book not registered properly.
+	Launched Version: 26.1.2
+	Launcher name: ElyPrismLauncher
+	Backend library: LWJGL version 3.4.1-snapshot
+	Backend API: Unknown
+	Window size: <not initialized>
+	GFLW Platform: <error>
+	Render Extensions: ERR
+	GL debug messages: <no renderer available>
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Universe: 404
+	Type: Client
+	Locale: en_VE
+	System encoding: UTF-8
+	File encoding: UTF-8
+	CPU: 4x Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+	Suspected Mods: Minecraft (minecraft), Fabric Loader (fabricloader), Controlify (controlify), Not Enough Crashes (notenoughcrashes)
+#@!@# Game crashed! Crash report saved to: #@!@# /home/jmx/.local/share/ElyPrismLauncher/instances/Mods vanilla++/minecraft/crash-reports/crash-2026-06-12_21.46.23-client.txt
+El proceso se cerró con el código 255.

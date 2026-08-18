@@ -1,0 +1,1 @@
+="yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --cookies-from-browser firefox --limit-rate 5M -o '~/Music/%(title)s.%(ext)s'"
