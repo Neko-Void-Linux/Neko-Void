@@ -1,23 +1,1121 @@
 {
-  "change_serial": 7,
+  "change_serial": 699,
   "entries": [
     {
       "active": false,
       "close_reason": "expired",
-      "event_serial": 2,
+      "event_serial": 239,
       "notification": {
-        "actions": [],
-        "app_name": "nemo",
-        "body": "Filesystem has been disconnected.",
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Welcome to Namecheap",
         "category": null,
-        "desktop_entry": "org.Nemo",
-        "expiry_wall_ms": 1781538847765,
-        "icon": "media-removable",
-        "id": 1,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785133678086,
+        "icon": null,
+        "id": 265,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785133672017,
+        "summary": "Namecheap",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 241,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Namecheap Order Summary (Order# 209434859);",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785133872321,
+        "icon": null,
+        "id": 266,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785133866321,
+        "summary": "Namecheap Support",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 243,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Action required: Verify your contact information for your domain(s)",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785133973988,
+        "icon": null,
+        "id": 267,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785133967988,
+        "summary": "Namecheap Support",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 248,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Message from Namecheap CEO",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785278096475,
+        "icon": null,
+        "id": 277,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785278090475,
+        "summary": "Namecheap.com",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 250,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Git push error src refspec beta matches more than one",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785284202204,
+        "icon": null,
+        "id": 281,
         "image_data": null,
         "origin": "external",
-        "received_wall_ms": 1781538841765,
-        "summary": "1.0 TB Volume unmounted",
+        "received_wall_ms": 1785284196204,
+        "summary": "Task completed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 252,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Tool has side effects and requires approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785287446859,
+        "icon": null,
+        "id": 282,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785287440251,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 258,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Tool has side effects and requires approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785288046550,
+        "icon": null,
+        "id": 285,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785288040550,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 262,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "High risk tools require explicit approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785297422095,
+        "icon": null,
+        "id": 293,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785297416095,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 264,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "High risk tools require explicit approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785298976990,
+        "icon": null,
+        "id": 295,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785298970990,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 270,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Mejorar compresión de ISOs en neko-builder.sh",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785336630798,
+        "icon": null,
+        "id": 298,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785336624798,
+        "summary": "Task completed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 272,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "High risk tools require explicit approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785338747080,
+        "icon": null,
+        "id": 299,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785338741080,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 274,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "High risk tools require explicit approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785338834627,
+        "icon": null,
+        "id": 300,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785338828627,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 276,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "High risk tools require explicit approval",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785339074206,
+        "icon": null,
+        "id": 301,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785339068206,
+        "summary": "Your confirmation is needed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 278,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Get off to a flying start",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785449913081,
+        "icon": null,
+        "id": 304,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785449907081,
+        "summary": "Namecheap",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 280,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Build your new website in a few simple steps",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785590924281,
+        "icon": null,
+        "id": 309,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785590918281,
+        "summary": "Namecheap",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 282,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Crear tapk-extract en Zig",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785595208624,
+        "icon": null,
+        "id": 310,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785595202624,
+        "summary": "Task completed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 284,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Crear tapk-extract en Zig",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785595609919,
+        "icon": null,
+        "id": 311,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785595603445,
+        "summary": "Task completed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 286,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Crear tapk-extract en Zig",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1785598119487,
+        "icon": null,
+        "id": 312,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1785598113487,
+        "summary": "Task completed",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 288,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Helping You Provide Better IT Services for Your SME Customers | Explore Our ISV Solutions",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785775911151,
+        "icon": null,
+        "id": 342,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785775905151,
+        "summary": "Alibaba Cloud",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 291,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Welcome to the Internet Archive",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785971324184,
+        "icon": null,
+        "id": 366,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785971318184,
+        "summary": "Internet Archive",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 292,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Please verify your email address",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1785971324197,
+        "icon": null,
+        "id": 367,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1785971318197,
+        "summary": "Internet Archive",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 302,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "vesktop",
+        "body": "Click here to restart",
+        "category": null,
+        "desktop_entry": "vesktop",
+        "expiry_wall_ms": 1786116003962,
+        "icon": null,
+        "id": 374,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786115997962,
+        "summary": "Vencord has been updated!",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 306,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Insufficient Free Quota",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786121073014,
+        "icon": null,
+        "id": 378,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786121067014,
+        "summary": "Alibaba Cloud",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 310,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Disfruta de 14 días por $0 🎉",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786141393661,
+        "icon": null,
+        "id": 380,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786141387661,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 312,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "[Gofile] 🕒 Your Files Will Expire Soon",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786148525322,
+        "icon": null,
+        "id": 382,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786148519322,
+        "summary": "Gofile",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 314,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Fwd: sourceforge usuario",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786155841316,
+        "icon": null,
+        "id": 383,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786155835316,
+        "summary": "Franckey Castro",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 316,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Fwd: sourceforge usuario",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786155852918,
+        "icon": null,
+        "id": 384,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786155846918,
+        "summary": "Franckey Castro",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 318,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: cat src/gui/main_window.h",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786229221682,
+        "icon": null,
+        "id": 385,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786229215682,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 320,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: cd /home/javierc/Documentos/server/projects/neko-xbps && meson setup builddir --wipe 2>&1 | tail -20 && ninja -C builddir 2>&1",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786229394646,
+        "icon": null,
+        "id": 386,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786229388646,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 322,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: ninja -C /home/javierc/Documentos/server/projects/neko-xbps/builddir 2>&1",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786229456647,
+        "icon": null,
+        "id": 387,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786229450647,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 324,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "ZCode",
+        "body": "Task: Añadir icono a readme y doc",
+        "category": null,
+        "desktop_entry": "zcode",
+        "expiry_wall_ms": 1786234949188,
+        "icon": null,
+        "id": 388,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786234943188,
+        "summary": "Task error occurred",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 326,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Insufficient Free Quota",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786239898927,
+        "icon": null,
+        "id": 390,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786239892927,
+        "summary": "Alibaba Cloud",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 338,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786298558834,
+        "icon": "system-file-manager",
+        "id": 414,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786298552834,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 347,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Ayyyyy tutiiu",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786306666709,
+        "icon": null,
+        "id": 421,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786306660709,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 370,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Dime con que",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786309648840,
+        "icon": null,
+        "id": 432,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786309642840,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 371,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "👀👀",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786309651582,
+        "icon": null,
+        "id": 433,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786309645582,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 407,
+      "notification": {
+        "actions": [],
+        "app_name": "Telegram Desktop",
+        "body": "🥹🥹🥹🥹🫂",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786316296020,
+        "icon": null,
+        "id": 451,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786316290020,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 432,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "🤧🤧🤧😖",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786318670223,
+        "icon": null,
+        "id": 456,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786318664007,
+        "summary": "Ori ❤️",
         "timeout": 6000,
         "urgency": "normal"
       },
@@ -26,48 +1124,1128 @@
     {
       "active": false,
       "close_reason": "closed_by_call",
-      "event_serial": 5,
+      "event_serial": 438,
       "notification": {
-        "actions": [],
-        "app_name": "nemo",
-        "body": "Disconnecting from filesystem.",
-        "category": null,
-        "desktop_entry": "org.Nemo",
-        "expiry_wall_ms": 1781543503710,
-        "icon": "media-removable",
-        "id": 2,
-        "image_data": null,
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Uuuumju! 👀👀👀👀👀",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786318872186,
+        "icon": null,
+        "id": 459,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
         "origin": "external",
-        "received_wall_ms": 1781543497710,
-        "summary": "Unmounting 8.2 GB Volume",
+        "received_wall_ms": 1786318866186,
+        "summary": "Ori ❤️",
         "timeout": 6000,
-        "urgency": "critical"
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 444,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Uuuuuuf que calorrrr",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786319753532,
+        "icon": null,
+        "id": 462,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786319747532,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 472,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "👀",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786319912768,
+        "icon": null,
+        "id": 472,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786319905547,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 473,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Satooooooooooo",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786319915653,
+        "icon": null,
+        "id": 473,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786319909653,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
       },
       "seen": false
     },
     {
       "active": false,
       "close_reason": "expired",
-      "event_serial": 7,
+      "event_serial": 501,
       "notification": {
-        "actions": [],
-        "app_name": "nemo",
-        "body": "Filesystem has been disconnected.",
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "[Gofile] 🕒 Your Files Will Expire Soon",
         "category": null,
-        "desktop_entry": "org.Nemo",
-        "expiry_wall_ms": 1781543505469,
-        "icon": "media-removable",
-        "id": 3,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786320732326,
+        "icon": null,
+        "id": 485,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786320726326,
+        "summary": "Gofile",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 512,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Photo, ‎⁨🎓 Estudiantes daneses tendrán que defender oralmente sus trabajos escritos por el uso de IA\n\nA partir de este ciclo escolar, los estudiantes de educación media superior en Dinamarca deberán defender de forma oral los trabajos escritos importante...",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786320882487,
+        "icon": null,
+        "id": 490,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_1971194808fe7ba0d5c7b0d65e9d4d3e.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786320876487,
+        "summary": "Hi, AI • Noticias sobre la IA",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 553,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Lleguee",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786322718785,
+        "icon": null,
+        "id": 504,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786322712785,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 585,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "👀",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786323307723,
+        "icon": null,
+        "id": 517,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786323301723,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 591,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Ya debo irme a mimirrr casi me duermooooo",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786324694451,
+        "icon": null,
+        "id": 520,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_f1db273f5d65b898203b062ab7e7867f.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786324688451,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 601,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git status && echo \"---DIFF---\" && git diff",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332625275,
+        "icon": null,
+        "id": 525,
         "image_data": null,
         "origin": "external",
-        "received_wall_ms": 1781543499070,
-        "summary": "Volume unmounted",
+        "received_wall_ms": 1786332619275,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 603,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git diff -- .gitignore include/lang.h src/i18n/lang_en.c src/i18n/lang_es.c src/i18n/lang_ja.c src/ui/ui.c",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332646280,
+        "icon": null,
+        "id": 526,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332640280,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 605,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git diff -- src/core/installer_steps.c",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332655263,
+        "icon": null,
+        "id": 527,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332649263,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 607,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git diff -- src/core/installer.c src/core/installer_steps.c src/core/installer_steps_void.c src/core/desktops-setup.c include/neko_installer.h extra/neko-desktops/desktop-set.sh | head -300",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332743267,
+        "icon": null,
+        "id": 528,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332737267,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 609,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git stash && git diff HEAD -- src/core/installer_steps.c | head -20; git stash pop",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332760265,
+        "icon": null,
+        "id": 529,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332754265,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 611,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git branch -a && echo \"---\" && git log --oneline -5 main 2>/dev/null || echo \"No main branch found locally\"",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332977269,
+        "icon": null,
+        "id": 530,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332971269,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 613,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git show main:src/core/installer.c | wc -l && echo \"---\" && git show main:src/core/installer_steps.c | wc -l && echo \"---\" && git show main:src/core/desktops-setup.c 2>/dev/null | wc -l && echo \"---\" && git show main:src/core/installer_steps_void.c 2>/dev/null | wc -l && echo \"---\" && git show main:include/neko_installer.h | wc -l && echo \"---\" && git ls-tree main extra/neko-desktops/ 2>/dev/null | head -5",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786332997327,
+        "icon": null,
+        "id": 531,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786332991267,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 615,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "Antigravity",
+        "body": "Command: git stash && git checkout main",
+        "category": null,
+        "desktop_entry": "antigravity",
+        "expiry_wall_ms": 1786333023263,
+        "icon": null,
+        "id": 532,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786333017263,
+        "summary": "Requesting your permission in Terminal:",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 618,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "$0 por 14 días de entretenimiento",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786372654177,
+        "icon": null,
+        "id": 533,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786372648177,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 623,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Ready for Your Next Project?",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1786482819568,
+        "icon": null,
+        "id": 539,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_6b0c542a95813c345d2940ec702da1ba.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1786482813568,
+        "summary": "Namecheap",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 625,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786489213940,
+        "icon": "system-file-manager",
+        "id": 541,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786489207940,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 627,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786490837296,
+        "icon": "system-file-manager",
+        "id": 542,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786490831296,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 629,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786490872782,
+        "icon": "system-file-manager",
+        "id": 543,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786490866782,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 631,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786538327862,
+        "icon": "system-file-manager",
+        "id": 547,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786538321862,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 633,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786569535162,
+        "icon": "system-file-manager",
+        "id": 548,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786569529162,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 639,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "‎⁨Daneska Canache⁩ was accepted to the group",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786578317224,
+        "icon": null,
+        "id": 556,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_79d5900159ad1c4620a101eb0b556e84.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786578311224,
+        "summary": "Welcome (Español - Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san)",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 642,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Holaaaaaa javiiiii sii como estás ya llegué del culto",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786578789311,
+        "icon": null,
+        "id": 557,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_0620f2509680e05bd01de1f7427bf607.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786578783311,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 643,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read",
+          "inline-reply",
+          "Reply"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "👀🥹",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786578789313,
+        "icon": null,
+        "id": 558,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_0620f2509680e05bd01de1f7427bf607.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786578783313,
+        "summary": "Ori ❤️",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 648,
+      "notification": {
+        "actions": [
+          "default",
+          "Open",
+          "mail-mark-read",
+          "Mark as read"
+        ],
+        "app_name": "Telegram Desktop",
+        "body": "Photo, ‎⁨❤️ Los perros pueden distinguir las emociones humanas\n\nInvestigadores entrenaron a 14 perros para permanecer tranquilos dentro de un escáner de resonancia magnética sin anestesia ni restricciones, con la opción de salir en cualquier momento. Mien...",
+        "category": "im.received",
+        "desktop_entry": "org.telegram.desktop._17eccf3f019df88ff8311071eca9daae",
+        "expiry_wall_ms": 1786580271515,
+        "icon": null,
+        "id": 560,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 64,
+          "image_file": "i_37240ba59222edaeede1227117cb5e2a.webp",
+          "row_stride": 256,
+          "width": 64
+        },
+        "origin": "external",
+        "received_wall_ms": 1786580265515,
+        "summary": "Hi, AI • Noticias sobre la IA",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 654,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786667581532,
+        "icon": "system-file-manager",
+        "id": 578,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786667575532,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 656,
+      "notification": {
+        "actions": [],
+        "app_name": "caja",
+        "body": "Process completed",
+        "category": null,
+        "desktop_entry": "org.mate.Caja",
+        "expiry_wall_ms": 1786668060180,
+        "icon": "system-file-manager",
+        "id": 579,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1786668054180,
+        "summary": "caja",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 672,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "¿Estás listo para mejorar tu ajedrez?",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787067578282,
+        "icon": null,
+        "id": 598,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787067572282,
+        "summary": "Chess.com",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 673,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "javiercoffee, tus jugadas iniciales están listas",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787067578285,
+        "icon": null,
+        "id": 599,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787067572285,
+        "summary": "♟Chess.com",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 674,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Entretenimiento ilimitado. 14 días. $0.",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787067580625,
+        "icon": null,
+        "id": 597,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787067572265,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 676,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "¡Te damos la bienvenida a Netflix, javiercplus!",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787069471835,
+        "icon": null,
+        "id": 600,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787069465835,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 678,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Acción requerida: Verifica el número de teléfono que acabas de agregar",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787069486171,
+        "icon": null,
+        "id": 601,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787069480171,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 680,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "Netflix: Tu código de inicio de sesión",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787069637999,
+        "icon": null,
+        "id": 602,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_828500dd6c86f536ba146adfb1f13a38.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787069631999,
+        "summary": "Netflix",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 682,
+      "notification": {
+        "actions": [
+          "default",
+          "Activate"
+        ],
+        "app_name": "Waterfox",
+        "body": "¡Úsala o piérdela! ⌛",
+        "category": null,
+        "desktop_entry": "Waterfox",
+        "expiry_wall_ms": 1787090902583,
+        "icon": null,
+        "id": 603,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 32,
+          "image_file": "i_badf02287d8018ea3009744f52a63b58.webp",
+          "row_stride": 128,
+          "width": 32
+        },
+        "origin": "external",
+        "received_wall_ms": 1787090896583,
+        "summary": "Chess.com",
         "timeout": 6000,
         "urgency": "normal"
       },
       "seen": false
     }
   ],
-  "next_id": 7,
+  "next_id": 611,
   "version": 2
 }

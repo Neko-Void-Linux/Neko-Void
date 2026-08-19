@@ -1,24 +1,27 @@
 id = "noctalia/translator"
 name = "Translator"
-version = "1.0.1"
-min_noctalia = "5.0.0"
+version = "1.0.5"
+plugin_api = 3
 author = "noctalia"
 license = "MIT"
-tags = ["translate", "language", "launcher"]
+dependencies = []
+tags = ["language", "launcher"]
 icon = "language"
-description = "Translate text from the launcher via Google Translate. Type `/tr <lang> <text>`."
+description = "Translate text from the launcher via Google Translate."
+
 
 [[launcher_provider]]
 id = "translate"
 entry = "translator.luau"
-prefix = "/tr"
+prefix = "tr"
 glyph = "language"
 include_in_global_search = false
 debounce_ms = 300  # wait for typing to settle before calling Google
 
-  [[launcher_provider.setting]]
-  key = "target_lang"
-  type = "string"
-  label = "Default target language"
-  description = "Language code used when no language is given (e.g. en, fr, es)."
-  default = "en"
+
+[[setting]]
+key = "target_lang"
+type = "string"
+label_key = "settings.target_lang.label"
+description_key = "settings.target_lang.description"
+default = "en"

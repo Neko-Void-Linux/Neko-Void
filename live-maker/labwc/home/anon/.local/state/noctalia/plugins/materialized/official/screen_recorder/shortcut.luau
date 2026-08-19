@@ -1,3 +1,4 @@
+--!nonstrict
 -- GPU Screen Recorder — control-center quick tile.
 --
 -- This tile holds no recording logic of its own. It mirrors the recorder widget
@@ -21,7 +22,11 @@ local function applyStatus(status)
     recording = table.find(RECORDING_STATES, st) ~= nil
     replaying = table.find(REPLAY_STATES, st) ~= nil
 
-    shortcut.setLabel(if recording then "Recording" elseif replaying then "Replay buffer" else "Record screen")
+    shortcut.setLabel(
+        if recording then noctalia.tr("shortcut.recording")
+        elseif replaying then noctalia.tr("shortcut.replay-buffer")
+        else noctalia.tr("shortcut.record-screen")
+    )
     shortcut.setIcon("video", "video-off")
     shortcut.setActive(recording or replaying)
     shortcut.setEnabled(available)
@@ -32,9 +37,9 @@ applyStatus(noctalia.state.get("status"))
 noctalia.state.watch("status", applyStatus)
 
 function onClick()
-    noctalia.state.set("command", "toggle")
+    noctalia.state.set("command", { action = "toggle", focusedOutputName = noctalia.focusedOutputName() })
 end
 
 function onRightClick()
-    noctalia.state.set("command", "replay-toggle")
+    noctalia.state.set("command", { action = "replay-toggle", focusedOutputName = noctalia.focusedOutputName() })
 end
