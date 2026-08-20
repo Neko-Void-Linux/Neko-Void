@@ -173,6 +173,7 @@ GPU_DRIVERS="
     linux-firmware-intel
     linux-firmware-nvidia
     linux-firmware-amd
+	xf86-video-nouveau
 "
 
 
