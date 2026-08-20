@@ -209,6 +209,15 @@ build_iso() {
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
             ;;
+         nvidia-kde)
+            pkg_var="PACKAGES_KDE"
+            includedir="./kdedir"
+            kernel_kver="linux6.18"
+            dm_service="emptty"
+            iso_name="nekovoid-nvidia-$VERSION.iso"
+            arch="x86_64"
+            postsetup="./postsetup-nvidia.sh"
+            ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
             echo "Usa --help para ver los escritorios disponibles."
