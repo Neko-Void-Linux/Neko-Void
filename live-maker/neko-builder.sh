@@ -70,6 +70,7 @@ Escritorios disponibles:
   ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
   ${GREEN}niri${RESET}     Niri (kernel Stable)
   ${GREEN}nvidia${RESET}   Niri + NVIDIA 580 (kernel 6.18, drivers via postsetup)
+  ${GREEN}nvidia-open${RESET}   Niri + NVIDIA OPEN (kernel 6.18, drivers via postsetup)
   ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
   ${GREEN}labwc${RESET}   Labwc (kernel LTS)
   ${GREEN}lxde${RESET}       LXDE (kernel mainline)
@@ -208,6 +209,15 @@ build_iso() {
             iso_name="nekovoid-nvidia-$VERSION.iso"
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
+            ;;
+        nvidia-open)
+            pkg_var="PACKAGES_NIRI"
+            includedir="./niri"
+            kernel_kver="linux6.18"
+            dm_service="emptty"
+            iso_name="nekovoid-nvidia-$VERSION.iso"
+            arch="x86_64"
+            postsetup="./postsetup-nvidia-open.sh"
             ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
