@@ -18,10 +18,10 @@ else
     printf 'nameserver 1.1.1.1\nnameserver 8.8.8.8\n' > "$ROOTFS"/etc/resolv.conf
 fi
 
-echo "[neko-postsetup] installing nvidia580 driver packages in chroot ..."
+echo "[neko-postsetup] installing nvidia latest driver packages in chroot ..."
 chroot "$ROOTFS" env -i HOME=/root TERM="$TERM" \
     PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin \
-    xbps-install -Sy nvidia580 || { echo "[neko-postsetup] ERROR: failed to install nvidia580" >&2; exit 1; }
+    xbps-install -Sy nvidia nvidia-libs-32bit || { echo "[neko-postsetup] ERROR: failed to install nvidia" >&2; exit 1; }
 
 echo "[neko-postsetup] applying Neko-Wizard nvidia-config.sh (dracut/modules-load only) ..."
 # ATENCIÓN: Esto debe ir ANTES de xbps-reconfigure para que Dracut lo lea.
