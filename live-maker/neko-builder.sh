@@ -214,7 +214,7 @@ build_iso() {
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
             kernel_kver="linux6.18"
-            dm_service="emptty"
+            dm_service="sddm"
             iso_name="nekovoid-nvidia-$VERSION.iso"
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
