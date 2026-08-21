@@ -215,7 +215,7 @@ build_iso() {
             includedir="./kdedir"
             kernel_kver="linux6.18"
             dm_service="sddm"
-            iso_name="nekovoid-nvidia-$VERSION.iso"
+            iso_name="nekovoid-nvidia-kde-$VERSION.iso"
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
             ;;
