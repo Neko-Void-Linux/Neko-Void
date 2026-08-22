@@ -164,7 +164,7 @@ build_iso() {
         icejwm)
             pkg_var="PACKAGES_ICEJWM"
             includedir="./icejwm"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-lts-icejwm-$VERSION.iso"
             arch="x86_64"
