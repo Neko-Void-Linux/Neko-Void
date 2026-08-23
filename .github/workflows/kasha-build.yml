@@ -1,9 +1,6 @@
 name: Build Kasha Installer
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch: 
 permissions:
   contents: write
@@ -27,9 +24,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clone Kasha-Installer repository
-        run: git clone --depth 1 https://codeberg.org/javiercplus/Kasha-Installer.git /tmp/build
+        run: git clone -b beta https://gitlab.com/javiercplus/kasha-installer.git /tmp/build
       - name: Compile project
-        run:  cd /tmp/build  && make
+        run:  cd /tmp/build  && make NO_DESKTOP_TAB=1
 
       - name: Create tarball
         run:  cd /tmp/build  && tar -cvf neko_installer.tar neko_installer
