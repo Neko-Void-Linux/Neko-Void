@@ -249,6 +249,7 @@ LXQT="
     mpv
     lxqt
     xfwm4
+    nwg-look
     xfwm4-themes
     lightdm
     lightdm-webkit2-greeter

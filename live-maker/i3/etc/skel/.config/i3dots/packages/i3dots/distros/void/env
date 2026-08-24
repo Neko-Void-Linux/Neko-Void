@@ -1,0 +1,35 @@
+# Variación para Void Linux
+export PKG_MANAGER="xbps-install"
+export PKG_UPDATE_CMD="-Syu"
+export PKG_INSTALL_CMD="-Sy"
+export PKG_QUERY_CMD="xbps-query -l | sed -E 's/^ii //; s/-[0-9].*//'"
+export PKG_LIST="i3 pcmanfm polybar rofi kitty picom qt6ct lxappearance feh xfce-polkit pipewire wireplumber pulseaudio-utils setxkbmap brightnessctl playerctl maim xclip xdotool dmenu git curl wget unzip font-awesome6 fontconfig ImageMagick papirus-icon-theme fastfetch lua53 xsettingsd dash"
+export PKG_LIVE="mpv xwinwrap-nk ffmpegthumbnailer socat"
+export PKG_BUILD="gcc libX11-devel"
+
+export POLKIT_AGENT="/usr/libexec/xfce-polkit"
+export I3_FONT="JetBrainsMono Nerd Font"
+export OS_ICON=""
+
+# Mapeo de paquetes de servicios opcionales
+export PKG_SERVICE_POLKIT="xfce-polkit"
+export PKG_SERVICE_XSETTINGSD="xsettingsd"
+
+export POWERMENU_CMD_SHUTDOWN="loginctl poweroff"
+export POWERMENU_CMD_REBOOT="loginctl reboot"
+export POWERMENU_CMD_SUSPEND="loginctl suspend"
+
+variant_pre_install() {
+    local repo_file="/etc/xbps.d/1-repository-neko.conf"
+    local key_file="/var/db/xbps/keys/3a:23:f2:2d:5e:d1:ab:f5:3f:01:6f:a6:50:9f:15:64.plist"
+
+    [ -f "$repo_file" ] || {
+        print_sub "Configurando repositorio Neko Void..."
+        run_elevated bash -c "echo 'repository=https://sourceforge.net/projects/neko-void/files/repo' > $repo_file"
+    }
+
+    [ -f "$key_file" ] || {
+        print_sub "Importando clave RSA de Neko Void..."
+        run_elevated bash -c "mkdir -p /var/db/xbps/keys && xbps-fetch -o '$key_file' https://codeberg.org/Neko-Void/keys/raw/branch/main/1 >/dev/null 2>&1"
+    }
+}

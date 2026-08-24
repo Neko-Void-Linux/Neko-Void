@@ -1,0 +1,9 @@
+set $bg {{colors.background.default.hex}}
+set $accent {{colors.primary.default.hex}}
+set $text {{colors.on_background.default.hex}}
+set $secondary {{colors.secondary.default.hex}}
+
+client.focused $accent $accent $bg #FFFFFF $accent
+client.focused_inactive $bg $bg $text $secondary $bg
+client.unfocused $bg $bg $text $secondary $bg
+client.urgent #f44336 #f44336 #ffffff #ffffff #f44336

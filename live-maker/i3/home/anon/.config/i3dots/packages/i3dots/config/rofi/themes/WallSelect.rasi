@@ -1,0 +1,117 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+* {
+    border-colour:               var(selected);
+    background-colour:           var(background);
+    foreground-colour:           var(foreground);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    selected-normal-background:  var(BGA);
+    selected-normal-foreground:  var(background);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+}
+
+/*****----- Main Window -----*****/
+window {
+    width:                       1500px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @border-colour;
+    background-color:            @background-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    children:                    [ "mode-switcher", "listview" ];
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px 0px 10px 0px;
+    background-color:            transparent;
+    text-color:                  var(foreground-colour);
+}
+
+button {
+    padding:                     12px 30px;
+    border:                      0px;
+    border-color:                transparent;
+    border-radius:               0px;
+    background-color:            var(alternate-normal-background);
+    text-color:                  var(foreground-colour);
+    cursor:                      pointer;
+    horizontal-align:            0.5;
+}
+
+button selected {
+    border:                      0px;
+    border-color:                transparent;
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     5px;
+    margin:                      5px;
+    padding:                     10px;
+    border-radius:               0px;
+    orientation:                vertical;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  var(normal-foreground);
+}
+element selected.normal {
+    background-color:            transparent;
+    text-color:                  var(selected-normal-background);
+}
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  var(alternate-normal-foreground);
+}
+element-icon {
+    background-color:            transparent;
+    size:                        2px;
+    cursor:                      inherit;
+}
+element-text {
+    enabled:            true;
+    background-color:   transparent;
+    horizontal-align:   0.5;
+    vertical-align:     0.5;
+    text-color:         inherit;
+}
+
+element-text selected {
+    background-color:            transparent;
+    text-color:                  inherit;
+}

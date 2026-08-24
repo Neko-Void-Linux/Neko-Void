@@ -1,0 +1,15 @@
+/**
+ * shared/fonts.rasi
+ */
+* {
+    font: "JetBrainsMono Nerd Font 10";
+}
+prompt {
+    font: "JetBrainsMono Nerd Font Bold 13";
+}
+entry {
+    font: "JetBrainsMono Nerd Font 12";
+}
+element-text {
+    font: "JetBrainsMono Nerd Font 11";
+}

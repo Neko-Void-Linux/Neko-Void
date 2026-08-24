@@ -1,0 +1,9 @@
+colors {
+    background {{colors.background.default.hex}}
+    statusline #FFFFFF
+    separator {{colors.secondary.default.hex}}
+    focused_workspace {{colors.primary.default.hex}} {{colors.primary.default.hex}} {{colors.background.default.hex}}
+    active_workspace {{colors.secondary.default.hex}} {{colors.secondary.default.hex}} {{colors.on_background.default.hex}}
+    inactive_workspace {{colors.background.default.hex}} {{colors.background.default.hex}} {{colors.on_background.default.hex}}
+    binding_mode {{colors.primary.default.hex}} {{colors.primary.default.hex}} {{colors.background.default.hex}}
+}

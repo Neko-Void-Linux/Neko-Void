@@ -1,0 +1,1 @@
+../../.config/i3dots/packages/i3dots/bin/toggle_autohide.sh

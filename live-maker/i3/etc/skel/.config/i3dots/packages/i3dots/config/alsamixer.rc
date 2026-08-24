@@ -1,0 +1,30 @@
+color mixer_frame blue default
+color mixer_text default default
+color mixer_active default default bold
+
+color ctl_frame blue default
+
+color ctl_mute red default bold
+color ctl_nomute green default bold
+color ctl_capture magenta default bold
+color ctl_nocapture default default
+
+color ctl_label default default
+color ctl_label_focus default default bold
+color ctl_mark_focus blue default bold
+
+color ctl_bar_lo blue default
+color ctl_bar_mi blue default
+color ctl_bar_hi yellow default
+
+color ctl_inactive default default dim
+color ctl_label_inactive default default dim
+
+color errormsg red default bold
+color infomsg green default
+
+color textbox default default bold
+color textfield default default
+
+color menu default default
+color menu_selected default default bold

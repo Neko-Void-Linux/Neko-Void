@@ -1,0 +1,254 @@
+#!/usr/bin/env bash
+
+# dots - Gestor de Paquetes de Dotfiles Autocontenidos
+export BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export CORE_DIR="$BASE_DIR/core"
+export PACKAGES_DIR="$BASE_DIR/packages"
+export BIN_DIR="$CORE_DIR/bin"
+export STATE_DIR="$CORE_DIR/state"
+
+# 0. Definición de colores y helpers visuales
+source "$CORE_DIR/lib/utils.sh"
+
+# 1. Almacenes de Argumentos
+GENERAL_ARGS=()
+declare -A TARGETED_ARGS
+CURRENT_TARGET="GENERAL"
+COMMAND="apply"
+PACKAGE_NAME=""
+ACTION_NAME=""
+
+# 2. Parseo de Comandos y Argumentos
+if [[ "$1" == "export" || "$1" == "import" || "$1" == "apply" || "$1" == "install" || "$1" == "uninstall" ]]; then
+    COMMAND="$1"
+    shift
+fi
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -S) export MANUAL_ENV="$2"; PACKAGE_NAME="$2"; shift 2 ;;
+        -P:*) 
+            CURRENT_TARGET="${1#-P:}"
+            shift 
+            ;;
+        *) 
+            if [ "$CURRENT_TARGET" == "GENERAL" ]; then
+                if [ -z "$PACKAGE_NAME" ] && [[ ! "$1" =~ ^- ]]; then
+                    PACKAGE_NAME="$1"
+                elif [ -z "$ACTION_NAME" ] && [[ ! "$1" =~ ^- ]] && [[ "$COMMAND" != "install" && "$COMMAND" != "uninstall" ]]; then
+                    ACTION_NAME="$1"
+                else
+                    GENERAL_ARGS+=("$1")
+                fi
+            else
+                TARGETED_ARGS["$CURRENT_TARGET"]+="${TARGETED_ARGS["$CURRENT_TARGET"]:+ }$1"
+            fi
+            shift 
+            ;;
+    esac
+done
+
+# 3. Lógica de Comandos (export/import/install/uninstall)
+case "$COMMAND" in
+    export)
+        [ -z "$PACKAGE_NAME" ] && { print_sub_err "Error: especifica paquete a exportar."; exit 1; }
+        pkg_path="$PACKAGES_DIR/$PACKAGE_NAME"
+        [ ! -d "$pkg_path" ] && { print_sub_err "Error: paquete $PACKAGE_NAME no existe."; exit 1; }
+        tar -czf "${PACKAGE_NAME}.tar.gz" -C "$PACKAGES_DIR" "$PACKAGE_NAME"
+        print_success "Exportado: ${PACKAGE_NAME}.tar.gz"
+        exit 0
+        ;;
+    import)
+        [ -z "$1" ] && { print_sub_err "Error: especifica archivo .tar.gz"; exit 1; }
+        tar -xzf "$1" -C "$PACKAGES_DIR"
+        print_success "Importado correctamente."
+        exit 0
+        ;;
+    install)
+        [ -z "$PACKAGE_NAME" ] && { print_sub_err "Error: especifica paquete a instalar."; exit 1; }
+        export PACKAGE_DIR="$PACKAGES_DIR/$PACKAGE_NAME"
+        if [ -x "$PACKAGE_DIR/install.sh" ]; then
+            export LOG_FILE="/tmp/dots_install_${PACKAGE_NAME}.log"
+            "$PACKAGE_DIR/install.sh" "${GENERAL_ARGS[@]}"
+            
+            # Aplicar configuración básica sin correr toda la secuencia (evita Rofi)
+            print_step "Aplicando configuración inicial..."
+            export CURRENT_ENV="$PACKAGE_NAME"
+            [ -f "$PACKAGE_DIR/config.env" ] && source "$PACKAGE_DIR/config.env"
+            "$BIN_DIR/apply_dots.sh" >> "$LOG_FILE" 2>&1
+            exit 0
+        else
+            print_sub_err "Error: el paquete '$PACKAGE_NAME' no tiene script de instalación."
+            exit 1
+        fi
+        ;;
+    uninstall)
+        [ -z "$PACKAGE_NAME" ] && { print_sub_err "Error: especifica paquete a desinstalar."; exit 1; }
+        export PACKAGE_DIR="$PACKAGES_DIR/$PACKAGE_NAME"
+        if [ -x "$PACKAGE_DIR/uninstall.sh" ]; then
+            "$PACKAGE_DIR/uninstall.sh" "${GENERAL_ARGS[@]}"
+            exit 0
+        else
+            print_sub_err "Error: el paquete '$PACKAGE_NAME' no tiene script de desinstalación."
+            exit 1
+        fi
+        ;;
+esac
+
+# 4. Aplicar Paquete (Apply)
+if [ -z "$PACKAGE_NAME" ]; then
+    if [ -n "$CURRENT_ENV" ]; then
+        PACKAGE_NAME="$CURRENT_ENV"
+    else
+        PACKAGE_NAME="${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}"
+        PACKAGE_NAME="${PACKAGE_NAME%%:*}"
+        PACKAGE_NAME="${PACKAGE_NAME,,}"
+    fi
+fi
+export CURRENT_ENV="$PACKAGE_NAME"
+export PACKAGE_DIR="$PACKAGES_DIR/$PACKAGE_NAME"
+export PATH="$PACKAGE_DIR/bin:$BIN_DIR:$PATH"
+
+ENV_CONFIG="$PACKAGE_DIR/config.env"
+if [ ! -f "$ENV_CONFIG" ]; then
+    print_sub_err "Error: El paquete '$PACKAGE_NAME' no tiene config.env"
+    exit 1
+fi
+
+source "$ENV_CONFIG"
+
+# 5. Determinar Secuencia a Ejecutar
+if [ -n "$ACTION_NAME" ]; then
+    # Sanitizar el nombre de la acción para la variable (quitar .sh y puntos)
+    clean_action="${ACTION_NAME%.sh}"
+    var_action="DOT_SEQUENCE_${clean_action^^}"
+    var_action="${var_action//./_}"
+    
+    declare -n SELECTED_SEQUENCE="$var_action"
+    
+    if [[ -n "${SELECTED_SEQUENCE[*]}" ]]; then
+        # Si existe la secuencia, la usamos
+        FINAL_SEQUENCE=("${SELECTED_SEQUENCE[@]}")
+    else
+        # Si no existe secuencia, la accion es el script mismo
+        FINAL_SEQUENCE=("$ACTION_NAME")
+    fi
+else
+    # Si no hay acción, usar la secuencia por defecto (DOT_SEQUENCE)
+    if [[ -z "${DOT_SEQUENCE[*]}" ]]; then
+        print_sub_warn "Aviso: DOT_SEQUENCE vacia para $PACKAGE_NAME"
+        exit 0
+    fi
+    FINAL_SEQUENCE=("${DOT_SEQUENCE[@]}")
+fi
+
+# 6. Ejecutar Secuencia Seleccionada
+seq_len=${#FINAL_SEQUENCE[@]}
+idx=0
+is_cancelable=0
+for action in "${FINAL_SEQUENCE[@]}"; do
+    ((idx++))
+    
+    if [ "$action" = "-c" ]; then
+        is_cancelable=1
+        continue
+    fi
+    
+    # 6.1 Detectar si la acción debe correr en segundo plano (asíncrona)
+    run_in_background=0
+    clean_action="$action"
+    if [[ "$action" =~ \&[[:space:]]*$ ]]; then
+        # Solo asíncrona si no contiene otros operadores en medio
+        action_without_bg="${action%\&*}"
+        if [[ ! "$action_without_bg" =~ [\&\|\;\<\>] ]]; then
+            run_in_background=1
+            clean_action="$action_without_bg"
+        fi
+    fi
+
+    # 6.2 Evaluar directamente si contiene operadores de control de shell
+    if [ "$run_in_background" -eq 0 ] && [[ "$action" =~ [\&\|\;\<\>] ]]; then
+        is_last=0
+        [ "$idx" -eq "$seq_len" ] && is_last=1
+        if [ "$is_last" -eq 1 ]; then
+            eval exec "$action"
+        else
+            eval "$action"
+        fi
+        
+        exit_code=$?
+        if [ "$is_cancelable" -eq 1 ]; then
+            is_cancelable=0
+            if [ $exit_code -ne 0 ]; then
+                exit 0
+            fi
+        fi
+        continue
+    fi
+
+    # Separar el nombre del script de sus argumentos internos
+    read -r -a action_parts <<< "$clean_action"
+    script_name="${action_parts[0]}"
+    internal_args=("${action_parts[@]:1}")
+    
+    clean_name="${script_name%.sh}"
+    specific="${TARGETED_ARGS["$clean_name"]}"
+    
+    is_last=0
+    if [ "$idx" -eq "$seq_len" ]; then
+        is_last=1
+    fi
+    
+    # Intentar ejecutar (con y sin .sh)
+    if [ -x "$PACKAGE_DIR/bin/$script_name" ]; then
+        if [ "$run_in_background" -eq 1 ]; then
+            "$PACKAGE_DIR/bin/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific &
+        elif [ "$is_last" -eq 1 ]; then
+            exec "$PACKAGE_DIR/bin/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        else
+            "$PACKAGE_DIR/bin/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        fi
+    elif [ -x "$PACKAGE_DIR/bin/${script_name}.sh" ]; then
+        if [ "$run_in_background" -eq 1 ]; then
+            "$PACKAGE_DIR/bin/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific &
+        elif [ "$is_last" -eq 1 ]; then
+            exec "$PACKAGE_DIR/bin/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        else
+            "$PACKAGE_DIR/bin/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        fi
+    elif [ -x "$BIN_DIR/$script_name" ]; then
+        if [ "$run_in_background" -eq 1 ]; then
+            "$BIN_DIR/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific &
+        elif [ "$is_last" -eq 1 ]; then
+            exec "$BIN_DIR/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        else
+            "$BIN_DIR/$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        fi
+    elif [ -x "$BIN_DIR/${script_name}.sh" ]; then
+        if [ "$run_in_background" -eq 1 ]; then
+            "$BIN_DIR/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific &
+        elif [ "$is_last" -eq 1 ]; then
+            exec "$BIN_DIR/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        else
+            "$BIN_DIR/${script_name}.sh" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        fi
+    elif command -v "$script_name" >/dev/null; then
+        if [ "$run_in_background" -eq 1 ]; then
+            "$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific &
+        elif [ "$is_last" -eq 1 ]; then
+            exec "$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        else
+            "$script_name" "${GENERAL_ARGS[@]}" "${internal_args[@]}" $specific
+        fi
+    else
+        print_sub_err "Error: Accion '$script_name' no encontrada."
+    fi
+
+    exit_code=$?
+    if [ "$is_cancelable" -eq 1 ]; then
+        is_cancelable=0
+        if [ $exit_code -ne 0 ]; then
+            exit 0
+        fi
+    fi
+done

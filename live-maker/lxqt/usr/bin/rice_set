@@ -6,9 +6,9 @@ MARKER_FILE="$HOME/.rices.set"
 runn(){
 # Aplicar configuración de apariencia personalizada para MATE
 xdg-user-dirs-update && xdg-user-dirs-update --force
-tar -xvzf /usr/share/rice/lxqt-config-backup.tar.gz -C ~/
+#tar -xvzf /usr/share/rice/lxqt-config-backup.tar.gz -C ~/
 /usr/lib/Neko-Wizard/neko-store
-/usr/share/rice/RestartApp &
+#/usr/share/rice/RestartApp &
 # Crear el archivo de marca para evitar reejecución
 touch "$MARKER_FILE"
 

@@ -1,0 +1,21 @@
+#██╗██████╗ 
+#██║╚════██╗
+#██║ █████╔╝ 
+#██║ ╚═══██╗
+#██║██████╔╝
+#╚═╝╚═════╝            
+
+set $mod Mod4
+set $alt Mod1
+
+include ~/.config/i3/conf.d/vars.generated
+include ~/.config/i3/conf.d/appearance.conf
+include ~/.config/i3/conf.d/keybinds.conf
+include ~/.config/i3/conf.d/workspaces.conf
+include ~/.config/i3/conf.d/windows.conf
+include ~/.config/i3/conf.d/borders_override.conf
+include ~/.config/i3/conf.d/input.conf
+include ~/.config/i3/conf.d/output.conf
+include ~/.config/i3/conf.d/autostart.conf
+include ~/.config/i3/colors.generated
+

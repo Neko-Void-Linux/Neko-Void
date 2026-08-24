@@ -1,0 +1,24 @@
+:root {
+  /* tus variables de matugen */
+  --primary: {{colors.primary.default.hex}};
+  --secondary: {{colors.secondary.default.hex}};
+  --background: {{colors.background.default.hex}};
+  --surface: {{colors.surface.default.hex}};
+  --on-surface: {{colors.on_surface.default.hex}};
+  --surface-variant: {{colors.surface_variant.default.hex}};
+
+  /* variables reales de Heroic */
+  --accent: {{colors.primary.default.hex}} !important;
+  --accent-overlay: {{colors.primary.default.hex}}33 !important;
+  --text-default: {{colors.on_background.default.hex}} !important;
+  --text-secondary: {{colors.on_surface_variant.default.hex}} !important;
+  --background-darker: {{colors.background.default.hex}} !important;
+  --background-dark: {{colors.surface.default.hex}} !important;
+  --body-background: {{colors.background.default.hex}} !important;
+}
+
+/* portadas en color */
+.gameCard img,
+.gameListItem img {
+  filter: none !important;
+}

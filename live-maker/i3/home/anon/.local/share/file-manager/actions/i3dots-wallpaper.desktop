@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Action
+Name=Wallpaper i3
+Icon=background
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=image/png;image/jpeg;image/webp;image/gif;image/bmp;video/mp4;video/webm;video/x-matroska;
+Exec=/bin/bash -c '$HOME/.config/i3dots/packages/i3dots/bin/wp_context_menu.sh %f'

@@ -1,0 +1,94 @@
+configuration {
+    show-icons:                     false;
+    disable-history:                true;
+    click-to-exit:                  false;
+    location:                       4;
+}
+
+@import "shared/fonts.rasi"
+@import "shared/colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @BG;
+    text-color:                     @FG;
+    border:                         0px;
+    border-color:                   @BGA;
+    border-radius:                  0px;
+    width:                          110px;
+    x-offset:                       -1%;
+    y-offset:                       0;
+}
+
+mainbox {
+    background-color:               @BG;
+    children:                       [ inputbar, listview ];
+    spacing:                        10px;
+    padding:                        15px;
+}
+
+inputbar {
+    enabled:                        true;
+    background-color:               transparent;
+    text-color:                     @FG;
+    expand:                         false;
+    margin:                         0px;
+    padding:                        0px 0px 5px 0px;
+    children:                       [ prompt ];
+}
+
+prompt {
+    enabled:                        true;
+    background-color:               transparent;
+    text-color:                     @FG;
+    font:                           "JetBrains Mono NF 9";
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+}
+
+listview {
+    background-color:               @BG;
+    columns:                        1;
+    lines:                          4;
+    spacing:                        18px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+    scrollbar:                      false;
+    padding:                        0px;
+    margin:                         0px;
+    border:                         0px;
+}
+
+element {
+    background-color:               transparent;
+    text-color:                     @FG;
+    orientation:                    vertical;
+    border-radius:                  0px;
+    padding:                        12px 0px;
+    cursor:                         pointer;
+}
+
+element-text {
+    background-color:               transparent;
+    text-color:                     inherit;
+    font:                           "JetBrains Mono NF 22";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    cursor:                         inherit;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color:               transparent;
+    text-color:                     @FG;
+}
+
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color:               @SEL;
+    text-color:                     @BG;
+    border-radius:                  0px;
+}

@@ -1,0 +1,1 @@
+../i3dots/packages/i3dots/bin/polybar_launch.sh

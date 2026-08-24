@@ -1,0 +1,65 @@
+[config]
+default_type = "scheme-tonal-spot"
+contrast = 0.0
+
+
+
+
+
+
+[templates.polybar]
+input_path = "~/.config/matugen/templates/polybar-colors.ini"
+output_path = "~/.config/polybar/colors.ini"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/themes/shared/colors.rasi"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/colors.conf"
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/discord.css'
+output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/midnight.theme.css'
+
+[templates.prismlauncher]
+input_path = '~/.config/matugen/templates/prismlauncher.json'
+output_path = '~/.local/share/PrismLauncher/themes/Matugen/theme.json'
+
+[templates.heroic]
+input_path = "~/.config/matugen/templates/heroic.css"
+output_path = "~/.var/app/com.heroicgameslauncher.hgl/config/heroic/themes/matugen.css"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.qt6ct]
+input_path = "~/.config/matugen/templates/qtct-colors.conf"
+output_path = "~/.config/qt6ct/colors/matugen.conf"
+
+[templates.i3_main]
+input_path = "~/.config/i3/colors.template"
+output_path = "~/.config/i3/colors.generated"
+# post_hook eliminado para evitar doble recarga y lag en HDD
+
+[templates.i3_bar]
+input_path = "~/.config/i3/bar_colors.template"
+output_path = "~/.config/i3/bar_colors.generated"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/themes/matugen"
+
+[templates.recolor_folders]
+input_path = "~/.config/matugen/templates/recolor_folders.sh"
+output_path = "~/.cache/matugen/recolor_folders-apply.sh"
+
+[templates.dunst]
+input_path = "~/.config/matugen/templates/dunstrc"
+output_path = "~/.config/dunst/dunstrc"

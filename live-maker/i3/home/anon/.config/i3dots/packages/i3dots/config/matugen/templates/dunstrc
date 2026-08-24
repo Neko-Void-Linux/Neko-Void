@@ -1,0 +1,40 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 300
+    height = (0, 300)
+    origin = top-right
+    offset = (10, 40)
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 1
+    frame_color = "{{colors.primary.default.hex}}"
+    separator_color = frame
+    font = Inter 10
+    format = "<b>%s</b>\n%b"
+    markup = full
+    icon_position = left
+    max_icon_size = 48
+    corner_radius = 0
+    
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+[urgency_low]
+    background = "{{colors.background.default.hex}}"
+    foreground = "{{colors.on_background.default.hex}}"
+    highlight = "{{colors.primary.default.hex}}"
+    timeout = 4
+
+[urgency_normal]
+    background = "{{colors.background.default.hex}}"
+    foreground = "{{colors.on_background.default.hex}}"
+    highlight = "{{colors.primary.default.hex}}"
+    timeout = 6
+
+[urgency_critical]
+    background = "{{colors.background.default.hex}}"
+    foreground = "#f44336"
+    frame_color = "#f44336"
+    highlight = "#f44336"
+    timeout = 0
