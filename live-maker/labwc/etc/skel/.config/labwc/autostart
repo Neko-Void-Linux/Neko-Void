@@ -1,31 +1,21 @@
-# Example autostart file
-
-# Set background color.
-#~/.local/bin/ici-paper &
-# Configure output directives such as mode, position, scale and transform.
-# Use wlr-randr to get your output names
-# Example ~/.config/kanshi/config below:
-#   profile {
-#     output HDMI-A-1 position 1366,0
-#     output eDP-1 position 0,0
-#   }
-kanshi >/dev/null 2>&1 &
-
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
     eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
-/usr/libexec/polkit-mate-authentication-agent-1 &
-# Export environment variables
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
-# Launch a panel such as yambar or waybar.
-#sfwbar >/dev/null 2>&1 &
-#nm-applet &
-# Enable notifications. Typically GNOME/KDE application notifications go
-# through the org.freedesktop.Notifications D-Bus API and require a client such
-# as mako to function correctly. Thunderbird is an example of this.
-mako >/dev/null 2>&1 &
+kanshi >/dev/null 2>&1 &
+
+# Esto es lo vital: pasarle el entorno a D-Bus
+export XDG_CURRENT_DESKTOP=labwc
+export WAYLAND_DISPLAY=wayland-0
+dbus-update-activation-environment --all
+
 noctalia &
-/usr/libexec/xdg-desktop-portal-wlr &
+
+# Tu PipeWire (que ya se encarga de wireplumber)
 pipewire &
+
+# Los portales
+/usr/libexec/xdg-desktop-portal-wlr &
+/usr/libexec/xdg-desktop-portal &
+
 /usr/bin/rice_set &

@@ -180,8 +180,8 @@ build_iso() {
         labwc)
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
-            kernel_kver="$KERNEL_LASTEST"
-            dm_service="lightdm"
+            kernel_kver="$KERNEL_DEFAULT"
+            dm_service="emptty"
             iso_name="nekovoid-labwc-$VERSION.iso"
             arch="x86_64"
             ;;

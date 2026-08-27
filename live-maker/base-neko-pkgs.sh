@@ -390,19 +390,22 @@ CINNAMON="
 "
 
 LABWC="
+	qt6-wayland-client
+	qt6-wayland
     ristretto
     noctalia
     xarchiver
-	lightdm
+	emptty
+	wofi
 	gvfs-afc
     gvfs-mtp
     gvfs-smb
 	wlr-randr
-	mako
 	xwayland-satellite
 	swaylock
-	mate-polkit
 	labwc
+	labwc-menu-generator
+	labwc-tweaks-qt
 	alacritty
 	kanshi
 	xdg-desktop-portal
@@ -437,16 +440,16 @@ NIRI="
     gvfs-smb
     wlr-randr
     wdisplays
-	mate-polkit
     caja
+    wofi
     xwayland-satellite
 	emptty
 	niri
 	noctalia
 	foot
 	xdg-desktop-portal
-	xdg-desktop-portal-gnome
 	xdg-desktop-portal-wlr
+	xdg-desktop-portal-gnome
 	wl-clipboard
 	mako
 	wlsunset

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Niri-nk
-Comment=A scrollable-tiling Wayland compositor
-Exec=/usr/bin/neko-niri
-Type=Application
-DesktopNames=niri-nk
-Name[en_US]=niri-nk.desktop

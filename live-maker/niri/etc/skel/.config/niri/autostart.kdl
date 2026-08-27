@@ -6,7 +6,7 @@ spawn-at-startup "noctalia"
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 
-spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+//spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "sleep 3 && /usr/libexec/xdg-desktop-portal -r"
 spawn-at-startup "sleep 2 && /usr/local/libexec/xdg-desktop-portal-gtk"
 spawn-at-startup "sleep 2 && /usr/local/libexec/xdg-desktop-portal-wlr"

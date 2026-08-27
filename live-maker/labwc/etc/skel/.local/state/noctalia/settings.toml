@@ -103,7 +103,7 @@ enabled = [ "noctalia/screen_recorder", "noctalia/translator" ]
 
 [shell]
 corner_radius_scale = 0.0
-
+polkit_agent = true
     [shell.launcher.providers.windows]
     prefix = ""
 
