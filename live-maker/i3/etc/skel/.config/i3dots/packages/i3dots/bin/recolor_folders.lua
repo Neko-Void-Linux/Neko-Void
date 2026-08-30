@@ -200,6 +200,98 @@ local function link_symbolic_icons(original_dir, ram_dir, disk_dir, sym_sed)
     end
 end
 
+local function run_rofi(prompt, items_str)
+    local theme_path = common.home .. "/.config/rofi/themes/shared/menu_generic.rasi"
+    local theme_arg  = common.path_exists(theme_path) and ("-theme " .. theme_path) or ""
+    local tmp = os.tmpname()
+    local f = io.open(tmp, "w")
+    if not f then return nil end
+    f:write(items_str)
+    f:close()
+    local h = io.popen(string.format("rofi -dmenu -p %q %s < %s", prompt, theme_arg, tmp), "r")
+    if not h then os.remove(tmp); return nil end
+    local res = h:read("*l")
+    h:close()
+    os.remove(tmp)
+    return res
+end
+
+local function show_menu(settings_ini, base_file)
+    while true do
+        local cfg = common.load_appearance_config()
+        local icon_status    = cfg.dynamic_icons and "[ Activado ]" or "[ Desactivado ]"
+        local gtk_status     = cfg.dynamic_gtk and "[ Activado ]" or "[ Desactivado ]"
+        local storage_status = (cfg.storage_mode == "disk") and "[ Híbrido Disco ]" or "[ RAM puro ]"
+        
+        local menu_text = string.format(
+            "1. Iconos dinámicos:        %s\n" ..
+            "2. Tema GTK dinámico:       %s\n" ..
+            "3. Almacenamiento:          %s\n" ..
+            "4. Guardar tema actual en Disco (Permanente)\n" ..
+            "5. Restaurar temas de fábrica (Papirus + GTK limpio)",
+            icon_status, gtk_status, storage_status
+        )
+        
+        local choice = run_rofi("Apariencia", menu_text)
+        if not choice or choice == "" then break end
+        
+        local base_theme = common.detect_base_theme(settings_ini, base_file)
+        local widget_base = get_widget_base(settings_ini)
+        
+        if choice:find("^1%.") then
+            cfg.dynamic_icons = not cfg.dynamic_icons
+            common.save_appearance_config(cfg)
+            if not cfg.dynamic_icons then
+                gtk.apply(base_theme, nil)
+                qt.apply(base_theme)
+                os.execute("notify-send 'Apariencia' 'Iconos dinámicos desactivados. Tema base restaurado.' 2>/dev/null &")
+            else
+                os.execute("notify-send 'Apariencia' 'Iconos dinámicos activados.' 2>/dev/null &")
+                os.execute("~/.local/bin/recolor_folders --restore >/dev/null 2>&1 &")
+            end
+        elseif choice:find("^2%.") then
+            cfg.dynamic_gtk = not cfg.dynamic_gtk
+            common.save_appearance_config(cfg)
+            if not cfg.dynamic_gtk then
+                gtk.apply(nil, widget_base)
+                os.execute("notify-send 'Apariencia' 'Tema GTK dinámico desactivado. Tema base restaurado.' 2>/dev/null &")
+            else
+                os.execute("notify-send 'Apariencia' 'Tema GTK dinámico activado.' 2>/dev/null &")
+                os.execute("~/.local/bin/recolor_folders --restore >/dev/null 2>&1 &")
+            end
+        elseif choice:find("^3%.") then
+            cfg.storage_mode = (cfg.storage_mode == "disk") and "ram" or "disk"
+            common.save_appearance_config(cfg)
+            if cfg.storage_mode == "disk" then
+                local xsettings_cfg = common.home .. "/.config/xsettingsd/xsettingsd.conf"
+                local active_variant = common.detect_active_variant(xsettings_cfg)
+                local active_theme = base_theme .. "-Custom-" .. active_variant
+                common.persist_theme_to_disk(active_theme)
+                os.execute("notify-send 'Apariencia' 'Modo Híbrido Disco activado. Iconos fijados en disco.' 2>/dev/null &")
+            else
+                os.execute("notify-send 'Apariencia' 'Modo RAM activado.' 2>/dev/null &")
+            end
+        elseif choice:find("^4%.") then
+            local xsettings_cfg = common.home .. "/.config/xsettingsd/xsettingsd.conf"
+            local active_variant = common.detect_active_variant(xsettings_cfg)
+            local active_theme = base_theme .. "-Custom-" .. active_variant
+            if common.persist_theme_to_disk(active_theme) then
+                os.execute("notify-send 'Apariencia' 'Iconos guardados en disco (~/.icons/) permanentemente.' 2>/dev/null &")
+            else
+                os.execute("notify-send 'Apariencia' 'Los iconos ya estaban en disco o no se encontraron en RAM.' 2>/dev/null &")
+            end
+            break
+        elseif choice:find("^5%.") then
+            cfg.dynamic_icons = false
+            cfg.dynamic_gtk   = false
+            common.save_appearance_config(cfg)
+            common.restore_clean_themes(base_theme, widget_base)
+            os.execute("notify-send 'Apariencia' 'Temas de fábrica restaurados (Papirus + adw-gtk3).' 2>/dev/null &")
+            break
+        end
+    end
+end
+
 -- ── Main ──────────────────────────────────────────────────────────────────────
 
 local function main()
@@ -208,21 +300,90 @@ local function main()
     local base_file     = common.home .. "/.config/i3/icon_theme.base"
     local xsettings_cfg = common.home .. "/.config/xsettingsd/xsettingsd.conf"
 
+    local arg1 = arg[1]
+    if arg1 == "--menu" then
+        show_menu(settings_ini, base_file)
+        os.exit(0)
+    elseif arg1 == "--status" then
+        local cfg = common.load_appearance_config()
+        print(string.format("dynamic_icons=%s", cfg.dynamic_icons and "true" or "false"))
+        print(string.format("dynamic_gtk=%s", cfg.dynamic_gtk and "true" or "false"))
+        print(string.format("storage_mode=%s", cfg.storage_mode or "ram"))
+        os.exit(0)
+    elseif arg1 == "--toggle-icons" then
+        local cfg = common.load_appearance_config()
+        cfg.dynamic_icons = not cfg.dynamic_icons
+        common.save_appearance_config(cfg)
+        local base_theme = common.detect_base_theme(settings_ini, base_file)
+        if not cfg.dynamic_icons then
+            gtk.apply(base_theme, nil)
+            qt.apply(base_theme)
+        else
+            os.execute("~/.local/bin/recolor_folders --restore")
+        end
+        os.exit(0)
+    elseif arg1 == "--toggle-gtk" then
+        local cfg = common.load_appearance_config()
+        cfg.dynamic_gtk = not cfg.dynamic_gtk
+        common.save_appearance_config(cfg)
+        local widget_base = get_widget_base(settings_ini)
+        if not cfg.dynamic_gtk then
+            gtk.apply(nil, widget_base)
+        else
+            os.execute("~/.local/bin/recolor_folders --restore")
+        end
+        os.exit(0)
+    elseif arg1 == "--toggle-storage" then
+        local cfg = common.load_appearance_config()
+        cfg.storage_mode = (cfg.storage_mode == "disk") and "ram" or "disk"
+        common.save_appearance_config(cfg)
+        os.exit(0)
+    elseif arg1 == "--save-disk" or arg1 == "--persist" then
+        local base_theme = common.detect_base_theme(settings_ini, base_file)
+        local active_variant = common.detect_active_variant(xsettings_cfg)
+        local active_theme = base_theme .. "-Custom-" .. active_variant
+        common.persist_theme_to_disk(active_theme)
+        os.exit(0)
+    elseif arg1 == "--reset" then
+        local cfg = common.load_appearance_config()
+        cfg.dynamic_icons = false
+        cfg.dynamic_gtk   = false
+        common.save_appearance_config(cfg)
+        local base_theme = common.detect_base_theme(settings_ini, base_file)
+        local widget_base = get_widget_base(settings_ini)
+        common.restore_clean_themes(base_theme, widget_base)
+        os.exit(0)
+    end
+
+    local cfg = common.load_appearance_config()
+    local base_theme = common.detect_base_theme(settings_ini, base_file)
+    local widget_base = get_widget_base(settings_ini)
+
+    -- Si ambos están desactivados, asegurar temas base limpios y salir
+    if not cfg.dynamic_icons and not cfg.dynamic_gtk then
+        gtk.apply(base_theme, widget_base)
+        qt.apply(base_theme)
+        os.exit(0)
+    end
+
     local prev_color = common.read_prev_color(persist_file)
     local color      = common.resolve_color(arg[1], persist_file)
 
-    local base_theme   = common.detect_base_theme(settings_ini, base_file)
     local original_dir = common.find_theme_dir(base_theme)
     if not original_dir then
         common.cleanup_old_themes("", "")
         os.exit(0)
     end
 
-    -- Early exit: mismo color ya aplicado en RAM
-    local active_variant    = common.detect_active_variant(xsettings_cfg)
-    local active_icon_theme = base_theme .. "-Custom-" .. active_variant
+    -- Early exit: si el color no cambió y el tema ya está listo en Disco o en RAM
+    local active_variant      = common.detect_active_variant(xsettings_cfg)
+    local active_icon_theme   = base_theme .. "-Custom-" .. active_variant
+    local active_physical_dir = common.home .. "/.icons/" .. active_icon_theme
+    local is_ready = common.is_theme_populated(active_physical_dir)
+                  or common.is_theme_populated("/dev/shm/" .. active_icon_theme)
+
     if color == prev_color
-        and common.is_ram_populated("/dev/shm/" .. active_icon_theme)
+        and is_ready
         and get_current_icon_theme(settings_ini) == active_icon_theme
     then
         gtk.apply(nil, nil)
@@ -232,23 +393,34 @@ local function main()
     local theme_mod = common.load_theme_module(base_theme)
     if not theme_mod then
         common.cleanup_old_themes("", "")
-        gtk.apply(base_theme, "adw-gtk3-dark")
+        gtk.apply(base_theme, widget_base)
         qt.apply(base_theme)
         os.exit(0)
     end
 
     local target_variant      = (active_variant == "A") and "B" or "A"
-    local widget_base         = get_widget_base(settings_ini)
     local custom_icon_theme   = base_theme  .. "-Custom-" .. target_variant
     local custom_widget_theme = widget_base .. "-Custom-" .. target_variant
     local ram_icon_dir        = "/dev/shm/" .. custom_icon_theme
     local backup_dir          = "/dev/shm/" .. base_theme .. "-Custom-backup"
     local physical_icon_dir   = common.home .. "/.icons/" .. custom_icon_theme
 
-    -- ── FASE 1: widget theme y señal Qt inmediatos ───────────────────────────
-    common.cleanup_old_themes(custom_icon_theme, custom_widget_theme)
-    gtk.setup_theme_variant(widget_base, target_variant)
-    gtk.apply(nil, custom_widget_theme)
+    -- ── FASE 1: widget theme y señal Qt ──────────────────────────────────────
+    if cfg.dynamic_gtk then
+        common.cleanup_old_themes(custom_icon_theme, custom_widget_theme)
+        gtk.setup_theme_variant(widget_base, target_variant)
+        gtk.apply(nil, custom_widget_theme)
+    else
+        gtk.apply(nil, widget_base)
+    end
+
+    -- Si iconos dinámicos están desactivados, mantener base_theme y finalizar
+    if not cfg.dynamic_icons then
+        gtk.apply(base_theme, nil)
+        qt.apply(base_theme)
+        os.exit(0)
+    end
+
     qt.apply(custom_icon_theme)
 
     -- ── FASE 2: backup + recoloreo de SVGs ───────────────────────────────────
@@ -269,7 +441,6 @@ local function main()
             physical_icon_dir .. "/index.theme", custom_icon_theme, base_theme)
         link_icon_subdirs(backup_dir, ram_icon_dir, physical_icon_dir)
 
-        -- Clonación rápida (1.8ms) de la estructura de enlaces a la otra variante
         local other_variant  = (target_variant == "A") and "B" or "A"
         local other_ram_dir  = "/dev/shm/" .. base_theme .. "-Custom-" .. other_variant
         local other_phys_dir = common.home .. "/.icons/" .. base_theme .. "-Custom-" .. other_variant
@@ -279,15 +450,17 @@ local function main()
         end
     end
 
-    -- Recolorear carpetas en RAM (cp backup + parallel sed con xargs -P$(nproc))
     common.copy_and_recolor(backup_dir, ram_icon_dir, sed_exprs)
-
-    -- Actualizar glifos simbólicos de lugares y carpetas en RAM
     link_symbolic_icons(original_dir, ram_icon_dir, physical_icon_dir, sym_sed)
 
-    -- ── FASE 3: señalizar iconos GTK (primero), luego cache en background ────────────────────────
+    -- ── FASE 3: señalizar iconos GTK y cache ─────────────────────────────────
     gtk.apply(custom_icon_theme, nil)
-    common.update_icon_cache(physical_icon_dir) -- no bloqueante (&)
+    common.update_icon_cache(physical_icon_dir)
+
+    -- Si el modo de almacenamiento es disco (híbrido), persistir a ~/.icons/
+    if cfg.storage_mode == "disk" then
+        common.persist_theme_to_disk(custom_icon_theme)
+    end
 end
 
 main()

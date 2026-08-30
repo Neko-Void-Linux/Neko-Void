@@ -1,0 +1,32 @@
+* {
+    background:     #0f1416FF;
+    background-alt: #40484cFF;
+    foreground:     #dee3e6FF;
+    selected:       #89d0edFF;
+    selected-neutral: #dee3e626;
+    active:         #b3cad5FF;
+    urgent:         #ffb4abFF;
+    BG:             #0f1416FF;
+    BGA:            #40484cFF;
+    FG:             #dee3e6FF;
+    SEL:            #89d0edFF;
+    BDR:            #8a9296FF;
+    ON:             #b3cad5FF;
+    OFF:            #ffb4abFF;
+    card-background: #dee3e605;
+    card-border:     #dee3e60D;
+    card-selected:   #dee3e614;
+}
+
+element selected.normal {
+    background-color: var(selected);
+    text-color:       var(background);
+}
+
+element-text selected {
+    text-color:       var(background);
+}
+
+element-icon selected {
+    text-color:       var(background);
+}

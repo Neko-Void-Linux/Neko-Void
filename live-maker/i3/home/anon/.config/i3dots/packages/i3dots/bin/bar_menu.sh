@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 # packages/i3dots/hooks/components/bar_menu.sh - Rofi Frontend para engine_state.sh bar
 
-# 1. Configurar Variables y Directorios de Forma Dinámica
-if [ -z "$PROJECT_ROOT" ]; then
-    SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
-    export PROJECT_ROOT=$(cd "$(dirname "$SCRIPT_PATH")/../../.." && pwd)
-fi
-export CORE_DIR="${CORE_DIR:-$PROJECT_ROOT/core}"
-export STATE_DIR="${STATE_DIR:-$PROJECT_ROOT/core/state}"
+# 1. Configurar Variables y Directorios Base
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export PROJECT_ROOT="$BASE_DIR"
+export CORE_DIR="${CORE_DIR:-$BASE_DIR/core}"
+export STATE_DIR="${STATE_DIR:-$BASE_DIR/core/state}"
 export CURRENT_ENV="${CURRENT_ENV:-i3dots}"
 STATE_FILE="$STATE_DIR/$CURRENT_ENV/bar/state.env"
 [ -f "$STATE_FILE" ] && source "$STATE_FILE"

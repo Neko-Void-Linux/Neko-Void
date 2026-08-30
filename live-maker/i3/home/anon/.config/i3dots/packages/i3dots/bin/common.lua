@@ -215,6 +215,14 @@ function common.is_ram_populated(ram_dir)
     return res and res ~= ""
 end
 
+function common.is_theme_populated(dir)
+    if not dir or dir == "" then return false end
+    local p = io.popen("find -L " .. dir .. " -name '*.svg' -print -quit 2>/dev/null")
+    if not p then return false end
+    local res = p:read("*a"); p:close()
+    return res and res ~= ""
+end
+
 function common.ensure_persistent_symlink_tree(original_dir, ram_dir, backup_dir, custom_theme, base_theme)
     if common.path_exists(ram_dir .. "/index.theme") then return end
 
@@ -314,6 +322,76 @@ end
 
 function common.update_icon_cache(dir)
     os.execute("gtk-update-icon-cache -f -q -t " .. dir .. " 2>/dev/null &")
+end
+
+-- ── Appearance configuration (dynamic icons / GTK / storage) ─────────────────
+
+function common.load_appearance_config()
+    local cfg_path = common.home .. "/.config/i3/appearance.ini"
+    local cfg = {
+        dynamic_icons = true,
+        dynamic_gtk   = true,
+        storage_mode  = "ram",
+    }
+    local s = common.read_file(cfg_path)
+    if s then
+        for line in s:gmatch("[^\n]+") do
+            local k, v = line:match("^([%w_]+)%s*=%s*(.*)")
+            if k and v then
+                v = v:gsub('^"', ''):gsub('"$', ''):gsub("%s+$", "")
+                if k == "dynamic_icons" then
+                    cfg.dynamic_icons = (v == "true" or v == "1")
+                elseif k == "dynamic_gtk" then
+                    cfg.dynamic_gtk = (v == "true" or v == "1")
+                elseif k == "storage_mode" then
+                    cfg.storage_mode = (v == "disk" or v == "hybrid") and "disk" or "ram"
+                end
+            end
+        end
+    end
+    return cfg
+end
+
+function common.save_appearance_config(cfg)
+    local cfg_path = common.home .. "/.config/i3/appearance.ini"
+    local content = string.format(
+        "dynamic_icons=%s\ndynamic_gtk=%s\nstorage_mode=%s\n",
+        cfg.dynamic_icons and "true" or "false",
+        cfg.dynamic_gtk and "true" or "false",
+        cfg.storage_mode or "ram"
+    )
+    common.write_file(cfg_path, content)
+end
+
+function common.persist_theme_to_disk(custom_icon_theme)
+    local ram_dir  = "/dev/shm/" .. custom_icon_theme
+    local disk_dir = common.home .. "/.icons/" .. custom_icon_theme
+    if not common.path_exists(ram_dir) then return false end
+
+    os.execute("mkdir -p " .. common.home .. "/.icons")
+    local tmp_disk = disk_dir .. "-tmp"
+    os.execute("rm -rf " .. tmp_disk)
+    os.execute("cp -rL " .. ram_dir .. " " .. tmp_disk)
+    if common.path_exists(disk_dir .. "/index.theme") then
+        os.execute("cp -f " .. disk_dir .. "/index.theme " .. tmp_disk .. "/index.theme")
+    end
+    os.execute("rm -rf " .. disk_dir)
+    os.execute("mv " .. tmp_disk .. " " .. disk_dir)
+    os.execute("rm -rf " .. ram_dir)
+    common.update_icon_cache(disk_dir)
+    return true
+end
+
+function common.restore_clean_themes(base_icon, base_gtk)
+    local base_i = base_icon or "Papirus-Dark"
+    local base_g = base_gtk  or "adw-gtk3-dark"
+
+    os.execute("rm -rf /dev/shm/*-Custom-* " .. common.home .. "/.icons/*-Custom-* " .. common.home .. "/.themes/*-Custom-* 2>/dev/null")
+    
+    local gtk = require("gtk")
+    local qt  = require("qt")
+    gtk.apply(base_i, base_g)
+    qt.apply(base_i)
 end
 
 return common

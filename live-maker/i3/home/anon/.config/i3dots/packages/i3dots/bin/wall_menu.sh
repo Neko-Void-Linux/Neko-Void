@@ -26,8 +26,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 # 2. Cargar entorno y lógica compartida
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/wp_shared.sh"
+BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+source "$BASE_DIR/packages/i3dots/bin/wp_shared.sh"
 
 # Si habilitado, pero no hay vips, desactivar
 if [[ "$THUMB_MODE" == "enabled" && "$HAS_VIPS" -eq 0 ]]; then
@@ -768,7 +768,7 @@ if [[ -n "$SELECTION" ]]; then
     ln -sf "$color_src" "$WP_STATE_DIR/color_source"
     
     # Asegurar que BIN_DIR esté definida si se ejecuta de forma externa (Rofi/Gestores)
-    [[ -z "$BIN_DIR" ]] && BIN_DIR="$(cd "$SCRIPT_DIR/../../../core/bin" && pwd)"
+    [[ -z "$BIN_DIR" ]] && BIN_DIR="${BASE_DIR:-$HOME/.config/i3dots}/core/bin"
 
     # Aplicar wallpaper en pantalla de forma desvinculada para no morir por SIGHUP al cerrarse Rofi
     setsid "$BIN_DIR/wp_select.sh" -C "$FINAL_PATH" < /dev/null > /dev/null 2>&1 &

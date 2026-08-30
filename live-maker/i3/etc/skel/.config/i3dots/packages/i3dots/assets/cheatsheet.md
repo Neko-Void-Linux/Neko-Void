@@ -45,6 +45,8 @@ Guía rápida de atajos de teclado y controles del sistema.
 | <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>W</kbd> | Live wallpaper |
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd> | Gestionar wallpapers |
 | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>W</kbd> | Wallpapers predefinidos |
+| <kbd>Super</kbd> + <kbd>N</kbd> | Gestor de redes y Wi-Fi (Rofi Network) |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd> | Selector de color de carpetas |
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> | Cambiar estilo/tema de barra (Polybar) |
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> | Opciones de barra (altura, etc.) |
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> | Administrar pantallas y resolución |

@@ -10,7 +10,7 @@
     frame_width = 1
     frame_color = "{{colors.primary.default.hex}}"
     separator_color = frame
-    font = Inter 10
+    font = JetBrainsMono Nerd Font 10
     format = "<b>%s</b>\n%b"
     markup = full
     icon_position = left

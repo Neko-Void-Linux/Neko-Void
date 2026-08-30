@@ -1,0 +1,2 @@
+# Neko-Void system services
+exec --no-startup-id pipewire &

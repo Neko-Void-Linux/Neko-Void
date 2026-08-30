@@ -21,8 +21,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 # 2. Cargar entorno y lógica compartida
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/wp_shared.sh"
+BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+source "$BASE_DIR/packages/i3dots/bin/wp_shared.sh"
 
 # 2.5 Lock de seguridad para evitar concurrencia
 LOCK_FILE="/dev/shm/wp_cache_${UID}.lock"

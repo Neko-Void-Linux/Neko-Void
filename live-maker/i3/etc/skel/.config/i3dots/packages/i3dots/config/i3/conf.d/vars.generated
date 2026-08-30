@@ -1,0 +1,5 @@
+set $dots_cmd ~/.config/i3dots/dots
+set $current_env i3dots
+set $polkit_agent /usr/lib/raven-polkit/raven-polkit-agent
+set $i3_font "JetBrainsMono Nerd Font"
+set $file_manager pcmanfm

@@ -14,5 +14,8 @@ engine_init() {
 engine_set() {
     local wp_path="$1"
     engine_init
+    local wp_state_dir="${BASE_DIR:-$HOME/.config/i3dots}/core/state/${CURRENT_ENV:-i3dots}/wallpaper"
+    mkdir -p "$wp_state_dir"
+    ln -sf "$wp_path" "$wp_state_dir/color_source"
     feh --bg-fill "$wp_path"
 }

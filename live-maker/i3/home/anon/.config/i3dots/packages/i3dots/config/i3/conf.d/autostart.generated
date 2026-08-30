@@ -1,0 +1,2 @@
+# Neko-Void Live ISO services
+exec --no-startup-id pipewire &

@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 # packages/i3dots/bin/wp_shared.sh - Entorno y funciones compartidas para Wallpaper Helpers
 
-# 1. Configurar Directorios Base de forma dinámica
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PKG_PARENT="${SCRIPT_DIR%/*}"
-PKG_NAME="${PKG_PARENT##*/}"
-CUR_ENV="${CURRENT_ENV:-$PKG_NAME}"
-ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
-STATE_DIR_VAL="${STATE_DIR:-$ROOT_DIR/core/state}"
+# 1. Configurar Directorios Base
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export ROOT_DIR="$BASE_DIR"
+CUR_ENV="${CURRENT_ENV:-i3dots}"
+STATE_DIR_VAL="${STATE_DIR:-$BASE_DIR/core/state}"
 WP_STATE_DIR="$STATE_DIR_VAL/$CUR_ENV/wallpaper"
 [[ -d "$WP_STATE_DIR" ]] || mkdir -p "$WP_STATE_DIR"
 

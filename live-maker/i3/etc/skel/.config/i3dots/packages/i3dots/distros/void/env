@@ -3,17 +3,18 @@ export PKG_MANAGER="xbps-install"
 export PKG_UPDATE_CMD="-Syu"
 export PKG_INSTALL_CMD="-Sy"
 export PKG_QUERY_CMD="xbps-query -l | sed -E 's/^ii //; s/-[0-9].*//'"
-export PKG_LIST="i3 pcmanfm polybar rofi kitty picom qt6ct lxappearance feh xfce-polkit pipewire wireplumber pulseaudio-utils setxkbmap brightnessctl playerctl maim xclip xdotool dmenu git curl wget unzip font-awesome6 fontconfig ImageMagick papirus-icon-theme fastfetch lua53 xsettingsd dash"
+export PKG_LIST="i3 pcmanfm polybar rofi kitty picom qt6ct lxappearance feh raven-polkit pipewire wireplumber pulseaudio-utils setxkbmap brightnessctl playerctl maim xclip xdotool dmenu git curl wget unzip font-awesome6 fontconfig ImageMagick papirus-icon-theme adw-gtk3 fastfetch lua53 xsettingsd dash dunst"
 export PKG_LIVE="mpv xwinwrap-nk ffmpegthumbnailer socat"
 export PKG_BUILD="gcc libX11-devel"
 
-export POLKIT_AGENT="/usr/libexec/xfce-polkit"
+export POLKIT_AGENT="/usr/lib/raven-polkit/raven-polkit-agent"
 export I3_FONT="JetBrainsMono Nerd Font"
 export OS_ICON=""
 
 # Mapeo de paquetes de servicios opcionales
-export PKG_SERVICE_POLKIT="xfce-polkit"
+export PKG_SERVICE_POLKIT="raven-polkit"
 export PKG_SERVICE_XSETTINGSD="xsettingsd"
+export PKG_OPTIONAL_NETWORK="NetworkManager"
 
 export POWERMENU_CMD_SHUTDOWN="loginctl poweroff"
 export POWERMENU_CMD_REBOOT="loginctl reboot"

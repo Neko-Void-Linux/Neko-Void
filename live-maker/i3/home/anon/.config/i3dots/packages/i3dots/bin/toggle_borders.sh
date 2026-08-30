@@ -21,17 +21,8 @@ if [ -z "$USER" ]; then
 fi
 export USER
 
-SCRIPT_NAME="$0"
-case "$SCRIPT_NAME" in
-    ~*) SCRIPT_NAME="$HOME${SCRIPT_NAME#\~}" ;;
-esac
-case "$SCRIPT_NAME" in
-    */*) ;;
-    *) SCRIPT_NAME=$(command -v "$SCRIPT_NAME") ;;
-esac
-REAL_PATH=$(readlink -f "$SCRIPT_NAME")
-SCRIPT_DIR=$(dirname "$REAL_PATH")
-BASE_DIR=$(cd "$SCRIPT_DIR/../../.." && pwd)
+# Directorio base de i3dots
+BASE_DIR="${DOTS_DIR:-$HOME/.config/i3dots}"
 STATE_FILE="$BASE_DIR/core/state/i3dots/borders/state.env"
 
 mkdir -p "$(dirname "$STATE_FILE")"

@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
 # i3dots/install.sh
 
-# 0. Cargar biblioteca de utilidades del core
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-source "$PROJECT_ROOT/core/lib/utils.sh"
+# 0. Directorios estándar (.config mode)
+INSTALL_SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+TARGET_DIR="${DOTS_DIR:-$HOME/.config/i3dots}"
+
+# Si se ejecuta fuera de ~/.config/i3dots, copiar todo el contenido a ~/.config/i3dots
+if [ "$INSTALL_SRC" != "$TARGET_DIR" ]; then
+    mkdir -p "$TARGET_DIR"
+    cp -a --remove-destination "$INSTALL_SRC"/. "$TARGET_DIR/"
+fi
+
+PROJECT_ROOT="$TARGET_DIR"
+PACKAGE_DIR="$TARGET_DIR/packages/i3dots"
+CORE_DIR="$TARGET_DIR/core"
+STATE_DIR="$CORE_DIR/state"
+BIN_DIR="$CORE_DIR/bin"
+
+source "$CORE_DIR/lib/utils.sh"
 
 LOG_FILE="${LOG_FILE:-/tmp/dots_install.log}"
 echo -e "${GRAY}--- Inicio de instalación $(date) ---${NC}" > "$LOG_FILE"
@@ -12,7 +26,6 @@ echo -e "${GRAY}--- Inicio de instalación $(date) ---${NC}" > "$LOG_FILE"
 echo -e "${CYAN}${BOLD}▗▄▄▄▖▄▄▄▄ ▗▄▄▄   ▗▄▖▗▄▄▄▖▗▄▄▖\n  █     █ ▐▌  █ ▐▌ ▐▌ █ ▐▌\n  █  ▀▀▀█ ▐▌  █ ▐▌ ▐▌ █  ▝▀▚▖\n▗▄█▄▖▄▄▄█ ▐▙▄▄▀ ▝▚▄▞▘ █ ▗▄▄▞▘\n          by loonyx${NC}"
 
 # 1. Parseo de argumentos y persistencia de variante
-PACKAGE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VARIANT_ARG=""
 IS_OFFLINE=false
 CLI_WALL=""
@@ -22,6 +35,7 @@ EXCLUDE_SERVICES="${EXCLUDE_SERVICES:-}"
 INTEGRATE_FM=""
 DEFAULT_FILE_MANAGER="pcmanfm"
 ENABLE_LIVE=true
+POLKIT_CHOICE="${POLKIT_CHOICE:-}"
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --offline) IS_OFFLINE=true; shift ;;
@@ -30,6 +44,24 @@ while [[ $# -gt 0 ]]; do
         --wallpaper-src) CLI_WALL_SRC="$2"; shift 2 ;;
         --exclude|-e) EXCLUDE_SERVICES="$2"; shift 2 ;;
         --file-manager|-fm) INTEGRATE_FM="$2"; shift 2 ;;
+        --polkit|-pk) POLKIT_CHOICE="$2"; shift 2 ;;
+        --network) INSTALL_NETWORK=true; shift ;;
+        -h|--help)
+            echo "Uso: $(basename "$0") [variante] [opciones]"
+            echo ""
+            echo "Variantes disponibles: arch, debian, void"
+            echo ""
+            echo "Opciones:"
+            echo "  --polkit, -pk <agente>        Agente Polkit: raven, xfce, lxpolkit, gnome, mate, none"
+            echo "  --file-manager, -fm <gestor>  Gestor de archivos: pcmanfm, thunar, all, none"
+            echo "  --exclude, -e <servicios>     Excluir servicios (ej: polkit,xsettingsd)"
+            echo "  --wallpaper <ruta>            Fondo de pantalla inicial"
+            echo "  --no-live, -nl                Desactivar dependencias de live wallpaper"
+            echo "  --network                     Instalar gestor de red opcional (NetworkManager)"
+            echo "  --offline                     Modo sin conexión"
+            echo "  -h, --help                    Mostrar esta ayuda"
+            exit 0
+            ;;
         -*) shift ;;
         *) [ -z "$VARIANT_ARG" ] && VARIANT_ARG="$1"; shift ;;
     esac
@@ -61,6 +93,12 @@ fi
 # Cargar configuraciones del paquete
 [ -f "$PACKAGE_DIR/config.env" ] && source "$PACKAGE_DIR/config.env"
 
+# Configuración de agente Polkit
+if [[ "$POLKIT_CHOICE" == "raven"* ]]; then
+    POLKIT_AGENT="/usr/lib/raven-polkit/raven-polkit-agent"
+    [ -n "$PKG_SERVICE_POLKIT" ] && PKG_LIST=${PKG_LIST/ $PKG_SERVICE_POLKIT / }
+fi
+
 # Excluir servicios del autostart y la instalación
 AUTOSTART_CONF="$PACKAGE_DIR/config/i3/conf.d/autostart.conf"
 
@@ -82,6 +120,12 @@ fi
 if [ "$ENABLE_LIVE" = "true" ] && [ -n "$PKG_LIVE" ]; then
     PKG_LIST="$PKG_LIST $PKG_LIVE"
     print_sub "Live wallpaper habilitado (mpv + xwinwrap)."
+fi
+
+# Agregar NetworkManager si se solicita explícitamente
+if [ "$INSTALL_NETWORK" = "true" ] && [ -n "$PKG_OPTIONAL_NETWORK" ]; then
+    PKG_LIST="$PKG_LIST $PKG_OPTIONAL_NETWORK"
+    print_sub "Gestor de red NetworkManager habilitado."
 fi
 
 # Cargar dependencias de compilación si falta algún precompilado
@@ -159,7 +203,6 @@ mkdir -p ~/.local/share/fonts
 
 fonts_list=(
     "JetBrainsMonoNerd|https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip"
-    "FiraCodeNerd|https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip"
     "SymbolsNerdFont|https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip"
 )
 
@@ -270,11 +313,18 @@ else
     rm -rf "$TEMP_MATUGEN"
 fi
 
+# 6.1 raven-polkit
+if [ "$POLKIT_AGENT" = "/usr/lib/raven-polkit/raven-polkit-agent" ] && [ ! -x "$POLKIT_AGENT" ] && [ "$IS_OFFLINE" != "true" ]; then
+    print_step "Instalando raven-polkit..."
+    run_elevated bash -c "mkdir -p /usr/lib/raven-polkit && curl -sL https://github.com/Derszi65g/raven-polkit/releases/download/0.1.4/raven-polkit-x86_64-linux-glibc.tar.gz | tar -xz -C /usr/lib/raven-polkit"
+fi
+
 # 7. Escribir configuraciones y variables locales
 print_step "Configurando persistencia de rutas en el sistema..."
-export PROJECT_ROOT="$(cd "$PACKAGE_DIR/../.." && pwd)"
+export PROJECT_ROOT="${TARGET_DIR:-$HOME/.config/i3dots}"
 export CURRENT_ENV="${CURRENT_ENV:-$(basename "$PACKAGE_DIR")}"
 export STATE_DIR="${STATE_DIR:-$PROJECT_ROOT/core/state}"
+touch "$PACKAGE_DIR/config/i3/conf.d/autostart.generated"
 echo "set \$dots_cmd $PROJECT_ROOT/dots" > "$PACKAGE_DIR/config/i3/conf.d/vars.generated"
 echo "set \$current_env $CURRENT_ENV" >> "$PACKAGE_DIR/config/i3/conf.d/vars.generated"
 echo "set \$polkit_agent ${POLKIT_AGENT:-lxpolkit}" >> "$PACKAGE_DIR/config/i3/conf.d/vars.generated"
@@ -325,7 +375,7 @@ clean_old_links_in_dir() {
             [ -L "$link" ] || continue
             [[ "$(basename "$link")" == "." || "$(basename "$link")" == ".." ]] && continue
             target=$(readlink "$link")
-            if [[ "$target" == *"/packages/i3dots/"* ]]; then
+            if [[ "$target" == *"/packages/i3dots/"* || "$target" == *".config/i3dots/"* ]]; then
                 rm "$link"
             fi
         done

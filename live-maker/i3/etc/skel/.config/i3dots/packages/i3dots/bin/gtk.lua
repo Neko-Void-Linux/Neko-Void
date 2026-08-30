@@ -17,6 +17,7 @@ function gtk.setup_theme_variant(base_theme, variant)
     if not common.path_exists(base_path) then return false end
 
     -- Clonar estructura de enlaces simbólicos del tema base
+    os.execute("mkdir -p " .. common.home .. "/.themes")
     os.execute("rm -rf " .. custom_dir)
     os.execute("cp -as " .. base_path .. " " .. custom_dir)
 

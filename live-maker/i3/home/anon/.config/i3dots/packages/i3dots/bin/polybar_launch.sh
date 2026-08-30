@@ -9,16 +9,14 @@ if [ -z "$USER" ]; then
     export USER=$(id -un)
 fi
 
-# 1. Resolver Directorios de Estado de Forma Dinámica
-if [ -z "$PROJECT_ROOT" ]; then
-    SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
-    export PROJECT_ROOT=$(cd "$(dirname "$SCRIPT_PATH")/../../.." && pwd)
-fi
-export STATE_DIR="${STATE_DIR:-$PROJECT_ROOT/core/state}"
+# 1. Resolver Directorios de Estado
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export PROJECT_ROOT="$BASE_DIR"
+export STATE_DIR="${STATE_DIR:-$BASE_DIR/core/state}"
 export CURRENT_ENV="${CURRENT_ENV:-i3dots}"
 BAR_STATE_DIR="$STATE_DIR/$CURRENT_ENV/bar"
 STATE_FILE="$BAR_STATE_DIR/state.env"
-export dots_cmd="${PROJECT_ROOT}/dots"
+export dots_cmd="${BASE_DIR}/dots"
 export current_env="${CURRENT_ENV:-i3dots}"
 
 # 2. Apagado Limpio y Rápido
@@ -46,7 +44,7 @@ else
     export BAR_ADAPTER="AC"
 fi
 
-export HAS_AUDIO=$(pactl info >/dev/null 2>&1 && echo "yes")
+export HAS_AUDIO=$(timeout 1 pactl info >/dev/null 2>&1 && echo "yes" || true)
 
 # Detectar sensor de temperatura (hwmon)
 export HWMON_PATH=""

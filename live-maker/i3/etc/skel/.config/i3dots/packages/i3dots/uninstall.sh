@@ -2,7 +2,9 @@
 # i3dots/uninstall.sh
 
 # 0. Cargar biblioteca de utilidades del core
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+PROJECT_ROOT="${DOTS_DIR:-$HOME/.config/i3dots}"
+[ ! -d "$PROJECT_ROOT" ] && PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+
 if [ -f "$PROJECT_ROOT/core/lib/utils.sh" ]; then
     source "$PROJECT_ROOT/core/lib/utils.sh"
 else
@@ -19,13 +21,13 @@ else
     print_success() { echo -e "${GREEN}SUCCESS: $1${NC}"; }
 fi
 
-PACKAGE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PACKAGE_NAME="$(basename "$PACKAGE_DIR")"
+PACKAGE_DIR="$PROJECT_ROOT/packages/i3dots"
+PACKAGE_NAME="i3dots"
 
 print_step "Iniciando desinstalación de $PACKAGE_NAME..."
 
 # 1. Eliminar enlaces simbólicos
-print_step "Eliminando enlaces simbólicos en ~/.config..."
+print_step "Eliminando enlaces simbólicos en ~/.config y ~/.local/bin..."
 
 targets=(
     "$HOME/.config/i3"
@@ -35,9 +37,20 @@ targets=(
     "$HOME/.config/gtk-3.0"
     "$HOME/.config/gtk-4.0"
     "$HOME/.config/qt6ct"
+    "$HOME/.config/qt5ct"
     "$HOME/.config/matugen"
     "$HOME/.config/fastfetch"
+    "$HOME/.config/polybar"
+    "$HOME/.config/xsettingsd"
     "$HOME/.gtkrc-2.0"
+    "$HOME/.local/bin/recolor_folders"
+    "$HOME/.local/bin/toggle_autohide.sh"
+    "$HOME/.local/bin/toggle_borders.sh"
+    "$HOME/.local/bin/sys_control.sh"
+    "$HOME/.local/bin/live_wp_daemon"
+    "$HOME/.local/bin/polybar_autohide"
+    "$HOME/.local/bin/xic"
+    "$HOME/.local/share/file-manager/actions/i3dots-wallpaper.desktop"
 )
 
 for target in "${targets[@]}"; do
@@ -91,6 +104,7 @@ for rc in "$HOME/.bashrc" "$HOME/.zshrc"; do
             -e '/export PATH=".*\.local\/bin:.*\.cargo\/bin:\$PATH"/d' \
             -e '/export QT_QPA_PLATFORMTHEME=qt6ct/d' \
             -e "s|export PATH=\"$PROJECT_ROOT:\$PATH\"||g" \
+            -e "s|export PATH=\"$HOME/.config/i3dots:\$PATH\"||g" \
             "$rc"
         print_sub_ok "$(basename "$rc") limpio."
     fi
@@ -106,6 +120,12 @@ if [ "$(id -u)" -eq 0 ] || command -v sudo &>/dev/null; then
     $SUDO_CMD rm -rf /root/.config/gtk-3.0 /root/.config/gtk-4.0
     $SUDO_CMD rm -f /root/.themes/adw-gtk3-dark
     print_sub_ok "Configuraciones de root eliminadas."
+fi
+
+# 6. Eliminar carpeta principal ~/.config/i3dots
+if [ -d "$HOME/.config/i3dots" ]; then
+    rm -rf "$HOME/.config/i3dots"
+    print_sub_ok "Directorio ~/.config/i3dots eliminado."
 fi
 
 print_success "Desinstalación completada. Se recomienda reiniciar la sesión de i3."

@@ -19,18 +19,6 @@ output_path = "~/.config/rofi/themes/shared/colors.rasi"
 input_path = "~/.config/matugen/templates/kitty.conf"
 output_path = "~/.config/kitty/colors.conf"
 
-[templates.vesktop]
-input_path = '~/.config/matugen/templates/discord.css'
-output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/midnight.theme.css'
-
-[templates.prismlauncher]
-input_path = '~/.config/matugen/templates/prismlauncher.json'
-output_path = '~/.local/share/PrismLauncher/themes/Matugen/theme.json'
-
-[templates.heroic]
-input_path = "~/.config/matugen/templates/heroic.css"
-output_path = "~/.var/app/com.heroicgameslauncher.hgl/config/heroic/themes/matugen.css"
-
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/gtk-colors.css"
 output_path = "~/.config/gtk-3.0/colors.css"

@@ -21,26 +21,14 @@ while [[ $# -gt 0 ]]; do
 done
 
 # 2. Obtener imagen a procesar de forma dinámica
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-STATE_DIR_VAL="${STATE_DIR:-$ROOT_DIR/core/state}"
-if [ -z "$CURRENT_ENV" ]; then
-    # Intentar detectar el primer paquete disponible en packages/
-    for dir in "$ROOT_DIR/packages"/*; do
-        if [ -d "$dir" ] && [ -f "$dir/config.env" ]; then
-            export CURRENT_ENV="${dir##*/}"
-            break
-        fi
-    done
-fi
-CUR_ENV="${CURRENT_ENV}"
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export CORE_DIR="${CORE_DIR:-$BASE_DIR/core}"
+export STATE_DIR="${STATE_DIR:-$CORE_DIR/state}"
+export PACKAGES_DIR="${PACKAGES_DIR:-$BASE_DIR/packages}"
+export CURRENT_ENV="${CURRENT_ENV:-i3dots}"
+export PACKAGE_DIR="${PACKAGE_DIR:-$PACKAGES_DIR/$CURRENT_ENV}"
 
-if [ -z "$CUR_ENV" ]; then
-    echo "Error [engine_matugen]: No se pudo detectar CURRENT_ENV" >&2
-    exit 1
-fi
-
-WP_STATE_DIR="$STATE_DIR_VAL/$CUR_ENV/wallpaper"
+WP_STATE_DIR="$STATE_DIR/$CURRENT_ENV/wallpaper"
 COLOR_SOURCE="$WP_STATE_DIR/color_source"
 
 if [[ -z "$IMG_PATH" ]]; then

@@ -2,8 +2,8 @@
 # packages/i3dots/bin/wp_seq.sh - Selector de Wallpapers con temas integrados y optimizado
 
 # 1. Cargar entorno y lógica compartida
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/wp_shared.sh"
+BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+source "$BASE_DIR/packages/i3dots/bin/wp_shared.sh"
 
 # Nombres de las pestañas/botones superiores
 L_DARK="Modo Oscuro"

@@ -17,5 +17,6 @@ include ~/.config/i3/conf.d/borders_override.conf
 include ~/.config/i3/conf.d/input.conf
 include ~/.config/i3/conf.d/output.conf
 include ~/.config/i3/conf.d/autostart.conf
+include ~/.config/i3/conf.d/autostart.generated
 include ~/.config/i3/colors.generated
 

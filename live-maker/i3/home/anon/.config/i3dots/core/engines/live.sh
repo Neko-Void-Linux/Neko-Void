@@ -14,13 +14,9 @@ _mpv_set_prop() {
 }
 
 _resolve_daemon_path() {
-    local script_dir repo_root
-    script_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"   # .../core/engines
-    repo_root="$(dirname "$(dirname "$script_dir")")"               # .../i3dots
-
     local local_bin="$HOME/.local/bin/live_wp_daemon"
+    local std="$HOME/.config/i3dots/packages/i3dots/bin/live_wp_daemon"
     local pkg="${PACKAGE_DIR:+$PACKAGE_DIR/bin/live_wp_daemon}"
-    local std="$repo_root/packages/i3dots/bin/live_wp_daemon"
 
     [[ -x "$local_bin" ]] && echo "$local_bin" || { [[ -x "$pkg" ]] && echo "$pkg" || echo "$std"; }
 }
@@ -41,8 +37,48 @@ engine_init() {
     rm -f "$MPV_SOCKET"
 }
 
+# Helper: Sincroniza la miniatura del video en la ventana raíz con feh para pseudo-transparencia
+_sync_root_thumbnail() {
+    local target_path="$1"
+    local wp_state_dir="${BASE_DIR:-$HOME/.config/i3dots}/core/state/${CURRENT_ENV:-i3dots}/wallpaper"
+    local safe_name="${target_path//\//_}"
+    local thumb=""
+
+    mkdir -p "$wp_state_dir"
+
+    # 1. Buscar thumbnail existente en el cache
+    if [[ -d "$wp_state_dir/thumbs" ]]; then
+        thumb=$(find "$wp_state_dir/thumbs" -name "${safe_name}*.jpg" -o -name "${safe_name}*.png" 2>/dev/null | head -1)
+    fi
+
+    # 2. Si no existe en thumbs, extraer un fotograma rápido del video
+    if [[ -z "$thumb" || ! -f "$thumb" ]]; then
+        local thumb_dir="$wp_state_dir/thumbs/450_fit"
+        mkdir -p "$thumb_dir"
+        local auto_thumb="$thumb_dir/${safe_name}.jpg"
+        if command -v ffmpeg &>/dev/null; then
+            ffmpeg -y -ss 00:00:01 -i "$target_path" -vframes 1 -q:v 2 "$auto_thumb" &>/dev/null
+            [[ -f "$auto_thumb" ]] && thumb="$auto_thumb"
+        fi
+    fi
+
+    # 3. Mantener siempre color_source actualizado para Matugen (paleta de colores)
+    [[ -n "$thumb" && -f "$thumb" ]] && ln -sf "$thumb" "$wp_state_dir/color_source"
+
+    # 4. En X11 sin compositor activo (picom), mantener la ventana raíz sincronizada
+    # para aplicaciones que usen pseudo-transparencia. Si picom está corriendo, no se ejecuta feh.
+    if ! pgrep -x picom &>/dev/null; then
+        if [[ -n "$thumb" && -f "$thumb" ]] && command -v feh &>/dev/null; then
+            feh --bg-fill "$thumb" &>/dev/null &
+        fi
+    fi
+}
+
 engine_set() {
     local wp_path="$1"
+
+    # Sincronizar siempre el fondo estático de respaldo en X11 (tanto en cold start como en hot reload)
+    _sync_root_thumbnail "$wp_path"
 
     # Detectar tipo de archivo
     local mime_type is_video=false

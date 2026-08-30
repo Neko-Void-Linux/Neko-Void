@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 # dots - Gestor de Paquetes de Dotfiles Autocontenidos
-export BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -d "$SCRIPT_DIR/packages" ] && [ -d "$SCRIPT_DIR/core" ]; then
+    export BASE_DIR="$SCRIPT_DIR"
+else
+    export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+fi
 export CORE_DIR="$BASE_DIR/core"
 export PACKAGES_DIR="$BASE_DIR/packages"
 export BIN_DIR="$CORE_DIR/bin"
@@ -19,7 +24,7 @@ PACKAGE_NAME=""
 ACTION_NAME=""
 
 # 2. Parseo de Comandos y Argumentos
-if [[ "$1" == "export" || "$1" == "import" || "$1" == "apply" || "$1" == "install" || "$1" == "uninstall" ]]; then
+if [[ "$1" == "export" || "$1" == "import" || "$1" == "apply" || "$1" == "install" || "$1" == "uninstall" || "$1" == "update" ]]; then
     COMMAND="$1"
     shift
 fi
@@ -92,6 +97,37 @@ case "$COMMAND" in
             print_sub_err "Error: el paquete '$PACKAGE_NAME' no tiene script de desinstalación."
             exit 1
         fi
+        ;;
+    update)
+        TARGET_DIR="$HOME/.config/i3dots"
+        if [ "$BASE_DIR" != "$TARGET_DIR" ] && [ -d "$BASE_DIR/core" ] && [ -d "$BASE_DIR/packages" ]; then
+            print_step "Actualizando i3dots desde directorio local ($BASE_DIR)..."
+            mkdir -p "$TARGET_DIR"
+            cp -a --remove-destination "$BASE_DIR"/. "$TARGET_DIR/"
+            print_sub_ok "Archivos del motor y paquetes actualizados."
+        elif [ -d "$TARGET_DIR/.git" ]; then
+            print_step "Actualizando i3dots desde repositorio git..."
+            git -C "$TARGET_DIR" pull --rebase
+            print_sub_ok "Repositorio actualizado."
+        else
+            print_sub_err "No se detectó origen de actualización (ejecuta './dots update' dentro del clon o repositorio)."
+            exit 1
+        fi
+        
+        print_step "Reaplicando enlaces y configuraciones..."
+        export BASE_DIR="$TARGET_DIR"
+        export CORE_DIR="$BASE_DIR/core"
+        export PACKAGES_DIR="$BASE_DIR/packages"
+        export BIN_DIR="$CORE_DIR/bin"
+        export STATE_DIR="$CORE_DIR/state"
+        
+        pkg="${PACKAGE_NAME:-i3dots}"
+        export PACKAGE_DIR="$PACKAGES_DIR/$pkg"
+        export CURRENT_ENV="$pkg"
+        [ -f "$PACKAGE_DIR/config.env" ] && source "$PACKAGE_DIR/config.env"
+        "$BIN_DIR/apply_dots.sh"
+        print_success "i3dots actualizado exitosamente a la última versión."
+        exit 0
         ;;
 esac
 

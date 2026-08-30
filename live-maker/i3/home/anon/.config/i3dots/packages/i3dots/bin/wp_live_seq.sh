@@ -3,6 +3,6 @@
 
 export LIVE_ONLY=1
 
-# Obtener la ruta real del script wp_seq.sh en el mismo directorio
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-exec "$SCRIPT_DIR/wp_seq.sh" "$@"
+# Obtener la ruta del script wp_seq.sh
+BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+exec "$BASE_DIR/packages/i3dots/bin/wp_seq.sh" "$@"

@@ -1,0 +1,135 @@
+/**
+ * cheatsheet.rasi - Rofi theme for interactive keyboard shortcuts cheatsheet
+ * Matching i3dots Material You aesthetics
+ */
+
+@import "shared/colors.rasi"
+
+configuration {
+    show-icons:                 false;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       750px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     15px 20px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @selected;
+    font:                        "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Buscar atajo o acción...";
+    placeholder-color:           @selected;
+    font:                        "JetBrainsMono Nerd Font 11";
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       13;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               true;
+    spacing:                     3px;
+    margin:                      0px;
+    padding:                     12px 16px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     8px 12px;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element normal.active {
+    background-color:            @background-alt;
+    text-color:                  @selected;
+}
+
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @background;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+}
+
+element selected.active {
+    background-color:            @selected;
+    text-color:                  @background;
+}
+
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @background;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    font:                        "JetBrainsMono Nerd Font 10.5";
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+element-text selected {
+    text-color:                  @background;
+}

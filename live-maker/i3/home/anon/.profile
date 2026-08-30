@@ -1,4 +1,2 @@
-# Ejecutar rice_set solo en sesión gráfica
-if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
-    /usr/bin/rice_set
-fi
+# ~/.profile: configuración de entorno de usuario
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"

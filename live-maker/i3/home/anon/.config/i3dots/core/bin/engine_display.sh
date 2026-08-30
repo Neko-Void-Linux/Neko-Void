@@ -2,39 +2,16 @@
 # core/bin/engine_display.sh - Motor de gestión de resoluciones universal optimizado
 
 # 1. Resolver Directorios y Fallbacks
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export BASE_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-export CORE_DIR="$BASE_DIR/core"
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export CORE_DIR="${CORE_DIR:-$BASE_DIR/core}"
+export STATE_DIR="${STATE_DIR:-$CORE_DIR/state}"
+export PACKAGES_DIR="${PACKAGES_DIR:-$BASE_DIR/packages}"
+export CURRENT_ENV="${CURRENT_ENV:-i3dots}"
+export PACKAGE_DIR="${PACKAGE_DIR:-$PACKAGES_DIR/$CURRENT_ENV}"
+export HOOK_DIR="${HOOK_DIR:-$PACKAGE_DIR/hooks}"
 
-if [ -z "$HOOK_DIR" ] || [ -z "$STATE_DIR" ]; then
-    export STATE_DIR="$CORE_DIR/state"
-    export PACKAGES_DIR="$BASE_DIR/packages"
-    
-    if [ -d "$PACKAGES_DIR" ]; then
-        for dir in "$PACKAGES_DIR"/*; do
-            if [ -f "$dir/config.env" ]; then
-                export CURRENT_ENV="$(basename "$dir")"
-                export PACKAGE_DIR="$dir"
-                source "$dir/config.env"
-                break
-            fi
-        done
-    fi
-fi
-
-if [ -z "$CURRENT_ENV" ]; then
-    # Intentar detectar el primer paquete disponible en packages/
-    for dir in "$BASE_DIR/packages"/*; do
-        if [ -d "$dir" ] && [ -f "$dir/config.env" ]; then
-            export CURRENT_ENV="${dir##*/}"
-            break
-        fi
-    done
-fi
-
-if [ -z "$CURRENT_ENV" ]; then
-    echo "Error: No se pudo detectar CURRENT_ENV en engine_display.sh" >&2
-    exit 1
+if [ -f "$PACKAGE_DIR/config.env" ]; then
+    source "$PACKAGE_DIR/config.env"
 fi
 
 # Ruta del hook de pantalla e importación
@@ -152,6 +129,10 @@ init_display() {
         
         local rate_var="rate_${monitor_clean}"
         local rate="${!rate_var}"
+        if [[ -z "$rate" || "$rate" == [Aa]uto || ! "$rate" =~ ^[0-9]+(\.[0-9]+)?$ ]] && [ -n "$resolution" ]; then
+            hook_query_rates "$output" "$resolution"
+            rate=$(head -n 1 <<< "$RET_LIST" | tr -d '[:space:]')
+        fi
         
         local scale_var="scale_${monitor_clean}"
         local scale="${!scale_var}"
@@ -196,6 +177,11 @@ select_display_interactive() {
         exit 1
     fi
     
+    if [[ -z "$SEL_RATE" || "$SEL_RATE" == [Aa]uto || ! "$SEL_RATE" =~ ^[0-9]+(\.[0-9]+)?$ ]] && [ -n "$SEL_RES" ]; then
+        hook_query_rates "$SEL_OUTPUT" "$SEL_RES"
+        SEL_RATE=$(head -n 1 <<< "$RET_LIST" | tr -d '[:space:]')
+    fi
+    
     hook_get_current_scale "$SEL_OUTPUT"
     local SEL_SCALE="$RET_SCALE"
     SEL_SCALE="${SEL_SCALE:-1.0}"
@@ -231,7 +217,7 @@ select_display_interactive() {
         local menu_options=""
         menu_options+="${PROM_MENU_OUTPUT}: $SEL_OUTPUT"$'\n'
         menu_options+="${PROM_MENU_RES}: ${SEL_RES:-$PROM_VAL_NONE}"$'\n'
-        menu_options+="${PROM_MENU_RATE}: ${SEL_RATE:-$PROM_VAL_AUTO}"$'\n'
+        menu_options+="${PROM_MENU_RATE}: ${SEL_RATE:-$PROM_VAL_AUTO}${SEL_RATE:+${UNIT_RATE}}"$'\n'
         menu_options+="${PROM_MENU_SCALE}: ${SEL_SCALE}"$'\n'
         menu_options+="${PROM_MENU_ROTATION}: ${SEL_ROTATION}"$'\n'
         menu_options+="${PROM_MENU_BRIGHTNESS}: ${SEL_BRIGHTNESS}"$'\n'
@@ -284,6 +270,10 @@ select_display_interactive() {
                     hook_get_current_all "$new_out"
                     SEL_RES="$RET_RES"
                     SEL_RATE="$RET_RATE"
+                    if [[ -z "$SEL_RATE" || "$SEL_RATE" == [Aa]uto || ! "$SEL_RATE" =~ ^[0-9]+(\.[0-9]+)?$ ]] && [ -n "$SEL_RES" ]; then
+                        hook_query_rates "$new_out" "$SEL_RES"
+                        SEL_RATE=$(head -n 1 <<< "$RET_LIST" | tr -d '[:space:]')
+                    fi
                     
                     hook_get_current_scale "$new_out"
                     SEL_SCALE="$RET_SCALE"
@@ -330,7 +320,8 @@ select_display_interactive() {
                     new_res="${new_res#$GLYPH_RESOLUTION}"
                     new_res="${new_res//[[:space:]]/}"
                     SEL_RES="$new_res"
-                    SEL_RATE=""
+                    hook_query_rates "$SEL_OUTPUT" "$new_res"
+                    SEL_RATE=$(head -n 1 <<< "$RET_LIST" | tr -d '[:space:]')
                 fi
                 ;;
                 

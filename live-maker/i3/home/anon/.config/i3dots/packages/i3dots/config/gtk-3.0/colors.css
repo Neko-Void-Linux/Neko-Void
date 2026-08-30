@@ -1,0 +1,37 @@
+/*
+* GTK Colors
+* Generated with Matugen
+*/
+
+/* Libadwaita / GTK4 names */
+@define-color accent_color #89d0ed;
+@define-color accent_fg_color #003544;
+@define-color accent_bg_color #89d0ed;
+@define-color window_bg_color #0f1416;
+@define-color window_fg_color #dee3e6;
+@define-color headerbar_bg_color #0f1416;
+@define-color headerbar_fg_color #dee3e6;
+@define-color popover_bg_color #0f1416;
+@define-color popover_fg_color #dee3e6;
+@define-color view_bg_color #0f1416;
+@define-color view_fg_color #dee3e6;
+@define-color card_bg_color #0f1416;
+@define-color card_fg_color #dee3e6;
+@define-color sidebar_bg_color @window_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_border_color @window_bg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+
+/* GTK3 legacy names for better compatibility with adw-gtk3 */
+@define-color theme_fg_color #dee3e6;
+@define-color theme_bg_color #0f1416;
+@define-color theme_view_fg_color #dee3e6;
+@define-color theme_view_bg_color #0f1416;
+@define-color theme_selected_bg_color #89d0ed;
+@define-color theme_selected_fg_color #003544;
+@define-color theme_unfocused_selected_bg_color #89d0ed;
+@define-color theme_unfocused_selected_fg_color #003544;
+@define-color warning_color #c4c3eb;
+@define-color error_color #ffb4ab;
+@define-color success_color #89d0ed;
+

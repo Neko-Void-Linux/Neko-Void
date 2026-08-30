@@ -56,9 +56,8 @@ echo "$FINAL_PATH" > "$LAST_WP_FILE"
 ln -sf "$FINAL_PATH" "$CURRENT_WP_LINK"
 
 # Resolver directorio core y cargar motor
-if [[ -z "$CORE_DIR" ]]; then
-    CORE_DIR="$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
-fi
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export CORE_DIR="${CORE_DIR:-$BASE_DIR/core}"
 
 engine_file="$CORE_DIR/engines/${WP_ENGINE}.sh"
 if [[ ! -f "$engine_file" ]]; then

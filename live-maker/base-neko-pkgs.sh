@@ -281,8 +281,6 @@ LXDE="
 I3="
     i3
     lightdm
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal
     lightdm-gtk-greeter
     polybar
     rofi
@@ -294,7 +292,7 @@ I3="
     feh
     mpv
     dex
-    polkit-gnome 
+    raven-polkit
     pulseaudio-utils
     setxkbmap
     brightnessctl
@@ -302,12 +300,9 @@ I3="
     maim
     xclip
     xdotool
-    nemo
+    pcmanfm
     dmenu
-    git
     ark
-    curl
-    wget
     unzip
     cargo
     pkg-config
@@ -325,8 +320,18 @@ I3="
     gvfs-afc
     gvfs-mtp
     gvfs-smb
-    udisks2
     firefox
+    adw-gtk3
+    matugen
+    papirus-icon-theme
+    lua53
+    xsettingsd
+    dash
+    ffmpegthumbnailer
+    socat
+    xwinwrap-nk
+    neko-icons
+    dunst
 "
 
 ICEJWM="

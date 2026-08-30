@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 # hooks/components/polybar.sh - Hook de enlace y generación de estado para Polybar
 
-# 1. Asegurar Variables de Entorno y Directorios de Forma Dinámica
-if [ -z "$PROJECT_ROOT" ]; then
-    SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
-    export PROJECT_ROOT=$(cd "$(dirname "$SCRIPT_PATH")/../../../.." && pwd)
-fi
-export BASE_DIR="${BASE_DIR:-$PROJECT_ROOT}"
-export STATE_DIR="${STATE_DIR:-$PROJECT_ROOT/core/state}"
-export CURRENT_ENV="${CURRENT_ENV:-$(basename "$(cd "$(dirname "$SCRIPT_PATH")/../.." && pwd)")}"
+# 1. Asegurar Variables de Entorno y Directorios Base
+export BASE_DIR="${BASE_DIR:-$HOME/.config/i3dots}"
+export PROJECT_ROOT="$BASE_DIR"
+export STATE_DIR="${STATE_DIR:-$BASE_DIR/core/state}"
+export CURRENT_ENV="${CURRENT_ENV:-i3dots}"
+export PACKAGE_DIR="${PACKAGE_DIR:-$BASE_DIR/packages/$CURRENT_ENV}"
 BAR_STATE_DIR="$STATE_DIR/$CURRENT_ENV/bar"
 mkdir -p "$BAR_STATE_DIR"
 STATE_FILE="$BAR_STATE_DIR/state.env"
 
 # 0. Protocolo de Consulta para Frontends
 if [ "$1" == "--query" ]; then
-    CUR_TYPE="${2:-$(source "$STATE_FILE" 2>/dev/null && echo "$type" || echo "polybar_antigua")}"
+    CUR_TYPE="${2:-$(source "$STATE_FILE" 2>/dev/null && echo "$type" || echo "polybar_underline")}"
     CUR_TYPE=$(echo "$CUR_TYPE" | tr -d '[:space:]')
     THEME_SRC="$PACKAGE_DIR/config/polybar/$CUR_TYPE"
     
@@ -28,10 +26,15 @@ if [ "$1" == "--query" ]; then
         done < "$THEME_SRC/options.conf"
     fi
 
+    VAR_KEYS=""
+    if [ "$CUR_TYPE" == "polybar_underline" ] || [ -f "$THEME_SRC/modules_underline.ini" ]; then
+        VAR_KEYS="mode"
+    fi
+
     echo "themes_dir=$PACKAGE_DIR/config/polybar"
-    echo "default_theme=polybar_antigua"
+    echo "default_theme=polybar_underline"
     echo "primary_key=type"
-    echo "variant_keys=mode"
+    echo "variant_keys=$VAR_KEYS"
     echo "supported_options=$SUPPORTED"
     exit 0
 fi
@@ -39,9 +42,9 @@ fi
 # 1. Cargar Estado Plano
 STYLE="square"
 POS="bottom"
-TRANS="true"
+TRANS="false"
 HEIGHT="15pt"
-TYPE="polybar_antigua"
+TYPE="polybar_underline"
 MODE="solid"
 ROFI_STYLE="solid"
 SOLID_LINE="false"
@@ -114,10 +117,14 @@ if [ "$MODE" == "underline" ] || [ "$SOLID_LINE" == "true" ]; then
     LINE_SIZE=$(( H_NUM / 6 )); [[ $LINE_SIZE -lt 2 ]] && LINE_SIZE=2
 fi
 
+COMP_BORDER_LEFT=0
+COMP_BORDER_RIGHT=0
 if [ "$TYPE" == "polybar_compact" ]; then
     if [ "$MARGIN_TYPE" == "pinned" ]; then
         COMP_BORDER_TOP=0
         COMP_BORDER_BOTTOM=0
+        COMP_BORDER_LEFT=0
+        COMP_BORDER_RIGHT=0
         if [ "$TRANS" == "false" ]; then
             COMP_HEIGHT="$(( H_NUM + 3 ))pt"
             COMP_LINE_SIZE="3pt"
@@ -127,6 +134,8 @@ if [ "$TYPE" == "polybar_compact" ]; then
         fi
     else
         # Modo floating (flotante)
+        COMP_BORDER_LEFT=180
+        COMP_BORDER_RIGHT=180
         if [ "$TRANS" == "false" ]; then
             COMP_HEIGHT="$(( H_NUM + 3 ))pt"
             COMP_LINE_SIZE="3pt"
@@ -154,6 +163,8 @@ else
     COMP_LINE_SIZE="${LINE_SIZE}pt"
     COMP_BORDER_TOP=5
     COMP_BORDER_BOTTOM=5
+    COMP_BORDER_LEFT=0
+    COMP_BORDER_RIGHT=0
 fi
 
 # Coeficientes proporcionales
@@ -185,10 +196,16 @@ fi
 # Colores y Estilos de Módulos
 BG_COLOR=$([ "$TRANS" == "false" ] && echo "\${colors.background-solid}" || echo "#00000000")
 COMPACT_BG_COLOR=$([ "$TRANS" == "false" ] && echo "\${colors.compact-bar-background}" || echo "#00000000")
-if [ "$TRANS" == "false" ]; then
-    P_TRANS="false"
-else
-    P_TRANS=$([ "$TRANS_TYPE" == "pseudo" ] && echo "true" || echo "false")
+P_TRANS=$([ "$TRANS_TYPE" == "pseudo" ] && echo "true" || echo "false")
+
+# Si la barra tiene pseudo-transparencia y hay un live wallpaper activo, asegurar fondo en ventana raíz
+if [ "$TRANS_TYPE" == "pseudo" ]; then
+    if [ "$TRANS" == "true" ] || [ "$THEME_NAME" == "polybar_compact" ]; then
+        if pgrep -f 'mpv.*--x11-name=mpv-wallpaper' &>/dev/null; then
+            _c_src="$HOME/.config/i3dots/core/state/i3dots/wallpaper/color_source"
+            [[ -f "$_c_src" ]] && command -v feh &>/dev/null && feh --bg-fill "$_c_src" &>/dev/null &
+        fi
+    fi
 fi
 
 # Definir esquema de resaltado
@@ -228,6 +245,8 @@ background = $BG_COLOR
 compact-background = $COMPACT_BG_COLOR
 border-top = ${COMP_BORDER_TOP}pt
 border-bottom = ${COMP_BORDER_BOTTOM}pt
+border-left = ${COMP_BORDER_LEFT}
+border-right = ${COMP_BORDER_RIGHT}
 line-size = $COMP_LINE_SIZE
 comp-modules-hidden = $([ "$MODULES_VISIBILITY" == "visible" ] && echo "false" || echo "true")
 font-0 = "JetBrainsMono Nerd Font Mono:style=Bold:size=$F_TEXT;$F_OFFSET_TEXT"
@@ -235,7 +254,6 @@ font-1 = "Symbols Nerd Font:size=$F_CURV;$F_CURV_OFFSET"
 font-2 = "JetBrainsMono Nerd Font Mono:size=$F_TEXT:antialias=false;$F_OFFSET_TEXT"
 font-rofi = "$F_ROFI_NAME:size=$F_ROFI_SIZE;$R_ROFI_OFFSET"
 font-extra = "JetBrainsMono Nerd Font Mono:size=$F_EXTRA;$F_OFFSET_TEXT"
-font-firacode = "FiraCode Nerd Font:size=$F_ICON;$F_OFFSET_TEXT"
 font-symbols = "Symbols Nerd Font Mono:size=$F_SYM;$F_OFFSET_SYM"
 font-large = "JetBrainsMono Nerd Font Mono:size=$((F_SYM + 2));$F_OFFSET_LARGE"
 module-padding = 1
