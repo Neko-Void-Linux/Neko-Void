@@ -11,6 +11,7 @@ BASE_SYSTEM="
     linux-firmware-intel
     linux-mainline-headers
     dkms
+	ntfs-3g
     dnsmasq
     kasha-installer
     iptables
