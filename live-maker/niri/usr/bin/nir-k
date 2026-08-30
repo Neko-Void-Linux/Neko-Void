@@ -1,0 +1,321 @@
+#!/usr/bin/env bash
+
+# ==============================================================================
+# Niri XKB Keymap TUI Manager - Fixed Version
+# ==============================================================================
+
+CONFIG_FILE="$HOME/.config/niri/input.kdl"
+TMP_FILE=$(mktemp)
+
+trap 'rm -f "$TMP_FILE"' EXIT
+
+# --- Dependency check ---
+if command -v dialog &> /dev/null; then
+    DIALOG=dialog
+elif command -v whiptail &> /dev/null; then
+    DIALOG=whiptail
+else
+    echo "Error: 'dialog' or 'whiptail' is required."
+    exit 1
+fi
+
+# ==============================================================================
+# i18n System (same as before, abbreviated for space)
+# ==============================================================================
+detect_lang() {
+    local lang="${LANG:-en_US.UTF-8}"
+    case "${lang:0:2}" in
+        es) LANG_ID="es" ;;
+        fr) LANG_ID="fr" ;;
+        pt) LANG_ID="pt" ;;
+        de) LANG_ID="de" ;;
+        *)  LANG_ID="en" ;;
+    esac
+}
+
+t() {
+    local key="$1"
+    echo "${T[$key]:-$key}"
+}
+
+load_translations() {
+    declare -gA T
+    
+    case "$LANG_ID" in
+        es)
+            T=(
+                [TITLE]="Gestor de Keymap de Niri"
+                [CURRENT]="Estado actual"
+                [CHOOSE_OPT]="Elige una opción"
+                [SET_LAYOUT]="Configurar Layout"
+                [SET_MODEL]="Configurar Model"
+                [SET_VARIANT]="Configurar Variant"
+                [SET_OPTIONS]="Configurar Options"
+                [APPLY]="Aplicar y Guardar"
+                [EXIT]="Salir"
+                [SELECT_LAYOUT]="Seleccionar Layout"
+                [CHOOSE_LAYOUT]="Elige tu distribución"
+                [SELECT_MODEL]="Seleccionar Model"
+                [ENTER_MODEL]="Modelo de teclado (ej. pc105)"
+                [SELECT_VARIANT]="Seleccionar Variant"
+                [ENTER_VARIANT]="Variante (ej. dvorak)"
+                [SELECT_OPTIONS]="Seleccionar Options"
+                [CHOOSE_OPTIONS]="Opciones XKB"
+                [APPLIED]="¡Configuración aplicada!"
+                [RELOAD_MSG]="Niri recargará automáticamente"
+                [ERR_NO_FILE]="Error: No se encontró"
+                [OPT_CTRL_NOcaps]="Bloq Mayús como Ctrl"
+                [OPT_ALT_SHIFT]="Alt+Shift cambiar layout"
+                [OPT_WIN_SPACE]="Win+Espacio cambiar layout"
+                [OPT_COMPOSE_RALT]="Alt Der como Componer"
+                [OPT_COMPOSE_CAPS]="Bloq Mayús como Componer"
+                [OPT_COMPOSE_LWIN]="Win Izq como Componer"
+                [OPT_COMPOSE_RWIN]="Win Der como Componer"
+                [OPT_COMPOSE_MENU]="Menú como Componer"
+                [OPT_TERMINATE]="Ctrl+Alt+Bksp terminar"
+                [OPT_SWAP_CAPS]="Intercambiar Caps y Esc"
+                [OPT_LV3_RALT]="Alt Der como Nivel 3"
+                [OPT_LV3_LALT]="Alt Izq como Nivel 3"
+                [OPT_LV3_WIN]="Cualquier Win como Nivel 3"
+                [OPT_LV3_CAPS]="Bloq Mayús como Nivel 3"
+            )
+            ;;
+        *)
+            T=(
+                [TITLE]="Niri Keymap Manager"
+                [CURRENT]="Current status"
+                [CHOOSE_OPT]="Choose an option"
+                [SET_LAYOUT]="Configure Layout"
+                [SET_MODEL]="Configure Model"
+                [SET_VARIANT]="Configure Variant"
+                [SET_OPTIONS]="Configure Options"
+                [APPLY]="Apply and Save"
+                [EXIT]="Exit"
+                [SELECT_LAYOUT]="Select Layout"
+                [CHOOSE_LAYOUT]="Choose your keyboard layout"
+                [SELECT_MODEL]="Select Model"
+                [ENTER_MODEL]="Keyboard model (e.g. pc105)"
+                [SELECT_VARIANT]="Select Variant"
+                [ENTER_VARIANT]="Variant (e.g. dvorak)"
+                [SELECT_OPTIONS]="Select Options"
+                [CHOOSE_OPTIONS]="XKB options"
+                [APPLIED]="Configuration applied!"
+                [RELOAD_MSG]="Niri will reload automatically"
+                [ERR_NO_FILE]="Error: File not found"
+                [OPT_CTRL_NOcaps]="Caps Lock as Ctrl"
+                [OPT_ALT_SHIFT]="Alt+Shift toggle layout"
+                [OPT_WIN_SPACE]="Win+Space toggle layout"
+                [OPT_COMPOSE_RALT]="Right Alt as Compose"
+                [OPT_COMPOSE_CAPS]="Caps Lock as Compose"
+                [OPT_COMPOSE_LWIN]="Left Win as Compose"
+                [OPT_COMPOSE_RWIN]="Right Win as Compose"
+                [OPT_COMPOSE_MENU]="Menu key as Compose"
+                [OPT_TERMINATE]="Ctrl+Alt+Bksp terminate"
+                [OPT_SWAP_CAPS]="Swap Caps and Esc"
+                [OPT_LV3_RALT]="Right Alt as Level 3"
+                [OPT_LV3_LALT]="Left Alt as Level 3"
+                [OPT_LV3_WIN]="Any Win key as Level 3"
+                [OPT_LV3_CAPS]="Caps Lock as Level 3"
+            )
+            ;;
+    esac
+}
+
+# ==============================================================================
+# Read current XKB configuration
+# ==============================================================================
+read_current_xkb() {
+    if [ -f "$CONFIG_FILE" ]; then
+        LAYOUT=$(grep -A 10 "xkb {" "$CONFIG_FILE" | grep "layout" | head -1 | awk -F '"' '{print $2}')
+        MODEL=$(grep -A 10 "xkb {" "$CONFIG_FILE" | grep "model" | head -1 | awk -F '"' '{print $2}')
+        VARIANT=$(grep -A 10 "xkb {" "$CONFIG_FILE" | grep "variant" | head -1 | awk -F '"' '{print $2}')
+        OPTIONS=$(grep -A 10 "xkb {" "$CONFIG_FILE" | grep "options" | head -1 | awk -F '"' '{print $2}')
+    fi
+
+    if [ -z "$LAYOUT" ]; then LAYOUT=$(localectl status 2>/dev/null | grep "X11 Layout" | awk '{print $3}' | cut -d, -f1); fi
+    if [ -z "$MODEL" ]; then MODEL=$(localectl status 2>/dev/null | grep "X11 Model" | awk '{print $3}'); fi
+    if [ -z "$VARIANT" ]; then VARIANT=$(localectl status 2>/dev/null | grep "X11 Variant" | awk '{print $3}'); fi
+    if [ -z "$OPTIONS" ]; then OPTIONS=$(localectl status 2>/dev/null | grep "X11 Options" | awk '{$1=$2=""; print $0}' | sed 's/^ *//'); fi
+    
+    [ -z "$LAYOUT" ] && LAYOUT="us"
+}
+
+# ==============================================================================
+# TUI Functions
+# ==============================================================================
+get_layouts() {
+    local file="/usr/share/X11/xkb/rules/evdev.lst"
+    if [ -f "$file" ]; then
+        awk '/^! layout$/,/^! model$/' "$file" | grep "^  " | awk '{code=$1; $1=""; desc=$0; gsub(/^[ \t]+|[ \t]+$/, "", desc); print code, "-", desc}'
+    else
+        echo "us - English (US)"
+        echo "es - Spanish"
+        echo "latam - Latin American"
+    fi
+}
+
+set_layout() {
+    local layouts=()
+    while read -r line; do
+        local code=$(echo "$line" | awk '{print $1}')
+        layouts+=("$code" "$line")
+    done < <(get_layouts)
+
+    local choice=$($DIALOG --title "$(t SELECT_LAYOUT)" --menu "$(t CHOOSE_LAYOUT):" 20 70 15 "${layouts[@]}" 2>&1 >/dev/tty)
+    if [ $? -eq 0 ]; then
+        LAYOUT="$choice"
+    fi
+}
+
+set_model() {
+    local choice=$($DIALOG --title "$(t SELECT_MODEL)" --inputbox "$(t ENTER_MODEL):" 10 60 "$MODEL" 2>&1 >/dev/tty)
+    if [ $? -eq 0 ]; then
+        MODEL="$choice"
+    fi
+}
+
+set_variant() {
+    local choice=$($DIALOG --title "$(t SELECT_VARIANT)" --inputbox "$(t ENTER_VARIANT):" 10 60 "$VARIANT" 2>&1 >/dev/tty)
+    if [ $? -eq 0 ]; then
+        VARIANT="$choice"
+    fi
+}
+
+set_options() {
+    local options_list=(
+        "ctrl:nocaps" "$(t OPT_CTRL_NOcaps)"
+        "grp:alt_shift_toggle" "$(t OPT_ALT_SHIFT)"
+        "grp:win_space_toggle" "$(t OPT_WIN_SPACE)"
+        "compose:ralt" "$(t OPT_COMPOSE_RALT)"
+        "compose:caps" "$(t OPT_COMPOSE_CAPS)"
+        "compose:lwin" "$(t OPT_COMPOSE_LWIN)"
+        "compose:rwin" "$(t OPT_COMPOSE_RWIN)"
+        "compose:menu" "$(t OPT_COMPOSE_MENU)"
+        "terminate:ctrl_alt_bksp" "$(t OPT_TERMINATE)"
+        "caps:swapescape" "$(t OPT_SWAP_CAPS)"
+        "lv3:ralt_switch" "$(t OPT_LV3_RALT)"
+        "lv3:lalt_switch" "$(t OPT_LV3_LALT)"
+        "lv3:win_switch" "$(t OPT_LV3_WIN)"
+        "lv3:caps_switch" "$(t OPT_LV3_CAPS)"
+    )
+
+    local checklist=()
+    IFS=',' read -ra CURR_OPTS <<< "$OPTIONS"
+    
+    for i in "${!options_list[@]}"; do
+        if [[ $((i % 2)) -eq 0 ]]; then
+            local opt_code="${options_list[$i]}"
+            local opt_desc="${options_list[$i+1]}"
+            local status="OFF"
+            
+            for curr in "${CURR_OPTS[@]}"; do
+                if [ "$curr" = "$opt_code" ]; then
+                    status="ON"
+                    break
+                fi
+            done
+            checklist+=("$opt_code" "$opt_desc" "$status")
+        fi
+    done
+
+    local choice=$($DIALOG --title "$(t SELECT_OPTIONS)" --checklist "$(t CHOOSE_OPTIONS):" 20 70 10 "${checklist[@]}" 2>&1 >/dev/tty)
+    if [ $? -eq 0 ]; then
+        OPTIONS=$(echo "$choice" | tr -d '"' | tr ' ' ',')
+    fi
+}
+
+# ==============================================================================
+# Apply to Niri config - FIXED PARSER
+# ==============================================================================
+apply_to_niri() {
+    if [ ! -f "$CONFIG_FILE" ]; then
+        $DIALOG --msgbox "$(t ERR_NO_FILE): $CONFIG_FILE" 10 60
+        return
+    fi
+
+    awk -v layout="$LAYOUT" -v model="$MODEL" -v variant="$VARIANT" -v options="$OPTIONS" '
+    BEGIN { 
+        in_xkb = 0
+        brace_depth = 0
+    }
+    
+    # Detect xkb block start
+    /^[[:space:]]*xkb[[:space:]]*\{/ {
+        in_xkb = 1
+        brace_depth = 1
+        print "        xkb {"
+        if (layout != "") print "            layout \"" layout "\""
+        if (model != "") print "            model \"" model "\""
+        if (variant != "") print "            variant \"" variant "\""
+        if (options != "") print "            options \"" options "\""
+        print "        }"
+        next
+    }
+    
+    # If inside xkb, count braces to find the end
+    in_xkb {
+        # Count opening braces
+        n = gsub(/\{/, "{", $0)
+        brace_depth += n
+        
+        # Count closing braces
+        n = gsub(/\}/, "}", $0)
+        brace_depth -= n
+        
+        # When depth reaches 0, we exited the xkb block
+        if (brace_depth == 0) {
+            in_xkb = 0
+        }
+        next
+    }
+    
+    # Print everything else
+    { print }
+    ' "$CONFIG_FILE" > "$TMP_FILE"
+
+    mv "$TMP_FILE" "$CONFIG_FILE"
+    $DIALOG --msgbox "$(t APPLIED)\n\n$(t RELOAD_MSG)" 10 60
+}
+
+# ==============================================================================
+# Main menu
+# ==============================================================================
+main_menu() {
+    read_current_xkb
+    while true; do
+        local current_status="Layout: ${LAYOUT:-none} | Model: ${MODEL:-none} | Variant: ${VARIANT:-none} | Options: ${OPTIONS:-none}"
+        
+        local choice=$($DIALOG --title "$(t TITLE)" \
+            --menu "$(t CURRENT):\n$current_status\n\n$(t CHOOSE_OPT):" 20 70 10 \
+            "1" "$(t SET_LAYOUT)" \
+            "2" "$(t SET_MODEL)" \
+            "3" "$(t SET_VARIANT)" \
+            "4" "$(t SET_OPTIONS)" \
+            "5" "$(t APPLY)" \
+            "6" "$(t EXIT)" 2>&1 >/dev/tty)
+        
+        case $? in
+            0) 
+                case $choice in
+                    1) set_layout ;;
+                    2) set_model ;;
+                    3) set_variant ;;
+                    4) set_options ;;
+                    5) apply_to_niri ;;
+                    6) clear; exit 0 ;;
+                esac
+                ;;
+            1|255) 
+                clear
+                exit 0 
+                ;;
+        esac
+    done
+}
+
+# ==============================================================================
+# Entry point
+# ==============================================================================
+detect_lang
+load_translations
+main_menu
