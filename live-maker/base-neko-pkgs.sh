@@ -149,7 +149,7 @@ AUDIO="
 # ─────────────────────────────────────────────
 XORG="
     xorg
-    libva-intel-driver
+    libva-intel-driver-irql
     intel-media-driver
     orca
 "
@@ -157,7 +157,7 @@ XORG="
 XLIBRE="
     xlibre
     xmirror
-    libva-intel-driver
+    libva-intel-driver-irql
     intel-media-driver
     xlibre-xf86-video-amdgpu
     xlibre-xf86-video-intel
