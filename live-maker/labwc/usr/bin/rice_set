@@ -9,6 +9,7 @@ gsettings set org.gnome.desktop.interface gtk-theme "Matecito-Dark"
 # Aplicar configuración de apariencia personalizada para MATE
 xdg-user-dirs-update && xdg-user-dirs-update --force
 /usr/lib/Neko-Wizard/neko-store
+/usr/bin/labwc-tweaks
 # Crear el archivo de marca para evitar reejecución
 touch "$MARKER_FILE"
 
