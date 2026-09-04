@@ -50,7 +50,7 @@ layout {
         off
 
         // How many logical pixels the ring extends out from the windows.
-        // width 16
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -58,13 +58,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        // inactive-color "#505050"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -87,8 +87,8 @@ layout {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         off
-
-        // width 4
+        
+        width 2
         // active-color "#ffc87f"
         // inactive-color "#505050"
 
@@ -122,19 +122,19 @@ layout {
         // window. These will also remove client-side shadows if the window
         // draws any.
         //
-        draw-behind-window true
+        draw-behind-window false
 
         // You can change how shadows look. The values below are in logical
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 5
 
         // Spread expands the shadow.
-        spread 5
+        spread 2
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+        offset x=-15 y=-15
 
         // You can also change the shadow color and opacity.
         color "#0007"
@@ -148,10 +148,10 @@ layout {
     
     gaps 8
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+         left 8
+         right 8
+         top 8
+         bottom 8
     }
 }
 
@@ -173,4 +173,63 @@ hotkey-overlay {
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
 prefer-no-csd
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+window-rule {
+    match app-id="geany"
+    match app-id="caja"
+    match app-id="pcmanfm"
+    match app-id="nwg"
+    match app-id="noctalia"
+    opacity 0.92
+}
+
+/* Apps: blur them all without xray so it looks more realistic. */
+window-rule {
+  background-effect {
+    blur true
+    xray true
+  }
+}
+
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+/* Enable blur on noctalia's window switcher and disable xray. */
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
+/* You can also fine-tune the blur effect globally. */
+blur {
+  passes 5        // more passes = stronger blur (default: 3)
+  offset 3.0      // sample distance per pass (default: 3.0)
+  noise 0.05      // grain overlay (default: 0.02)
+  saturation 1.2  // color saturation boost (default: 1.5)
+}
 

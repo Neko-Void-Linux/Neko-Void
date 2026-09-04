@@ -1,6 +1,0 @@
-gsettings set org.gnome.desktop.interface icon-theme "Tela-dracula-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "Everforest-BL-MB-Dark-Soft"
-# Cambiar el tema del cursor para aplicaciones GTK
-gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Gruvbox'
-# Cambiar el tamaño del cursor
-gsettings set org.gnome.desktop.interface cursor-size 16

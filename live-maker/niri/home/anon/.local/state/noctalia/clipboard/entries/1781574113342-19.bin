@@ -1,4 +1,0 @@
-# Cambiar el tema del cursor para aplicaciones GTK
-gsettings set org.gnome.desktop.interface cursor-theme 'nombre-de-tu-tema'
-# Cambiar el tamaño del cursor
-gsettings set org.gnome.desktop.interface cursor-size 24

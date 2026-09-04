@@ -12,10 +12,10 @@ environment {
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_TYPE "wayland"
     XDG_SESSION_DESKTOP "niri"
-    XDG_DATA_DIRS "/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:~/.local/share/flatpak/exports/share"
+    XDG_DATA_DIRS "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}:/usr/local/share:/usr/share"
 
     // Qt5/Qt6 theming
-    //QT_QPA_PLATFORMTHEME "qt5ct"
+    //QT_QPA_PLATFORMTHEME "qt6ct"
 
     // Fix Java application rendering
     _JAVA_AWT_WM_NONREPARENTING "1"

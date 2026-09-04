@@ -1,9 +1,0 @@
-{
-  "Applications": [
-    "/usr/share/applications/nemo.desktop",
-    "/usr/share/applications/firefox.desktop",
-    "/usr/share/applications/Alacritty.desktop",
-    "/usr/share/applications/gparted.desktop",
-    "/usr/share/applications/xfce4-about.desktop"
-  ]
-}

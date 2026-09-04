@@ -9,7 +9,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="dev.noctalia.Noctalia.Settings"
+  match app-id="Noctalia"
   open-floating true
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
@@ -20,7 +20,7 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="pavucontrol"
     open-floating true
 }
 
@@ -36,9 +36,4 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
-}
+

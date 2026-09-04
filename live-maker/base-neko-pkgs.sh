@@ -451,6 +451,7 @@ NIRI="
     xwayland-satellite
 	emptty
 	niri
+	niri-settings
 	noctalia
 	foot
 	xdg-desktop-portal

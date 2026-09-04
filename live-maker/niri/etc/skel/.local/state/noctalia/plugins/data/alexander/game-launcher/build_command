@@ -1,0 +1,1 @@
+cc -o /home/jmx/.local/state/noctalia/plugins/materialized/community/game-launcher/gamelauncher /home/jmx/.local/state/noctalia/plugins/materialized/community/game-launcher/gamelauncher.c /home/jmx/.local/state/noctalia/plugins/materialized/community/game-launcher/sqlite_reader.c

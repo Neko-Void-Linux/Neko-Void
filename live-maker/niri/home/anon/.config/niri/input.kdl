@@ -4,14 +4,7 @@
 input {
     keyboard {
         xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
-
-            // For example:
-
-            // If this section is empty, niri will fetch xkb settings
-            // from org.freedesktop.locale1. You can control these using
-            // localectl set-x11-keymap.
+            layout "latam"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -43,18 +36,18 @@ input {
     }
 
     trackpoint {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "on-button-down"
-        // scroll-button 273
-        // scroll-button-lock
-        // middle-emulation
+        off
+        natural-scroll
+        accel-speed 0.2
+        accel-profile "flat"
+        scroll-method "on-button-down"
+        scroll-button 273
+        scroll-button-lock
+        middle-emulation
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
+    warp-mouse-to-focus
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
@@ -65,6 +58,6 @@ input {
 
 cursor {
     xcursor-theme "Bibata-Gruvbox"
-    xcursor-size 16
+    xcursor-size 24
         hide-when-typing
     }
