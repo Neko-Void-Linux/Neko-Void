@@ -40,6 +40,7 @@ BASE_SYSTEM="
     xsetroot
     xinit
     Neko-Wizard
+    neko-fonts
     neko-icons
     neko-themes
     neko-backgrounds
