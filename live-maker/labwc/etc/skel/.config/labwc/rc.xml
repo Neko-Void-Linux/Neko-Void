@@ -1,64 +1,409 @@
 <?xml version="1.0"?>
-
-<!--
-  This is a very simple config file with many options missing. For a complete
-  set of options with comments, see docs/rc.xml.all
--->
-
 <labwc_config>
+	
+  <!-- Themes -->
+
+  <core>
+    <gap>16</gap>
+    <decoration>server</decoration>
+    <adaptiveSync>yes</adaptiveSync>
+    <reuseOutputMode>yes</reuseOutputMode>
+  </core>
   <theme>
     <name>noctalia</name>
-    <cornerRadius>10</cornerRadius>
-    <font name="sans" size="10" />
+    <cornerRadius>0</cornerRadius>
+    <resistance>
+      <screenEdgeStrength>20</screenEdgeStrength>
+    </resistance>
+    <icon>Tela-dracula</icon>
+    <maximizedDecoration>none</maximizedDecoration>
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
+    
+    <font place="ActiveWindow">
+      <name>CozetteVector</name>
+      <size>11</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="InactiveWindow">
+      <name>CozetteVector</name>
+      <size>11</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="MenuHeader">
+      <name>CozetteVector</name>
+      <size>11</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="MenuItem">
+      <name>CozetteVector</name>
+      <size>11</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="OnScreenDisplay">
+      <name>CozetteVector</name>
+      <size>11</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
   </theme>
 
+  
+  
+  <!-- Thumbnail-based window switcher -->
+  
+  <windowSwitcher preview="yes" outlines="yes">
+    <osd style="thumbnail"/>
+  </windowSwitcher>
   <keyboard>
-    <default />
+    <repeatRate>25</repeatRate>
+    <repeatDelay>600</repeatDelay>
+    
+   <!-- KeyBinds -->
+   
+    <keybind key="W-t">
+      <action name="Execute" command="foot"/>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute" command="caja"/>
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute" command="waterfox"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute" command="labwc -r"/>
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute" command="noctalia msg panel-toggle session"/>
+    </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="pamixer -d 5" />
+      <action name="Execute" command="pamixer -d 5"/>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="pamixer -i 5" />
+      <action name="Execute" command="pamixer -i 5"/>
     </keybind>
-    <!-- Use a different terminal emulator -->
-    <keybind key="W-Return">
-      <action name="Execute" command="alacritty" />
+    <keybind key="W-d">
+      <action name="ToggleShowDesktop"/>
     </keybind>
-    <keybind key="W-u">
-      <action name="Execute">
-        <command>sh -c 'grim -g "$(slurp)" - | wl-copy'</command>
+    <keybind key="W-f">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="F11">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="W-space">
+      <action name="Execute" command="noctalia msg panel-toggle launcher"/>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute" command="noctalia msg screenshot-region"/>
+    </keybind>
+    <keybind key="W-Print">
+      <action name="Execute" command="slurp | grim -g - - | tree ~/Pictures/$(date +%s).png"/>
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="A-Left">
+      <action name="MoveToEdge" direction="left"/>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="MoveToEdge" direction="right"/>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="MoveToEdge" direction="up"/>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="MoveToEdge" direction="down"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="SnapToEdge" direction="up"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down"/>
+    </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
       </action>
-   </keybind>
-    
-    <keybind key="W-r">
-      <action name="Execute">
-	      <command>noctalia msg panel-toggle launcher</command>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
       </action>
     </keybind>
-
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>noctalia msg panel-toggle session</command>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
       </action>
     </keybind>
-    
-    <!--
-      Remove a previously defined keybind
-      A shorter alternative is <keybind key="W-F4" />
-    -->
+    <keybind key="W-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-5">
+      <action name="SendToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-1">
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-KP_7">
+      <action name="SnapToRegion" region="top-left"/>
+    </keybind>
+    <keybind key="W-KP_8">
+      <action name="SnapToRegion" region="top"/>
+    </keybind>
+    <keybind key="W-KP_9">
+      <action name="SnapToRegion" region="top-right"/>
+    </keybind>
+    <keybind key="W-KP_4">
+      <action name="SnapToRegion" region="left"/>
+    </keybind>
+    <keybind key="W-KP_5">
+      <action name="SnapToRegion" region="center"/>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="SnapToRegion" region="right"/>
+    </keybind>
+    <keybind key="W-KP_1">
+      <action name="SnapToRegion" region="bottom-left"/>
+    </keybind>
+    <keybind key="W-KP_2">
+      <action name="SnapToRegion" region="bottom"/>
+    </keybind>
+    <keybind key="W-KP_3">
+      <action name="SnapToRegion" region="bottom-right"/>
+    </keybind>
     <keybind key="W-F4">
-      <action name="None" />
+      <action name="None"/>
     </keybind>
   </keyboard>
-
+  
+  <!-- Desktop -->
+  
+    <regions>
+    <region name="top-left" x="0%" y="0%" height="50%" width="50%"/>
+    <region name="top" x="0%" y="0%" height="50%" width="100%"/>
+    <region name="top-right" x="50%" y="0%" height="50%" width="50%"/>
+    <region name="left" x="0%" y="0%" height="100%" width="50%"/>
+    <region name="center" x="10%" y="10%" height="80%" width="80%"/>
+    <region name="right" x="50%" y="0%" height="100%" width="50%"/>
+    <region name="bottom-left" x="0%" y="50%" height="50%" width="50%"/>
+    <region name="bottom" x="0%" y="50%" height="50%" width="100%"/>
+    <region name="bottom-right" x="50%" y="50%" height="50%" width="50%"/>
+  </regions>
+  <focus>
+    <followMouse>yes</followMouse>
+    <raiseOnFocus>no</raiseOnFocus>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+  </focus>
+  
+  <snapping>
+    <range inner="1" outer="1"/>
+    <topMaximize>no</topMaximize>
+  </snapping>
+  <desktops>
+    <popupTime>1000</popupTime>
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
+    </names>
+  </desktops>
+  
+  <!-- Mouse -->
+  
+  <libinput>
+    <device>
+      <naturalScroll>no</naturalScroll>
+      <accelProfile>flat</accelProfile>
+      <tap>yes</tap>
+    </device>
+  </libinput>
   <mouse>
-    <default />
-    <!-- Show a custom menu on desktop right click -->
+    <default/>
+    <doubleClickTime>500</doubleClickTime>
+    <context name="Frame">
+      <mousebind button="A-Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      <mousebind button="A-Right" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="BRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="BLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TitleBar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="ShowMenu" menu="client-menu"/>
+      </mousebind>
+    </context>
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize"/>
+      </mousebind>
+    </context>
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="ToggleMaximize"/>
+      </mousebind>
+    </context>
+    <context name="WindowMenu">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu"/>
+      </mousebind>
+    </context>
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify"/>
+      </mousebind>
+    </context>
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close"/>
+      </mousebind>
+    </context>
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+    </context>
     <context name="Root">
       <mousebind button="Right" action="Press">
-        <action name="ShowMenu" menu="some-custom-menu" />
+        <action name="ShowMenu" menu="root-menu"/>
+      </mousebind>
+      <mousebind direction="W-Up" action="Scroll">
+        <action name="GoToDesktop" to="left"/>
+      </mousebind>
+      <mousebind direction="W-Down" action="Scroll">
+        <action name="GoToDesktop" to="right"/>
       </mousebind>
     </context>
   </mouse>
+  
+  <!-- Window Rule -->
+  
+  <placement>
+    <policy>cascade</policy>
+  </placement>
+  <magnifier>
+    <useFilter>yes</useFilter>
+  </magnifier>
+  <resize>
+    <popupShow>always</popupShow>
+  </resize>
+  <windowRule title="*">
+    <fixedPosition>yes</fixedPosition>
+    <center>yes</center>
+    <float>yes</float>
+  </windowRule>
 
 </labwc_config>

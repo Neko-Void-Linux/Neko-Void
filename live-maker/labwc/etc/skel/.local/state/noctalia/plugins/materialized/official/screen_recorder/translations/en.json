@@ -54,8 +54,34 @@
     "frame_rate": {
       "label": "Frame Rate"
     },
+    "glyph_idle": {
+      "label": "Glyph: Idle"
+    },
+    "glyph_pending": {
+      "description": "Shown while a recording or replay buffer is starting.",
+      "label": "Glyph: Starting"
+    },
+    "glyph_recording": {
+      "label": "Glyph: Recording"
+    },
+    "glyph_replaying": {
+      "label": "Glyph: Replay Buffer"
+    },
+    "glyph_unavailable": {
+      "description": "Shown when gpu-screen-recorder is not installed.",
+      "label": "Glyph: Unavailable"
+    },
     "hide_inactive": {
       "label": "Hide Widget When Idle"
+    },
+    "quality": {
+      "label": "Quality",
+      "options": {
+        "high": "High",
+        "medium": "Medium",
+        "ultra": "Ultra",
+        "very_high": "Very High"
+      }
     },
     "replay_duration": {
       "label": "Replay Seconds"

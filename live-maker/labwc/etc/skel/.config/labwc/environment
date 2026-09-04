@@ -30,7 +30,7 @@
 
 XCURSOR_THEME=Bibata-Gruvbox
 # XCURSOR_THEME=capitaine-cursors
-XCURSOR_SIZE=22
+XCURSOR_SIZE=24
 
 ## Disable hardware cursors. Most users would not want to do this, but if you
 ## are experiencing issues with disappearing cursors, this might fix it.
@@ -59,6 +59,23 @@ XCURSOR_SIZE=22
 ##
 
 XDG_CURRENT_DESKTOP=labwc:wlroots
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_DESKTOP=labwc
+XDG_DATA_DIRS=/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}:/usr/local/share:/usr/share
+
+
+CLUTTER_BACKEND=wayland
+SDL_VIDEODRIVER=wayland,x11
+SDL_AUDIODRIVER=pipewire
+QT_QPA_PLATFORM=wayland
+GDK_BACKEND "wayland"
+MOZ_ENABLE_WAYLAND=1
+
+
+
+_JAVA_AWT_WM_NONREPARENTING=1
+NO_AT_BRIDGE=1
+GTK_USE_PORTAL=0
 
 ##
 ## This causes a virtual output to be created automatically whenever there

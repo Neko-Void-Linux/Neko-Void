@@ -1,5 +1,9 @@
 {
   "files": {
+    "README.md": "ec6624854727034569dc45a01ba1c3fb",
+    "apply.sh": "fc46b6b7623d70ba2f3167f3a3e7832d",
+    "colors": "8a4e6f3534feca2fb2580b9fd87d2db9",
+    "papirus-folders": "bbd3c668282aea1dd26b7b044d9bd4d4",
     "template.toml": "5d3d732600d5801a84f3c103d7ca2591"
   },
   "version": 1

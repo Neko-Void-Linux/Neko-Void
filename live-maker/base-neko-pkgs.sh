@@ -412,7 +412,7 @@ LABWC="
 	labwc
 	labwc-menu-generator
 	labwc-tweaks-qt
-	alacritty
+	foot
 	kanshi
 	xdg-desktop-portal
 	xdg-desktop-portal-wlr

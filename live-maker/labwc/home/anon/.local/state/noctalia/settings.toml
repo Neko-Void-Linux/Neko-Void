@@ -1,45 +1,112 @@
 config_version = 13
 
-[bar.default]
-background_opacity = 0.93999997898936272
-capsule_radius = 0
-center = []
-end = [
-    "media",
-    "tray",
-    "notifications",
-    "clipboard",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "battery",
-    "clock",
-    "control-center",
-    "session"
-]
-font_weight = 400
-margin_edge = 3
-margin_ends = 5
-padding = 16
-position = "bottom"
-radius = 0
-start = [ "launcher", "wallpaper", "workspaces", "spacer_2", "taskbar" ]
-thickness = 32
+[audio]
+enable_overdrive = true
+enable_sounds = true
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    border_width = 2.0
+    capsule_radius = 0
+    center = []
+    contact_shadow = true
+    end = [
+        "media",
+        "tray",
+        "notifications",
+        "Updater",
+        "clipboard",
+        "recorder",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "battery",
+        "clock",
+        "control-center",
+        "session"
+    ]
+    font_scale = 1.0999999828636646
+    margin_ends = 0
+    padding = 16
+    position = "bottom"
+    radius = 0
+    start = [ "launcher", "workspaces", "spacer_2", "taskbar" ]
+    thickness = 42
+
+[control_center]
+sidebar_section = "none"
+width = 650
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
 
 [dock]
-cross_axis_padding = 7
+background_opacity = 0.99999997764825821
+icon_size = 42
 radius = 0
+
+[hot_corners]
+delay_ms = 500
+enabled = true
+
+    [hot_corners.top_left]
+    action = "launcher"
+
+[keybinds]
+validate = [ "Return", "KP_Enter" ]
 
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@Virtual-1", "lockscreen-login-box@VGA-1" ]
+widget_order = [
+    "lockscreen-login-box@WL-1",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@Virtual-1",
+    "lockscreen-login-box@VGA-1"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 912.0
+    cy = 765.15557861328125
+    output = "HDMI-A-1"
+    placement_height = 1024.0
+    placement_width = 1824.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@VGA-1"]
     box_height = 196.0
@@ -95,42 +162,79 @@ widget_order = [ "lockscreen-login-box@Virtual-1", "lockscreen-login-box@VGA-1" 
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 538.0
+    output = "WL-1"
+    placement_height = 720.0
+    placement_width = 1280.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
 [plugin_settings."noctalia/screen_recorder"]
 directory = ""
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/translator" ]
+enabled = [ "noctalia/translator", "noctalia/wallhaven", "noctalia/screen_recorder" ]
 
 [shell]
 corner_radius_scale = 0.0
+font_family = "CozetteVector"
+password_style = "random"
 polkit_agent = true
+settings_show_advanced = false
 
-    [shell.launcher.providers.windows]
-    prefix = ""
+    [shell.animation]
+    speed = 0.70000001043081284
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    show_app_actions = true
 
     [shell.panel]
     launcher_placement = "attached"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
     open_near_click_launcher = true
+    open_near_click_wallpaper = true
 
     [shell.screen_corners]
-    size = 1
-
-    [shell.screenshot]
-    confirm_region = true
-    directory = "/home/javierc/Imágenes/Screenshots"
+    size = 79
 
 [theme]
+builtin = "Gruvbox"
 community_palette = "Cream"
 custom_palette = "4-ts"
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "m3-content"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "alacritty", "btop", "cava", "foot", "gtk3", "gtk4", "kitty", "labwc", "qt" ]
+    builtin_ids = [ "btop", "cava", "foot", "gtk3", "gtk4", "labwc", "qt" ]
+    community_ids = [ "discord" ]
 
 [wallpaper]
-directory = "/home/javierc/Imágenes/Wallpapers/OTAKU WALLPAPERS"
+directory = "/usr/share/wallpapers"
 directory_dark = "/usr/share/wallpapers"
 
     [wallpaper.default]
@@ -139,27 +243,42 @@ directory_dark = "/usr/share/wallpapers"
     [wallpaper.last]
     path = "/usr/share/wallpapers/moony-art3.png"
 
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/usr/share/wallpapers/moony-art3.png"
+
     [wallpaper.monitors.VGA-1]
     path = "/usr/share/wallpapers/moony-art3.png"
 
     [wallpaper.monitors.Virtual-1]
     path = "/usr/share/wallpapers/moony-art3.png"
 
-    [[wallpaper.favorite]]
-    path = "/home/javierc/Imágenes/Wallpapers/OTAKU WALLPAPERS/wallpaper-theme-converter(5).png"
-    theme_mode = "auto"
+[widget.Updater]
+glyph = "reload"
+tooltip = "Reloader"
+type = "custom_button"
+
+    [widget.Updater.actions]
+    left = "exec labwc --reconfigure"
+    right = "config-reload"
 
 [widget.media]
-enabled = false
+album_art_only = true
+hide_when_no_media = true
 
 [widget.network]
 show_label = false
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
 
 [widget.spacer_2]
 type = "spacer"
 
 [widget.taskbar]
-scale = 1.2
+show_window_title = true
+
+[widget.tray]
+drawer = true
 
 [widget.volume]
 show_label = false

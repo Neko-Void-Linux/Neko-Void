@@ -4,17 +4,17 @@ fi
 
 kanshi >/dev/null 2>&1 &
 
-# Esto es lo vital: pasarle el entorno a D-Bus
+# D-Bus
 export XDG_CURRENT_DESKTOP=labwc
 export WAYLAND_DISPLAY=wayland-0
 dbus-update-activation-environment --all
 
 noctalia &
 
-# Tu PipeWire (que ya se encarga de wireplumber)
+# PipeWire
 pipewire &
 
-# Los portales
+# Portals
 /usr/libexec/xdg-desktop-portal-wlr &
 /usr/libexec/xdg-desktop-portal &
 

@@ -17,7 +17,7 @@ Install `gpu-screen-recorder` on `PATH`, or install the Flatpak app
 `com.dec05eba.gpu_screen_recorder`. Portal capture also requires
 `xdg-desktop-portal` with any backend that provides the ScreenCast interface.
 
-- **[gpu-screen-recorder](https://git.dec05eba.com/gpu-screen-recorder/about/)** — Hardware-accelerated screen recording
+- **[gpu-screen-recorder](https://git.dec05eba.com/gpu-screen-recorder/about/)** - Hardware-accelerated screen recording
 
 Recordings are saved to the configured output directory. When the directory is
 empty, the plugin uses `~/Videos/Recordings`.
@@ -63,6 +63,11 @@ Replay controls are available only when `replay_enabled` is true.
 | `color_range` | `select` | `limited` | Uses limited or full color range. |
 | `copy_to_clipboard` | `bool` | `false` | Copies the saved recording URI to the clipboard. |
 | `hide_inactive` | `bool` | `false` | Hides the bar widget while idle. |
+| `glyph_unavailable` | `glyph` | `video-off` | Bar glyph when gpu-screen-recorder is not installed. |
+| `glyph_idle` | `glyph` | `video` | Bar glyph when idle. |
+| `glyph_pending` | `glyph` | `video` | Bar glyph while a recording or replay buffer is starting. |
+| `glyph_recording` | `glyph` | `video` | Bar glyph while recording. |
+| `glyph_replaying` | `glyph` | `repeat` | Bar glyph while the replay buffer is running. |
 | `replay_enabled` | `bool` | `false` | Enables replay-buffer controls. |
 | `replay_duration` | `int` | `30` | Replay buffer duration in seconds. |
 | `replay_storage` | `select` | `ram` | Stores replay data in RAM or on disk. |
@@ -95,13 +100,13 @@ noctalia msg plugin noctalia/screen_recorder:service all start portal
 ```
 
 Here `all` is the IPC target (which instance receives the event) and the trailing
-word is the capture source — two separate fields.
+word is the capture source - two separate fields.
 
 ## Debugging
 
 The service logs its decisions (availability, portal checks, the resolved
 gpu-screen-recorder command, and every state transition) through the Noctalia log
-with a `screen_recorder:` prefix — watch it in the terminal running Noctalia or via
+with a `screen_recorder:` prefix - watch it in the terminal running Noctalia or via
 `journalctl`. gpu-screen-recorder's own stdout/stderr is captured to
 `${XDG_STATE_HOME:-~/.local/state}/noctalia/screen_recorder/gpu-screen-recorder.log`
 (truncated per run); when a recording fails to start or ends early, the tail of that
