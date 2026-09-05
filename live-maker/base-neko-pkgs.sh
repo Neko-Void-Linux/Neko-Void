@@ -150,16 +150,12 @@ AUDIO="
 # ─────────────────────────────────────────────
 XORG="
     xorg
-    libva-intel-driver-irql
-    intel-media-driver
     orca
 "
 
 XLIBRE="
     xlibre
     xmirror
-    libva-intel-driver-irql
-    intel-media-driver
     xlibre-xf86-video-amdgpu
     xlibre-xf86-video-intel
     orca
@@ -172,6 +168,8 @@ GPU_DRIVERS="
     vulkan-loader
     Vulkan-Tools
     libglvnd
+    libva-intel-driver-irql
+    intel-media-driver
     linux-firmware-intel
     linux-firmware-nvidia
     linux-firmware-amd
@@ -562,7 +560,6 @@ DEFAULT="
     ${SYSTEM_UTILS}
     ${NETWORKING}
     ${AUDIO}
-    ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
     ${ANOTHER}
@@ -579,7 +576,6 @@ MUSL="
     ${SYSTEM_UTILS}
     ${NETWORKING}
     ${AUDIO}
-    ${XORG}
     ${GPU_DRIVERS}
     ${DESKTOP_APPS}
     ${ANOTHER}
@@ -594,11 +590,13 @@ MUSL="
 # ─────────────────────────────────────────────
 XORG_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${MATE}
 "
 
 KDE_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${KDE}
 "
 
@@ -623,36 +621,43 @@ XLIBRE_PACKAGES="
 
 LXQT_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${LXQT}
 "
 I3_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${I3}
 "
 
 XFCE_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${XFCE}
 "
 
 MUSL_PACKAGES="
     ${MUSL}
+    ${XORG}
     ${XFCE2}
 "
 
 
 ICEJWM_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${ICEJWM}
 "
 
 LXDE_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${LXDE}
 "
 
 CINNAMON_PACKAGES="
     ${DEFAULT}
+    ${XORG}
     ${CINNAMON}
 "
 LABWC_PACKAGES="
