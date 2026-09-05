@@ -446,7 +446,7 @@ generate_squashfs() {
     truncate -s "$((ROOTFS_SIZE+ROOTFS_SIZE))M" \
 	    "$BUILDDIR"/tmp/LiveOS/rootfs.img >/dev/null 2>&1
     mkdir -p "$BUILDDIR/tmp-rootfs"
-    mkfs.ext3 -F -m1 "$BUILDDIR/tmp/LiveOS/rootfs.img" >/dev/null 2>&1
+    mkfs.ext4 -F -m1 "$BUILDDIR/tmp/LiveOS/rootfs.img" >/dev/null 2>&1
     mount -o loop "$BUILDDIR/tmp/LiveOS/rootfs.img" "$BUILDDIR/tmp-rootfs"
     cp -a "$ROOTFS"/* "$BUILDDIR"/tmp-rootfs/
     umount -f "$BUILDDIR/tmp-rootfs"

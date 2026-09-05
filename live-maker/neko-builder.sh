@@ -188,7 +188,7 @@ build_iso() {
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="$KERNEL_STABLE"
+            kernel_kver="$KERNEL_LASTEST"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             arch="x86_64"
