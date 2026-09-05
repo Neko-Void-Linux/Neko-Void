@@ -2,13 +2,13 @@
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
 input {
-    keyboard {
-        xkb {
-            layout "latam"
-        }
+    //keyboard {
+    //    xkb {
+     //       layout "latam"
+   //     }
 
         // Enable numlock on startup, omitting this setting disables it.
-    }
+ //   }
 
     // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
