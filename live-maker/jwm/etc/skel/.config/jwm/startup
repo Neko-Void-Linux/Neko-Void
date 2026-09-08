@@ -1,8 +1,8 @@
 <JWM>
-     <StartupCommand>pipewire</StartupCommand>
-     <StartupCommand>rice_set</StartupCommand>
-     <StartupCommand>nm-applet</StartupCommand>
-     </StartupCommand>/usr/libexec/xdg-desktop-portal</StartupCommand>
-     </StartupCommand>/usr/libexec/xdg-desktop-portal-gtk</StartupCommand>
+     <StartupCommand>/usr/bin/pipewire</StartupCommand>
+     <StartupCommand>/usr/libexec/xdg-desktop-portal</StartupCommand>
+     <StartupCommand>/usr/libexec/xdg-desktop-portal-gtk</StartupCommand>
      <StartupCommand>/usr/libexec/polkit-mate-authentication-agent-1</StartupCommand>
+     <StartupCommand>/usr/bin/nm-applet</StartupCommand>
+     <StartupCommand>/usr/bin/rice_set</StartupCommand>
 </JWM>
