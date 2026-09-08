@@ -47,6 +47,7 @@ BASE_SYSTEM="
     xtools
     tmux
     xmirror
+    vouru
 "
 MUSL_SYSTEM="
     base-system
