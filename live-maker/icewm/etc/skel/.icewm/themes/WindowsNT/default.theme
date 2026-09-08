@@ -1,0 +1,108 @@
+####################################################
+# "Windows NT" IceWM theme
+# By Azuma Hazuki (azumahazuki at gee-mail dot calm)
+# 1 Jan 2010
+####################################################
+
+Look=flat
+Gradients="titleAT.xpm titleAB.xpm titleIB.xpm titleIT.xpm taskbarbg.xpm taskbuttonbg.xpm taskbuttonminimized.xpm taskbuttonactive.xpm toolbuttonbg.xpm menubg.xpm dialogbg.xpm"
+
+BorderSizeX=3
+BorderSizeY=3
+CornerSizeX=21
+CornerSizeY=21
+
+TitleBarHeight=19
+TitleButtonsLeft="s"
+TitleButtonsight="xmi"
+
+TitleBarJoinLeft=0
+TitleBarJoinRight=1
+
+ColorNormalButton="rgb:d6/d3/ce"
+ColorNormalButtonText="rgb:00/00/00"
+ColorActiveButton="rgb:d6/d3/ce"
+ColorActiveButtonText="rgb:00/00/00"
+
+ColorNormalTitleBarText="rgb:c0/c0/c0"
+ColorActiveTitleBarText="rgb:ff/ff/ff"
+ColorActiveTitleBarShadow="rgb:00/00/00"
+
+ColorActiveBorder="rgb:d6/d3/ce"
+ColorNormalBorder="rgb:d6/d3/ce"
+
+ColorDialog="rgb:00/00/00"
+ColorListBox="rgb:00/00/00"
+ColorListBoxText="rgb:ff/ff/ff"
+ColorListBoxSelection="rgb:00/7f/df"
+ColorListBoxSelectionText="rgb:ff/ff/ff"
+ColorScrollBar="rgb:00/00/00"
+ColorScrollBarSlider="rgb:00/00/00"
+ColorScrollBarButton="rgb:00/00/00"
+ColorScrollBarButtonArrow="rgb:00/00/00"
+ColorLabel="rgb:00/00/00"
+ColorLabelText="rgb:ff/ff/ff"
+
+ColorNormalMenu="rgb:d6/d3/ce"
+ColorActiveMenuItem="rgb:00/00/80"
+ColorNormalMenuItemText="rgb:00/00/00"
+ColorActiveMenuItemText="rgb:ff/ff/ff"
+ColorDisabledMenuItemText="rgb:80/80/80"
+
+ColorDefaultTaskBar="rgb:d6/d3/ce"
+ColorNormalTaskBarApp="rgb:d6/d3/ce"
+ColorNormalTaskBarAppText="rgb:00/00/00"
+ColorInvisibleTaskBarApp="rgb:00/00/00"
+ColorInvisibleTaskBarAppText="rgb:ff/ff/ff"
+ColorActiveTaskBarApp="rgb:d6/d3/ce"
+ColorActiveTaskBarAppText="rgb:00/00/00"
+ColorMinimizedTaskBarApp="rgb:00/00/00"
+ColorMinimizedTaskBarAppText="rgb:00/00/00"
+ColorNormalWorkspaceButton="rgb:00/00/00"
+ColorActiveWorkspaceButton="rgb:30/30/30"
+
+ColorInput="rgb:00/00/00"
+ColorInputText="rgb:ff/ff/ff"
+
+ColorClock=""
+ColorClockText="rgb:00/00/00"
+
+ColorCPUStatusUser="rgb:00/8f/ff"
+ColorCPUStatusSystem="rgb:00/cf/ff"
+ColorCPUStatusNice="rgb:9d/a1/bc"
+# ColorCPUStatusIdle=""
+# silly icewm: ColorCPUStatusIdle="" doesn't work - it's transparent but the monitoring is screwed, so this is poor-man's pseudo-transparency instead :)
+ColorCPUStatusIdle="rgb:00/00/00"
+
+ColorNetSend="rgb:4c/59/a6"
+ColorNetReceive="rgb:9d/a1/bc"
+ColorNetIdle="00/00/00"
+
+ColorToolTip="rgb:00/00/00"
+ColorToolTipText="rgb:FF/FF/FF"
+
+ColorMoveSizeStatus="rgb:0f/0f/10"
+ColorMoveSizeStatusText="rgb:00/8f/ff"
+
+ColorQuickSwitch="rgb:00/00/00"
+ColorQuickSwitchText="rgb:ff/ff/ff"
+
+# Font Specification
+TitleFontNameXft		=	tahoma:size=9:bold
+MenuFontNameXft			=	tahoma:size=8
+MinimizedWindowFontNameXft	=	tahoma:size=8
+ActiveButtonFontNameXft		=	tahoma:size=8
+NormalButtonFontNameXft		=	tahoma:size=8
+ToolButtonFontNameXft		=	tahoma:size=8
+NormalWorkspaceFontNameXft	=	tahoma:size=8
+ActiveWorkspaceFontNameXft	=	tahoma:size=8
+QuickSwitchFontNameXft		=	tahoma:size=8
+ListBoxFontNameXft		=	tahoma:size=8
+StatusFontNameXft		=	tahoma:size=8
+ToolTipFontNameXft		=	tahoma:size=8
+ActiveTaskBarFontNameXft	=	tahoma:size=8
+NormalTaskBarFontNameXft	=	tahoma:size=8
+ClockFontNameXft		=	tahoma:size=8
+InputFontNameXft		=	tahoma:size=8
+
+TaskBarClockLeds=0

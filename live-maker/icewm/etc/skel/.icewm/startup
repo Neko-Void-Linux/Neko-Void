@@ -1,0 +1,8 @@
+#!/bin/bash
+pipewire &
+/usr/libexec/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal-gtk &
+pcmanfm --desktop &
+nm-applet &
+/usr/libexec/polkit-mate-authentication-agent-1 &
+/usr/bin/rice_set &

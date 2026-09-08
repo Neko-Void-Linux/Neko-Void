@@ -161,12 +161,20 @@ build_iso() {
             iso_name="nekovoid-xfce-$VERSION.iso"
             arch="x86_64"
             ;;
-        icejwm)
-            pkg_var="PACKAGES_ICEJWM"
-            includedir="./icejwm"
+        icewm)
+            pkg_var="PACKAGES_ICEWM"
+            includedir="./icewm"
             kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
-            iso_name="nekovoid-lts-icejwm-$VERSION.iso"
+            iso_name="nekovoid-lts-icewm-$VERSION.iso"
+            arch="x86_64"
+            ;;
+        jwm)
+            pkg_var="PACKAGES_JWM"
+            includedir="./jwm"
+            kernel_kver="$KERNEL_DEFAULT"
+            dm_service="lightdm"
+            iso_name="nekovoid-lts-jwm-$VERSION.iso"
             arch="x86_64"
             ;;
         cinnamon)

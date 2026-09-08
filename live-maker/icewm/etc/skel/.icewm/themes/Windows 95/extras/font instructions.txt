@@ -1,0 +1,29 @@
+This procedure was inspired by the one outlined here: https://github.com/grassmunk/Chicago95/blob/master/INSTALL.md#ms_sans_serif
+
+1. Acquire a copy of the Tahoma font (regular and bold) from a Windows installation. It can be found in C:\WINDOWS\Fonts (filenames tahoma.ttf and tahomabd.ttf). You can also use MS Sans Serif, which is the font that was actually used in Windows 95. 
+
+2. Open tahoma.ttf in FontForge and press Ctrl+Shift+B to open the bitmap strikes dialog.
+
+3. Select "Win" and type 8 under "Point sizes on a 96 dpi screen" and then press OK. Make sure "Create Rasterized Strikes" is checked.
+
+4. Press Ctrl+Shift+F to open the Font Info menu.
+
+5. In order to not overlap with existing fonts, the name should be changed to something unique. For the sake of simplicity, I suggest setting the same names I did as that's how the theme is configured:
+    Fontname: Tahoma8ptRegular
+    Family name: Tahoma8pt
+    Name for humans: Tahoma 8pt Regular
+    Weight: Regular
+
+6. Press OK. A dialog box will open asking to change the UniqueID or XUID. Press "Change".
+
+7. Export the font by pressing Ctrl+Shift+G. Make sure the options "No Outline Font" and "(faked) MS bitmap only" are selected under the file name, then press "Generate". You may now close FontForge without saving.
+
+8. Repeat the same procedure for tahomabd.ttf, using the following values in the Font Info menu:
+    Fontname: Tahoma8ptBold
+    Family name: Tahoma8pt
+    Name for humans: Tahoma 8pt Bold
+    Weight: Bold
+    
+9. Place the exported .ttf files in $HOME/.fonts or /usr/share/fonts
+
+Keep in mind, if you intend to use a different font, you must update the default.theme file for it to take effect.

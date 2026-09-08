@@ -1,0 +1,97 @@
+# This theme is a modification of the Windows 2000 / ME theme
+# by PixelOCDGuy (https://www.box-look.org/p/1648821). The icons were 
+# sourced from the Chicago95 theme (https://github.com/grassmunk/Chicago95)
+# The Tux Start button was sourced from screenshots of FVWM95.
+
+ThemeDescription="Windows 95"
+ThemeAuthor=bongo
+Look="flat"
+
+DesktopBackgroundColor="rgb:00/80/80"
+TaskBarClockLeds=1
+TrayDrawBevel=1
+TaskbuttonIconOffset=5
+
+TitleButtonsLeft="s"
+TitleButtonsRight="xmi"
+TitleButtonsSupported="xmis"
+TitleBarHeight=18
+
+TitleBarJoinRight=1
+
+BorderSizeX=4
+BorderSizeY=4
+CornerSizeX=24
+CornerSizeY=24
+DlgBorderSizeX=3
+DlgBorderSizeY=3
+
+ColorNormalButton="rgb:C0/C0/C0"
+ColorNormalButtonText="rgb:00/00/00"
+ColorActiveButton="rgb:C0/C0/C0"
+ColorActiveButtonText="rgb:00/00/00"
+
+ColorNormalTitleBarText="rgb:C0/C0/C0"
+ColorActiveTitleBarText="rgb:ff/ff/ff"
+ColorActiveBorder="rgb:C0/C0/C0"
+ColorNormalBorder="rgb:C0/C0/C0"
+ColorNormalTitleBar="rgb:80/80/80"
+ColorActiveTitleBar="rgb:00/00/80"
+
+ColorDialog="rgb:C0/C0/C0"
+ColorListBox="rgb:ff/ff/ff"
+ColorListBoxText="rgb:00/00/00"
+ColorListBoxSelection="rgb:00/00/80"
+ColorListBoxSelectionText="rgb:ff/ff/ff"
+ColorScrollBar="rgb:C0/C0/C0"
+ColorScrollBarSlider="rgb:C0/C0/C0"
+ColorScrollBarButton="rgb:C0/C0/C0"
+ColorScrollBarButtonArrow="rgb:00/00/00"
+ColorLabel="rgb:C0/C0/C0"
+ColorLabelText="rgb:00/00/00"
+
+ColorNormalMenu="rgb:C0/C0/C0"
+ColorActiveMenuItem="rgb:00/00/80"
+ColorNormalMenuItemText="rgb:00/00/00"
+ColorActiveMenuItemText="rgb:ff/ff/ff"
+ColorDisabledMenuItemText="rgb:80/80/80"
+
+ColorDefaultTaskBar="rgb:C0/C0/C0"
+ColorNormalTaskBarApp="rgb:C0/C0/C0"
+ColorNormalTaskBarAppText="rgb:00/00/00"
+ColorActiveTaskBarApp="rgb:ea/e8/e4"
+ColorActiveTaskBarAppText="rgb:00/00/00"
+ColorMinimizedTaskBarApp="rgb:C0/C0/C0"
+ColorMinimizedTaskBarAppText="rgb:00/00/00"
+
+ColorInput="rgb:ff/ff/ff"
+ColorInputText="rgb:00/00/00"
+ColorClock="rgb:C0/C0/C0"
+ColorClockText="rgb:00/00/00"
+
+ColorToolTip="rgb:ff/ff/e1"
+ColorToolTipText="rgb:00/00/00"
+ColorMoveSizeStatus="rgb:C0/C0/C0"
+ColorMoveSizeStatusText="rgb:00/00/00"
+ColorQuickSwitch="rgb:C0/C0/C0"
+ColorQuickSwitchText="rgb:00/00/00"
+
+# Font Specification
+# Please refer to the font instructions in the extras folder if you want
+# a more authentic-looking font. Otherwise, modify the values below
+# to a font of your choice.
+TitleFontNameXft	   = 	"Tahoma8pt:size=8:bold"
+MenuFontNameXft	           =    "Tahoma8pt:size=8"
+MinimizedWindowFontNameXft =    "Tahoma8pt:size=8"
+ActiveButtonFontNameXft    =    "Tahoma8pt:size=8"
+NormalButtonFontNameXft    =    "Tahoma8pt:size=8"
+QuickSwitchFontNameXft     =    "Tahoma8pt:size=8"
+ListBoxFontNameXft         =    "Tahoma8pt:size=8"
+StatusFontNameXft          =    "Tahoma8pt:size=8"
+ToolTipFontNameXft         =    "Tahoma8pt:size=8"
+ActiveTaskBarFontNameXft   =    "Tahoma8pt:size=8:bold"
+NormalTaskBarFontNameXft   =    "Tahoma8pt:size=8"
+ClockFontNameXft           =    "Tahoma8pt:size=8"
+ApmFontNameXft             =    "Tahoma8pt:size=8"
+LabelFontNameXft             =    "Tahoma8pt:size=8"
+

@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# Colores
+CYAN='\033[96m'
+GREEN='\033[92m'
+BLUE='\033[94m'
+RESET='\033[0m'
+
+# Obtener información del sistema
+KERNEL=$(uname -r)
+
+# Obtener número de paquetes (para Arch Linux)
+PACKAGES="Idk"
+
+# Obtener memoria
+MEMORY=$(free -h)
+TOTAL_MEM=$(echo "$MEMORY" | awk '/^Mem:/ {print $2}')
+USED_MEM=$(echo "$MEMORY" | awk '/^Mem:/ {print $3}')
+
+# Función para formatear uptime desde /proc/uptime (compatible con POSIX)
+format_uptime() {
+    uptime_seconds=$(cat /proc/uptime | awk '{print $1}' | cut -d. -f1)
+    
+    days=$((uptime_seconds / 86400))
+    hours=$(( (uptime_seconds % 86400) / 3600 ))
+    minutes=$(( (uptime_seconds % 3600) / 60 ))
+    
+    result=""
+    
+    if [ $days -gt 0 ]; then
+        result="${days}d "
+    fi
+    
+    if [ $hours -gt 0 ]; then
+        result="${result}${hours}h "
+    fi
+    
+    if [ $minutes -gt 0 ]; then
+        result="${result}${minutes}m"
+    fi
+    
+    # Si es menos de 1 minuto
+    if [ -z "$result" ]; then
+        result="<1m"
+    fi
+    
+    echo "${result}"
+}
+
+# Usar la función
+UPTIME=$(format_uptime)
+
+# Calcular la longitud del contenido más largo para ajustar el cuadro
+# En lugar de un array, usaremos variables individuales y calcularemos la longitud máxima
+
+CONTENT1="OS› Neko-Void"
+CONTENT2="Kernel› $KERNEL"
+CONTENT3="Packages› $PACKAGES"
+CONTENT4="Memory› $USED_MEM/$TOTAL_MEM"
+CONTENT5="Uptime› $UPTIME"
+
+# Función para obtener la longitud de una cadena sin códigos de color
+strlen_without_colors() {
+    echo "$1" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m
+}
+
+# Nota: wc -m cuenta caracteres, pero puede incluir un newline. Ajustamos.
+L1=$(printf "%s" "$CONTENT1" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m)
+L2=$(printf "%s" "$CONTENT2" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m)
+L3=$(printf "%s" "$CONTENT3" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m)
+L4=$(printf "%s" "$CONTENT4" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m)
+L5=$(printf "%s" "$CONTENT5" | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | wc -m)
+
+# Encontrar la longitud máxima
+MAX_LEN=0
+for len in "$L1" "$L2" "$L3" "$L4" "$L5"; do
+    # Convertir a número (eliminar newline de wc)
+    len_num=$(echo "$len" | tr -d '\n')
+    if [ "$len_num" -gt "$MAX_LEN" ]; then
+        MAX_LEN=$len_num
+    fi
+done
+
+# Añadir margen para los espacios y caracteres extra
+BOX_WIDTH=$((MAX_LEN + 5))
+
+# Imprimir el sistema de información con arte ASCII
+echo "  ${CYAN}╭$(printf '─%.0s' $(seq 1 $BOX_WIDTH))╮${RESET}"
+echo " ${CYAN} │${RESET} ${BLUE}OS${RESET}› Neko Void $(printf ' %.0s' $(seq 1 $((BOX_WIDTH - L1 - 2))))${CYAN}│${RESET}"
+echo "  ${CYAN}│${RESET} ${BLUE}Kernel${RESET}› $KERNEL$(printf ' %.0s' $(seq 1 $((BOX_WIDTH - L2 - 2))))${CYAN} │${RESET}"
+echo "  ${CYAN}│${RESET} ${BLUE}Packages${RESET}› $PACKAGES$(printf ' %.0s' $(seq 1 $((BOX_WIDTH - L3 - 2))))${CYAN} │${RESET}"
+echo "  ${CYAN}│${RESET} ${BLUE}Memory${RESET}› $USED_MEM/$TOTAL_MEM$(printf ' %.0s' $(seq 1 $((BOX_WIDTH - L4 - 2))))${CYAN} │${RESET}"
+echo "  ${CYAN}│${RESET} ${BLUE}Uptime${RESET}› $UPTIME$(printf ' %.0s' $(seq 1 $((BOX_WIDTH - L5 - 2))))${CYAN} │${RESET}"
+echo "  ${CYAN}╰$(printf '─%.0s' $(seq 1 $BOX_WIDTH))╯${RESET}"

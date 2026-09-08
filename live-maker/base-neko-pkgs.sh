@@ -335,18 +335,41 @@ I3="
     dunst
 "
 
-ICEJWM="
+JWM="
     ristretto
     xarchiver
     arandr
     jwm
     jwmkit-neko
+    mpv
+    pcmanfm
+    sakura
+    ristretto
+    lxappearance
+    atril
+    lightdm
+    lightdm-gtk-greeter
+    gvfs-afc
+    gvfs-mtp
+    gvfs-smb
+    udisks2
+    firefox
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    mate-polkit
+    xfce4-screenshooter
+"
+
+ICEWM="
+    ristretto
+    xarchiver
+    arandr
     icewm
     mpv
     pcmanfm
-    alacritty
+    sakura
     ristretto
-    lxappearance
+    nwg-look
     atril
     lightdm
     lightdm-gtk-greeter
@@ -644,10 +667,15 @@ MUSL_PACKAGES="
 "
 
 
-ICEJWM_PACKAGES="
+ICEWM_PACKAGES="
     ${DEFAULT}
     ${XORG}
-    ${ICEJWM}
+    ${ICEWM}
+"
+JWM_PACKAGES="
+    ${DEFAULT}
+    ${XORG}
+    ${JWM}
 "
 
 LXDE_PACKAGES="
@@ -676,7 +704,8 @@ PACKAGES_KDE=$(echo ${KDE_PACKAGES} | tr -s ' ')
 PACKAGES_LXQT=$(echo ${LXQT_PACKAGES} | tr -s ' ')
 PACKAGES_I3=$(echo ${I3_PACKAGES} | tr -s ' ')
 PACKAGES_XFCE=$(echo ${XFCE_PACKAGES} | tr -s ' ')
-PACKAGES_ICEJWM=$(echo ${ICEJWM_PACKAGES} | tr -s ' ')
+PACKAGES_ICEWM=$(echo ${ICEWM_PACKAGES} | tr -s ' ')
+PACKAGES_JWM=$(echo ${JWM_PACKAGES} | tr -s ' ')
 PACKAGES_LXDE=$(echo ${LXDE_PACKAGES} | tr -s ' ')
 PACKAGES_CINNAMON=$(echo ${CINNAMON_PACKAGES} | tr -s ' ')
 PACKAGES_LABWC=$(echo ${LABWC_PACKAGES} | tr -s ' ')
