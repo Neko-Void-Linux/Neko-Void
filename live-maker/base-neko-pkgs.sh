@@ -338,6 +338,7 @@ I3="
 JWM="
     ristretto
     xarchiver
+    geany
     arandr
     jwm
     jwmkit-neko
@@ -345,7 +346,7 @@ JWM="
     pcmanfm
     sakura
     ristretto
-    lxappearance
+    nwg-look
     atril
     lightdm
     lightdm-gtk-greeter
@@ -365,6 +366,7 @@ ICEWM="
     xarchiver
     arandr
     icewm
+    geany
     mpv
     pcmanfm
     sakura
