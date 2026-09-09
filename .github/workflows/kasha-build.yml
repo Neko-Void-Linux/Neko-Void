@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clone Kasha-Installer repository
-        run: git clone -b beta https://gitlab.com/javiercplus/kasha-installer.git /tmp/build
+        run: git clone -b beta https://github.com/javiercplus/kasha-installer.git /tmp/build
       - name: Compile project
         run:  cd /tmp/build  && make NO_DESKTOP_TAB=1
 
