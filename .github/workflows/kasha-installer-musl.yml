@@ -20,7 +20,7 @@ jobs:
             xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/musl xbps && \
             xbps-install -Syu --repository=https://repo-de.voidlinux.org/current/musl && \
             xbps-install -Sy --repository=https://repo-de.voidlinux.org/current/musl base-devel nodejs python3 bash xtools openssl xz shadow util-linux gcc make pkg-config gtk+3-devel xxd sed coreutils tar git && \
-            git clone --depth 1 https://codeberg.org/javiercplus/Kasha-Installer.git /tmp/build && \
+            git clone --depth 1 https://github.com/javiercplus/kasha-installer.git /tmp/build && \
             cd /tmp/build && \
             make && \
             tar -cvf neko_installer-musl.tar neko_installer && \
