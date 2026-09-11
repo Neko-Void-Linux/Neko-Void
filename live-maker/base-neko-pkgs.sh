@@ -336,16 +336,15 @@ I3="
 "
 
 JWM="
-    ristretto
     xarchiver
-    geany
+    pluma
     arandr
     jwm
     jwmkit-neko
     mpv
     pcmanfm
     sakura
-    ristretto
+    gpicview
     nwg-look
     atril
     lightdm
@@ -362,15 +361,14 @@ JWM="
 "
 
 ICEWM="
-    ristretto
     xarchiver
     arandr
     icewm
-    geany
+    pluma
     mpv
     pcmanfm
     sakura
-    ristretto
+    gpicview
     nwg-look
     atril
     lightdm
