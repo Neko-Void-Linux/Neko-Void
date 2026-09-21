@@ -12,8 +12,7 @@
 #
 VERSION=$(date +"%Y%m%d")
 set -euo pipefail
-KERNEL_DEFAULT="linux-lts"
-KERNEL_LASTEST="linux-mainline"
+KERNEL_DEFAULT="linux-mainline"
 KERNEL_STABLE="linux6.18"
 # ─────────────────────────────────────────────
 # Configuración de salida
@@ -140,7 +139,7 @@ build_iso() {
         lxqt)
             pkg_var="PACKAGES_LXQT"
             includedir="./lxqt"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-lxqt-$VERSION.iso"
             arch="x86_64"
@@ -156,7 +155,7 @@ build_iso() {
         xfce)
             pkg_var="PACKAGES_XFCE"
             includedir="./xfce"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-xfce-$VERSION.iso"
             arch="x86_64"
@@ -164,7 +163,7 @@ build_iso() {
         icewm)
             pkg_var="PACKAGES_ICEWM"
             includedir="./icewm"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-lts-icewm-$VERSION.iso"
             arch="x86_64"
@@ -172,7 +171,7 @@ build_iso() {
         jwm)
             pkg_var="PACKAGES_JWM"
             includedir="./jwm"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="linux-lts"
             dm_service="lightdm"
             iso_name="nekovoid-lts-jwm-$VERSION.iso"
             arch="x86_64"
@@ -196,7 +195,7 @@ build_iso() {
         niri)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="emptty"
             iso_name="nekovoid-niri-$VERSION.iso"
             arch="x86_64"
@@ -204,7 +203,7 @@ build_iso() {
         musl)
             pkg_var="PACKAGES_MUSL"
             includedir="./musl"
-            kernel_kver="$KERNEL_LASTEST"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="lightdm"
             iso_name="nekovoid-musl-$VERSION.iso"
             arch="x86_64-musl"
@@ -212,7 +211,7 @@ build_iso() {
         nvidia)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="linux6.18"
+            kernel_kver="linux-mainline"
             dm_service="emptty"
             iso_name="nekovoid-nvidia-$VERSION.iso"
             arch="x86_64"
@@ -294,7 +293,7 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://sourceforge.net/projects/neko-void/files/repo  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 "${cmd_args[@]}"
+    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://github.com/Neko-Void-Linux/repo-neko/releases/download/stable  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 "${cmd_args[@]}"
     sha256sum ${iso_name} >> ${iso_name}.txt
 }
 

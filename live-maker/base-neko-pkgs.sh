@@ -10,6 +10,7 @@ BASE_SYSTEM="
     linux-firmware-nvidia
     linux-firmware-intel
     linux-mainline-headers
+    linux-lts-headers
     dkms
 	ntfs-3g
     dnsmasq
@@ -452,7 +453,7 @@ LABWC="
 	gtksourceview
 	json-c
 	yad
-	waterfox
+	firefox
 	gtk-layer-shell
 	gtkmm
 	pcmanfm
@@ -495,7 +496,7 @@ NIRI="
 	gtksourceview
 	json-c
 	yad
-	waterfox
+	firefox
 	gtk-layer-shell
 	gtkmm
 "
