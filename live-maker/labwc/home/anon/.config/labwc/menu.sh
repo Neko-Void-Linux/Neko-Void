@@ -2,7 +2,7 @@
 printf '%b\n' '
 <openbox_pipe_menu>
 
-  <item label="Web Browser" name.action="Execute" command.action="waterfox" icon="waterfox" />
+  <item label="Web Browser" name.action="Execute" command.action="firefox" icon="firefox" />
   <item label="Terminal" name.action="Execute" command.action="foot" icon="utilities-terminal" />
   <item label="File Manager" name.action="Execute" command.action="caja" icon="system-file-manager" />
   <item label="Tweaks" name.action="Execute" command.action="labwc-tweaks" icon="configure" />

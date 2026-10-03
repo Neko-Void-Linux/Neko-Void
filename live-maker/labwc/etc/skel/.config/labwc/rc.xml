@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <labwc_config>
-	
+
   <!-- Themes -->
 
   <core>
@@ -19,7 +19,7 @@
     <maximizedDecoration>none</maximizedDecoration>
     <dropShadows>yes</dropShadows>
     <dropShadowsOnTiled>yes</dropShadowsOnTiled>
-    
+
     <font place="ActiveWindow">
       <name>CozetteVector</name>
       <size>11</size>
@@ -52,19 +52,19 @@
     </font>
   </theme>
 
-  
-  
+
+
   <!-- Thumbnail-based window switcher -->
-  
+
   <windowSwitcher preview="yes" outlines="yes">
     <osd style="thumbnail"/>
   </windowSwitcher>
   <keyboard>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
-    
+
    <!-- KeyBinds -->
-   
+
     <keybind key="W-t">
       <action name="Execute" command="foot"/>
     </keybind>
@@ -72,7 +72,7 @@
       <action name="Execute" command="caja"/>
     </keybind>
     <keybind key="W-b">
-      <action name="Execute" command="waterfox"/>
+      <action name="Execute" command="firefox"/>
     </keybind>
     <keybind key="W-r">
       <action name="Execute" command="labwc -r"/>
@@ -218,9 +218,9 @@
       <action name="None"/>
     </keybind>
   </keyboard>
-  
+
   <!-- Desktop -->
-  
+
     <regions>
     <region name="top-left" x="0%" y="0%" height="50%" width="50%"/>
     <region name="top" x="0%" y="0%" height="50%" width="100%"/>
@@ -237,7 +237,7 @@
     <raiseOnFocus>no</raiseOnFocus>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
   </focus>
-  
+
   <snapping>
     <range inner="1" outer="1"/>
     <topMaximize>no</topMaximize>
@@ -252,9 +252,9 @@
       <name>5</name>
     </names>
   </desktops>
-  
+
   <!-- Mouse -->
-  
+
   <libinput>
     <device>
       <naturalScroll>no</naturalScroll>
@@ -388,9 +388,9 @@
       </mousebind>
     </context>
   </mouse>
-  
+
   <!-- Window Rule -->
-  
+
   <placement>
     <policy>cascade</policy>
   </placement>
