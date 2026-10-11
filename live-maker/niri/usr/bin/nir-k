@@ -44,7 +44,7 @@ load_translations() {
     case "$LANG_ID" in
         es)
             T=(
-                [TITLE]="Gestor de Keymap de Niri"
+                [TITLE]="Gestor de Teclado"
                 [CURRENT]="Estado actual"
                 [CHOOSE_OPT]="Elige una opción"
                 [SET_LAYOUT]="Configurar Layout"
@@ -82,7 +82,7 @@ load_translations() {
             ;;
         *)
             T=(
-                [TITLE]="Niri Keymap Manager"
+                [TITLE]="Niri Keyboard Manager"
                 [CURRENT]="Current status"
                 [CHOOSE_OPT]="Choose an option"
                 [SET_LAYOUT]="Configure Layout"
