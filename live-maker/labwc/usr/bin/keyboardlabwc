@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Comprobar si yad está instalado
+if ! command -v yad &> /dev/null; then
+    echo "Error: 'yad' no está instalado. Por favor, instálalo primero."
+    exit 1
+fi
+
+# Detectar el idioma del sistema (primeros 2 caracteres de $LANG)
+LANG_CODE="${LANG:0:2}"
+
+# Definir mensajes y botones según el idioma detectado
+case "$LANG_CODE" in
+    es)
+        MSG="Ahora configura el teclado en la sección 'keyboard'."
+        BTN="Aceptar"
+        ;;
+    fr)
+        MSG="Configurez maintenant le clavier dans la section 'keyboard'."
+        BTN="OK"
+        ;;
+    de)
+        MSG="Konfigurieren Sie nun die Tastatur im Bereich 'keyboard'."
+        BTN="OK"
+        ;;
+    it)
+        MSG="Ora configura la tastiera nella sezione 'keyboard'."
+        BTN="OK"
+        ;;
+    pt)
+        MSG="Agora configure o teclado na seção 'keyboard'."
+        BTN="OK"
+        ;;
+    *)
+        # Inglés por defecto si el idioma no está en la lista
+        MSG="Now configure the keyboard in the 'keyboard' section."
+        BTN="OK"
+        ;;
+esac
+
+# Mostrar el diálogo gráfico con yad
+yad --title="Neko Void" \
+    --text="$MSG" \
+    --button="$BTN:0" \
+    --width=350 \
+    --center \
+    --no-markup
+
+# Guardar el código de salida de yad
+EXIT_CODE=$?
+
+# Si el usuario presionó el botón OK (código de salida 0), abrir labwc-tweaks
+if [ $EXIT_CODE -eq 0 ]; then
+    # Se ejecuta en segundo plano (&) para no bloquear el terminal si se lanza desde él
+    /usr/bin/labwc-tweaks &
+fi
