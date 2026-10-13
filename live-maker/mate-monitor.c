@@ -1,6 +1,6 @@
 /*
  * mate-monitor.c – Monitor de cambios en directorios de aplicaciones
- *                  y reinicio automático de mate-panel.
+ *                  y reinicio automático de mate-panel con watchdog.
  *
  * Compilación:
  *   gcc -o mate-monitor mate-monitor.c -D_GNU_SOURCE -Wall -Wextra -O2
@@ -8,11 +8,14 @@
  * Uso:
  *   ./mate-monitor [-s]
  *
- * Lógica de reinicio (debounce adaptativo):
+ * Lógica de reinicio (debounce adaptativo + watchdog):
  *   - Un único cambio asentado  -> pkill + 'mate-panel --replace' inmediato.
  *   - Ráfaga (>1 cambio corto)  -> se agrupa; tras el último cambio, 5s de
  *                                  cooldown y entonces UN solo reinicio.
- *   Esto evita los reinicios en cadena que destruían el panel.
+ *   - Watchdog: si mate-panel no aparece en el sistema por >3 segundos,
+ *                 se relanza automáticamente con 'nohup mate-panel'.
+ *   Esto evita los reinicios en cadena que destruían el panel y recupera
+ *   el panel si muere inesperadamente.
  */
 
 #include <stdio.h>
@@ -28,10 +31,11 @@
 #include <stdbool.h>
 #include <limits.h>
 
-#define SCAN_INTERVAL_SEC  1     // cadencia de escaneo
-#define SINGLE_SETTLE_SEC  1     // ventana para considerar "cambio único"
-#define MULTI_COOLDOWN_SEC 5     // cooldown tras una ráfaga de cambios
-#define KILL_GRACE_MS      400   // tiempo de cortesía para que el panel termine
+#define SCAN_INTERVAL_SEC        1     // cadencia de escaneo
+#define SINGLE_SETTLE_SEC        1     // ventana para considerar "cambio único"
+#define MULTI_COOLDOWN_SEC       5     // cooldown tras una ráfaga de cambios
+#define KILL_GRACE_MS            400   // tiempo de cortesía para que el panel termine
+#define PANEL_DEAD_THRESHOLD_SEC 3     // segundos que el panel puede estar muerto antes de relanzarlo
 
 #define DIR_PATH_LEN 512
 
@@ -110,7 +114,7 @@ static bool scan_dir(const char *path, int *count_out, time_t *mtime_sum_out) {
         if (n < 0 || (size_t)n >= sizeof(full))
             continue;  // ruta demasiado larga: la ignoramos con seguridad
 
-        struct stat st;
+            struct stat st;
         if (stat(full, &st) == 0)
             sum += st.st_mtime;
     }
@@ -128,8 +132,8 @@ static void spawn_detached(char *const argv[]) {
     if (pid != 0)
         return;  // padre (o fork fallido): seguimos sin esperar
 
-    // Hijo: nueva sesión, independiente del terminal y del padre.
-    setsid();
+        // Hijo: nueva sesión, independiente del terminal y del padre.
+        setsid();
 
     // Segundo fork para asegurar que no adquiera nunca un terminal.
     pid_t pid2 = fork();
@@ -155,6 +159,16 @@ static void restart_panel(void) {
 
     char *panel_argv[]  = { "mate-panel", "--replace", NULL };
     spawn_detached(panel_argv);
+}
+
+// --- Verifica si mate-panel está corriendo ---
+static bool is_panel_running(void) {
+    FILE *fp = popen("pgrep -x mate-panel", "r");
+    if (!fp) return false;
+    char buffer[64];
+    bool running = (fgets(buffer, sizeof(buffer), fp) != NULL);
+    pclose(fp);
+    return running;
 }
 
 // --- Imprime sólo si no estamos en modo silencioso ---
@@ -194,92 +208,118 @@ int main(int argc, char *argv[]) {
 
     struct DirWatch dirs[2];
     if (snprintf(dirs[0].path, sizeof(dirs[0].path),
-                 "%s/.local/share/applications", home) >= (int)sizeof(dirs[0].path)) {
+        "%s/.local/share/applications", home) >= (int)sizeof(dirs[0].path)) {
         fprintf(stderr, "Error: ruta HOME demasiado larga\n");
-        return EXIT_FAILURE;
-    }
-    snprintf(dirs[1].path, sizeof(dirs[1].path), "%s", "/usr/share/applications");
-
-    // --- Inicializar contadores ---
-    for (int i = 0; i < 2; i++) {
-        if (!scan_dir(dirs[i].path, &dirs[i].count, &dirs[i].mtime_sum)) {
-            dirs[i].count = 0;
-            dirs[i].mtime_sum = 0;
-            log_msg("Aviso: no se pudo abrir %s (¿aún no existe?)", dirs[i].path);
+    return EXIT_FAILURE;
         }
-    }
+        snprintf(dirs[1].path, sizeof(dirs[1].path), "%s", "/usr/share/applications");
 
-    if (!silent_mode) {
-        printf("Monitorizando:\n  %s (%d)\n  %s (%d)\n",
-               dirs[0].path, dirs[0].count, dirs[1].path, dirs[1].count);
-        printf("Debounce: cambio único -> inmediato | ráfaga -> %ds cooldown\n",
-               MULTI_COOLDOWN_SEC);
-        fflush(stdout);
-    }
-
-    setup_signals();
-
-    // --- Bucle principal con debounce adaptativo ---
-    int    pending     = 0;        // cambios acumulados sin reiniciar
-    time_t last_change = 0;        // timestamp del último cambio detectado
-
-    while (keep_running) {
-        sleep(SCAN_INTERVAL_SEC);
-        if (!keep_running) break;
-
-        bool changed = false;
+        // --- Inicializar contadores ---
         for (int i = 0; i < 2; i++) {
-            int    c;
-            time_t m;
-            if (!scan_dir(dirs[i].path, &c, &m))
-                continue;  // directorio inaccesible este ciclo
-
-            if (c != dirs[i].count || m != dirs[i].mtime_sum) {
-                log_msg("Cambio en %s: %d -> %d",
-                        dirs[i].path, dirs[i].count, c);
-                dirs[i].count      = c;
-                dirs[i].mtime_sum  = m;
-                changed = true;
+            if (!scan_dir(dirs[i].path, &dirs[i].count, &dirs[i].mtime_sum)) {
+                dirs[i].count = 0;
+                dirs[i].mtime_sum = 0;
+                log_msg("Aviso: no se pudo abrir %s (¿aún no existe?)", dirs[i].path);
             }
         }
 
-        time_t now = time(NULL);
-
-        if (changed) {
-            // Hay movimiento: acumular y seguir esperando a que se asiente.
-            pending++;
-            last_change = now;
-            log_msg("Cambio acumulado (total: %d)", pending);
-            continue;
+        if (!silent_mode) {
+            printf("Monitorizando:\n  %s (%d)\n  %s (%d)\n",
+                   dirs[0].path, dirs[0].count, dirs[1].path, dirs[1].count);
+            printf("Debounce: cambio único -> inmediato | ráfaga -> %ds cooldown\n",
+                   MULTI_COOLDOWN_SEC);
+            printf("Watchdog: relanzamiento con nohup si el panel está muerto >%ds\n",
+                   PANEL_DEAD_THRESHOLD_SEC);
+            fflush(stdout);
         }
 
-        // Sin cambios nuevos este ciclo: evaluar si toca reiniciar.
-        if (pending > 0) {
-            long settled = (long)difftime(now, last_change);
+        setup_signals();
 
-            if (pending == 1) {
-                // Cambio único: tras asentarse la ventana corta, reiniciar ya.
-                if (settled >= SINGLE_SETTLE_SEC) {
-                    log_msg("Cambio único asentado: reiniciando mate-panel...");
-                    restart_panel();
-                    pending = 0;
+        // --- Bucle principal con debounce adaptativo y watchdog ---
+        int    pending     = 0;        // cambios acumulados sin reiniciar
+        time_t last_change = 0;        // timestamp del último cambio detectado
+        time_t panel_dead_since = 0;   // timestamp desde que el panel no aparece
+        time_t last_restart_time = 0;  // timestamp del último reinicio (evita solapamientos)
+
+        while (keep_running) {
+            sleep(SCAN_INTERVAL_SEC);
+            if (!keep_running) break;
+
+            time_t now = time(NULL);
+
+            // --- Watchdog: verificar si el panel está muerto ---
+            bool running = is_panel_running();
+            if (!running) {
+                if (panel_dead_since == 0) {
+                    panel_dead_since = now; // Acabamos de detectar que murió
+                } else if (now - panel_dead_since >= PANEL_DEAD_THRESHOLD_SEC) {
+                    // Evitar relanzar si acabamos de hacer un reinicio programado (evita solapamientos)
+                    if (now - last_restart_time > 5) {
+                        log_msg("Watchdog: mate-panel ausente por %ld s. Relanzando con nohup...", (long)(now - panel_dead_since));
+                        char *nohup_argv[] = { "sh", "-c", "nohup mate-panel >/dev/null 2>&1 &", NULL };
+                        spawn_detached(nohup_argv);
+                        last_restart_time = now;
+                        panel_dead_since = 0; // Resetear para dar tiempo a que inicie
+                    }
                 }
             } else {
-                // Ráfaga: cooldown de 5s desde el último cambio.
-                long remaining = MULTI_COOLDOWN_SEC - settled;
-                if (remaining > 0) {
-                    log_msg("Ráfaga de %d cambios; cooldown %lds...",
-                            pending, remaining);
+                panel_dead_since = 0; // El panel está vivo, resetear contador
+            }
+
+            // --- Lógica existente de monitoreo de directorios ---
+            bool changed = false;
+            for (int i = 0; i < 2; i++) {
+                int    c;
+                time_t m;
+                if (!scan_dir(dirs[i].path, &c, &m))
+                    continue;  // directorio inaccesible este ciclo
+
+                    if (c != dirs[i].count || m != dirs[i].mtime_sum) {
+                        log_msg("Cambio en %s: %d -> %d",
+                                dirs[i].path, dirs[i].count, c);
+                        dirs[i].count      = c;
+                        dirs[i].mtime_sum  = m;
+                        changed = true;
+                    }
+            }
+
+            if (changed) {
+                // Hay movimiento: acumular y seguir esperando a que se asiente.
+                pending++;
+                last_change = now;
+                log_msg("Cambio acumulado (total: %d)", pending);
+                continue;
+            }
+
+            // Sin cambios nuevos este ciclo: evaluar si toca reiniciar.
+            if (pending > 0) {
+                long settled = (long)difftime(now, last_change);
+
+                if (pending == 1) {
+                    // Cambio único: tras asentarse la ventana corta, reiniciar ya.
+                    if (settled >= SINGLE_SETTLE_SEC) {
+                        log_msg("Cambio único asentado: reiniciando mate-panel...");
+                        restart_panel();
+                        last_restart_time = now; // Registrar para que el watchdog no interfiera
+                        pending = 0;
+                    }
                 } else {
-                    log_msg("Cooldown cumplido (%d cambios agrupados): reiniciando...",
-                            pending);
-                    restart_panel();
-                    pending = 0;
+                    // Ráfaga: cooldown de 5s desde el último cambio.
+                    long remaining = MULTI_COOLDOWN_SEC - settled;
+                    if (remaining > 0) {
+                        log_msg("Ráfaga de %d cambios; cooldown %lds...",
+                                pending, remaining);
+                    } else {
+                        log_msg("Cooldown cumplido (%d cambios agrupados): reiniciando...",
+                                pending);
+                        restart_panel();
+                        last_restart_time = now; // Registrar para que el watchdog no interfiera
+                        pending = 0;
+                    }
                 }
             }
         }
-    }
 
-    log_msg("Monitor detenido correctamente.");
-    return EXIT_SUCCESS;
+        log_msg("Monitor detenido correctamente.");
+        return EXIT_SUCCESS;
 }
