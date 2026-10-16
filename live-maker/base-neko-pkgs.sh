@@ -49,6 +49,7 @@ BASE_SYSTEM="
     tmux
     xmirror
     vouru
+    soar-git
 "
 MUSL_SYSTEM="
     base-system

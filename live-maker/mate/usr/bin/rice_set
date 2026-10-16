@@ -8,24 +8,6 @@ runn(){
 xdg-user-dirs-update && xdg-user-dirs-update --force
 gsettings set org.mate.caja-open-terminal desktop-opens-home-dir true
 
-# Tema GTK y Marco: Juno
-gsettings set org.mate.interface gtk-theme "Dracula"
-gsettings set org.mate.Marco.general theme "Dracula"
-
-# Tema de iconos: pixelitos-dark
-gsettings set org.mate.interface icon-theme "pixelitos-dark"
-
-# Tema de cursor: Bibata-Gruvbox
-gsettings set org.mate.peripherals-mouse cursor-theme "Bibata-Gruvbox"
-
-# Fondo de pantalla
-gsettings set org.mate.background picture-filename "/usr/share/backgrounds/kyoko241.png"
-gsettings set org.mate.background picture-options "stretched"  
-# Opciones: none, wallpaper, centered, scaled, stretched, zoom, spanned
-#Keys
-dconf write /org/mate/marco/global-keybindings/run-command-terminal "'<Alt>Return'"
-dconf write /org/mate/settings-daemon/plugins/media-keys/home "'<Alt>e'"
-dconf load / < /usr/share/rice/backup_dconf_completo.txt
 /usr/lib/Neko-Wizard/neko-store &
 /usr/bin/mate_monitor &
 # Crear el archivo de marca para evitar reejecución
