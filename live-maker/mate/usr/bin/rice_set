@@ -9,7 +9,7 @@ xdg-user-dirs-update && xdg-user-dirs-update --force
 gsettings set org.mate.caja-open-terminal desktop-opens-home-dir true
 
 /usr/lib/Neko-Wizard/neko-store &
-/usr/bin/mate_monitor &
+/usr/bin/mate-monitor &
 # Crear el archivo de marca para evitar reejecución
 touch "$MARKER_FILE"
 
@@ -18,7 +18,7 @@ echo "✓ Apariencia MATE configurada: Juno + pixelitos-dark + Bibata-Gruvbox + 
 
 # Verificar si ya se ejecutó la configuración
 if [ -f "$MARKER_FILE" ]; then
-    /usr/bin/mate_monitor &
+    /usr/bin/mate-monitor &
     echo "✓ La configuración de apariencia ya fue aplicada (archivo $MARKER_FILE encontrado)."
 else
 runn
