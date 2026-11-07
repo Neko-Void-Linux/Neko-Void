@@ -211,7 +211,7 @@ build_iso() {
         nvidia)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="linux-mainline"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="emptty"
             iso_name="nekovoid-nvidia-$VERSION.iso"
             arch="x86_64"
@@ -220,7 +220,7 @@ build_iso() {
          nvidia-kde)
             pkg_var="PACKAGES_KDE"
             includedir="./kdedir"
-            kernel_kver="linux6.18"
+            kernel_kver="$KERNEL_DEFAULT"
             dm_service="sddm"
             iso_name="nekovoid-nvidia-kde-$VERSION.iso"
             arch="x86_64"

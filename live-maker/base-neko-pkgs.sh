@@ -9,8 +9,6 @@ BASE_SYSTEM="
     linux-firmware-amd
     linux-firmware-nvidia
     linux-firmware-intel
-    linux-mainline-headers
-    linux-lts-headers
     dkms
 	ntfs-3g
     dnsmasq
