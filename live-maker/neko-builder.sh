@@ -14,10 +14,10 @@ VERSION=$(date +"%Y%m%d")
 set -euo pipefail
 KERNEL_DEFAULT="linux-mainline"
 KERNEL_STABLE="linux6.18"
+
 # ─────────────────────────────────────────────
 # Configuración de salida
 # ─────────────────────────────────────────────
-
 ISO_TITLE="NekoVoid"
 
 # ─────────────────────────────────────────────
@@ -51,6 +51,27 @@ YELLOW="\033[0;33m"
 RESET="\033[0m"
 
 # ─────────────────────────────────────────────
+# run_as_root() – Eleva privilegios usando
+#                 root directo, sudo, doas o su -c
+# ─────────────────────────────────────────────
+run_as_root() {
+    if [ "$(id -u)" -eq 0 ]; then
+        "$@"
+    elif command -v sudo >/dev/null 2>&1; then
+        sudo "$@"
+    elif command -v doas >/dev/null 2>&1; then
+        doas "$@"
+    elif command -v su >/dev/null 2>&1; then
+        local escaped_cmd
+        printf -v escaped_cmd '%q ' "$@"
+        su -c "$escaped_cmd"
+    else
+        echo -e "${BOLD}Error:${RESET} No se encontró sudo, doas ni su para ejecutar como root." >&2
+        exit 1
+    fi
+}
+
+# ─────────────────────────────────────────────
 # usage() – Ayuda
 # ─────────────────────────────────────────────
 usage() {
@@ -61,19 +82,20 @@ Uso: $(basename "$0") [ESCRITORIO] [OPCIONES]
       $(basename "$0")                          ${CYAN}# Modo interactivo${RESET}
 
 Escritorios disponibles:
-  ${GREEN}mate${RESET}    MATE + Xorg (kernel mainline)
+  ${GREEN}mate${RESET}        MATE + Xorg (kernel mainline)
   ${GREEN}matelibre${RESET}   MATE + Xlibre (kernel mainline, sólo libre)
-  ${GREEN}kde${RESET}        KDE Plasma (kernel mainline)
-  ${GREEN}lxqt${RESET}       LXQt (kernel mainline)
-  ${GREEN}xfce${RESET}       XFCE (kernel mainline)
-  ${GREEN}icejwm${RESET}     IceWM + JWM (kernel LTS)
-  ${GREEN}niri${RESET}     Niri (kernel Stable)
-  ${GREEN}nvidia${RESET}   Niri + NVIDIA (kernel 6.18, drivers via postsetup)
-  ${GREEN}nvidia-kde${RESET}   KDE + NVIDIA (kernel 6.18, drivers via postsetup)
-  ${GREEN}cinnamon${RESET}   Cinnamon (kernel mainline)
-  ${GREEN}labwc${RESET}   Labwc (kernel LTS)
-  ${GREEN}lxde${RESET}       LXDE (kernel mainline)
-  ${GREEN}i3${RESET}       I3 (kernel mainline)
+  ${GREEN}kde${RESET}         KDE Plasma (kernel mainline)
+  ${GREEN}lxqt${RESET}        LXQt (kernel mainline)
+  ${GREEN}xfce${RESET}        XFCE (kernel LTS)
+  ${GREEN}icewm${RESET}       IceWM (kernel LTS)
+  ${GREEN}jwm${RESET}         JWM (kernel LTS)
+  ${GREEN}cinnamon${RESET}    Cinnamon (kernel LTS)
+  ${GREEN}labwc${RESET}       Labwc (kernel mainline)
+  ${GREEN}niri${RESET}        Niri (kernel mainline)
+  ${GREEN}i3${RESET}          i3 (kernel mainline)
+  ${GREEN}musl${RESET}        Musl (kernel mainline)
+  ${GREEN}nvidia${RESET}      Niri + NVIDIA Legacy 575 (drivers via postsetup)
+  ${GREEN}nvidia-open${RESET} Labwc + NVIDIA Open 620 (drivers via postsetup)
 
 Especiales:
   ${GREEN}doble${RESET}       Construir xlibre + xorg (ambos)
@@ -85,7 +107,7 @@ Opciones:
 
 Ejemplos:
   $(basename "$0")                        # Menú interactivo
-  $(basename "$0") icejwm                 # Construir IceWM directamente
+  $(basename "$0") icewm                  # Construir IceWM directamente
   $(basename "$0") kde -e "gimp inkscape" # KDE + paquetes extra
   $(basename "$0") doble                  # Construir ambos (libre + nonfree)
 EOF
@@ -110,6 +132,7 @@ build_iso() {
     local iso_name=""
     local arch=""
     local postsetup=""
+
     # ─── Mapeo de escritorio → configuración ───
     case "$desktop" in
         mate)
@@ -217,7 +240,7 @@ build_iso() {
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
             ;;
-         nvidia-open)
+        nvidia-open)
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
             kernel_kver="$KERNEL_DEFAULT"
@@ -243,7 +266,7 @@ build_iso() {
 
     # ─── Paquetes específicos por build ───
     if [ -n "$postsetup" ]; then
-        packages="$packages linux6.18-headers"
+        packages="$packages ${kernel_kver}-headers"
     fi
 
     # ─── Banner informativo ───
@@ -293,8 +316,20 @@ build_iso() {
 
     cmd_args+=(-S "$SERVICES_BASE $dm_service")
 
-    sudo ./mklive.sh  -r https://github.com/xlibre-void/xlibre/releases/latest/download -r https://github.com/Neko-Void-Linux/repo-neko/releases/download/stable  -r https://repo-de.voidlinux.org/current/nonfree -r https://repo-de.voidlinux.org/current  -r https://repo-de.voidlinux.org/current/multilib/nonfree -r https://repo-de.voidlinux.org/current/multilib -r https://repo-de.voidlinux.org/current/musl/bootstrap -r https://repo-de.voidlinux.org/current/musl -r https://repo-de.voidlinux.org/current/musl/nonfree -r https://sourceforge.net/projects/neko-void/files/repo/musl -i xz -s zstd -L 22 "${cmd_args[@]}"
-    sha256sum ${iso_name} >> ${iso_name}.txt
+    run_as_root ./mklive.sh \
+        -r https://github.com/xlibre-void/xlibre/releases/latest/download \
+        -r https://github.com/Neko-Void-Linux/repo-neko/releases/download/stable \
+        -r https://repo-de.voidlinux.org/current/nonfree \
+        -r https://repo-de.voidlinux.org/current \
+        -r https://repo-de.voidlinux.org/current/multilib/nonfree \
+        -r https://repo-de.voidlinux.org/current/multilib \
+        -r https://repo-de.voidlinux.org/current/musl/bootstrap \
+        -r https://repo-de.voidlinux.org/current/musl \
+        -r https://repo-de.voidlinux.org/current/musl/nonfree \
+        -r https://sourceforge.net/projects/neko-void/files/repo/musl \
+        -i xz -s zstd -L 22 "${cmd_args[@]}"
+
+    sha256sum "${iso_name}" >> "${iso_name}.txt"
 }
 
 # ─────────────────────────────────────────────
@@ -356,9 +391,7 @@ interactive_menu() {
     build_iso "$desktop" "$extra_pkgs"
 }
 
-# ─────────────────────────────────────────────
-# MAIN – Parseo de argumentos
-# ─────────────────────────────────────────────
+
 EXTRA_PKGS=""
 DESKTOP=""
 
@@ -397,13 +430,11 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# ─── Si no hay escritorio especificado → modo interactivo ───
 if [ -z "$DESKTOP" ]; then
     interactive_menu
     exit 0
 fi
 
-# ─── Despachar según el escritorio ───
 case "$DESKTOP" in
     doble)
         echo -e "${CYAN}→ Construyendo xlibre + xorg...${RESET}"
