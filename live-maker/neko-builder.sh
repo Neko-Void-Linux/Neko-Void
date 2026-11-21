@@ -244,7 +244,7 @@ build_iso() {
             pkg_var="PACKAGES_LABWC"
             includedir="./labwc"
             kernel_kver="$KERNEL_DEFAULT"
-            dm_service="sddm"
+            dm_service="emptty"
             iso_name="nekovoid-nvidia-open-$VERSION.iso"
             arch="x86_64"
             postsetup="./postsetup-nvidia-open.sh"
