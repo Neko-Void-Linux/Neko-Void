@@ -309,41 +309,43 @@ interactive_menu() {
     echo ""
     echo -e "  ${CYAN}Escritorios disponibles:${RESET}"
     echo ""
-    echo -e "  ${GREEN} 1)${RESET} xorg      ${YELLOW}→${RESET} MATE + Xorg (kernel estable)"
-    echo -e "  ${GREEN} 2)${RESET} xlibre    ${YELLOW}→${RESET} MATE + Xlibre (kernel estable, libre)"
-    echo -e "  ${GREEN} 3)${RESET} rolling   ${YELLOW}→${RESET} MATE + Xorg (kernel mainline)"
-    echo -e "  ${GREEN} 4)${RESET} rollibre  ${YELLOW}→${RESET} MATE + Xlibre (kernel mainline, libre)"
-    echo -e "  ${GREEN} 5)${RESET} kde       ${YELLOW}→${RESET} KDE Plasma (kernel mainline)"
-    echo -e "  ${GREEN} 6)${RESET} lxqt      ${YELLOW}→${RESET} LXQt (kernel mainline)"
-    echo -e "  ${GREEN} 7)${RESET} xfce      ${YELLOW}→${RESET} XFCE (kernel mainline)"
-    echo -e "  ${GREEN} 8)${RESET} icejwm    ${YELLOW}→${RESET} IceWM + JWM (kernel LTS)"
-    echo -e "  ${GREEN} 9)${RESET} cinnamon  ${YELLOW}→${RESET} Cinnamon (kernel mainline)"
-    echo -e "  ${GREEN}10)${RESET} lxde      ${YELLOW}→${RESET} LXDE (kernel mainline)"
-    echo -e "  ${GREEN}11)${RESET} labwc     ${YELLOW}→${RESET} labwc (kernel LTS)"
-    echo -e "  ${GREEN}12)${RESET} i3        ${YELLOW}→${RESET} I3 (kernel mainline)"
-    echo -e "  ${GREEN}13)${RESET} nvidia    ${YELLOW}→${RESET} Niri + NVIDIA (kernel 6.18, postsetup)"
+    echo -e "  ${GREEN} 1)${RESET} mate        ${YELLOW}→${RESET} MATE + Xorg (kernel mainline)"
+    echo -e "  ${GREEN} 2)${RESET} matelibre   ${YELLOW}→${RESET} MATE + Xlibre (kernel mainline, libre)"
+    echo -e "  ${GREEN} 3)${RESET} kde         ${YELLOW}→${RESET} KDE Plasma (kernel mainline)"
+    echo -e "  ${GREEN} 4)${RESET} lxqt        ${YELLOW}→${RESET} LXQt (kernel mainline)"
+    echo -e "  ${GREEN} 5)${RESET} xfce        ${YELLOW}→${RESET} XFCE (kernel LTS)"
+    echo -e "  ${GREEN} 6)${RESET} icewm       ${YELLOW}→${RESET} IceWM (kernel LTS)"
+    echo -e "  ${GREEN} 7)${RESET} jwm         ${YELLOW}→${RESET} JWM (kernel LTS)"
+    echo -e "  ${GREEN} 8)${RESET} cinnamon    ${YELLOW}→${RESET} Cinnamon (kernel LTS)"
+    echo -e "  ${GREEN} 9)${RESET} lxde        ${YELLOW}→${RESET} LXDE (kernel mainline)"
+    echo -e "  ${GREEN}10)${RESET} labwc       ${YELLOW}→${RESET} Labwc (kernel mainline)"
+    echo -e "  ${GREEN}11)${RESET} i3          ${YELLOW}→${RESET} i3 (kernel mainline)"
+    echo -e "  ${GREEN}12)${RESET} niri        ${YELLOW}→${RESET} Niri (kernel mainline)"
+    echo -e "  ${GREEN}13)${RESET} nvidia      ${YELLOW}→${RESET} Niri + NVIDIA Legacy 575 (postsetup)"
+    echo -e "  ${GREEN}14)${RESET} nvidia-open ${YELLOW}→${RESET} Labwc + NVIDIA Open 620 (postsetup)"
     echo ""
 
     local choice
-    read -r -p "  Selecciona escritorio [1-10]: " choice
+    read -r -p "  Selecciona escritorio [1-14]: " choice
 
     local desktop
     case "$choice" in
-        1)  desktop="xorg" ;;
-        2)  desktop="xlibre" ;;
-        3)  desktop="rolling" ;;
-        4)  desktop="rollibre" ;;
-        5)  desktop="kde" ;;
-        6)  desktop="lxqt" ;;
-        7)  desktop="xfce" ;;
-        8)  desktop="icejwm" ;;
-        9)  desktop="cinnamon" ;;
-        10) desktop="lxde" ;;
+        1)  desktop="mate" ;;
+        2)  desktop="matelibre" ;;
+        3)  desktop="kde" ;;
+        4)  desktop="lxqt" ;;
+        5)  desktop="xfce" ;;
+        6)  desktop="icewm" ;;
+        7)  desktop="jwm" ;;
+        8)  desktop="cinnamon" ;;
+        9)  desktop="lxde" ;;
+        10) desktop="labwc" ;;
         11) desktop="i3" ;;
-        12) desktop="labwc" ;;
+        12) desktop="niri" ;;
         13) desktop="nvidia" ;;
+        14) desktop="nvidia-open" ;;
         *)
-            echo -e "${BOLD}Error:${RESET} Opción inválida '$choice'. Usa un número del 1 al 10."
+            echo -e "${BOLD}Error:${RESET} Opción inválida '$choice'. Usa un número del 1 al 14."
             exit 1
             ;;
     esac
