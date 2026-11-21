@@ -217,14 +217,14 @@ build_iso() {
             arch="x86_64"
             postsetup="./postsetup-nvidia.sh"
             ;;
-         nvidia-kde)
-            pkg_var="PACKAGES_KDE"
-            includedir="./kdedir"
+         nvidia-open)
+            pkg_var="PACKAGES_LABWC"
+            includedir="./labwc"
             kernel_kver="$KERNEL_DEFAULT"
             dm_service="sddm"
-            iso_name="nekovoid-nvidia-kde-$VERSION.iso"
+            iso_name="nekovoid-nvidia-open-$VERSION.iso"
             arch="x86_64"
-            postsetup="./postsetup-nvidia.sh"
+            postsetup="./postsetup-nvidia-open.sh"
             ;;
         *)
             echo -e "${BOLD}Error:${RESET} Escritorio desconocido '${desktop}'"
