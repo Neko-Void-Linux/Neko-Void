@@ -84,6 +84,26 @@ chroot "$ROOTFS" env -i HOME=/root TERM="$TERM" \
         done
     ' || { echo "[neko-postsetup] ERROR: DKMS/initramfs build failed in chroot" >&2; exit 1; }
 
+echo "[neko-postsetup] cleaning extra kernels and DKMS build artifacts..."
+chroot "$ROOTFS" env -i HOME=/root TERM="$TERM" \
+    PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin \
+    bash -c '
+        # Obtener la versión exacta del kernel principal instalado en el chroot
+        KEEP_KVER=$(ls -1 /boot/vmlinuz-* 2>/dev/null | sed "s|/boot/vmlinuz-||" | sort -V | tail -n 1)
+
+        if [ -n "$KEEP_KVER" ]; then
+            for kver in $(ls -1 /boot/vmlinuz-* 2>/dev/null | sed "s|/boot/vmlinuz-||"); do
+                if [ "$kver" != "$KEEP_KVER" ]; then
+                    echo "Removing older/extra kernel: $kver"
+                    rm -rf "/boot/vmlinuz-${kver}" "/boot/initramfs-${kver}.img" "/boot/System.map-${kver}" "/boot/config-${kver}" "/lib/modules/${kver}"
+                fi
+            done
+        fi
+
+        # Limpiar archivos temporales de compilación de DKMS (los .ko ya están en /lib/modules)
+        rm -rf /var/lib/dkms/nvidia/*/build
+    '
+
 echo "[neko-postsetup] cleaning up xbps cache to reduce ISO size ..."
 chroot "$ROOTFS" env -i HOME=/root TERM="$TERM" \
     PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin \
