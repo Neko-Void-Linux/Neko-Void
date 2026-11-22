@@ -241,8 +241,8 @@ build_iso() {
             postsetup="./postsetup-nvidia.sh"
             ;;
         nvidia-open)
-            pkg_var="PACKAGES_LABWC"
-            includedir="./labwc"
+            pkg_var="PACKAGES_NIRI"
+            includedir="./niri"
             kernel_kver="$KERNEL_DEFAULT"
             dm_service="emptty"
             iso_name="nekovoid-nvidia-open-$VERSION.iso"
