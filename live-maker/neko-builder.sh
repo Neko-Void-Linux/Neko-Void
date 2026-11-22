@@ -243,7 +243,7 @@ build_iso() {
         nvidia-open)
             pkg_var="PACKAGES_NIRI"
             includedir="./niri"
-            kernel_kver="$KERNEL_DEFAULT"
+            kernel_kver="linux7.3"
             dm_service="emptty"
             iso_name="nekovoid-nvidia-open-$VERSION.iso"
             arch="x86_64"
