@@ -9,6 +9,7 @@
  *   ./mate-monitor [-s]
  *
  * Lógica de reinicio (debounce adaptativo + watchdog):
+ *   - Validación de entorno: sólo se ejecuta dentro de una sesión MATE.
  *   - Instancia única garantizada por usuario vía flock() en /tmp.
  *   - Un único cambio asentado  -> pkill + 'mate-panel --replace' inmediato.
  *   - Ráfaga (>1 cambio corto)  -> se agrupa; tras el último cambio, 5s de
@@ -65,6 +66,21 @@ static void log_msg(const char *fmt, ...) {
     vfprintf(stderr, fmt, ap);
     fputc('\n', stderr);
     va_end(ap);
+}
+
+// --- Verifica si la sesión gráfica actual corresponde a MATE ---
+static bool is_mate_session(void) {
+    const char *xdg_desktop = getenv("XDG_CURRENT_DESKTOP");
+    if (xdg_desktop && strcasestr(xdg_desktop, "MATE") != NULL) {
+        return true;
+    }
+
+    const char *session = getenv("DESKTOP_SESSION");
+    if (session && strcasestr(session, "MATE") != NULL) {
+        return true;
+    }
+
+    return false;
 }
 
 // --- Asegura que sólo corra una instancia por usuario ---
@@ -246,6 +262,13 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "Error: opción desconocida '%s'. Usa -h.\n", argv[i]);
             return EXIT_FAILURE;
         }
+    }
+
+    // --- Verificar que estamos en MATE antes de hacer nada ---
+    if (!is_mate_session()) {
+        log_msg("Entorno no es MATE (XDG_CURRENT_DESKTOP='%s'). Saliendo.",
+                getenv("XDG_CURRENT_DESKTOP") ? getenv("XDG_CURRENT_DESKTOP") : "no definido");
+        return EXIT_SUCCESS;
     }
 
     // --- Garantizar ejecución única ---
